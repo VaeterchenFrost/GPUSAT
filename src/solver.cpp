@@ -303,7 +303,7 @@ namespace gpusat {
                 free(node.solution[a].elements);
                 node.solution[a].elements = NULL;
 
-                if (a > 0 and solutionType != ARRAY) {
+                if (a > 0 && solutionType != ARRAY) {
                     node.solution[a - 1].maxId = node.solution[a].maxId;
 
                     node.bags--;
@@ -522,7 +522,7 @@ namespace gpusat {
                 free(node.solution[a].elements);
                 node.solution[a].elements = NULL;
 
-                if (a > 0 and solutionType != ARRAY) {
+                if (a > 0 && solutionType != ARRAY) {
                     node.solution[a - 1].maxId = node.solution[a].maxId;
 
                     node.bags--;
