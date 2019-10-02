@@ -13,18 +13,7 @@ R"=====(
 
 #if !defined(ARRAY_TYPE)
 
-/**
- * returns the model count which corresponds to the given id
- *
- * @param id
- *      the id for which the model count should be returned
- * @param tree
- *      a pointer to the tree structure
- * @param numVars
- *      the number of variables in the bag
- * @return
- *      the model count
- */
+
 double getCount(long id, __global long *tree, long numVars) {
     ulong nextId = 0;
     for (ulong i = 0; i < numVars; i++) {
@@ -37,20 +26,7 @@ double getCount(long id, __global long *tree, long numVars) {
     return as_double(tree[nextId]);
 }
 
-/**
- * sets the model count which corresponds to the given id
- *
- * @param id
- *      the id for which the model count should be set
- * @param tree
- *      a pointer to the tree structure
- * @param numVars
- *      the number of variables in the bag
- * @param treeSize
- *      the number of nodes in the tree
- * @param value
- *      the new value of the id
- */
+
 void setCount(long id, __global long *tree, long numVars, __global long *treeSize, double value) {
     ulong nextId = 0;
     ulong val = 0;
@@ -75,22 +51,7 @@ void setCount(long id, __global long *tree, long numVars, __global long *treeSiz
     tree[nextId] = as_long(value);
 }
 
-/**
- * converts a array structure into a tree
- *
- * @param numVars
- *      the number of variables in the bag
- * @param tree
- *      a pointer to the tree structure
- * @param solutions_old
- *      array containing the models
- * @param treeSize
- *      the number of nodes in the tree
- * @param startId
-  *     the start id of the current node
- * @param exponent
-  *     the max exponent of this run
- */
+
 __kernel void resize(long numVars, __global long *tree, __global double *solutions_old, __global long *treeSize, long startId, __global long *exponent) {
     long id = get_global_id(0);
     if (solutions_old[id] > 0) {
@@ -101,20 +62,7 @@ __kernel void resize(long numVars, __global long *tree, __global double *solutio
     }
 }
 
-/**
- * combines two tree structure into one
- *
- * @param numVars
- *      the number of variables in the bag
- * @param tree
- *      a pointer to the tree structure which will receive all the models from the other tree
- * @param solutions_old
- *      a pointer to the old tree structure
- * @param treeSize
- *      the number of nodes in the tree
- * @param startId
-  *     the start id of the current node
- */
+
 __kernel void combineTree(long numVars, __global long *tree, __global double *solutions_old, __global long *treeSize, long startId) {
     long id = get_global_id(0);
     double val = getCount(id + startId, solutions_old, numVars);
@@ -125,30 +73,7 @@ __kernel void combineTree(long numVars, __global long *tree, __global double *so
 
 #endif
 
-/**
- * Operation to solve a Introduce node in the decomposition.
- *
- * @param numV
- *      the number of variables in the current bag
- * @param edge
- *      the number of models for each assignment of the next bag
- * @param numVE
- *      the number of variables in the next bag
- * @param variables
- *      the ids of the variables in the current bag
- * @param edgeVariables
- *      the ids of the variables in the next bag
- * @param minId
- *      the start id of the last bag
- * @param maxId
- *      the end id of the last bag
- * @param weights
- *      the variables weights for weighted model counting
- * @param id
- *      the id for which the introduce should be solved
- * @return
- *      the model count
- */
+
 double solveIntroduce_(long numV, __global long *edge, long numVE, __global long *variables, __global long *edgeVariables, long minId, long maxId, __global double *weights, long id) {
     long otherId = 0;
     long a = 0, b = 0;
@@ -189,25 +114,7 @@ double solveIntroduce_(long numV, __global long *edge, long numVE, __global long
     }
 }
 
-/**
- * Operation to check if an assignment satisfies the clauses of a SAT formula.
- *
- * @param clauses
- *      the clauses in the SAT formula
- * @param numVarsC
- *      array containing the number of Variables in each clause
- * @param numclauses
- *      the number of clauses in the sat formula
- * @param id
- *      the id of the thread - used to get the variable assignment
- * @param numV
- *      the number of variables
- * @param variables
- *      a vector containing the ids of the variables
- * @return
- *      1 - if the assignment satisfies the formula
- *      0 - if the assignment doesn't satisfy the formula
- */
+
 int checkBag(__global long *clauses, __global long *numVarsC, long numclauses, long id, long numV, __global long *variables) {
     long i, varNum = 0;
     long satC = 0, a, b;
@@ -248,46 +155,7 @@ int checkBag(__global long *clauses, __global long *numVarsC, long numclauses, l
     return 1;
 }
 
-/**
- * Operation to solve a Join node in the decomposition.
- *
- * @param solutions
- *      the number of solutions of the join
- * @param edge1
- *      contains the number of solutions in the first edge
- * @param edge2
- *      contains the number of solutions in the second edge
- * @param variables
- *      the variables in the join bag
- * @param edgeVariables1
- *      the variables in the bag of the first edge
- * @param edgeVariables2
- *      the variables in the bag of the second edge
- * @param numV
- *      the number of variables in the join bag
- * @param numVE1
- *      the number of variables in the first edge
- * @param numVE2
- *      the number of variables in the second edge
-  * @param minId1
-  *     the start id of the first edge
-  * @param maxId1
-  *     the end id of the first edge
-  * @param minId2
-  *     the start id of the second edge
-  * @param maxId2
-  *     the end id of the second edge
-  * @param startIDNode
-  *     the start id of the current node
-  * @param weights
-  *     the variable weights for weighted model counting
-  * @param sols
-  *     the number of assignments which lead to a solution
-  * @param value
-  *     correction value for the exponents
-  * @param exponent
-  *     the max exponent of this run
-  */
+
 __kernel void solveJoin(__global long *solutions, __global long *edge1, __global long *edge2, __global long *variables, __global long *edgeVariables1, __global long *edgeVariables2, long numV, long numVE1, long numVE2, long minId1, long maxId1, long minId2, long maxId2, long startIDNode, long startIDEdge1, long startIDEdge2, __global double *weights, __global long *sols, double value, __global long *exponent) {
     long id = get_global_id(0);
     double tmp = -1, tmp_ = -1;

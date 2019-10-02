@@ -1,0 +1,10 @@
+^D:\BACHELOR\GPUSAT\GPUSAT\CMAKEFILES\428D9FA16870B1ED7FB954F6F45DE85D\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Bachelor/GPUSAT/GPUSAT -BD:/Bachelor/GPUSAT/GPUSAT --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Bachelor/GPUSAT/GPUSAT/gpusat.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

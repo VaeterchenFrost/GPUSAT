@@ -1,0 +1,213 @@
+﻿  decomposer.cpp
+  main.cpp
+D:\boost_1_71_0\boost/container_hash/hash.hpp(310,26): error C2039: "hash_combine_impl": Ist kein Element von "std"
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\typeindex(16): message : Siehe Deklaration von "std"
+D:\boost_1_71_0\boost/container_hash/hash.hpp(315,26): error C2039: "hash_combine_impl": Ist kein Element von "std"
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\typeindex(16): message : Siehe Deklaration von "std"
+D:\boost_1_71_0\boost/container_hash/hash.hpp(336,26): error C2039: "hash_combine_impl": Ist kein Element von "std"
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\typeindex(16): message : Siehe Deklaration von "std"
+D:\boost_1_71_0\boost/container_hash/hash.hpp(413,5): error C2888: "void std::hash_combine(size_t &,const T &)": Symbol kann nicht im Namespace "boost" definiert werden
+D:\boost_1_71_0\boost/container_hash/hash.hpp(412,22): error C2995: "void std::hash_combine(size_t &,const T &)": Funktionsvorlage wurde bereits definiert.
+D:\Bachelor\htd\htd-1.2\include\htd/Helpers.hpp(797): message : Siehe Deklaration von "std::hash_combine"
+D:\boost_1_71_0\boost/container_hash/hash.hpp(545,41): error C2668: "boost::hash_combine": Mehrdeutiger Aufruf einer überladenen Funktion
+D:\boost_1_71_0\boost/container_hash/hash_fwd.hpp(25,29): message : kann "void boost::hash_combine<const std::error_category*>(size_t &,const T &)" sein
+D:\boost_1_71_0\boost/container_hash/hash_fwd.hpp(25,29): message :         with
+D:\boost_1_71_0\boost/container_hash/hash_fwd.hpp(25,29): message :         [
+D:\boost_1_71_0\boost/container_hash/hash_fwd.hpp(25,29): message :             T=const std::error_category *
+D:\boost_1_71_0\boost/container_hash/hash_fwd.hpp(25,29): message :         ]
+D:\Bachelor\htd\htd-1.2\include\htd/Helpers.hpp(797,10): message : oder "void std::hash_combine<const std::error_category*>(size_t &,const T &)" [bei der Verwendung der argumentbezogenen Suche gefunden]
+D:\Bachelor\htd\htd-1.2\include\htd/Helpers.hpp(797,10): message :         with
+D:\Bachelor\htd\htd-1.2\include\htd/Helpers.hpp(797,10): message :         [
+D:\Bachelor\htd\htd-1.2\include\htd/Helpers.hpp(797,10): message :             T=const std::error_category *
+D:\Bachelor\htd\htd-1.2\include\htd/Helpers.hpp(797,10): message :         ]
+D:\boost_1_71_0\boost/container_hash/hash.hpp(545,41): message : bei Anpassung der Argumentliste "(size_t, const std::error_category *)"
+D:\boost_1_71_0\boost/container_hash/hash.hpp(552,41): error C2668: "boost::hash_combine": Mehrdeutiger Aufruf einer überladenen Funktion
+D:\boost_1_71_0\boost/container_hash/hash_fwd.hpp(25,29): message : kann "void boost::hash_combine<const std::error_category*>(size_t &,const T &)" sein
+D:\boost_1_71_0\boost/container_hash/hash_fwd.hpp(25,29): message :         with
+D:\boost_1_71_0\boost/container_hash/hash_fwd.hpp(25,29): message :         [
+D:\boost_1_71_0\boost/container_hash/hash_fwd.hpp(25,29): message :             T=const std::error_category *
+D:\boost_1_71_0\boost/container_hash/hash_fwd.hpp(25,29): message :         ]
+D:\Bachelor\htd\htd-1.2\include\htd/Helpers.hpp(797,10): message : oder "void std::hash_combine<const std::error_category*>(size_t &,const T &)" [bei der Verwendung der argumentbezogenen Suche gefunden]
+D:\Bachelor\htd\htd-1.2\include\htd/Helpers.hpp(797,10): message :         with
+D:\Bachelor\htd\htd-1.2\include\htd/Helpers.hpp(797,10): message :         [
+D:\Bachelor\htd\htd-1.2\include\htd/Helpers.hpp(797,10): message :             T=const std::error_category *
+D:\Bachelor\htd\htd-1.2\include\htd/Helpers.hpp(797,10): message :         ]
+D:\boost_1_71_0\boost/container_hash/hash.hpp(552,41): message : bei Anpassung der Argumentliste "(size_t, const std::error_category *)"
+D:\boost_1_71_0\boost/container_hash/extensions.hpp(82,44): error C2668: "boost::hash_combine": Mehrdeutiger Aufruf einer überladenen Funktion
+D:\boost_1_71_0\boost/container_hash/hash_fwd.hpp(25,29): message : kann "void boost::hash_combine<bool>(size_t &,const T &)" sein
+D:\boost_1_71_0\boost/container_hash/hash_fwd.hpp(25,29): message :         with
+D:\boost_1_71_0\boost/container_hash/hash_fwd.hpp(25,29): message :         [
+D:\boost_1_71_0\boost/container_hash/hash_fwd.hpp(25,29): message :             T=bool
+D:\boost_1_71_0\boost/container_hash/hash_fwd.hpp(25,29): message :         ]
+D:\Bachelor\htd\htd-1.2\include\htd/Helpers.hpp(797,10): message : oder "void std::hash_combine<bool>(size_t &,const T &)" [bei der Verwendung der argumentbezogenen Suche gefunden]
+D:\Bachelor\htd\htd-1.2\include\htd/Helpers.hpp(797,10): message :         with
+D:\Bachelor\htd\htd-1.2\include\htd/Helpers.hpp(797,10): message :         [
+D:\Bachelor\htd\htd-1.2\include\htd/Helpers.hpp(797,10): message :             T=bool
+D:\Bachelor\htd\htd-1.2\include\htd/Helpers.hpp(797,10): message :         ]
+D:\boost_1_71_0\boost/container_hash/extensions.hpp(82,44): message : bei Anpassung der Argumentliste "(size_t, std::_Vb_reference<std::_Wrap_alloc<std::allocator<std::_Vbase>>>)"
+D:\boost_1_71_0\boost/container_hash/extensions.hpp(109,18): error C2039: "hash_combine": Ist kein Element von "htd"
+D:\Bachelor\htd\htd-1.2\include\htd/ITreeDecompositionFitnessFunction.hpp(32): message : Siehe Deklaration von "htd"
+D:\boost_1_71_0\boost/container_hash/extensions.hpp(109,35): error C2062: "bool"-Typ unerwartet
+D:\boost_1_71_0\boost/container_hash/extensions.hpp(120,18): error C2039: "hash_combine": Ist kein Element von "htd"
+D:\Bachelor\htd\htd-1.2\include\htd/ITreeDecompositionFitnessFunction.hpp(32): message : Siehe Deklaration von "htd"
+D:\boost_1_71_0\boost/container_hash/extensions.hpp(120,35): error C2062: "bool"-Typ unerwartet
+D:\Bachelor\GPUSAT\GPUSAT\include\kernel.h(499,1): error C2026: Zeichenfolge zu lang, Zeichen am Ende wurden entfernt
+  solver.cpp
+D:\Bachelor\GPUSAT\GPUSAT\src\main.cpp(112,11): warning C4244: "Argument": Konvertierung von "time_t" in "unsigned int", möglicher Datenverlust
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(47,43): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(111,29): warning C4244: "Initialisierung": Konvertierung von "cl_long" in "cl_double", möglicher Datenverlust
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(112,23): warning C4244: "Initialisierung": Konvertierung von "double" in "cl_long", möglicher Datenverlust
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(159,29): warning C4244: "Initialisierung": Konvertierung von "cl_long" in "cl_double", möglicher Datenverlust
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(160,23): warning C4244: "Initialisierung": Konvertierung von "double" in "cl_long", möglicher Datenverlust
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(227,91): warning C4334: "<<": Das Ergebnis der 32-Bit-Verschiebung wurde implizit in 64 Bits konvertiert. (War eine 64-Bit-Verschiebung vorgesehen?)
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(231,132): error C2672: "std::min": keine übereinstimmende überladene Funktion gefunden
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(231,297): error C2780: "_Ty std::min(std::initializer_list<_Elem>)": Erwartet 1 Argumente - 2 unterstützt
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4502): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(231,297): error C2782: "const _Ty &std::min(const _Ty &,const _Ty &) noexcept(<expr>)": Vorlage-Parameter "_Ty" ist mehrdeutig.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4489): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(231,297): message : kann "long" sein
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(231,297): message : oder "cl_long"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(231,297): error C2784: "const _Ty &std::min(const _Ty &,const _Ty &) noexcept(<expr>)": Vorlage-Argument für "const _Ty &" konnte nicht von "long" hergeleitet werden.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4489): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(231,297): error C2784: "_Ty std::min(std::initializer_list<_Elem>,_Pr)": Vorlage-Argument für "std::initializer_list<_Elem>" konnte nicht von "cl_long" hergeleitet werden.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4480): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(231,297): error C2780: "const _Ty &std::min(const _Ty &,const _Ty &,_Pr) noexcept(<expr>)": Erwartet 3 Argumente - 2 unterstützt
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4473): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(231,40): error C2672: "std::min": keine übereinstimmende überladene Funktion gefunden
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(231,298): error C2784: "_Ty std::min(std::initializer_list<_Elem>)": Vorlage-Argument für "std::initializer_list<_Elem>" konnte nicht von "cl_long" hergeleitet werden.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4502): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(231,298): error C2780: "const _Ty &std::min(const _Ty &,const _Ty &) noexcept(<expr>)": Erwartet 2 Argumente - 1 unterstützt
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4489): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(231,298): error C2780: "_Ty std::min(std::initializer_list<_Elem>,_Pr)": Erwartet 2 Argumente - 1 unterstützt
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4480): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(231,298): error C2780: "const _Ty &std::min(const _Ty &,const _Ty &,_Pr) noexcept(<expr>)": Erwartet 3 Argumente - 1 unterstützt
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4473): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(233,132): error C2672: "std::min": keine übereinstimmende überladene Funktion gefunden
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(233,297): error C2780: "_Ty std::min(std::initializer_list<_Elem>)": Erwartet 1 Argumente - 2 unterstützt
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4502): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(233,297): error C2782: "const _Ty &std::min(const _Ty &,const _Ty &) noexcept(<expr>)": Vorlage-Parameter "_Ty" ist mehrdeutig.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4489): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(233,297): message : kann "long" sein
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(233,297): message : oder "cl_long"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(233,297): error C2784: "const _Ty &std::min(const _Ty &,const _Ty &) noexcept(<expr>)": Vorlage-Argument für "const _Ty &" konnte nicht von "long" hergeleitet werden.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4489): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(233,297): error C2784: "_Ty std::min(std::initializer_list<_Elem>,_Pr)": Vorlage-Argument für "std::initializer_list<_Elem>" konnte nicht von "cl_long" hergeleitet werden.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4480): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(233,297): error C2780: "const _Ty &std::min(const _Ty &,const _Ty &,_Pr) noexcept(<expr>)": Erwartet 3 Argumente - 2 unterstützt
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4473): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(233,40): error C2672: "std::min": keine übereinstimmende überladene Funktion gefunden
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(233,298): error C2784: "_Ty std::min(std::initializer_list<_Elem>)": Vorlage-Argument für "std::initializer_list<_Elem>" konnte nicht von "cl_long" hergeleitet werden.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4502): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(233,298): error C2780: "const _Ty &std::min(const _Ty &,const _Ty &) noexcept(<expr>)": Erwartet 2 Argumente - 1 unterstützt
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4489): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(233,298): error C2780: "_Ty std::min(std::initializer_list<_Elem>,_Pr)": Erwartet 2 Argumente - 1 unterstützt
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4480): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(233,298): error C2780: "const _Ty &std::min(const _Ty &,const _Ty &,_Pr) noexcept(<expr>)": Erwartet 3 Argumente - 1 unterstützt
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4473): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(236,178): warning C4334: "<<": Das Ergebnis der 32-Bit-Verschiebung wurde implizit in 64 Bits konvertiert. (War eine 64-Bit-Verschiebung vorgesehen?)
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(240,25): warning C4244: "Initialisierung": Konvertierung von "double" in "cl_long", möglicher Datenverlust
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(250,43): error C2672: "std::min": keine übereinstimmende überladene Funktion gefunden
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(250,109): error C2780: "_Ty std::min(std::initializer_list<_Elem>)": Erwartet 1 Argumente - 2 unterstützt
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4502): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(250,109): error C2782: "const _Ty &std::min(const _Ty &,const _Ty &) noexcept(<expr>)": Vorlage-Parameter "_Ty" ist mehrdeutig.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4489): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(250,109): message : kann "long" sein
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(250,109): message : oder "cl_long"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(250,109): error C2784: "const _Ty &std::min(const _Ty &,const _Ty &) noexcept(<expr>)": Vorlage-Argument für "const _Ty &" konnte nicht von "long" hergeleitet werden.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4489): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(250,109): error C2784: "_Ty std::min(std::initializer_list<_Elem>,_Pr)": Vorlage-Argument für "std::initializer_list<_Elem>" konnte nicht von "cl_long" hergeleitet werden.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4480): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(250,109): error C2780: "const _Ty &std::min(const _Ty &,const _Ty &,_Pr) noexcept(<expr>)": Erwartet 3 Argumente - 2 unterstützt
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4473): message : Siehe Deklaration von "std::min"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(306,27): error C2146: Syntaxfehler: Fehlendes ")" vor Bezeichner "and"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(306,27): error C2065: "and": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(306,31): error C2146: Syntaxfehler: Fehlendes ";" vor Bezeichner "solutionType"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(306,52): error C2059: Syntaxfehler: ")"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(307,72): error C2059: Syntaxfehler: ";"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(312,15): error C2181: Ungültiges "else" ohne zugehöriges "if"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(313,41): error C2065: "bufSol": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(313,93): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(313,116): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(317,25): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(317,48): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(317,90): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(317,122): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(317,163): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(318,49): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(318,115): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(318,138): error C2660: "gpusat::Solver::cleanTree": Funktion akzeptiert keine 4 Argumente
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(75,18): message : Siehe Deklaration von "gpusat::Solver::cleanTree"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(319,51): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(319,69): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(319,98): error C2660: "gpusat::Solver::combineTree": Funktion akzeptiert keine 2 Argumente
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(140,18): message : Siehe Deklaration von "gpusat::Solver::combineTree"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(320,39): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(320,62): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(323,25): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(324,32): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(324,55): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(325,49): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(326,39): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(326,64): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(327,39): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(327,62): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(330,25): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(332,49): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(334,35): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(334,59): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(335,73): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(335,41): error C2672: "std::max": keine übereinstimmende überladene Funktion gefunden
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(335,80): error C2784: "_Ty std::max(std::initializer_list<_Elem>)": Vorlage-Argument für "std::initializer_list<_Elem>" konnte nicht von "cl_long" hergeleitet werden.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4466): message : Siehe Deklaration von "std::max"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(335,80): error C2780: "const _Ty &std::max(const _Ty &,const _Ty &) noexcept(<expr>)": Erwartet 2 Argumente - 1 unterstützt
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4453): message : Siehe Deklaration von "std::max"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(335,80): error C2780: "_Ty std::max(std::initializer_list<_Elem>,_Pr)": Erwartet 2 Argumente - 1 unterstützt
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4444): message : Siehe Deklaration von "std::max"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(335,80): error C2780: "const _Ty &std::max(const _Ty &,const _Ty &,_Pr) noexcept(<expr>)": Erwartet 3 Argumente - 1 unterstützt
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4437): message : Siehe Deklaration von "std::max"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(337,35): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(338,73): error C2065: "a": nichtdeklarierter Bezeichner
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(338,41): error C2672: "std::max": keine übereinstimmende überladene Funktion gefunden
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(338,80): error C2784: "_Ty std::max(std::initializer_list<_Elem>)": Vorlage-Argument für "std::initializer_list<_Elem>" konnte nicht von "cl_long" hergeleitet werden.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4466): message : Siehe Deklaration von "std::max"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(338,80): error C2780: "const _Ty &std::max(const _Ty &,const _Ty &) noexcept(<expr>)": Erwartet 2 Argumente - 1 unterstützt
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4453): message : Siehe Deklaration von "std::max"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(338,80): error C2780: "_Ty std::max(std::initializer_list<_Elem>,_Pr)": Erwartet 2 Argumente - 1 unterstützt
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4444): message : Siehe Deklaration von "std::max"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(338,80): error C2780: "const _Ty &std::max(const _Ty &,const _Ty &,_Pr) noexcept(<expr>)": Erwartet 3 Argumente - 1 unterstützt
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm(4437): message : Siehe Deklaration von "std::max"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(342,9): error C2059: Syntaxfehler: "if"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(342,36): error C2143: Syntaxfehler: Es fehlt ";" vor "{"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(342,36): error C2447: "{": Funktionsheader fehlt - Parameterliste im alten Stil?
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(345,13): error C3927: "->": Ein nachstehender Rückgabetyp ist nach einem Nichtfunktionsdeklarator nicht zulässig.
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(345,13): error C3484: Syntaxfehler: "->" wird vor dem Rückgabetyp erwartet.
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(345,25): error C3613: Rückgabetyp nach '"->" (Annahme: "int") fehlt
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(345,25): error C4430: Fehlender Typspezifizierer - int wird angenommen. Hinweis: "default-int" wird von C++ nicht unterstützt.
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(345,14): error C2146: Syntaxfehler: Fehlendes ";" vor Bezeichner "correction"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(347,9): error C2059: Syntaxfehler: "for"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(347,27): error C2143: Syntaxfehler: Es fehlt ")" vor ";"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(347,31): error C2143: Syntaxfehler: Es fehlt ";" vor "<"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(347,31): error C4430: Fehlender Typspezifizierer - int wird angenommen. Hinweis: "default-int" wird von C++ nicht unterstützt.
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(347,45): error C2143: Syntaxfehler: Es fehlt ";" vor "++"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(347,45): error C4430: Fehlender Typspezifizierer - int wird angenommen. Hinweis: "default-int" wird von C++ nicht unterstützt.
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(347,45): error C2086: "int gpusat::i": Neudefinition
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(347): message : Siehe Deklaration von "gpusat::i"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(347,47): error C2059: Syntaxfehler: ")"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(347,49): error C2143: Syntaxfehler: Es fehlt ";" vor "{"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(347,49): error C2447: "{": Funktionsheader fehlt - Parameterliste im alten Stil?
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(350,9): error C2059: Syntaxfehler: "this"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(351,9): error C2059: Syntaxfehler: "for"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(351,27): error C2143: Syntaxfehler: Es fehlt ")" vor ";"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(351,31): error C2143: Syntaxfehler: Es fehlt ";" vor "<"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(351,31): error C4430: Fehlender Typspezifizierer - int wird angenommen. Hinweis: "default-int" wird von C++ nicht unterstützt.
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(351,46): error C2143: Syntaxfehler: Es fehlt ";" vor "++"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(351,46): error C4430: Fehlender Typspezifizierer - int wird angenommen. Hinweis: "default-int" wird von C++ nicht unterstützt.
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(351,46): error C2086: "int gpusat::a": Neudefinition
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(351): message : Siehe Deklaration von "gpusat::a"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(351,48): error C2059: Syntaxfehler: ")"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(351,50): error C2143: Syntaxfehler: Es fehlt ";" vor "{"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(351,50): error C2447: "{": Funktionsheader fehlt - Parameterliste im alten Stil?
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(357,9): error C2059: Syntaxfehler: "for"
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(357,27): error C2143: Syntaxfehler: Es fehlt ")" vor ";"
+  Code wird generiert...
+D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp(357,27): fatal error C1003: Mehr als 100 Fehler gefunden; Kompilierung wird abgebrochen.
