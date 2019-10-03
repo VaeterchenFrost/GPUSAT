@@ -69,13 +69,13 @@
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">gpusat.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">gpusat</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Bachelor\GPUSAT\GPUSAT\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">gpusat.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">gpusat</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Bachelor\GPUSAT\GPUSAT\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">gpusat.dir\RelWithDebInfo\</IntDir>
@@ -85,24 +85,24 @@
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\Bachelor\htd\htd-1.2\include\htd_io;D:\Bachelor\htd\htd-1.2\include\htd_cli;D:\Bachelor\htd\htd-1.2\include\htd;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Bachelor\htd\htd-1.2\out\build\x64-Debug\build\debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\Bachelor\htd\htd\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Bachelor\htd\htd\build\debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
-    <IncludePath>D:\Bachelor\htd\htd-1.2\include\htd_io;D:\Bachelor\htd\htd-1.2\include\htd_cli;D:\Bachelor\htd\htd-1.2\include\htd;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Bachelor\htd\htd-1.2\out\build\x64-Debug\build\debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\Bachelor\htd\htd\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Bachelor\htd\htd\build\debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>D:\Bachelor\htd\htd-1.2\include\htd_io;D:\Bachelor\htd\htd-1.2\include\htd_cli;D:\Bachelor\htd\htd-1.2\include\htd;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Bachelor\htd\htd-1.2\out\build\x64-Debug\build\debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\Bachelor\htd\htd\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Bachelor\htd\htd\build\debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
-    <IncludePath>D:\Bachelor\htd\htd-1.2\include\htd_io;D:\Bachelor\htd\htd-1.2\include\htd_cli;D:\Bachelor\htd\htd-1.2\include\htd;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Bachelor\htd\htd-1.2\out\build\x64-Debug\build\debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\Bachelor\htd\htd\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Bachelor\htd\htd\build\debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Bachelor\htd\htd-1.2\include\htd_io;D:\Bachelor\htd\htd-1.2\include\htd_cli;D:\Bachelor\htd\htd-1.2\include\htd;D:\boost_1_71_0;D:\Bachelor\htd\htd-1.2\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\boost_1_71_0;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;D:\Bachelor\htd\htd\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -132,8 +132,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>OpenCL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:/Bachelor/htd/htd-1.2/out/build/x64-Debug/build/debug;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>htd.lib;htd_cli.lib;htd_io.lib;OpenCL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\Bachelor\htd\htd\build\debug;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -142,12 +142,12 @@
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
-      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Bachelor\htd\htd-1.2\include\htd_io;D:\Bachelor\htd\htd-1.2\include\htd_cli;D:\Bachelor\htd\htd-1.2\include\htd;D:\boost_1_71_0;D:\Bachelor\htd\htd-1.2\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\boost_1_71_0;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;D:\Bachelor\htd\htd\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -177,8 +177,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>OpenCL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:/Bachelor/htd/htd-1.2/out/build/x64-Debug/build/debug;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>htd.lib;htd_cli.lib;htd_io.lib;OpenCL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\Bachelor\htd\htd\build\debug;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -187,12 +187,12 @@
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
-      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Bachelor\htd\htd-1.2\include\htd_io;D:\Bachelor\htd\htd-1.2\include\htd_cli;D:\Bachelor\htd\htd-1.2\include\htd;D:\boost_1_71_0;D:\Bachelor\htd\htd-1.2\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\boost_1_71_0;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;D:\Bachelor\htd\htd\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -222,8 +222,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>OpenCL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:/Bachelor/htd/htd-1.2/out/build/x64-Debug/build/debug;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>htd.lib;htd_cli.lib;htd_io.lib;OpenCL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\Bachelor\htd\htd\build\debug;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -232,12 +232,12 @@
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
-      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Bachelor\htd\htd-1.2\include\htd_io;D:\Bachelor\htd\htd-1.2\include\htd_cli;D:\Bachelor\htd\htd-1.2\include\htd;D:\boost_1_71_0;D:\Bachelor\htd\htd-1.2\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\boost_1_71_0;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;D:\Bachelor\htd\htd\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -266,8 +266,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>OpenCL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:/Bachelor/htd/htd-1.2/out/build/x64-Debug/build/debug;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>htd.lib;htd_cli.lib;htd_io.lib;OpenCL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\Bachelor\htd\htd\build\debug;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -276,7 +276,7 @@
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
-      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>

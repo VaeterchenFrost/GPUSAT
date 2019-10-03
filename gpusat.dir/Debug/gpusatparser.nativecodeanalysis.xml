@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\Bachelor\GPUSAT\GPUSAT\src\</FILEPATH>
+      <FILENAME>gpusatparser.cpp</FILENAME>
+      <LINE>282</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetischer Überlauf: Wenn Sie den Operator "-" für einen 4-Bytewert verwenden und das Ergebnis in einen 8-Bytewert umwandeln, wandeln Sie den Wert in den breiteren Typ um, bevor Sie den Operator "-" verwenden, um einen Überlauf zu vermeiden (io.2).</DESCRIPTION>
+    <FUNCTION>gpusat::TDParser::parseBagLine</FUNCTION>
+    <DECORATED>?parseBagLine@TDParser@gpusat@@AEAAXAEAUtreedecType@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z</DECORATED>
+    <FUNCLINE>265</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\Bachelor\GPUSAT\GPUSAT\src\</FILEPATH>
+      <FILENAME>gpusatparser.cpp</FILENAME>
+      <LINE>282</LINE>
+      <COLUMN>37</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetischer Überlauf: Wenn Sie den Operator "-" für einen 4-Bytewert verwenden und das Ergebnis in einen 8-Bytewert umwandeln, wandeln Sie den Wert in den breiteren Typ um, bevor Sie den Operator "-" verwenden, um einen Überlauf zu vermeiden (io.2).</DESCRIPTION>
+    <FUNCTION>gpusat::TDParser::parseBagLine</FUNCTION>
+    <DECORATED>?parseBagLine@TDParser@gpusat@@AEAAXAEAUtreedecType@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z</DECORATED>
+    <FUNCLINE>265</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\Bachelor\GPUSAT\GPUSAT\src\</FILEPATH>
+      <FILENAME>gpusatparser.cpp</FILENAME>
+      <LINE>286</LINE>
+      <COLUMN>30</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetischer Überlauf: Wenn Sie den Operator "-" für einen 4-Bytewert verwenden und das Ergebnis in einen 8-Bytewert umwandeln, wandeln Sie den Wert in den breiteren Typ um, bevor Sie den Operator "-" verwenden, um einen Überlauf zu vermeiden (io.2).</DESCRIPTION>
+    <FUNCTION>gpusat::TDParser::parseBagLine</FUNCTION>
+    <DECORATED>?parseBagLine@TDParser@gpusat@@AEAAXAEAUtreedecType@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z</DECORATED>
+    <FUNCLINE>265</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\Bachelor\GPUSAT\GPUSAT\src\</FILEPATH>
+      <FILENAME>gpusatparser.cpp</FILENAME>
+      <LINE>290</LINE>
+      <COLUMN>70</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetischer Überlauf: Wenn Sie den Operator "-" für einen 4-Bytewert verwenden und das Ergebnis in einen 8-Bytewert umwandeln, wandeln Sie den Wert in den breiteren Typ um, bevor Sie den Operator "-" verwenden, um einen Überlauf zu vermeiden (io.2).</DESCRIPTION>
+    <FUNCTION>gpusat::TDParser::parseBagLine</FUNCTION>
+    <DECORATED>?parseBagLine@TDParser@gpusat@@AEAAXAEAUtreedecType@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z</DECORATED>
+    <FUNCLINE>265</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\Bachelor\GPUSAT\GPUSAT\src\</FILEPATH>
+      <FILENAME>gpusatparser.cpp</FILENAME>
+      <LINE>290</LINE>
+      <COLUMN>32</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetischer Überlauf: Wenn Sie den Operator "-" für einen 4-Bytewert verwenden und das Ergebnis in einen 8-Bytewert umwandeln, wandeln Sie den Wert in den breiteren Typ um, bevor Sie den Operator "-" verwenden, um einen Überlauf zu vermeiden (io.2).</DESCRIPTION>
+    <FUNCTION>gpusat::TDParser::parseBagLine</FUNCTION>
+    <DECORATED>?parseBagLine@TDParser@gpusat@@AEAAXAEAUtreedecType@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z</DECORATED>
+    <FUNCLINE>265</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\Bachelor\GPUSAT\GPUSAT\include\</FILEPATH>
+      <FILENAME>types.h</FILENAME>
+      <LINE>34</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Die Variable "gpusat::bagType::solution" ist nicht initialisiert. Eine Membervariable muss immer initialisiert werden (type.6).</DESCRIPTION>
+    <FUNCTION>gpusat::bagType::{ctor}</FUNCTION>
+    <DECORATED>??0bagType@gpusat@@QEAA@XZ</DECORATED>
+    <FUNCLINE>34</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>gpusat::bagType::solution</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>
