@@ -1,4 +1,6 @@
 d:\bachelor\gpusat\gpusat\gpusat.dir\debug\vc142.pdb
+d:\bachelor\gpusat\gpusat\gpusat.dir\debug\solver.obj
+d:\bachelor\gpusat\gpusat\gpusat.dir\debug\main.obj
 d:\bachelor\gpusat\gpusat\gpusat.dir\debug\gpusatpreprocessor.obj
 d:\bachelor\gpusat\gpusat\gpusat.dir\debug\gpusatparser.obj
 d:\bachelor\gpusat\gpusat\gpusat.dir\debug\decomposer.obj
@@ -7,9 +9,19 @@ d:\bachelor\gpusat\gpusat\gpusat.dir\debug\numjoinfitnessfunction.obj
 d:\bachelor\gpusat\gpusat\gpusat.dir\debug\joinsizefitnessfunction.obj
 d:\bachelor\gpusat\gpusat\gpusat.dir\debug\cutsetwidthfitnessfunction.obj
 d:\bachelor\gpusat\gpusat\cmakefiles\generate.stamp
+d:\bachelor\gpusat\gpusat\debug\gpusat.pdb
 d:\bachelor\gpusat\gpusat\gpusat.dir\debug\gpusat.tlog\cl.command.1.tlog
 d:\bachelor\gpusat\gpusat\gpusat.dir\debug\gpusat.tlog\cl.read.1.tlog
 d:\bachelor\gpusat\gpusat\gpusat.dir\debug\gpusat.tlog\cl.write.1.tlog
 d:\bachelor\gpusat\gpusat\gpusat.dir\debug\gpusat.tlog\custombuild.command.1.tlog
 d:\bachelor\gpusat\gpusat\gpusat.dir\debug\gpusat.tlog\custombuild.read.1.tlog
 d:\bachelor\gpusat\gpusat\gpusat.dir\debug\gpusat.tlog\custombuild.write.1.tlog
+d:\bachelor\gpusat\gpusat\gpusat.dir\debug\gpusat.tlog\link-cvtres.read.1.tlog
+d:\bachelor\gpusat\gpusat\gpusat.dir\debug\gpusat.tlog\link-cvtres.write.1.tlog
+d:\bachelor\gpusat\gpusat\gpusat.dir\debug\gpusat.tlog\link-rc.read.1.tlog
+d:\bachelor\gpusat\gpusat\gpusat.dir\debug\gpusat.tlog\link-rc.write.1.tlog
+d:\bachelor\gpusat\gpusat\gpusat.dir\debug\gpusat.tlog\link.command.1.tlog
+d:\bachelor\gpusat\gpusat\gpusat.dir\debug\gpusat.tlog\link.delete.1.tlog
+d:\bachelor\gpusat\gpusat\gpusat.dir\debug\gpusat.tlog\link.read.1.tlog
+d:\bachelor\gpusat\gpusat\gpusat.dir\debug\gpusat.tlog\link.read.2.tlog
+d:\bachelor\gpusat\gpusat\gpusat.dir\debug\gpusat.tlog\link.write.1.tlog
