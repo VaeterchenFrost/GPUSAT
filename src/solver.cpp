@@ -109,10 +109,10 @@ namespace gpusat {
 
             cl_long error1 = 0, error2 = 0;
             cl_double range = table.maxId - table.minId;
-            cl_long s = std::ceil(range / (1l << 31));
+            cl_long s = std::ceil(range / (1ll << 31));
             for (cl_long i = 0; i < s; i++) {
-                cl_long id1 = (1 << 31) * i;
-                cl_long range = std::min((cl_long) 1 << 31, (cl_long) table.maxId - table.minId - (1 << 31) * i);
+                cl_long id1 = (1ll << 31) * i;
+                cl_long range = std::min((cl_long) 1 << 31, (cl_long) table.maxId - table.minId - ((cl_long) 1 << 31) * i);
                 error1 = queue.enqueueNDRangeKernel(kernel_resize, cl::NDRange(static_cast<size_t>(id1)), cl::NDRange(static_cast<size_t>(range)));
                 error2 = queue.finish();
                 if (error1 != 0 || error2 != 0) {
@@ -157,10 +157,10 @@ namespace gpusat {
 
             cl_long error1 = 0, error2 = 0;
             cl_double range = table.maxId - table.minId;
-            cl_long s = std::ceil(range / (1l << 31));
+            cl_long s = std::ceil(range / (1ll << 31));
             for (long i = 0; i < s; i++) {
-                cl_long id1 = (1 << 31) * i;
-                cl_long range = std::min((cl_long) 1 << 31, (cl_long) table.maxId - table.minId - (1 << 31) * i);
+                cl_long id1 = (1ll << 31) * i;
+                cl_long range = std::min((cl_long) 1 << 31, (cl_long) table.maxId - table.minId - (1ll << 31) * i);
                 error1 = queue.enqueueNDRangeKernel(kernel_resize, cl::NDRange(static_cast<size_t>(id1)), cl::NDRange(static_cast<size_t>(range)));
                 error2 = queue.finish();
                 if (error1 != 0 || error2 != 0) {
@@ -224,7 +224,7 @@ namespace gpusat {
         cl_long bagSizeNode = 1;
 
         if (maxBag > 0) {
-            bagSizeNode = 1l << (cl_long) std::min(node.variables.size(), (size_t) maxBag);
+            bagSizeNode = 1ll << (cl_long) std::min(node.variables.size(), (size_t) maxBag);
         } else {
             if (solutionType == TREE) {
                 if (nextNode == JOIN) {
@@ -233,11 +233,11 @@ namespace gpusat {
                     bagSizeNode = std::min((cl_long) (maxMemoryBuffer / s / 2 - node.variables.size() * sizeof(cl_long) * 3), std::min((cl_long) std::min((memorySize - usedMemory - edge1.maxSize * s - edge2.maxSize * s) / s / 2, (memorySize - usedMemory) / 2 / 2 / s), 1ll << node.variables.size()));
                 }
             } else if (solutionType == ARRAY) {
-                bagSizeNode = 1l << (cl_long) std::min(node.variables.size(), (size_t) std::min(log2(maxMemoryBuffer / sizeof(cl_long)), log2(memorySize / sizeof(cl_long) / 3)));
+                bagSizeNode = 1ll << (cl_long) std::min(node.variables.size(), (size_t) std::min(log2(maxMemoryBuffer / sizeof(cl_long)), log2(memorySize / sizeof(cl_long) / 3)));
             }
         }
 
-        cl_long maxSize = std::ceil((1l << (node.variables.size())) * 1.0 / bagSizeNode);
+        cl_long maxSize = std::ceil((1ll << (node.variables.size())) * 1.0 / bagSizeNode);
         node.solution = new treeType[maxSize];
         if (node.solution == NULL || errno == ENOMEM) {
             std::cerr << "\nOut of Memory\n";
@@ -450,7 +450,7 @@ namespace gpusat {
 
 
         if (maxBag > 0) {
-            bagSizeForget = 1l << (cl_long) std::min(node.variables.size(), (size_t) maxBag);
+            bagSizeForget = 1ll << (cl_long) std::min(node.variables.size(), (size_t) maxBag);
         } else {
             if (solutionType == TREE) {
                 if (nextNode == JOIN) {
@@ -459,11 +459,11 @@ namespace gpusat {
                     bagSizeForget = std::min((cl_long) (maxMemoryBuffer / s / 2 - 3 * node.variables.size() * sizeof(cl_long)), std::min((cl_long) std::min((memorySize - usedMemory - cnode.maxSize * s) / s / 2, (memorySize - usedMemory) / 2 / 2 / s), 1ll << node.variables.size()));
                 }
             } else if (solutionType == ARRAY) {
-                bagSizeForget = 1l << (cl_long) std::min(node.variables.size(), (size_t) std::min(log2(maxMemoryBuffer / sizeof(cl_long)), log2(memorySize / sizeof(cl_long) / 3)));
+                bagSizeForget = 1ll << (cl_long) std::min(node.variables.size(), (size_t) std::min(log2(maxMemoryBuffer / sizeof(cl_long)), log2(memorySize / sizeof(cl_long) / 3)));
             }
         }
 
-        cl_long maxSize = std::ceil((1l << (node.variables.size())) * 1.0 / bagSizeForget);
+        cl_long maxSize = std::ceil((1ll << (node.variables.size())) * 1.0 / bagSizeForget);
         node.solution = new treeType[maxSize];
         if (node.solution == NULL || errno == ENOMEM) {
             std::cerr << "\nOut of Memory\n";

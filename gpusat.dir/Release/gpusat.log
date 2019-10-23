@@ -1,0 +1,6 @@
+﻿  main.cpp
+D:\Bachelor\GPUSAT\GPUSAT\src\main.cpp(113,11): warning C4244: "Argument": Konvertierung von "time_t" in "unsigned int", möglicher Datenverlust
+D:\Bachelor\GPUSAT\GPUSAT\src\main.cpp(262,18): warning C4101: "buf": Unreferenzierte lokale Variable
+  Code wird generiert.
+  Codegenerierung ist abgeschlossen.
+  gpusat.vcxproj -> D:\Bachelor\GPUSAT\GPUSAT\Release\gpusat.exe

@@ -63,25 +63,25 @@
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">gpusat.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">gpusat</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Bachelor\GPUSAT\GPUSAT\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">gpusat.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">gpusat</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Bachelor\GPUSAT\GPUSAT\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">gpusat.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">gpusat</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Bachelor\GPUSAT\GPUSAT\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">gpusat.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">gpusat</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -102,7 +102,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\boost_1_71_0;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;D:\Bachelor\htd\htd\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include\CL;D:\boost_1_71_0;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;D:\Bachelor\htd\htd\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -118,6 +118,7 @@
       <PreprocessorDefinitions>WIN32;_WINDOWS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <LanguageStandard>stdcpp14</LanguageStandard>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -140,6 +141,7 @@
       <ImportLibrary>D:/Bachelor/GPUSAT/GPUSAT/Debug/gpusat.lib</ImportLibrary>
       <ProgramDataBaseFile>D:/Bachelor/GPUSAT/GPUSAT/Debug/gpusat.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
@@ -147,7 +149,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\boost_1_71_0;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;D:\Bachelor\htd\htd\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include\CL;D:\boost_1_71_0;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;D:\Bachelor\htd\htd\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -163,6 +165,7 @@
       <DebugInformationFormat>
       </DebugInformationFormat>
       <LanguageStandard>stdcpp14</LanguageStandard>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -185,6 +188,7 @@
       <ImportLibrary>D:/Bachelor/GPUSAT/GPUSAT/Release/gpusat.lib</ImportLibrary>
       <ProgramDataBaseFile>D:/Bachelor/GPUSAT/GPUSAT/Release/gpusat.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
@@ -192,7 +196,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\boost_1_71_0;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;D:\Bachelor\htd\htd\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include\CL;D:\boost_1_71_0;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;D:\Bachelor\htd\htd\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -208,6 +212,7 @@
       <DebugInformationFormat>
       </DebugInformationFormat>
       <LanguageStandard>stdcpp14</LanguageStandard>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -230,6 +235,7 @@
       <ImportLibrary>D:/Bachelor/GPUSAT/GPUSAT/MinSizeRel/gpusat.lib</ImportLibrary>
       <ProgramDataBaseFile>D:/Bachelor/GPUSAT/GPUSAT/MinSizeRel/gpusat.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
@@ -237,7 +243,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\boost_1_71_0;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;D:\Bachelor\htd\htd\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include\CL;D:\boost_1_71_0;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;D:\Bachelor\htd\htd\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -252,6 +258,7 @@
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <LanguageStandard>stdcpp14</LanguageStandard>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -274,6 +281,7 @@
       <ImportLibrary>D:/Bachelor/GPUSAT/GPUSAT/RelWithDebInfo/gpusat.lib</ImportLibrary>
       <ProgramDataBaseFile>D:/Bachelor/GPUSAT/GPUSAT/RelWithDebInfo/gpusat.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>true</LinkLibraryDependencies>

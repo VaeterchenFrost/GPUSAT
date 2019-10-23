@@ -21,6 +21,7 @@
 #include <FitnessFunctions/WidthCutSetFitnessFunction.h>
 #include <FitnessFunctions/CutSetWidthFitnessFunction.h>
 
+
 std::string kernelStr =
 
 #include <kernel.h>
@@ -87,7 +88,7 @@ int main(int argc, char *argv[]) {
     CLI::App app{};
     std::size_t numDecomps = 30;
     cl_long maxBag = -1;
-
+	std::cout <<"V:" << clGetPlatformInfo(NULL, CL_PLATFORM_VERSION, 100,NULL,NULL);
     //cmd options
     app.add_option("-s,--seed", seed, "path to the file containing the sat formula")->set_default_str("");
     app.add_option("-f,--formula", formulaDir, "path to the file containing the sat formula")->set_default_str("");
