@@ -102,7 +102,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include\CL;D:\boost_1_71_0;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;D:\Bachelor\htd\htd\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Martin\AppData\Roaming\Mathematica\Paclets\Repository\CUDAResources-Win64-12.0.359\CUDAToolkit\include;D:\boost_1_71_0;D:\Bachelor\htd\htd\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -134,7 +134,7 @@
     </Midl>
     <Link>
       <AdditionalDependencies>htd.lib;htd_cli.lib;htd_io.lib;OpenCL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\Bachelor\htd\htd\build\debug;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Bachelor\htd\htd\build\debug;C:\Users\Martin\AppData\Roaming\Mathematica\Paclets\Repository\CUDAResources-Win64-12.0.359\CUDAToolkit\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -149,7 +149,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include\CL;D:\boost_1_71_0;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;D:\Bachelor\htd\htd\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Martin\AppData\Roaming\Mathematica\Paclets\Repository\CUDAResources-Win64-12.0.359\CUDAToolkit\include;D:\boost_1_71_0;D:\Bachelor\htd\htd\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -181,7 +181,7 @@
     </Midl>
     <Link>
       <AdditionalDependencies>htd.lib;htd_cli.lib;htd_io.lib;OpenCL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\Bachelor\htd\htd\build\debug;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Bachelor\htd\htd\build\debug;C:\Users\Martin\AppData\Roaming\Mathematica\Paclets\Repository\CUDAResources-Win64-12.0.359\CUDAToolkit\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -196,7 +196,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include\CL;D:\boost_1_71_0;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;D:\Bachelor\htd\htd\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Martin\AppData\Roaming\Mathematica\Paclets\Repository\CUDAResources-Win64-12.0.359\CUDAToolkit\include;D:\boost_1_71_0;D:\Bachelor\htd\htd\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -228,7 +228,7 @@
     </Midl>
     <Link>
       <AdditionalDependencies>htd.lib;htd_cli.lib;htd_io.lib;OpenCL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\Bachelor\htd\htd\build\debug;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Bachelor\htd\htd\build\debug;C:\Users\Martin\AppData\Roaming\Mathematica\Paclets\Repository\CUDAResources-Win64-12.0.359\CUDAToolkit\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -243,7 +243,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include\CL;D:\boost_1_71_0;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;D:\Bachelor\htd\htd\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Martin\AppData\Roaming\Mathematica\Paclets\Repository\CUDAResources-Win64-12.0.359\CUDAToolkit\include;D:\boost_1_71_0;D:\Bachelor\htd\htd\include;D:\Bachelor\GPUSAT\GPUSAT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -274,7 +274,7 @@
     </Midl>
     <Link>
       <AdditionalDependencies>htd.lib;htd_cli.lib;htd_io.lib;OpenCL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\Bachelor\htd\htd\build\debug;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Bachelor\htd\htd\build\debug;C:\Users\Martin\AppData\Roaming\Mathematica\Paclets\Repository\CUDAResources-Win64-12.0.359\CUDAToolkit\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
