@@ -21,6 +21,7 @@ namespace gpusat {
         while (getline(ss, item)) {
             //ignore empty line
             if (item.length() > 0) {
+				//replace tabs with spaces
 				std::replace(item.begin(), item.end(), '\t', ' ');
                 char type = item.at(0);
                 if (type == 'c' || type == '%') {
