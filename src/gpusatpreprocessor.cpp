@@ -8,7 +8,7 @@
 
 namespace gpusat {
     void Preprocessor::preprocessDecomp(bagType *decomp, cl_long combineWidth) {
-
+		// std::cout << "Entering preprocessDecomp with combineWidth " << combineWidth << "\n";
         bool changed = true;
         // try to merge child nodes
         while (changed) {
