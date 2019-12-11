@@ -5,7 +5,7 @@
 #include <errno.h>
 
 namespace gpusat {
-	bool verbose = true;
+	
     void Solver::solveProblem(treedecType &decomp, satformulaType &formula, bagType &node, bagType &pnode, nodeType lastNode) {
 		if (verbose) std::cout << "Entering solveProblem on id " << node.id << "\n";
         if (isSat > 0) {
