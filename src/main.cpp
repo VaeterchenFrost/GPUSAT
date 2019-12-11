@@ -166,7 +166,7 @@ int main(int argc, char* argv[]) {
 	std::string fitness;
 	std::string type;
 	std::string decompDir;
-	long combineWidth = -1;
+	long combineWidth = 20;
 	time_t seed = time(0);
 	bool cpu, weighted, noExp, nvidia, amd, verbose;
 	dataStructure solutionType = dataStructure::TREE;
