@@ -58,7 +58,11 @@ namespace gpusat {
                 cNode.bags = 1;
                 cNode.maxSize = 1;
                 solveIntroduceForget(formula, pnode, node, cNode, true, lastNode);
-				if (verbose) std::cout << "Solved IF on node " << node.id << "\n";
+                if (verbose) {
+                    std::cout << "Solved IF on node " << node.id << "\n";
+                    printbagType(&node, std::cout);
+                }
+
 					
             } else if (node.edges.size() == 1) {
                 solveProblem(decomp, formula, *node.edges[0], node, INTRODUCEFORGET);

@@ -348,15 +348,15 @@ int main(int argc, char* argv[]) {
 			for (cl_long a = 0; a < treeDecomp.bags[0].bags; a++) {
 				auto sola = treeDecomp.bags[0].solution[a];
 				std::cout << "bag " << a << "   (from " << sola.minId << " to " << sola.maxId - 1 << ")\n";
-				for (cl_long i = treeDecomp.bags[0].solution[a].minId; i < std::min(maxlinesid, treeDecomp.bags[0].solution[a].maxId); i++) {
-					if (treeDecomp.bags[0].solution[a].elements != nullptr) {
+				for (cl_long i = sola.minId; i < std::min(maxlinesid, sola.maxId); i++) {
+					if (sola.elements != nullptr) {
 						std::cout << "id: " << i << " count: ";
 						if (solutionType == TREE) {
-							cl_double newsolutions = getCount(i, treeDecomp.bags[0].solution[a].elements, treeDecomp.bags[0].variables.size());
+							cl_double newsolutions = getCount(i, sola.elements, treeDecomp.bags[0].variables.size());
 							std::cout << newsolutions;
 						}
 						else if (solutionType == ARRAY) {
-							cl_double newsolutions = *reinterpret_cast <cl_double*>(&treeDecomp.bags[0].solution[a].elements[i - treeDecomp.bags[0].solution[a].minId]);
+							cl_double newsolutions = *reinterpret_cast <cl_double*>(&sola.elements[i - sola.minId]);
 							std::cout << newsolutions;
 						}
 						std::cout << "\n";
