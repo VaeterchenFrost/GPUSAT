@@ -3,12 +3,40 @@
 #include <iostream>
 #include <solver.h>
 #include <errno.h>
-
+// Verbose / Debug
+// #include <boost/format.hpp>
+#include <gpusatutils.h>
 namespace gpusat {
 	
     void Solver::solveProblem(treedecType &decomp, satformulaType &formula, bagType &node, bagType &pnode, nodeType lastNode) {
 		if (verbose) std::cout << "Entering solveProblem on id " << node.id << "\n";
-        if (isSat > 0) {
+		if (verbose) printtreedecType(&decomp, std::cout);
+		/// solution visualisation
+		/*if (verbose) {
+			std::cout << "\n--- Solutions: ---\n";
+			cl_long maxlinesid = 10;
+			std::cout << " with " << decomp.bags[0].bags << " bags\n";
+			for (cl_long a = 0; a < decomp.bags[0].bags; a++) {
+				auto sola = decomp.bags[0].solution[a];
+				std::cout << "bag " << a << "   (from " << sola.minId << " to " << sola.maxId - 1 << ")\n";
+				for (cl_long i = decomp.bags[0].solution[a].minId; i < std::min(maxlinesid, decomp.bags[0].solution[a].maxId); i++) {
+					if (decomp.bags[0].solution[a].elements != nullptr) {
+						std::cout << "id: " << i << " count: ";
+						if (solutionType == TREE) {
+							cl_double newsolutions = getCount(i, decomp.bags[0].solution[a].elements, decomp.bags[0].variables.size());
+							std::cout << newsolutions;
+						}
+						else if (solutionType == ARRAY) {
+							cl_double newsolutions = *reinterpret_cast <cl_double*>(&decomp.bags[0].solution[a].elements[i - decomp.bags[0].solution[a].minId]);
+							std::cout << newsolutions;
+						}
+						std::cout << "\n";
+					}
+				}
+				std::cout << "...\n";
+			}
+		}
+       */ if (isSat > 0) {
             if (node.edges.empty()) {
                 bagType cNode;
                 cNode.solution = new treeType[1];
@@ -30,7 +58,8 @@ namespace gpusat {
                 cNode.bags = 1;
                 cNode.maxSize = 1;
                 solveIntroduceForget(formula, pnode, node, cNode, true, lastNode);
-				if (verbose)std::cout << "Solved IF on node " << node.id << "\n";
+				if (verbose) std::cout << "Solved IF on node " << node.id << "\n";
+					
             } else if (node.edges.size() == 1) {
                 solveProblem(decomp, formula, *node.edges[0], node, INTRODUCEFORGET);
                 if (isSat == 1) {
@@ -182,6 +211,7 @@ namespace gpusat {
 		///
 		if (verbose) {
 			std::cout << "solveJoin " << edge1.id << " & " << edge2.id << " ~ " << node.id << "\n";
+			printbagType(&node, std::cout);
 		}
 		///
 		isSat = 0;
@@ -371,7 +401,13 @@ namespace gpusat {
     }
 
     void Solver::solveIntroduceForget(satformulaType &formula, bagType &pnode, bagType &node, bagType &cnode, bool leaf, nodeType nextNode) {
-        isSat = 0;
+		///
+		if (verbose) {
+			std::cout << "solveIF " << pnode.id << " + " << cnode.id << " => " << node.id << "\n";
+			printbagType(&node, std::cout);
+		}
+		///
+		isSat = 0;
         std::vector<cl_long> fVars;
         std::set_intersection(node.variables.begin(), node.variables.end(), pnode.variables.begin(), pnode.variables.end(), std::back_inserter(fVars));
         std::vector<cl_long> iVars = node.variables;

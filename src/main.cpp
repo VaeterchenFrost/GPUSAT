@@ -168,7 +168,7 @@ int main(int argc, char* argv[]) {
 	std::string decompDir;
 	long combineWidth = 20;
 	time_t seed = time(0);
-	bool cpu, weighted, noExp, nvidia, amd, verbose;
+	bool cpu, weighted, noExp, nvidia, amd, verbose, nopreprocess;
 	dataStructure solutionType = dataStructure::TREE;
 	CLI::App app{};
 	std::size_t numDecomps = 30;
@@ -191,6 +191,7 @@ int main(int argc, char* argv[]) {
 	app.add_flag("--weighted", weighted, "use weighted model count");
 	app.add_flag("--noExp", noExp, "don't use extended exponents");
 	app.add_flag("-v,--verbose", verbose, "print additional program information");
+	app.add_flag("-p,--nopreprocess", nopreprocess, "skips the preprocessing step for debugging purpose and visualisation");
 	app.add_set("--dataStructure", type, { "array", "tree", "combined" }, "data structure for storing the solution")->set_default_str("combined");
 	app.add_option("-m,--maxBagSize", maxBag, "max size of a bag on the gpu")->set_default_str("-1");
 	app.add_option("-w,--combineWidth", combineWidth, "maximum width to combine bags of the decomposition")->set_default_str("20");
@@ -315,13 +316,16 @@ int main(int argc, char* argv[]) {
 	try {
 		if (verbose) {
 			std::cout << "-- Before preprocessing --\n" << "bags: " << treeDecomp.numb << "\n";
-			for (auto v : treeDecomp.bags) std::cout << v.id << " : " << v.variables << "\n";
+			for (auto v : treeDecomp.bags) std::cout << v.id << " : " << v.variables << "\n\n";
 		}
 		// combine small bags
-		Preprocessor::preprocessDecomp(&treeDecomp.bags[0], combineWidth);
-		if (verbose) {
-			std::cout << "-- After preprocessing --\n" << "bags: " << treeDecomp.numb << "\n";
-			for (auto v : treeDecomp.bags) std::cout << v.id << " : " << v.variables << "\n";
+		if (nopreprocess == false) {
+			Preprocessor::preprocessDecomp(&treeDecomp.bags[0], combineWidth);
+			if (verbose) {
+				std::cout << "-- After preprocessing --\n" << "bags: " << treeDecomp.numb << "\n";
+				for (auto v : treeDecomp.bags) std::cout << v.id << " : " << v.variables << "\n";
+				std::cout << "-- preprocessing ended --\n\n";
+			}
 		}
 
 		buildKernel(context, devices, queue, program, memorySize, maxMemoryBuffer, nvidia, amd, cpu, combineWidth);
@@ -358,6 +362,7 @@ int main(int argc, char* argv[]) {
 						std::cout << "\n";
 					}
 				}
+				std::cout << "...\n";
 			}
 		}
 		///
