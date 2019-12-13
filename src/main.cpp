@@ -120,14 +120,18 @@ void graphOutput(std::string filename, treedecType& decomp) {
 		stream << "graph\n[\n";
 		/// nodes
 		for (bagType b : decomp.bags) {
-			stream << "node\n[\n" << "id " << b.id << "\n";
-			stream << "label \"bag " << b.id << "with " << b.variables << "\"\n ]\n";
+			stream << "node\n[\n" << " id " << b.id << "\n";
+			stream << " label \"bag " << b.id << " var: " << b.variables << "\"\n]\n";
 		}
 		/// edges
-		for (auto e : decomp.bags) {
-			stream << "edge " << e.edges << " ]\n";
+		for (auto b : decomp.bags) {
+			for (auto e : b.edges) {
+				stream << "edge\n[\n source " << b.id << "\n"
+					<< " target " << e->id << "\n]\n";
+			}
 		}
-		stream << "]"
+		stream << "]";
+		stream.close();
 	}
 	else { std::cerr << "Failed to open file : " << filename << " with " << errno << std::endl; }
 }
