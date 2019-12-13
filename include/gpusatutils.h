@@ -41,17 +41,17 @@ namespace gpusat {
 	}
 
 	/// print information from a treeType
-	inline void printtreeType(treeType* tree, std::ostream& stream) {
+	inline void printtreeType(treeType* tree, std::ostream& stream, cl_long size) {
 		stream << "treeType ( " << tree->minId << " - " << tree->maxId << "): size=" << tree->size
 			<< " sol=" << tree->numSolutions << "\n";
 
 		if (tree->elements != nullptr) {
 			stream << "elements: " << "\n";
 			for (cl_long i = tree->minId; i < tree->maxId; i++) {
-				stream << "id: " << i << " count: ";
-				if (TREE == TREE) {
-					getCount(i, tree->elements, tree->size);
-				}
+				stream << "id: " << i << " # ";
+				// ONLY FOR TREE format, not ARRAY!!!
+				stream << getCount(i, tree->elements, size) << "\n";
+				
 			}
 		}
 	};
@@ -70,7 +70,7 @@ namespace gpusat {
 		}
 		if (bag->solution != nullptr) {
 			stream << "\nsolution: \n";
-			printtreeType(bag->solution, stream);
+			printtreeType(bag->solution, stream, bag->variables.size());
 		}
 
 	};

@@ -114,6 +114,23 @@ void PrintDeviceInfo(cl_device_id device)
 	printf("    CL_DEVICE_MAX_COMPUTE_UNITS: %d\n", queryInt);
 }
 
+void graphOutput(std::string filename, treedecType& decomp) {
+	std::ofstream stream(filename);
+	if (stream.is_open()) {
+		stream << "graph\n[\n";
+		/// nodes
+		for (bagType b : decomp.bags) {
+			stream << "node\n[\n" << "id " << b.id << "\n";
+			stream << "label \"bag " << b.id << "with " << b.variables << "\"\n ]\n";
+		}
+		/// edges
+		for (auto e : decomp.bags) {
+			stream << "edge " << e.edges << " ]\n";
+		}
+		stream << "]"
+	}
+	else { std::cerr << "Failed to open file : " << filename << " with " << errno << std::endl; }
+}
 void device_query() {
 	int i, j, k, num_attributes;
 	char* info;
@@ -166,6 +183,7 @@ int main(int argc, char* argv[]) {
 	std::string fitness;
 	std::string type;
 	std::string decompDir;
+	std::string graphfile;
 	long combineWidth = 20;
 	time_t seed = time(0);
 	bool cpu, weighted, noExp, nvidia, amd, verbose, nopreprocess;
@@ -195,6 +213,7 @@ int main(int argc, char* argv[]) {
 	app.add_set("--dataStructure", type, { "array", "tree", "combined" }, "data structure for storing the solution")->set_default_str("combined");
 	app.add_option("-m,--maxBagSize", maxBag, "max size of a bag on the gpu")->set_default_str("-1");
 	app.add_option("-w,--combineWidth", combineWidth, "maximum width to combine bags of the decomposition")->set_default_str("20");
+	app.add_option("-g, --graph", graphfile, "filename for saving the decomposition graph")->set_default_str("");
 	CLI11_PARSE(app, argc, argv)
 
 	srand(seed);
@@ -268,7 +287,12 @@ int main(int argc, char* argv[]) {
 		treeDecomp = tdParser.parseTreeDecomp(treeDString, satFormula);
 
 		if (verbose)
+		{
 			std::cout << "\n-- Computed Decomposition: --\n" << treeDString << "\n" << "---End of decomposition---\n";
+			if (graphfile != "") {
+				graphOutput(graphfile, treeDecomp);
+			}
+		}
 	}
 	std::cout.flush();
 
@@ -346,7 +370,7 @@ int main(int argc, char* argv[]) {
 			std::cout << "\n--- Solutions: ---\n";
 			cl_long maxlinesid = 10;
 			for (cl_long a = 0; a < treeDecomp.bags[0].bags; a++) {
-				auto sola = treeDecomp.bags[0].solution[a];
+				treeType sola = treeDecomp.bags[0].solution[a];
 				std::cout << "bag " << a << "   (from " << sola.minId << " to " << sola.maxId - 1 << ")\n";
 				for (cl_long i = sola.minId; i < std::min(maxlinesid, sola.maxId); i++) {
 					if (sola.elements != nullptr) {

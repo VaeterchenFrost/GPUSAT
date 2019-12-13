@@ -10,7 +10,7 @@ namespace gpusat {
 	
     void Solver::solveProblem(treedecType &decomp, satformulaType &formula, bagType &node, bagType &pnode, nodeType lastNode) {
 		if (verbose) std::cout << "Entering solveProblem on id " << node.id << "\n";
-		if (verbose) printtreedecType(&decomp, std::cout);
+		if (verbose && node.id == 0) printtreedecType(&decomp, std::cout);
 		/// solution visualisation
 		/*if (verbose) {
 			std::cout << "\n--- Solutions: ---\n";
