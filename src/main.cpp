@@ -363,7 +363,8 @@ int main(int argc, char* argv[]) {
 
 		Solver* sol;
 		bagType next;
-		sol = new Solver(context, queue, program, memorySize, maxMemoryBuffer, solutionType, maxBag, verbose);
+		sol = new Solver(context, queue, program, memorySize, maxMemoryBuffer, solutionType, maxBag, verbose, graphfile);
+
 		next.variables.assign(treeDecomp.bags[0].variables.begin(), treeDecomp.bags[0].variables.begin() + std::min((cl_long)treeDecomp.bags[0].variables.size(), (cl_long)12));
 		long long int time_solving = getTime();
 		(*sol).solveProblem(treeDecomp, satFormula, treeDecomp.bags[0], next, INTRODUCEFORGET);

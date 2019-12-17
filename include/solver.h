@@ -7,6 +7,7 @@
 #include <CL/cl.hpp>
 #include <types.h>
 
+
 namespace gpusat {
     /**
      *
@@ -27,6 +28,7 @@ namespace gpusat {
         cl_long maxMemoryBuffer = 0;
 		bool verbose = false;
         dataStructure solutionType = TREE;
+        std::string graph;
 
         /**
          *
@@ -35,8 +37,12 @@ namespace gpusat {
          * @param program_
          * @param memorySize_
          * @param maxMemoryBuffer_
+         * @param solutionType_
+         * @param maxBag_
+         * @param verbose_
+         * @param graph_
          */
-        Solver(cl::Context &context_, cl::CommandQueue &queue_, cl::Program &program_, cl_long memorySize_, cl_long maxMemoryBuffer_, dataStructure solutionType_, cl_long maxBag_, bool verbose_) : context(context_), queue(queue_), program(program_), memorySize(memorySize_), maxMemoryBuffer(maxMemoryBuffer_), solutionType(solutionType_), maxBag(maxBag_), verbose(verbose_) {}
+        Solver(cl::Context &context_, cl::CommandQueue &queue_, cl::Program &program_, cl_long memorySize_, cl_long maxMemoryBuffer_, dataStructure solutionType_, cl_long maxBag_, bool verbose_, std::string graph_) : context(context_), queue(queue_), program(program_), memorySize(memorySize_), maxMemoryBuffer(maxMemoryBuffer_), solutionType(solutionType_), maxBag(maxBag_), verbose(verbose_), graph(graph_) {}
 
         /**
          * function to solve the sat problem
