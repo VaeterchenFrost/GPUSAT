@@ -293,9 +293,6 @@ int main(int argc, char* argv[]) {
 		if (verbose)
 		{
 			std::cout << "\n-- Computed Decomposition: --\n" << treeDString << "\n" << "---End of decomposition---\n";
-			if (graphfile != "") {
-				graphOutput(graphfile, treeDecomp);
-			}
 		}
 	}
 	std::cout.flush();

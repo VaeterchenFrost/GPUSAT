@@ -8,6 +8,7 @@
 #include <queue>
 #include <chrono>
 #include <numeric>
+#include <string>
 
 namespace gpusat {
 	/**
@@ -41,14 +42,14 @@ namespace gpusat {
 	}
 
 	/// print information from a treeType
-	inline void printtreeType(treeType* tree, std::ostream& stream, cl_long size) {
-		stream << "treeType ( " << tree->minId << " - " << tree->maxId << "): size=" << tree->size
+	inline void printtreeType(treeType* tree, std::ostream& stream, cl_long size, int depth = 0) {
+		stream << std::string(depth, ' ') << "treeType ( " << tree->minId << " - " << tree->maxId << "): size=" << tree->size
 			<< " sol=" << tree->numSolutions << "\n";
 
 		if (tree->elements != nullptr) {
-			stream << "elements: " << "\n";
+			stream << std::string(depth, ' ') << "elements: " << "\n";
 			for (cl_long i = tree->minId; i < tree->maxId; i++) {
-				stream << "id: " << i << " # ";
+				stream << std::string(depth, ' ') << "id: " << i << " # ";
 				// ONLY FOR TREE format, not ARRAY!!!
 				cl_double sol = getCount(i, tree->elements, size);
 				// ONLY FOR THE ARRAY format:
@@ -59,20 +60,28 @@ namespace gpusat {
 	};
 
 	/// print information for a bag in the tree decomposition
-	inline void printbagType(bagType* bag, std::ostream& stream) {
-		stream << "bagType ( " << bag->id << "): bags= " << bag->bags << " , exp= " << bag->exponent
+	inline void printbagType(bagType* bag, std::ostream& stream, int depth = 0) {
+		depth += 2;
+		stream << std::string(depth, ' ');
+		stream << "bag(" << bag->id << "): bags= " << bag->bags << " , exp= " << bag->exponent
 			<< " , correction= " << bag->correction << "\n";
-		stream << "var= [";
+		stream << std::string(depth, ' ') << "var= [";
 		for (auto a : bag->variables) {
 			stream << a << ", ";
 		}
-		stream << "]" << "\nbags=\n";
-		for (auto b : bag->edges) {
-			printbagType(b, stream);
+		stream << "]" << "\n";
+		if (!bag->edges.empty()) {
+			stream << std::string(depth, ' ');
+			stream << "bags=[\n";
+			for (bagType* b : bag->edges) {
+				printbagType(b, stream, depth);
+			}
+			stream << std::string(depth, ' ') << "]\n";
 		}
+		
 		if (bag->solution != nullptr) {
-			stream << "\nsolution: \n";
-			printtreeType(bag->solution, stream, bag->variables.size());
+			stream << "\n" << std::string(depth, ' ') << "solution: \n";
+			printtreeType(bag->solution, stream, bag->variables.size(), depth);
 		}
 
 	};
@@ -84,7 +93,7 @@ namespace gpusat {
 		for (auto bag : dec->bags) {
 			printbagType(&bag, stream);
 		}
-		stream << "\n===treedec " << dec->numb << "===\n";
+		stream << "^^^ treedec " << dec->numb << "^^^\n";
 	};
 }
 #endif //GPUSAT_GPUSAUTILS_H
