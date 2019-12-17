@@ -39,12 +39,7 @@ namespace gpusat {
 					printbagType(&node, std::cout);
 				}
 				if (graphfile != "") {
-					graphout(graphfile, 
-						"node\n"
-						"[\n"
-						"id	" + std::to_string(node.id) + "\n"
-						"label \"bag " + std::to_string(node.id) + "\"\n"
-						"]\n");
+					graphNode(graphfile, std::to_string(node.id));
 				}
 			}
 
@@ -58,12 +53,7 @@ namespace gpusat {
 						printbagType(&node, std::cout);
 					}
 					if (graphfile != "") {
-						graphout(graphfile,
-							"node\n"
-							"[\n"
-							"id	" + std::to_string(node.id) + "\n"
-							"label \"bag " + std::to_string(node.id) + "\"\n"
-							"]\n");
+						graphNode(graphfile, std::to_string(node.id));
 					}
 				}
 			}
@@ -95,12 +85,7 @@ namespace gpusat {
 								printbagType(&tmp, std::cout);
 							}
 							if (graphfile != "") {
-								graphout(graphfile,
-									"node\n"
-									"[\n"
-									"id	j" + std::to_string(node.id) + "\n"
-									"label \"bag j" + std::to_string(node.id) + "\"\n"
-									"]\n");
+								graphNode(graphfile, "j" + std::to_string(node.id));
 							}
 							if (isSat <= 0) {
 								return;
@@ -112,12 +97,7 @@ namespace gpusat {
 								printbagType(&node, std::cout);
 							}
 							if (graphfile != "") {
-								graphout(graphfile,
-									"node\n"
-									"[\n"
-									"id	" + std::to_string(node.id) + "\n"
-									"label \"bag " + std::to_string(node.id) + "\"\n"
-									"]\n");
+								graphNode(graphfile, std::to_string(node.id));
 							}
 						}
 						else {

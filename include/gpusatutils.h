@@ -95,8 +95,16 @@ namespace gpusat {
 		stream << "^^^ treedec " << dec->numb << "^^^\n";
 	}
 
+	inline void graphNode(std::string filename, std::string id) {
+		graphout(filename, "<node id=\"" + id + "\"/>\n");
+	}
+
+	inline void graphEdge(std::string filename, std::string so, std::string ta) {
+		graphout(filename, "<edge source=\"" + so + "\" target=\"" + ta + "\"/>\n");
+	}
+
 	inline void graphout(std::string filename, std::string string) {
-		std::ofstream stream(filename);
+		std::ofstream stream(filename, std::ios_base::app);
 		if (stream.is_open()) {
 			stream << string;
 			stream.close();
