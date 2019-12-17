@@ -50,8 +50,10 @@ namespace gpusat {
 			for (cl_long i = tree->minId; i < tree->maxId; i++) {
 				stream << "id: " << i << " # ";
 				// ONLY FOR TREE format, not ARRAY!!!
-				stream << getCount(i, tree->elements, size) << "\n";
-				
+				cl_double sol = getCount(i, tree->elements, size);
+				// ONLY FOR THE ARRAY format:
+				// cl_double sol = *reinterpret_cast <cl_double*>(&tree->elements[i - tree->minId]);
+				stream << sol << "\n";
 			}
 		}
 	};

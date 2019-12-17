@@ -317,6 +317,7 @@ int main(int argc, char* argv[]) {
 		exit(20);
 	}
 
+	
 	if (type == "array") {
 		kernelStr = "#define ARRAY_TYPE\n" + kernelStr;
 		solutionType = dataStructure::ARRAY;
@@ -333,6 +334,9 @@ int main(int argc, char* argv[]) {
 			solutionType = dataStructure::TREE;
 		}
 	}
+	if (verbose) std::cout << "---Determining datastructure---\ninput:\n" << type
+		<< "treeDecomp.width : " << treeDecomp.width
+		<< "\nSOLUTIONTYPE : " << solutionType << "\n------\n";
 
 	cl::Context context;
 	std::vector<cl::Device> devices;
