@@ -71,12 +71,11 @@ namespace gpusat {
 		}
 		stream << "]" << "\n";
 		if (!bag->edges.empty()) {
-			stream << std::string(depth, ' ');
-			stream << "bags=[\n";
+			stream << std::string(depth, ' ') << "edges to [";
 			for (bagType* b : bag->edges) {
-				printbagType(b, stream, depth);
+				stream << b->id << ", ";
 			}
-			stream << std::string(depth, ' ') << "]\n";
+			stream << "]\n";
 		}
 		
 		if (bag->solution != nullptr) {

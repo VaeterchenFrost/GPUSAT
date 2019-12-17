@@ -11,7 +11,7 @@ namespace gpusat {
 	void Solver::solveProblem(treedecType& decomp, satformulaType& formula, bagType& node, bagType& pnode, nodeType lastNode) {
 		if (verbose) std::cout << "==> Entering solveProblem on id " << node.id << " <==\n";
 		//if (verbose && node.id == 0) printtreedecType(&decomp, std::cout);
-
+		
 		if (isSat > 0) {
 			if (node.edges.empty()) {
 				bagType cNode;
@@ -70,14 +70,26 @@ namespace gpusat {
 
 						if (i == node.edges.size() - 1) {
 							solveJoin(tmp, edge1, edge2, formula, INTRODUCEFORGET);
+							if (verbose) {
+								std::cout << "Solved JOIN on node " << tmp.id << "\n";
+								printbagType(&tmp, std::cout);
+							}
 							if (isSat <= 0) {
 								return;
 							}
 							edge1 = tmp;
 							solveIntroduceForget(formula, pnode, node, tmp, false, lastNode);
+							if (verbose) {
+								std::cout << "Solved IF on node " << node.id << "\n";
+								printbagType(&node, std::cout);
+							}
 						}
 						else {
 							solveJoin(tmp, edge1, edge2, formula, JOIN);
+							if (verbose) {
+								std::cout << "Solved JOIN on node " << tmp.id << "\n";
+								printbagType(&tmp, std::cout);
+							}
 							edge1 = tmp;
 						}
 					}
