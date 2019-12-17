@@ -9,7 +9,7 @@
 #include <chrono>
 #include <numeric>
 #include <string>
-
+#include <fstream>
 namespace gpusat {
 	/**
 	 * returns the model count which corresponds to the given id
@@ -57,7 +57,7 @@ namespace gpusat {
 				stream << sol << "\n";
 			}
 		}
-	};
+	}
 
 	/// print information for a bag in the tree decomposition
 	inline void printbagType(bagType* bag, std::ostream& stream, int depth = 0) {
@@ -83,7 +83,7 @@ namespace gpusat {
 			printtreeType(bag->solution, stream, bag->variables.size(), depth);
 		}
 
-	};
+	}
 
 	/// print a tree decomposition
 	inline void printtreedecType(treedecType* dec, std::ostream& stream) {
@@ -93,6 +93,15 @@ namespace gpusat {
 			printbagType(&bag, stream);
 		}
 		stream << "^^^ treedec " << dec->numb << "^^^\n";
-	};
+	}
+
+	inline void graphout(std::string filename, std::string string) {
+		std::ofstream stream(filename);
+		if (stream.is_open()) {
+			stream << string;
+			stream.close();
+		}
+		else { std::cerr << "Failed to open file : " << filename << " with " << errno << std::endl; }
+	}
 }
 #endif //GPUSAT_GPUSAUTILS_H

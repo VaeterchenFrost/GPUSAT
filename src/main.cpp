@@ -114,7 +114,7 @@ void PrintDeviceInfo(cl_device_id device)
 	printf("    CL_DEVICE_MAX_COMPUTE_UNITS: %d\n", queryInt);
 }
 
-void graphOutput(std::string filename, treedecType& decomp) {
+void decompGraph(std::string filename, treedecType& decomp) {
 	std::ofstream stream(filename);
 	if (stream.is_open()) {
 		stream << "graph\n[\n";
@@ -135,6 +135,25 @@ void graphOutput(std::string filename, treedecType& decomp) {
 	}
 	else { std::cerr << "Failed to open file : " << filename << " with " << errno << std::endl; }
 }
+
+
+void graphStart(std::string filename) {
+	std::ofstream stream(filename);
+	if (stream.is_open()) {
+		stream << "graph\n[\n";
+		stream.close();
+	}
+	else { std::cerr << "Failed to open file : " << filename << " with " << errno << std::endl; }
+}
+void graphEnd(std::string filename) {
+	std::ofstream stream(filename);
+	if (stream.is_open()) {
+		stream << "\n]";
+		stream.close();
+	}
+	else { std::cerr << "Failed to open file : " << filename << " with " << errno << std::endl; }
+}
+
 void device_query() {
 	int i, j, k, num_attributes;
 	char* info;
@@ -220,7 +239,7 @@ int main(int argc, char* argv[]) {
 	app.add_option("-g, --graph", graphfile, "filename for saving the decomposition graph")->set_default_str("");
 	CLI11_PARSE(app, argc, argv)
 
-	srand(seed);
+		srand(seed);
 
 	if (noExp) {
 		kernelStr = "#define NO_EXP\n" + kernelStr;
@@ -314,7 +333,7 @@ int main(int argc, char* argv[]) {
 		exit(20);
 	}
 
-	
+
 	if (type == "array") {
 		kernelStr = "#define ARRAY_TYPE\n" + kernelStr;
 		solutionType = dataStructure::ARRAY;
@@ -364,12 +383,13 @@ int main(int argc, char* argv[]) {
 		Solver* sol;
 		bagType next;
 		sol = new Solver(context, queue, program, memorySize, maxMemoryBuffer, solutionType, maxBag, verbose, graphfile);
+		if (graphfile != "") graphStart(graphfile);
 
 		next.variables.assign(treeDecomp.bags[0].variables.begin(), treeDecomp.bags[0].variables.begin() + std::min((cl_long)treeDecomp.bags[0].variables.size(), (cl_long)12));
 		long long int time_solving = getTime();
 		(*sol).solveProblem(treeDecomp, satFormula, treeDecomp.bags[0], next, INTRODUCEFORGET);
 		time_solving = getTime() - time_solving;
-
+		if (graphfile != "") graphEnd(graphfile);
 
 		/// solution visualisation
 		if (verbose) {

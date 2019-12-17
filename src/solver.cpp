@@ -35,8 +35,16 @@ namespace gpusat {
 				cNode.maxSize = 1;
 				solveIntroduceForget(formula, pnode, node, cNode, true, lastNode);
 				if (verbose) {
-					std::cout << "Solved IF on node " << node.id << "\n";
+					std::cout << "Solved IF-0 on node " << node.id << "\n";
 					printbagType(&node, std::cout);
+				}
+				if (graphfile != "") {
+					graphout(graphfile, 
+						"node\n"
+						"[\n"
+						"id	" + std::to_string(node.id) + "\n"
+						"label \"bag " + std::to_string(node.id) + "\"\n"
+						"]\n");
 				}
 			}
 
@@ -46,8 +54,16 @@ namespace gpusat {
 					bagType& cnode = *node.edges[0];
 					solveIntroduceForget(formula, pnode, node, cnode, false, lastNode);
 					if (verbose) {
-						std::cout << "Solved IF on node " << node.id << "\n";
+						std::cout << "Solved IF-1 on node " << node.id << "\n";
 						printbagType(&node, std::cout);
+					}
+					if (graphfile != "") {
+						graphout(graphfile,
+							"node\n"
+							"[\n"
+							"id	" + std::to_string(node.id) + "\n"
+							"label \"bag " + std::to_string(node.id) + "\"\n"
+							"]\n");
 					}
 				}
 			}
@@ -75,8 +91,16 @@ namespace gpusat {
 						if (i == node.edges.size() - 1) {
 							solveJoin(tmp, edge1, edge2, formula, INTRODUCEFORGET);
 							if (verbose) {
-								std::cout << "Solved JOIN on node " << tmp.id << "\n";
+								std::cout << "Solved JOIN-1 on nodes " << edge1.id << "~" << edge2.id << "\n";
 								printbagType(&tmp, std::cout);
+							}
+							if (graphfile != "") {
+								graphout(graphfile,
+									"node\n"
+									"[\n"
+									"id	j" + std::to_string(node.id) + "\n"
+									"label \"bag j" + std::to_string(node.id) + "\"\n"
+									"]\n");
 							}
 							if (isSat <= 0) {
 								return;
@@ -84,14 +108,22 @@ namespace gpusat {
 							edge1 = tmp;
 							solveIntroduceForget(formula, pnode, node, tmp, false, lastNode);
 							if (verbose) {
-								std::cout << "Solved IF on node " << node.id << "\n";
+								std::cout << "Solved JOIN-IF on node " << node.id << "\n";
 								printbagType(&node, std::cout);
+							}
+							if (graphfile != "") {
+								graphout(graphfile,
+									"node\n"
+									"[\n"
+									"id	" + std::to_string(node.id) + "\n"
+									"label \"bag " + std::to_string(node.id) + "\"\n"
+									"]\n");
 							}
 						}
 						else {
 							solveJoin(tmp, edge1, edge2, formula, JOIN);
 							if (verbose) {
-								std::cout << "Solved JOIN on node " << tmp.id << "\n";
+								std::cout << "Solved JOIN-0 on node " << tmp.id << "\n";
 								printbagType(&tmp, std::cout);
 							}
 							edge1 = tmp;
