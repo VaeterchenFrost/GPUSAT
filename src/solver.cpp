@@ -38,16 +38,20 @@ namespace gpusat {
 					std::cout << "Solved IF on node " << node.id << "\n";
 					printbagType(&node, std::cout);
 				}
-
-
 			}
+
 			else if (node.edges.size() == 1) {
 				solveProblem(decomp, formula, *node.edges[0], node, INTRODUCEFORGET);
 				if (isSat == 1) {
 					bagType& cnode = *node.edges[0];
 					solveIntroduceForget(formula, pnode, node, cnode, false, lastNode);
+					if (verbose) {
+						std::cout << "Solved IF on node " << node.id << "\n";
+						printbagType(&node, std::cout);
+					}
 				}
 			}
+
 			else if (node.edges.size() > 1) {
 				bagType& edge1 = *node.edges[0];
 				solveProblem(decomp, formula, edge1, node, JOIN);
