@@ -13,8 +13,8 @@
 #include <numeric>
 #include <decomposer.h>
 #include <solver.h>
-#include <CLI11.hpp>
 #include <boost/multiprecision/cpp_bin_float.hpp>
+#include <CLI11.hpp>
 #include <gpusatpreprocessor.h>
 #include <FitnessFunctions/NumJoinFitnessFunction.h>
 #include <FitnessFunctions/JoinSizeFitnessFunction.h>
