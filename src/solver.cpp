@@ -11,7 +11,7 @@ namespace gpusat {
 	void Solver::solveProblem(treedecType& decomp, satformulaType& formula, bagType& node, bagType& pnode, nodeType lastNode) {
 		if (verbose) std::cout << "==> Entering solveProblem on id " << node.id << " <==\n";
 		//if (verbose && node.id == 0) printtreedecType(&decomp, std::cout);
-		
+
 		if (isSat > 0) {
 			if (node.edges.empty()) {
 				bagType cNode;
@@ -39,12 +39,7 @@ namespace gpusat {
 					printbagType(&node, std::cout);
 				}
 				if (graphfile != "") {
-					graphout(graphfile, 
-						"node\n"
-						"[\n"
-						"id	" + std::to_string(node.id) + "\n"
-						"label \"bag " + std::to_string(node.id) + "\"\n"
-						"]\n");
+					graphNode(graphfile, node.id, "bag " + std::to_string(node.id));
 				}
 			}
 
@@ -58,12 +53,7 @@ namespace gpusat {
 						printbagType(&node, std::cout);
 					}
 					if (graphfile != "") {
-						graphout(graphfile,
-							"node\n"
-							"[\n"
-							"id	" + std::to_string(node.id) + "\n"
-							"label \"bag " + std::to_string(node.id) + "\"\n"
-							"]\n");
+						graphNode(graphfile, node.id, "bag " + std::to_string(node.id));
 					}
 				}
 			}
@@ -95,12 +85,7 @@ namespace gpusat {
 								printbagType(&tmp, std::cout);
 							}
 							if (graphfile != "") {
-								graphout(graphfile,
-									"node\n"
-									"[\n"
-									"id	j" + std::to_string(node.id) + "\n"
-									"label \"bag j" + std::to_string(node.id) + "\"\n"
-									"]\n");
+								graphNode(graphfile, tmp.id, "bag j" + std::to_string(tmp.id));
 							}
 							if (isSat <= 0) {
 								return;
@@ -112,12 +97,7 @@ namespace gpusat {
 								printbagType(&node, std::cout);
 							}
 							if (graphfile != "") {
-								graphout(graphfile,
-									"node\n"
-									"[\n"
-									"id	" + std::to_string(node.id) + "\n"
-									"label \"bag " + std::to_string(node.id) + "\"\n"
-									"]\n");
+								graphNode(graphfile, node.id, "bag " + std::to_string(node.id));
 							}
 						}
 						else {
@@ -125,6 +105,9 @@ namespace gpusat {
 							if (verbose) {
 								std::cout << "Solved JOIN-0 on node " << tmp.id << "\n";
 								printbagType(&tmp, std::cout);
+							}
+							if (graphfile != "") {
+								graphNode(graphfile, tmp.id, "bag " + std::to_string(tmp.id));
 							}
 							edge1 = tmp;
 						}
@@ -240,10 +223,10 @@ namespace gpusat {
 	void Solver::solveJoin(bagType& node, bagType& edge1, bagType& edge2, satformulaType& formula, nodeType nextNode) {
 
 		///
-		if (verbose) {
+		/*if (verbose) {
 			std::cout << "solveJoin " << edge1.id << " & " << edge2.id << " ~ " << node.id << "\n";
 			printbagType(&node, std::cout);
-		}
+		}*/
 		///
 		isSat = 0;
 		this->numJoin++;

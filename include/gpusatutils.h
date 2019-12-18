@@ -94,6 +94,14 @@ namespace gpusat {
 		}
 		stream << "^^^ treedec " << dec->numb << "^^^\n";
 	}
+	inline void graphNode(std::string filename, int id, std::string label) {
+		graphout(filename,
+			"node\n"
+			"[\n id " + std::to_string(id) + "\n"
+			"label \"" + label + "\"\n"
+			"]\n"
+		);
+	}
 
 	inline void graphout(std::string filename, std::string string) {
 		std::ofstream stream(filename);
