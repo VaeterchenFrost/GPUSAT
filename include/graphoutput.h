@@ -15,7 +15,8 @@ namespace gpusat {
 		inline void graphEdge(unsigned int source, unsigned int target);
 		inline void graphNode(unsigned int id, std::string label, std::string solution);
 		inline void graphEdgeSet(treedecType* dec);
-
+		inline void graphStart();
+		inline void graphEnd();
 		std::string getFilename() {
 			return graphfile;
 		}
@@ -26,7 +27,7 @@ namespace gpusat {
 		bool outputEnabled = false;
 		std::string graphfile;
 
-		void graphout(std::string string);
+		void graphout(std::string string, bool append = true);
 		bool setFile(std::string filename);
 	};
 }

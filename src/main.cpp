@@ -20,6 +20,7 @@
 #include <FitnessFunctions/JoinSizeFitnessFunction.h>
 #include <FitnessFunctions/WidthCutSetFitnessFunction.h>
 #include <FitnessFunctions/CutSetWidthFitnessFunction.h>
+#include <graphoutput.h>
 
 std::string kernelStr =
 
@@ -112,45 +113,6 @@ void PrintDeviceInfo(cl_device_id device)
 	queryBuffer[0] = '\0';
 	clError = clGetDeviceInfo(device, CL_DEVICE_MAX_COMPUTE_UNITS, sizeof(int), &queryInt, NULL);
 	printf("    CL_DEVICE_MAX_COMPUTE_UNITS: %d\n", queryInt);
-}
-
-void decompGraph(std::string filename, treedecType& decomp) {
-	std::ofstream stream(filename);
-	if (stream.is_open()) {
-		stream << "graph\n[\n";
-		/// nodes
-		for (bagType b : decomp.bags) {
-			stream << "node\n[\n" << " id " << b.id << "\n";
-			stream << " label \"bag " << b.id << " var: " << b.variables << "\"\n]\n";
-		}
-		/// edges
-		for (auto b : decomp.bags) {
-			for (auto e : b.edges) {
-				stream << "edge\n[\n source " << b.id << "\n"
-					<< " target " << e->id << "\n]\n";
-			}
-		}
-		stream << "]";
-		stream.close();
-	}
-	else { std::cerr << "Failed to open file : " << filename << " with " << errno << std::endl; }
-}
-
-void graphStart(std::string filename) {
-	std::ofstream stream(filename);
-	if (stream.is_open()) {
-		stream << "graph\n[\n";
-		stream.close();
-	}
-	else { std::cerr << "Failed to open file : " << filename << " with " << errno << std::endl; }
-}
-void graphEnd(std::string filename) {
-	std::ofstream stream(filename, std::ios_base::app);
-	if (stream.is_open()) {
-		stream << "\n]\n";
-		stream.close();
-	}
-	else { std::cerr << "Failed to open file : " << filename << " with " << errno << std::endl; }
 }
 
 void device_query() {
@@ -380,15 +342,16 @@ int main(int argc, char* argv[]) {
 		std::cout.flush();
 
 		Solver* sol;
+		Graphoutput* graphout = new Graphoutput(graphfile);
 		bagType next;
 		sol = new Solver(context, queue, program, memorySize, maxMemoryBuffer, solutionType, maxBag, verbose, graphfile);
-		if (graphfile != "") graphStart(graphfile);
+		graphout->graphStart();
 
 		next.variables.assign(treeDecomp.bags[0].variables.begin(), treeDecomp.bags[0].variables.begin() + std::min((cl_long)treeDecomp.bags[0].variables.size(), (cl_long)12));
 		long long int time_solving = getTime();
 		(*sol).solveProblem(treeDecomp, satFormula, treeDecomp.bags[0], next, INTRODUCEFORGET);
 		time_solving = getTime() - time_solving;
-		if (graphfile != "") graphEnd(graphfile);
+		graphout->graphEnd();
 
 		/// solution visualisation
 		if (verbose) {
