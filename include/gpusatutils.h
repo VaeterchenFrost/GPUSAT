@@ -94,6 +94,16 @@ namespace gpusat {
 		}
 		stream << "^^^ treedec " << dec->numb << "^^^\n";
 	}
+
+	inline void graphout(std::string filename, std::string string) {
+		std::ofstream stream(filename, std::ios_base::app);
+		if (stream.is_open()) {
+			stream << string;
+			stream.close();
+		}
+		else { std::cerr << "Failed to open file : " << filename << " with " << errno << std::endl; }
+	}
+
 	inline void graphNode(std::string filename, int id, std::string label) {
 		graphout(filename,
 			"node\n"
@@ -103,13 +113,5 @@ namespace gpusat {
 		);
 	}
 
-	inline void graphout(std::string filename, std::string string) {
-		std::ofstream stream(filename);
-		if (stream.is_open()) {
-			stream << string;
-			stream.close();
-		}
-		else { std::cerr << "Failed to open file : " << filename << " with " << errno << std::endl; }
-	}
 }
 #endif //GPUSAT_GPUSAUTILS_H
