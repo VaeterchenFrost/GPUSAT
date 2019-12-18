@@ -87,8 +87,10 @@ namespace gpusat {
 								printbagType(&tmp, std::cout);
 							}
 							if (graphfile != "") {
-								graphNode(graphfile, tmp.id + 1000, "bag j" + std::to_string(tmp.id), solutiontable(tmp));
-								graphEdge(graphfile, edge1.id, edge2.id);
+								cl_long joinid = 10000 * edge1.id + 10 * edge2.id;
+								graphNode(graphfile, joinid, "bag j" + std::to_string(joinid), solutiontable(tmp));
+								graphEdge(graphfile, edge1.id, joinid);
+								graphEdge(graphfile, edge2.id, joinid);
 							}
 							if (isSat <= 0) {
 								return;

@@ -136,7 +136,6 @@ void decompGraph(std::string filename, treedecType& decomp) {
 	else { std::cerr << "Failed to open file : " << filename << " with " << errno << std::endl; }
 }
 
-
 void graphStart(std::string filename) {
 	std::ofstream stream(filename);
 	if (stream.is_open()) {

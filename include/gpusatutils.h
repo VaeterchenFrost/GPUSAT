@@ -159,7 +159,7 @@ namespace gpusat {
 	inline void graphEdgeSet(std::string filename, treedecType* dec) {
 		for (auto b : dec->bags) {
 			for (auto e : b.edges) {
-				graphEdge(filename, b.id, e->id);
+				graphEdge(filename, e->id, b.id);
 			}
 		}
 	}
