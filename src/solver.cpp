@@ -11,7 +11,7 @@ namespace gpusat {
 
 	void Solver::solveProblem(treedecType& decomp, satformulaType& formula, bagType& node, bagType& pnode, nodeType lastNode) {
 		if (verbose) std::cout << "==> Entering solveProblem on id " << node.id << " <==\n";
-		//if (verbose && node.id == 0) printtreedecType(&decomp, std::cout);
+		if (verbose && node.id == 0) printtreedecType(&decomp, std::cout);
 
 		if (isSat > 0) {
 			if (node.edges.empty()) {
@@ -87,6 +87,7 @@ namespace gpusat {
 							}
 							if (graphfile != "") {
 								graphNode(graphfile, tmp.id + 1000, "bag j" + std::to_string(tmp.id), solutiontable(tmp));
+								graphEdge(graphfile, edge1.id, edge2.id);
 							}
 							if (isSat <= 0) {
 								return;
@@ -115,6 +116,9 @@ namespace gpusat {
 					}
 				}
 			}
+		}
+		if (graphfile != "" && node.id == 0) {
+			
 		}
 	}
 
