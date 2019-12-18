@@ -106,7 +106,9 @@ namespace gpusat {
 		else { std::cerr << "Failed to open file : " << filename << " with " << errno << std::endl; }
 	}
 	inline void graphNode(std::string filename, std::string id) {
-		graphout(filename, "<node id=\"" + id + "\"/>\n");
+		graphout(filename, "<node id=\"" + id + "\">\n"
+			"<data key=\"d3\"><y:Label><y:Label.Text>"+id+"</y:Label.Text></y:Label></data>\n"
+			"</node>\n");
 	}
 
 	inline void graphEdge(std::string filename, std::string so, std::string ta) {

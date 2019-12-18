@@ -144,8 +144,10 @@ void graphStart(std::string filename) {
 			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
 			"<graphml xmlns=\"http://graphml.graphdrawing.org/xmlns\"\n"
 			"xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"
+			"xmlns:y=\"http://www.yworks.com/xml/yfiles-common/3.0\"\n"
 			"xsi:schemaLocation=\"http://graphml.graphdrawing.org/xmlns\n"
 			" http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd\">\n"
+			"<key id=\"d3\" for=\"node\" attr.name=\"NodeLabels\" y:attr.uri=\"http://www.yworks.com/xml/yfiles-common/2.0/NodeLabels\"/>"
 			"<graph id=\"G\" edgedefault=\"undirected\">\n";
 		stream.close();
 	}
