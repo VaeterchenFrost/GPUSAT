@@ -13,6 +13,7 @@ namespace gpusat {
 		if (verbose) std::cout << "==> Entering solveProblem on id " << node.id << " <==\n";
 		if (verbose && node.id == 0) printtreedecType(&decomp, std::cout);
 
+
 		if (isSat > 0) {
 			if (node.edges.empty()) {
 				bagType cNode;
@@ -117,9 +118,9 @@ namespace gpusat {
 				}
 			}
 		}
-		if (graphfile != "" && node.id == 0) {
-			
-		}
+
+		if (graphfile != "" && node.id == 0) graphEdgeSet(graphfile, &decomp);
+
 	}
 
 	void Solver::cleanTree(treeType& table, cl_long size, cl_long numVars, bagType& node, cl_long nextSize) {
