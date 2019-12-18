@@ -4,9 +4,9 @@
 
 namespace gpusat {
 
-	inline void Graphoutput::graphEdge(std::string filename, unsigned int source, unsigned int target)
+	inline void Graphoutput::graphEdge(unsigned int source, unsigned int target)
 	{
-		graphout(filename,
+		graphout(
 			"edge\n[\n"
 			"source " + std::to_string(source) + "\n"
 			"target " + std::to_string(target) + "\n"
@@ -14,9 +14,9 @@ namespace gpusat {
 		);
 	}
 
-	inline void Graphoutput::graphNode(std::string filename, unsigned int id, std::string label, std::string solution)
+	inline void Graphoutput::graphNode(unsigned int id, std::string label, std::string solution)
 	{
-		graphout(filename,
+		graphout(
 			"node\n"
 			"[\n id " + std::to_string(id) + "\n"
 			"label \"" + label + "\"\n"
@@ -36,22 +36,28 @@ namespace gpusat {
 		);
 	}
 
-	inline void Graphoutput::graphEdgeSet(std::string filename, treedecType* dec)
+	inline void Graphoutput::graphEdgeSet(treedecType* dec)
 	{
 		for (auto b : dec->bags) {
 			for (auto e : b.edges) {
-				graphEdge(filename, e->id, b.id);
+				graphEdge(e->id, b.id);
 			}
 		}
 	}
 
-	inline void Graphoutput::graphout(std::string filename, std::string string)
+	inline void Graphoutput::graphout(std::string string)
 	{
-		std::ofstream stream(filename, std::ios_base::app);
+		std::ofstream stream(graphfile, std::ios_base::app);
 		if (stream.is_open()) {
 			stream << string;
 			stream.close();
 		}
-		else { std::cerr << "Failed to open file : " << filename << " with " << errno << std::endl; }
+		else { std::cerr << "Failed to open file : " << graphfile << " with " << errno << std::endl; }
 	}
+
+	bool Graphoutput::setFile(std::string filename)
+	{
+		graphfile = filename;
+	}
+	
 }
