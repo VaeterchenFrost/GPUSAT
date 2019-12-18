@@ -5,6 +5,7 @@
 #include <errno.h>
 // Verbose / Debug
 // #include <boost/format.hpp>
+#include <sstream>
 #include <gpusatutils.h>
 namespace gpusat {
 
@@ -39,7 +40,7 @@ namespace gpusat {
 					printbagType(&node, std::cout);
 				}
 				if (graphfile != "") {
-					graphNode(graphfile, node.id, "bag " + std::to_string(node.id));
+					graphNode(graphfile, node.id, "bag " + std::to_string(node.id), solutiontable(node));
 				}
 			}
 
@@ -53,7 +54,7 @@ namespace gpusat {
 						printbagType(&node, std::cout);
 					}
 					if (graphfile != "") {
-						graphNode(graphfile, node.id, "bag " + std::to_string(node.id));
+						graphNode(graphfile, node.id, "bag " + std::to_string(node.id), solutiontable(node));
 					}
 				}
 			}
@@ -85,7 +86,7 @@ namespace gpusat {
 								printbagType(&tmp, std::cout);
 							}
 							if (graphfile != "") {
-								graphNode(graphfile, tmp.id, "bag j" + std::to_string(tmp.id));
+								graphNode(graphfile, tmp.id + 1000, "bag j" + std::to_string(tmp.id), solutiontable(tmp));
 							}
 							if (isSat <= 0) {
 								return;
@@ -97,7 +98,7 @@ namespace gpusat {
 								printbagType(&node, std::cout);
 							}
 							if (graphfile != "") {
-								graphNode(graphfile, node.id, "bag " + std::to_string(node.id));
+								graphNode(graphfile, node.id, "bag " + std::to_string(node.id), solutiontable(node));
 							}
 						}
 						else {
@@ -107,7 +108,7 @@ namespace gpusat {
 								printbagType(&tmp, std::cout);
 							}
 							if (graphfile != "") {
-								graphNode(graphfile, tmp.id, "bag " + std::to_string(tmp.id));
+								graphNode(graphfile, tmp.id, "bag " + std::to_string(tmp.id), solutiontable(tmp));
 							}
 							edge1 = tmp;
 						}

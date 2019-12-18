@@ -10,6 +10,7 @@
 #include <numeric>
 #include <string>
 #include <fstream>
+#include <sstream>
 namespace gpusat {
 	/**
 	 * returns the model count which corresponds to the given id
@@ -85,6 +86,27 @@ namespace gpusat {
 
 	}
 
+	inline std::string solutiontable(bagType node) {
+		std::ostringstream os;
+		os << "bag(" << node.id << "), [" << node.variables[0];
+		for (int i = 1; i < node.variables.size(); i++) {
+			os << ", " << node.variables[i];
+		}
+		os << "]\n";
+		if (node.solution->elements != nullptr) {
+			os << "solutions: " << "\n";
+			for (cl_long i = node.solution->minId; i < node.solution->maxId; i++) {
+				os << "id: " << i << " # ";
+				// ONLY FOR TREE format, not ARRAY!!!
+				cl_double sol = getCount(i, node.solution->elements, node.variables.size()) * pow(2, node.correction);
+				// ONLY FOR THE ARRAY format:
+				// cl_double sol = *reinterpret_cast <cl_double*>(&tree->elements[i - tree->minId]);
+				os << sol << "\n";
+			}
+		}
+		return os.str();
+	}
+
 	/// print a tree decomposition
 	inline void printtreedecType(treedecType* dec, std::ostream& stream) {
 		stream << "\nprinting treedec with numb:" << dec->numb << ", numVars:" << dec->numVars <<
@@ -104,11 +126,17 @@ namespace gpusat {
 		else { std::cerr << "Failed to open file : " << filename << " with " << errno << std::endl; }
 	}
 
-	inline void graphNode(std::string filename, int id, std::string label) {
+	inline void graphNode(std::string filename, int id, std::string label, std::string solution) {
 		graphout(filename,
 			"node\n"
 			"[\n id " + std::to_string(id) + "\n"
 			"label \"" + label + "\"\n"
+			"LabelGraphics\n[ text \""
+			+ solution +
+			"\"\n fontSize 12\n"
+			" fontName \"Dialog\"\n"
+			" model \"null\"\n"
+			" ]\n"
 			"]\n"
 		);
 	}

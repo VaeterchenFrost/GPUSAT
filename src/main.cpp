@@ -148,7 +148,7 @@ void graphStart(std::string filename) {
 void graphEnd(std::string filename) {
 	std::ofstream stream(filename, std::ios_base::app);
 	if (stream.is_open()) {
-		stream << "\n]";
+		stream << "\n]\n";
 		stream.close();
 	}
 	else { std::cerr << "Failed to open file : " << filename << " with " << errno << std::endl; }
