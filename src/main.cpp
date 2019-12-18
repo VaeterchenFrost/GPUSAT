@@ -141,12 +141,12 @@ void graphStart(std::string filename) {
 	std::ofstream stream(filename);
 	if (stream.is_open()) {
 		stream << 
-			"<?xml version=\"1.0\" encoding=\"UTF - 8\"?>\n"
-			"<graphml xmlns = \"http://graphml.graphdrawing.org/xmlns\"\n"
-			"xmlns:xsi = \"http://www.w3.org/2001/XMLSchema-instance\"\n"
-			"xsi:schemaLocation = \"http://graphml.graphdrawing.org/xmlns\"\n"
-			"http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd\">\n"
-			"< graph id = \"G\" edgedefault = \"undirected\">\"\n";
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+			"<graphml xmlns=\"http://graphml.graphdrawing.org/xmlns\"\n"
+			"xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"
+			"xsi:schemaLocation=\"http://graphml.graphdrawing.org/xmlns\n"
+			" http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd\">\n"
+			"<graph id=\"G\" edgedefault=\"undirected\">\n";
 		stream.close();
 	}
 	else { std::cerr << "Failed to open file : " << filename << " with " << errno << std::endl; }
@@ -155,7 +155,7 @@ void graphEnd(std::string filename) {
 	std::ofstream stream(filename, std::ios_base::app);
 	if (stream.is_open()) {
 		stream << "</graph>\n"
-			"</graphml >\n";
+			"</graphml>\n";
 		stream.close();
 	}
 	else { std::cerr << "Failed to open file : " << filename << " with " << errno << std::endl; }
