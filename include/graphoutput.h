@@ -7,6 +7,7 @@
 
 namespace gpusat {
 
+
 	class Graphoutput {
 
 	public:

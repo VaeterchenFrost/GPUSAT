@@ -3,7 +3,7 @@
 #include <fstream>
 
 namespace gpusat {
-
+	
 	inline void Graphoutput::graphEdge(unsigned int source, unsigned int target)
 	{
 		graphout(

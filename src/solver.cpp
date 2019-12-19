@@ -3,7 +3,6 @@
 #include <iostream>
 #include <solver.h>
 #include <errno.h>
-// Verbose / Debug
 // #include <boost/format.hpp>
 #include <sstream>
 #include <gpusatutils.h>
@@ -41,7 +40,7 @@ namespace gpusat {
 					std::cout << "Solved IF-0 on node " << node.id << "\n";
 					printbagType(&node, std::cout);
 				}
-				graphoutput->graphNode(node.id, "bag " + std::to_string(node.id), solutiontable(node));			
+				graphoutput->graphNode(node.id, "bag " + std::to_string(node.id), solutiontable(node));
 			}
 
 			else if (node.edges.size() == 1) {
@@ -53,9 +52,9 @@ namespace gpusat {
 						std::cout << "Solved IF-1 on node " << node.id << "\n";
 						printbagType(&node, std::cout);
 					}
-					if (graphfile != "") {
-						graphNode(graphfile, node.id, "bag " + std::to_string(node.id), solutiontable(node));
-					}
+
+					graphoutput->graphNode(node.id, "bag " + std::to_string(node.id), solutiontable(node));
+
 				}
 			}
 
@@ -85,11 +84,11 @@ namespace gpusat {
 								std::cout << "Solved JOIN-1 on nodes " << edge1.id << "~" << edge2.id << "\n";
 								printbagType(&tmp, std::cout);
 							}
-							if (graphfile != "") {
+							if (graphoutput->isEnabled()) {
 								cl_long joinid = 10000 * edge1.id + 10 * edge2.id;
-								graphNode(graphfile, joinid, "bag j" + std::to_string(joinid), solutiontable(tmp));
-								graphEdge(graphfile, edge1.id, joinid);
-								graphEdge(graphfile, edge2.id, joinid);
+								graphoutput->graphNode(joinid, "bag j" + std::to_string(joinid), solutiontable(tmp));
+								graphoutput->graphEdge(edge1.id, joinid);
+								graphoutput->graphEdge(edge2.id, joinid);
 							}
 							if (isSat <= 0) {
 								return;
@@ -100,9 +99,9 @@ namespace gpusat {
 								std::cout << "Solved JOIN-IF on node " << node.id << "\n";
 								printbagType(&node, std::cout);
 							}
-							if (graphfile != "") {
-								graphNode(graphfile, node.id, "bag " + std::to_string(node.id), solutiontable(node));
-							}
+
+							graphoutput->graphNode(node.id, "bag " + std::to_string(node.id), solutiontable(node));
+
 						}
 						else {
 							solveJoin(tmp, edge1, edge2, formula, JOIN);
@@ -110,9 +109,9 @@ namespace gpusat {
 								std::cout << "Solved JOIN-0 on node " << tmp.id << "\n";
 								printbagType(&tmp, std::cout);
 							}
-							if (graphfile != "") {
-								graphNode(graphfile, tmp.id, "bag " + std::to_string(tmp.id), solutiontable(tmp));
-							}
+
+							graphoutput->graphNode(tmp.id, "bag " + std::to_string(tmp.id), solutiontable(tmp));
+
 							edge1 = tmp;
 						}
 					}
@@ -120,7 +119,7 @@ namespace gpusat {
 			}
 		}
 
-		if (graphfile != "" && node.id == 0) graphEdgeSet(graphfile, &decomp);
+		if (graphoutput->isEnabled() && node.id == 0) graphoutput->graphEdgeSet(&decomp);
 
 	}
 
