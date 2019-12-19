@@ -57,7 +57,7 @@ namespace gpusat {
 
 	inline void Graphoutput::graphout(std::string string, bool append = true)
 	{
-		std::ofstream stream;
+		if (!isEnabled()) return;
 
 		if (append) {
 			std::ofstream stream(graphfile, std::ios_base::app);
@@ -76,9 +76,10 @@ namespace gpusat {
 	bool Graphoutput::setFile(std::string filename)
 	{
 		if (filename != "") {
-			graphfile = filename;
 			outputEnabled = true;
 		}
+		else outputEnabled = false;
+		graphfile = filename;
 	}
 
 	// currently deprecated

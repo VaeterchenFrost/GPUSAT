@@ -7,12 +7,13 @@
 // #include <boost/format.hpp>
 #include <sstream>
 #include <gpusatutils.h>
+#include <graphoutput.h>
+
 namespace gpusat {
 
 	void Solver::solveProblem(treedecType& decomp, satformulaType& formula, bagType& node, bagType& pnode, nodeType lastNode) {
 		if (verbose) std::cout << "==> Entering solveProblem on id " << node.id << " <==\n";
-		if (verbose && node.id == 0) printtreedecType(&decomp, std::cout);
-
+		// if (verbose && node.id == 0) printtreedecType(&decomp, std::cout);
 
 		if (isSat > 0) {
 			if (node.edges.empty()) {
@@ -40,9 +41,7 @@ namespace gpusat {
 					std::cout << "Solved IF-0 on node " << node.id << "\n";
 					printbagType(&node, std::cout);
 				}
-				if (graphfile != "") {
-					graphNode(graphfile, node.id, "bag " + std::to_string(node.id), solutiontable(node));
-				}
+				graphoutput->graphNode(node.id, "bag " + std::to_string(node.id), solutiontable(node));			
 			}
 
 			else if (node.edges.size() == 1) {

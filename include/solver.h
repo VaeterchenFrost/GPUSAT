@@ -10,7 +10,7 @@
 
 namespace gpusat {
 	/**
-	 *
+	 * Organizes the process of solving a sat problem in the given context.
 	 */
 	class Solver {
 	protected:
@@ -32,7 +32,7 @@ namespace gpusat {
 
 		/**
 		 *
-		 * @param context_
+		 * @param context_ the given context as hardware
 		 * @param queue_
 		 * @param program_
 		 * @param memorySize_
