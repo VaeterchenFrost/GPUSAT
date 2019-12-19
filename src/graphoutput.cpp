@@ -82,7 +82,7 @@ namespace gpusat {
 	}
 
 	// currently deprecated
-	void decompGraph(std::string filename, treedecType& decomp) {
+	/*void decompGraph(std::string filename, treedecType& decomp) {
 		std::ofstream stream(filename);
 		if (stream.is_open()) {
 			stream << "graph\n[\n";
@@ -102,6 +102,6 @@ namespace gpusat {
 			stream.close();
 		}
 		else { std::cerr << "Failed to open file : " << filename << " with " << errno << std::endl; }
-	}
+	}*/
 
 }
