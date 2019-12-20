@@ -7,17 +7,16 @@
 
 namespace gpusat {
 
-
 	class Graphoutput {
 
 	public:
 		Graphoutput(std::string filename) { setFile(filename); }
 
-		inline void graphEdge(unsigned int source, unsigned int target);
-		inline void graphNode(unsigned int id, std::string label, std::string solution);
-		inline void graphEdgeSet(treedecType* dec);
-		inline void graphStart();
-		inline void graphEnd();
+		void graphEdge(unsigned int source, unsigned int target);
+		void graphNode(unsigned int id, std::string label, std::string solution);
+		void graphEdgeSet(treedecType* dec);
+		void graphStart();
+		void graphEnd();
 		std::string getFilename() {
 			return graphfile;
 		}

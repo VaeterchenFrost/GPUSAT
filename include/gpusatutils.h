@@ -42,7 +42,7 @@ namespace gpusat {
 		return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 	}
 
-	/// print information from a treeType
+
 	inline void printtreeType(treeType* tree, std::ostream& stream, cl_long size, int depth = 0) {
 		stream << std::string(depth, ' ') << "treeType ( " << tree->minId << " - " << tree->maxId << "): size=" << tree->size
 			<< " sol=" << tree->numSolutions << "\n";
@@ -78,7 +78,7 @@ namespace gpusat {
 			}
 			stream << "]\n";
 		}
-		
+
 		if (bag->solution != nullptr) {
 			stream << "\n" << std::string(depth, ' ') << "solution: \n";
 			printtreeType(bag->solution, stream, bag->variables.size(), depth);

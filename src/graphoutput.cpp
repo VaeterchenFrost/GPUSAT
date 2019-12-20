@@ -1,10 +1,11 @@
-#include "..\include\graphoutput.h"
+#include <graphoutput.h>
 #include <iostream>
 #include <fstream>
+#include <types.h>
 
 namespace gpusat {
 	
-	inline void Graphoutput::graphEdge(unsigned int source, unsigned int target)
+	void Graphoutput::graphEdge(unsigned int source, unsigned int target)
 	{
 		graphout(
 			"edge\n[\n"
@@ -14,7 +15,7 @@ namespace gpusat {
 		);
 	}
 
-	inline void Graphoutput::graphNode(unsigned int id, std::string label, std::string solution)
+	void Graphoutput::graphNode(unsigned int id, std::string label, std::string solution)
 	{
 		graphout(
 			"node\n"
@@ -36,7 +37,7 @@ namespace gpusat {
 		);
 	}
 
-	inline void Graphoutput::graphEdgeSet(treedecType* dec)
+	void Graphoutput::graphEdgeSet(treedecType* dec)
 	{
 		for (auto b : dec->bags) {
 			for (auto e : b.edges) {
@@ -45,20 +46,20 @@ namespace gpusat {
 		}
 	}
 
-	inline void Graphoutput::graphStart()
+	void Graphoutput::graphStart()
 	{
-		graphout("graph\n[\n", false);
+		Graphoutput::graphout("graph\n[\n", false);
 	}
 
-	inline void Graphoutput::graphEnd()
+	void Graphoutput::graphEnd()
 	{
-		graphout("\n]\n");
+		Graphoutput::graphout("\n]\n");
 	}
 
-	inline void Graphoutput::graphout(std::string string, bool append = true)
+	void Graphoutput::graphout(std::string string, bool append)
 	{
 		if (!isEnabled()) return;
-
+		std::ofstream stream;
 		if (append) {
 			std::ofstream stream(graphfile, std::ios_base::app);
 		}

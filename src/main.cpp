@@ -7,6 +7,7 @@
 #include <math.h>
 #include <chrono>
 #include <types.h>
+#include <graphoutput.h>
 #include <gpusatparser.h>
 #include <gpusatutils.h>
 #include <sys/stat.h>
@@ -20,7 +21,7 @@
 #include <FitnessFunctions/JoinSizeFitnessFunction.h>
 #include <FitnessFunctions/WidthCutSetFitnessFunction.h>
 #include <FitnessFunctions/CutSetWidthFitnessFunction.h>
-#include <graphoutput.h>
+
 
 std::string kernelStr =
 
