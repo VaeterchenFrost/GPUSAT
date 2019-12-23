@@ -28,6 +28,9 @@
     <ClCompile Include="D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\graphoutput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\Bachelor\GPUSAT\GPUSAT\CMakeLists.txt" />

@@ -5,6 +5,11 @@
 
 namespace gpusat {
 
+	/// <summary>
+	/// Create one edge between two nodes.
+	/// </summary>
+	/// <param name="source">The source id.</param>
+	/// <param name="target">The target id.</param>
 	void Graphoutput::graphEdge(unsigned int source, unsigned int target)
 	{
 		graphout(
@@ -15,6 +20,30 @@ namespace gpusat {
 		);
 	}
 
+	/// <summary>
+	/// Creates a node with one label.
+	/// </summary>
+	/// <param name="id">The identifier.</param>
+	/// <param name="label">The label.</param>
+	void Graphoutput::graphNode(unsigned int id, std::string label)
+	{
+		graphout(
+			"node\n"
+			"[\n id " + std::to_string(id) + "\n"
+			"label \"" + label + "\"\n"
+			"LabelGraphics\n[ text \""
+			+ label +
+			" \"]\n"
+			"]\n"
+		);
+	}
+
+	/// <summary>
+	/// Creates a node with one label and a solution label.
+	/// </summary>
+	/// <param name="id">The identifier.</param>
+	/// <param name="label">The corresponding label.</param>
+	/// <param name="solution">The solution to create a label.</param>
 	void Graphoutput::graphNode(unsigned int id, std::string label, std::string solution)
 	{
 		graphout(
@@ -23,20 +52,44 @@ namespace gpusat {
 			"label \"" + label + "\"\n"
 			"LabelGraphics\n[ text \""
 			+ label +
-			"\"\n fontSize 12\n"
-			" fontName \"Dialog\"\n"
-			" model \"null\"\n"
-			" ]\n"
+			" \"]\n"
 			"LabelGraphics\n[ text \""
 			+ solution +
-			"\"\n fontSize 12\n"
-			" fontName \"Dialog\"\n"
-			" model \"null\"\n"
-			" ]\n"
+			" \"]\n"
 			"]\n"
 		);
 	}
 
+	/// <summary>
+	/// Create one node with the corresponding solution in a connected extra bag.
+	/// </summary>
+	/// <param name="id">The identifier of the bag.</param>
+	/// <param name="solution">The solution in string form.</param>
+	void Graphoutput::nodeBag(unsigned int id, std::string solution)
+	{
+		std::string label = "bag " + id;
+		graphNode(id, label);
+		graphNode(++countSol, label, solution);
+		graphEdge(id, countSol);
+	}
+
+
+	/// <summary>
+	/// Creates a node with the solution that joins two bags.
+	/// Two edges are added to connect the solution.
+	/// </summary>
+	/// <param name="id1">The id1.</param>
+	/// <param name="id2">The id2.</param>
+	/// <param name="solution">The solution.</param>
+	/// TODO Edit XML Comment Template for nodeJoin
+	void Graphoutput::nodeJoin(unsigned int id1, unsigned int id2, std::string solution)
+	{
+		graphNode(++countJoin, "Join " + (countJoin - joinIdBase), solution);
+		graphEdge(id1, countJoin);
+		graphEdge(id2, countJoin);
+	}
+
+	
 	void Graphoutput::graphEdgeSet(treedecType* dec)
 	{
 		for (auto b : dec->bags) {

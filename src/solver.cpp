@@ -92,7 +92,7 @@ namespace gpusat {
 								printbagType(&tmp, std::cout);
 							}
 							if (graphoutput->isEnabled()) {
-								cl_long joinid = 10000 * edge1.id + 10 * edge2.id;
+								
 								graphoutput->graphNode(joinid, "bag j" + std::to_string(joinid), solutiontable(tmp));
 								graphoutput->graphEdge(edge1.id, joinid);
 								graphoutput->graphEdge(edge2.id, joinid);
@@ -435,12 +435,12 @@ namespace gpusat {
 	}
 
 	void Solver::solveIntroduceForget(satformulaType& formula, bagType& pnode, bagType& node, bagType& cnode, bool leaf, nodeType nextNode) {
-		
+
 		if (verbose) {
 			std::cout << "solveIF " << pnode.id << " + " << cnode.id << " => " << node.id << "\n";
 			printbagType(&node, std::cout);
 		}
-		
+
 		isSat = 0;
 		std::vector<cl_long> fVars;
 		std::set_intersection(node.variables.begin(), node.variables.end(), pnode.variables.begin(), pnode.variables.end(), std::back_inserter(fVars));
@@ -527,7 +527,10 @@ namespace gpusat {
 		cl::Buffer buf_exp(context, CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR, sizeof(cl_long), &(node.exponent));
 		kernel.setArg(18, buf_exp);
 
-		cl_ulong usedMemory = sizeof(cl_long) * eVars.size() + sizeof(cl_long) * iVars.size() * 3 + sizeof(cl_long) * (clauses.size()) + sizeof(cl_long) * (numClauses)+sizeof(cl_double) * formula.numWeights + sizeof(cl_long) * fVars.size() + sizeof(cl_double) * formula.numWeights;
+		cl_ulong usedMemory = sizeof(cl_long) * eVars.size() + sizeof(cl_long) * iVars.size() * 3
+			+ sizeof(cl_long) * (clauses.size()) + sizeof(cl_long) * (numClauses)
+			+ sizeof(cl_double) * formula.numWeights + sizeof(cl_long) * fVars.size()
+			+ sizeof(cl_double) * formula.numWeights;
 		cl_long bagSizeForget = 1;
 		cl_long s = sizeof(cl_long);
 
