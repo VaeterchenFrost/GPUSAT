@@ -350,7 +350,7 @@ int main(int argc, char* argv[]) {
 		
 		next.variables.assign(treeDecomp.bags[0].variables.begin(), treeDecomp.bags[0].variables.begin() + std::min((cl_long)treeDecomp.bags[0].variables.size(), (cl_long)12));
 		long long int time_solving = getTime();
-		(*sol).solveProblem(treeDecomp, satFormula, treeDecomp.bags[0], next, INTRODUCEFORGET);
+		(*sol).solveProblem(treeDecomp, satFormula, treeDecomp.bags[0], next, nodeType::INTRODUCEFORGET);
 		time_solving = getTime() - time_solving;
 		graphout->graphEnd();
 
@@ -368,7 +368,7 @@ int main(int argc, char* argv[]) {
 							cl_double newsolutions = getCount(i, sola.elements, treeDecomp.bags[0].variables.size());
 							std::cout << newsolutions;
 						}
-						else if (solutionType == ARRAY) {
+						else if (solutionType == dataStructure::ARRAY) {
 							cl_double newsolutions = *reinterpret_cast <cl_double*>(&sola.elements[i - sola.minId]);
 							std::cout << newsolutions;
 						}
@@ -395,7 +395,7 @@ int main(int argc, char* argv[]) {
 						if (solutionType == TREE) {
 							sols = sols + getCount(i, treeDecomp.bags[0].solution[a].elements, treeDecomp.bags[0].variables.size());
 						}
-						else if (solutionType == ARRAY) {
+						else if (solutionType == dataStructure::ARRAY) {
 							sols = sols + *reinterpret_cast <cl_double*>(&treeDecomp.bags[0].solution[a].elements[i - treeDecomp.bags[0].solution[a].minId]);
 						}
 					}
