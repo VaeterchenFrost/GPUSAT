@@ -314,7 +314,7 @@ int main(int argc, char* argv[]) {
 	}
 	if (verbose) std::cout << "---Determining datastructure---\ninput:\n" << type
 		<< "treeDecomp.width : " << treeDecomp.width
-		<< "\nSOLUTIONTYPE : " << solutionType << "\n------\n";
+		<< "\nSOLUTIONTYPE : " << (int)solutionType << "\n------\n";
 
 	cl::Context context;
 	std::vector<cl::Device> devices;
@@ -364,7 +364,7 @@ int main(int argc, char* argv[]) {
 				for (cl_long i = sola.minId; i < std::min(maxlinesid, sola.maxId); i++) {
 					if (sola.elements != nullptr) {
 						std::cout << "id: " << i << " count: ";
-						if (solutionType == TREE) {
+						if (solutionType == dataStructure::TREE) {
 							cl_double newsolutions = getCount(i, sola.elements, treeDecomp.bags[0].variables.size());
 							std::cout << newsolutions;
 						}
@@ -392,7 +392,7 @@ int main(int argc, char* argv[]) {
 			for (cl_long a = 0; a < treeDecomp.bags[0].bags; a++) {
 				for (cl_long i = treeDecomp.bags[0].solution[a].minId; i < treeDecomp.bags[0].solution[a].maxId; i++) {
 					if (treeDecomp.bags[0].solution[a].elements != nullptr) {
-						if (solutionType == TREE) {
+						if (solutionType == dataStructure::TREE) {
 							sols = sols + getCount(i, treeDecomp.bags[0].solution[a].elements, treeDecomp.bags[0].variables.size());
 						}
 						else if (solutionType == dataStructure::ARRAY) {

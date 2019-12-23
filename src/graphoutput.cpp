@@ -4,7 +4,7 @@
 #include <types.h>
 
 namespace gpusat {
-	
+
 	void Graphoutput::graphEdge(unsigned int source, unsigned int target)
 	{
 		graphout(
@@ -59,13 +59,8 @@ namespace gpusat {
 	void Graphoutput::graphout(std::string string, bool append)
 	{
 		if (!isEnabled()) return;
-		std::ofstream stream;
-		if (append) {
-			std::ofstream stream(graphfile, std::ios_base::app);
-		}
-		else {
-			std::ofstream stream(graphfile);
-		}
+
+		std::ofstream stream(graphfile, append ? std::ios_base::app : std::ios_base::out);
 
 		if (stream.is_open()) {
 			stream << string;

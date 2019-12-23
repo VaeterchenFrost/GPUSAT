@@ -290,7 +290,7 @@ namespace gpusat {
 			bagSizeNode = 1ll << (cl_long)std::min(node.variables.size(), (size_t)maxBag);
 		}
 		else {
-			if (solutionType == TREE) {
+			if (solutionType == dataStructure::TREE) {
 				if (nextNode == nodeType::JOIN) {
 					bagSizeNode = std::min((cl_long)(maxMemoryBuffer / s / 2 - node.variables.size() * sizeof(cl_long) * 3), std::min((cl_long)std::min((memorySize - usedMemory - edge1.maxSize * s - edge2.maxSize * s) / s / 2, (memorySize - usedMemory) / 2 / 3 / s), (cl_long)(1ll << node.variables.size())));
 				}
@@ -381,7 +381,7 @@ namespace gpusat {
 			else {
 				queue.enqueueReadBuffer(bufSol, CL_TRUE, 0, sizeof(cl_long) * node.solution[a].size, node.solution[a].elements);
 				this->isSat = 1;
-				if (solutionType == TREE) {
+				if (solutionType == dataStructure::TREE) {
 
 					if (a > 0 && node.solution[a - 1].elements != NULL && (node.solution[a].numSolutions + node.solution[a - 1].numSolutions + 2) < node.solution[a].size) {
 						cleanTree(node.solution[a], (bagSizeNode) * 2, node.variables.size(), node, node.solution[a - 1].numSolutions + 1);
@@ -536,7 +536,7 @@ namespace gpusat {
 			bagSizeForget = 1ll << (cl_long)std::min(node.variables.size(), (size_t)maxBag);
 		}
 		else {
-			if (solutionType == TREE) {
+			if (solutionType == dataStructure::TREE) {
 				if (nextNode == nodeType::JOIN) {
 					bagSizeForget = std::min((cl_long)(maxMemoryBuffer / s / 2 - 3 * node.variables.size() * sizeof(cl_long)), std::min((cl_long)std::min((memorySize - usedMemory - cnode.maxSize * s) / s / 2, (memorySize - usedMemory) / 2 / 3 / s), (cl_long)(1ll << node.variables.size())));
 				}
@@ -620,7 +620,7 @@ namespace gpusat {
 			else {
 				this->isSat = 1;
 
-				if (solutionType == TREE) {
+				if (solutionType == dataStructure::TREE) {
 					if (node.variables.size() == 0) {
 						node.solution[a].numSolutions--;
 					}

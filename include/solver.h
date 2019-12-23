@@ -27,7 +27,7 @@ namespace gpusat {
 		cl_long maxBag = 0;
 		cl_long maxMemoryBuffer = 0;
 		bool verbose = false;
-		dataStructure solutionType = TREE;
+		dataStructure solutionType = dataStructure::TREE;
 		Graphoutput* graphoutput;
 
 		/**
