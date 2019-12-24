@@ -47,7 +47,7 @@ namespace gpusat {
 					std::cout << "Solved IF-0 on node " << node.id << "\n";
 					printbagType(&node, std::cout);
 				}
-				graphoutput->graphNode(node.id, "bag " + std::to_string(node.id), solutiontable(node));
+				graphoutput->nodeBag(node.id, solutiontable(node));
 			}
 
 			else if (node.edges.size() == 1) {
@@ -60,8 +60,7 @@ namespace gpusat {
 						printbagType(&node, std::cout);
 					}
 
-					graphoutput->graphNode(node.id, "bag " + std::to_string(node.id), solutiontable(node));
-
+					graphoutput->nodeBag(node.id, solutiontable(node));
 				}
 			}
 
@@ -92,10 +91,7 @@ namespace gpusat {
 								printbagType(&tmp, std::cout);
 							}
 							if (graphoutput->isEnabled()) {
-								
-								graphoutput->graphNode(joinid, "bag j" + std::to_string(joinid), solutiontable(tmp));
-								graphoutput->graphEdge(edge1.id, joinid);
-								graphoutput->graphEdge(edge2.id, joinid);
+								graphoutput->nodeJoin(edge1.id, edge2.id, solutiontable(tmp));
 							}
 							if (isSat <= 0) {
 								return;
@@ -107,8 +103,7 @@ namespace gpusat {
 								printbagType(&node, std::cout);
 							}
 
-							graphoutput->graphNode(node.id, "bag " + std::to_string(node.id), solutiontable(node));
-
+							graphoutput->nodeBag(node.id, solutiontable(node));
 						}
 						else {
 							solveJoin(tmp, edge1, edge2, formula, nodeType::JOIN);
@@ -117,7 +112,7 @@ namespace gpusat {
 								printbagType(&tmp, std::cout);
 							}
 
-							graphoutput->graphNode(tmp.id, "bag " + std::to_string(tmp.id), solutiontable(tmp));
+							graphoutput->nodeBag(tmp.id, solutiontable(tmp));
 
 							edge1 = tmp;
 						}
@@ -529,7 +524,7 @@ namespace gpusat {
 
 		cl_ulong usedMemory = sizeof(cl_long) * eVars.size() + sizeof(cl_long) * iVars.size() * 3
 			+ sizeof(cl_long) * (clauses.size()) + sizeof(cl_long) * (numClauses)
-			+ sizeof(cl_double) * formula.numWeights + sizeof(cl_long) * fVars.size()
+			+sizeof(cl_double) * formula.numWeights + sizeof(cl_long) * fVars.size()
 			+ sizeof(cl_double) * formula.numWeights;
 		cl_long bagSizeForget = 1;
 		cl_long s = sizeof(cl_long);

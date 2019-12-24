@@ -11,16 +11,12 @@ namespace gpusat {
 
 	public:
 
-		static const int solIdBase = 1'000'000;
-		static const int joinIdBase = 4 * solIdBase; // avoid factor 2 that would collide with adding two ids.
+		static const int baseIdSol = 1'000'000;
+		static const int baseIdJoin = 4 * baseIdSol; // avoid factor 2 that would collide with adding two ids.
 
 		Graphoutput(std::string filename) {
 			setFile(filename);
 		}
-
-		void graphEdge(unsigned int source, unsigned int target);
-		void graphNode(unsigned int id, std::string label);
-		void graphNode(unsigned int id, std::string label, std::string solution);
 
 		void nodeBag(unsigned int id, std::string solution);
 		void nodeJoin(unsigned int id1, unsigned int id2, std::string solution);
@@ -40,12 +36,16 @@ namespace gpusat {
 	private:
 		bool outputEnabled = false;
 
-		unsigned int countJoin = solIdBase;
-		unsigned int countSol = joinIdBase;
+		unsigned int countJoin = baseIdJoin;
+		unsigned int countSol = baseIdSol;
 		std::string graphfile;
 
+		void graphEdge(unsigned int source, unsigned int target);
+		void graphNode(unsigned int id, std::string label);
+		void graphNode(unsigned int id, std::string label, std::string solution);
+
 		void graphout(std::string string, bool append = true);
-		bool setFile(std::string filename);
+		void setFile(std::string filename);
 	};
 }
 

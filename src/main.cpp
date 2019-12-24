@@ -314,7 +314,7 @@ int main(int argc, char* argv[]) {
 	}
 	if (verbose) std::cout << "---Determining datastructure---\ninput:\n" << type
 		<< "treeDecomp.width : " << treeDecomp.width
-		<< "\nSOLUTIONTYPE : " << (int)solutionType << "\n------\n";
+		<< "\nSOLUTIONTYPE : " << (solutionType==dataStructure::TREE ? "tree" : "NOT TREE!")<< "\n------\n";
 
 	cl::Context context;
 	std::vector<cl::Device> devices;
@@ -352,6 +352,7 @@ int main(int argc, char* argv[]) {
 		long long int time_solving = getTime();
 		(*sol).solveProblem(treeDecomp, satFormula, treeDecomp.bags[0], next, nodeType::INTRODUCEFORGET);
 		time_solving = getTime() - time_solving;
+		std::cout << "GRAPH END" << std::endl;
 		graphout->graphEnd();
 
 		/// solution visualisation

@@ -67,7 +67,7 @@ namespace gpusat {
 	/// <param name="solution">The solution in string form.</param>
 	void Graphoutput::nodeBag(unsigned int id, std::string solution)
 	{
-		std::string label = "bag " + id;
+		std::string label = "bag " + std::to_string(id);
 		graphNode(id, label);
 		graphNode(++countSol, label, solution);
 		graphEdge(id, countSol);
@@ -84,7 +84,7 @@ namespace gpusat {
 	/// TODO Edit XML Comment Template for nodeJoin
 	void Graphoutput::nodeJoin(unsigned int id1, unsigned int id2, std::string solution)
 	{
-		graphNode(++countJoin, "Join " + (countJoin - joinIdBase), solution);
+		graphNode(++countJoin, "Join " + std::to_string(countJoin - baseIdJoin), solution);
 		graphEdge(id1, countJoin);
 		graphEdge(id2, countJoin);
 	}
@@ -122,7 +122,7 @@ namespace gpusat {
 		else { std::cerr << "Failed to open file : " << graphfile << " with " << errno << std::endl; }
 	}
 
-	bool Graphoutput::setFile(std::string filename)
+	void Graphoutput::setFile(std::string filename)
 	{
 		if (filename != "") {
 			outputEnabled = true;
