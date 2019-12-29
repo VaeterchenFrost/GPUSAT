@@ -352,7 +352,7 @@ int main(int argc, char* argv[]) {
 		long long int time_solving = getTime();
 		(*sol).solveProblem(treeDecomp, satFormula, treeDecomp.bags[0], next, nodeType::INTRODUCEFORGET);
 		time_solving = getTime() - time_solving;
-		std::cout << "GRAPH END" << std::endl;
+		if (verbose) std::cout << "GRAPH END" << std::endl;
 		graphout->graphEnd();
 
 		/// solution visualisation
