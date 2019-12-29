@@ -6,7 +6,7 @@
 namespace gpusat {
 
 	/// <summary>
-	/// Create one edge between two nodes.
+	/// Write out one edge between two nodes.
 	/// </summary>
 	/// <param name="source">The source id.</param>
 	/// <param name="target">The target id.</param>
@@ -21,7 +21,7 @@ namespace gpusat {
 	}
 
 	/// <summary>
-	/// Creates a node with one label.
+	/// Writes out a node with one label.
 	/// </summary>
 	/// <param name="id">The identifier.</param>
 	/// <param name="label">The label.</param>
@@ -39,7 +39,7 @@ namespace gpusat {
 	}
 
 	/// <summary>
-	/// Creates a node with one label and a solution label.
+	/// Writes out a node with one label and a solution label.
 	/// </summary>
 	/// <param name="id">The identifier.</param>
 	/// <param name="label">The corresponding label.</param>
@@ -56,6 +56,29 @@ namespace gpusat {
 			"LabelGraphics\n[ text \""
 			+ solution +
 			" \"]\n"
+			"]\n"
+		);
+	}
+
+	/// <summary>
+	/// Writes out a node with one label and a solution label.
+	/// </summary>
+	/// <param name="id">The identifier.</param>
+	/// <param name="label">The corresponding label.</param>
+	/// <param name="solution">The solution to create a label.</param>
+	void Graphoutput::graphNode(unsigned int id, std::string label, std::string solution)
+	{
+		graphout(
+			"node\n"
+			"[\n id " + std::to_string(id) + "\n"
+			"label \"" + label + "\"\n"
+			"graphics[type \"star8\"]\n"
+			"LabelGraphics\n[ text \""
+			+ label +
+			" \"]\n"
+			"LabelGraphics\n[ text \""
+			+ solution +
+			"\"model \"sandwich\"\nanchor \"s\"]\n"
 			"]\n"
 		);
 	}
