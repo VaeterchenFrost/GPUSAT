@@ -88,21 +88,38 @@ namespace gpusat {
 
 	inline std::string solutiontable(bagType node) {
 		std::ostringstream os;
-		os << "bag(" << node.id << "), [" << node.variables[0];
-		for (int i = 1; i < node.variables.size(); i++) {
-			os << ", " << node.variables[i];
-		}
-		os << "]\n";
+		size_t var_count = node.variables.size();
+
 		if (node.solution->elements != nullptr) {
-			os << "solutions: " << "\n";
-			for (cl_long i = node.solution->minId; i < node.solution->maxId; i++) {
-				os << "id: " << i << " # ";
+			os << "ID|";
+
+			for (int i = 0; i < var_count; ++i) {
+				os << " v" << node.variables[i];
+			}
+			os << "|| n Sol\n";
+			// underlined
+			for (int i = 0; i < var_count; ++i) {
+				os << "_";
+			}
+			os << "_________\n"; // additional underline around variables
+			// all ID-lines
+			for (cl_long id = node.solution->minId; id < node.solution->maxId; id++) {
+				os << id << "|";
+				cl_long id_b = id;
+				for (int v = 0; v < var_count; ++v) { // find binary rep. of id
+					os << " " << id_b % 2;
+					id_b /= 2;
+				}
 				// ONLY FOR TREE format, not ARRAY!!!
-				cl_double sol = getCount(i, node.solution->elements, node.variables.size()) * pow(2, node.correction);
+				cl_double sol = getCount(id, node.solution->elements, var_count) * pow(2, node.correction);
 				// ONLY FOR THE ARRAY format:
 				// cl_double sol = *reinterpret_cast <cl_double*>(&tree->elements[i - tree->minId]);
-				os << sol << "\n";
+				os << "||  " << sol << "\n";
 			}
+		}
+		else
+		{
+			os << "no solutions (nullptr)";
 		}
 		return os.str();
 	}
