@@ -4,6 +4,8 @@
 
 #include <string>
 #include <types.h>
+#include <map>
+#include <utility>
 
 namespace gpusat {
 
@@ -35,7 +37,7 @@ namespace gpusat {
 
 	private:
 		bool outputEnabled = false;
-
+		std::map<int, int> joinmap;
 		unsigned int countJoin = baseIdJoin;
 		unsigned int countSol = baseIdSol;
 		std::string graphfile;

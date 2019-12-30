@@ -64,7 +64,7 @@ namespace gpusat {
 			"type \"star8\"\n]\n"
 			"LabelGraphics\n[ text \""
 			+ label +
-			"\"]\n"
+			"\"\nanchor \"e\"\n]\n"
 			"LabelGraphics\n[ text \""
 			+ solution +
 			"\"\nmodel \"sandwich\"\nanchor \"s\"\n]\n"
@@ -96,17 +96,30 @@ namespace gpusat {
 	/// TODO Edit XML Comment Template for nodeJoin
 	void Graphoutput::nodeJoin(unsigned int id1, unsigned int id2, std::string solution)
 	{
-		graphNode(++countJoin, "Join " + std::to_string(countJoin - baseIdJoin), solution);
+		graphNode(++countJoin, "Join " + std::to_string(id1) + "~" + std::to_string(id2), solution);
 		graphEdge(id1, countJoin);
 		graphEdge(id2, countJoin);
+		joinmap.emplace(id1, countJoin);
+		joinmap.emplace(id2, countJoin);
 	}
 
-	
+
 	void Graphoutput::graphEdgeSet(treedecType* dec)
 	{
 		for (auto b : dec->bags) {
 			for (auto e : b.edges) {
-				graphEdge(e->id, b.id);
+				// no backward from 0	
+				if (e->id != 0) {
+					// replace joined nodes with the join result:
+					auto search = joinmap.find(e->id);
+					if (search != joinmap.end()) {
+						graphEdge(search->second, b.id);
+					}
+					else {
+						graphEdge(e->id, b.id);
+					}
+
+				}
 			}
 		}
 	}

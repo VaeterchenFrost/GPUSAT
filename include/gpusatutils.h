@@ -8,7 +8,6 @@
 #include <queue>
 #include <chrono>
 #include <numeric>
-#include <string>
 #include <fstream>
 #include <sstream>
 namespace gpusat {
@@ -91,30 +90,33 @@ namespace gpusat {
 		size_t var_count = node.variables.size();
 
 		if (node.solution->elements != nullptr) {
-			os << "ID|";
+			os << "id |";
 
 			for (int i = 0; i < var_count; ++i) {
 				os << " v" << node.variables[i];
 			}
-			os << "|| n Sol\n";
+			os << " || n Sol\n";
 			// underlined
-			for (int i = 0; i < var_count; ++i) {
-				os << "_";
-			}
-			os << "_________\n"; // additional underline around variables
+			os << std::setw(var_count * 2 + 8)
+				<< std::setfill('_')
+				<< "\n";
+
 			// all ID-lines
 			for (cl_long id = node.solution->minId; id < node.solution->maxId; id++) {
+				os.width(3);
 				os << id << "|";
 				cl_long id_b = id;
 				for (int v = 0; v < var_count; ++v) { // find binary rep. of id
-					os << " " << id_b % 2;
+					os << "  " << id_b % 2;
 					id_b /= 2;
 				}
 				// ONLY FOR TREE format, not ARRAY!!!
 				cl_double sol = getCount(id, node.solution->elements, var_count) * pow(2, node.correction);
 				// ONLY FOR THE ARRAY format:
 				// cl_double sol = *reinterpret_cast <cl_double*>(&tree->elements[i - tree->minId]);
-				os << "||  " << sol << "\n";
+				os << " ||  ";
+				os.width(3);
+				os << sol << "  \n";
 			}
 		}
 		else
