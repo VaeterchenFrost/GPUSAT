@@ -5,7 +5,6 @@
 #include <string>
 #include <types.h>
 #include <map>
-#include <utility>
 
 namespace gpusat {
 

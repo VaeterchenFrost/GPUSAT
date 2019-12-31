@@ -2,7 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <types.h>
-
+#include <sstream>
 namespace gpusat {
 
 	/// <summary>
@@ -27,6 +27,21 @@ namespace gpusat {
 	/// <param name="label">The label.</param>
 	void Graphoutput::graphNode(unsigned int id, std::string label)
 	{
+		// find the original variables for this bag:
+		std::ostringstream variables;
+		auto search = variablesmap.find(id);
+		if (search != variablesmap.end()) {
+			std::vector<cl_long> vars = search->second;
+			variables << "[";
+			for (cl_long var : vars)
+			{
+				variables << " " << var;
+			}
+			variables << " ]";
+		}
+		else {
+			std::cerr << "No value for key " << id << "in variablesmap!";
+		}
 		graphout(
 			"node\n"
 			"[\n id " + std::to_string(id) + "\n"
@@ -41,6 +56,11 @@ namespace gpusat {
 			+ label +
 			"\"\n"
 			"anchor \"w\"\n"
+			"]\n"
+			"LabelGraphics\n[ text \""
+			+ variables.str() +
+			"\"\n"
+			"anchor \"e\"\n"
 			"]\n"
 			"]\n"
 		);

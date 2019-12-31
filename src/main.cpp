@@ -344,7 +344,7 @@ int main(int argc, char* argv[]) {
 
 		Solver* sol;
 		Graphoutput* graphout = new Graphoutput(graphfile);
-		graphout->graphStart();
+		graphout->graphStart(&treeDecomp);
 		bagType next;
 		sol = new Solver(context, queue, program, memorySize, maxMemoryBuffer, solutionType, maxBag, verbose, graphout);
 		
