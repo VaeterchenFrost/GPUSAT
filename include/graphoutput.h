@@ -24,7 +24,7 @@ namespace gpusat {
 		void nodeJoin(unsigned int id1, unsigned int id2, std::string solution);
 
 		void graphEdgeSet(treedecType* dec);
-		void graphStart();
+		void graphStart(treedecType* dec);
 		void graphEnd();
 
 		std::string getFilename() {
@@ -38,13 +38,15 @@ namespace gpusat {
 	private:
 		bool outputEnabled = false;
 		std::map<int, int> joinmap;
+		std::map<int, std::vector<cl_long>> variablesmap;
+
 		unsigned int countJoin = baseIdJoin;
 		unsigned int countSol = baseIdSol;
 		std::string graphfile;
 
 		void graphEdge(unsigned int source, unsigned int target);
 		void graphNode(unsigned int id, std::string label);
-		void graphNode(unsigned int id, std::string label, std::string solution);
+		void graphSolutionNode(unsigned int id, std::string label, std::string solution);
 
 		void graphout(std::string string, bool append = true);
 		void setFile(std::string filename);

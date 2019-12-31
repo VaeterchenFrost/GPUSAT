@@ -314,7 +314,7 @@ int main(int argc, char* argv[]) {
 	}
 	if (verbose) std::cout << "---Determining datastructure---\ninput:\n" << type
 		<< "treeDecomp.width : " << treeDecomp.width
-		<< "\nSOLUTIONTYPE : " << (solutionType==dataStructure::TREE ? "tree" : "NOT TREE!")<< "\n------\n";
+		<< "\nSOLUTIONTYPE : " << (solutionType==dataStructure::TREE ? "TREE" : "NOT TREE!")<< "\n------\n";
 
 	cl::Context context;
 	std::vector<cl::Device> devices;

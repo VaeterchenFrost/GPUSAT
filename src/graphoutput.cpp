@@ -52,7 +52,7 @@ namespace gpusat {
 	/// <param name="id">The identifier.</param>
 	/// <param name="label">The corresponding label.</param>
 	/// <param name="solution">The solution to create a label.</param>
-	void Graphoutput::graphNode(unsigned int id, std::string label, std::string solution)
+	void Graphoutput::graphSolutionNode(unsigned int id, std::string label, std::string solution)
 	{
 		graphout(
 			"node\n"
@@ -81,7 +81,7 @@ namespace gpusat {
 	{
 		std::string label = "bag " + std::to_string(id);
 		graphNode(id, label);
-		graphNode(++countSol, label, solution);
+		graphSolutionNode(++countSol, label, solution);
 		graphEdge(id, countSol);
 	}
 
@@ -96,7 +96,7 @@ namespace gpusat {
 	/// TODO Edit XML Comment Template for nodeJoin
 	void Graphoutput::nodeJoin(unsigned int id1, unsigned int id2, std::string solution)
 	{
-		graphNode(++countJoin, "Join " + std::to_string(id1) + "~" + std::to_string(id2), solution);
+		graphSolutionNode(++countJoin, "Join " + std::to_string(id1) + "~" + std::to_string(id2), solution);
 		graphEdge(id1, countJoin);
 		graphEdge(id2, countJoin);
 		joinmap.emplace(id1, countJoin);
@@ -124,8 +124,14 @@ namespace gpusat {
 		}
 	}
 
-	void Graphoutput::graphStart()
+	void Graphoutput::graphStart(treedecType* dec)
 	{
+		if (!isEnabled()) return;
+		// collect variables for each bag for later use
+		for (auto b : dec->bags) {
+			variablesmap.emplace(b.id, b.variables);
+		}
+		// overwrite existing content with the opening line
 		Graphoutput::graphout("graph\n[\n", false);
 	}
 
