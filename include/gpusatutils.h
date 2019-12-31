@@ -5,11 +5,11 @@
 #endif
 
 #include <CL/cl_platform.h>
-#include <queue>
 #include <chrono>
 #include <numeric>
 #include <fstream>
 #include <sstream>
+
 namespace gpusat {
 	/**
 	 * returns the model count which corresponds to the given id
@@ -84,22 +84,20 @@ namespace gpusat {
 		}
 
 	}
-
+	/// Generate a formatted stringoutput for a solved node with solutions
 	inline std::string solutiontable(bagType node) {
 		std::ostringstream os;
 		size_t var_count = node.variables.size();
+		cl_double totalSol = 0;
+		std::string underline = std::string(var_count * 3 + 12, '-');
 
 		if (node.solution->elements != nullptr) {
 			os << "id |";
-
 			for (int i = 0; i < var_count; ++i) {
 				os << " v" << node.variables[i];
 			}
 			os << " || n Sol\n";
-			// underlined
-			os << std::setw(var_count * 2 + 8)
-				<< std::setfill('_')
-				<< "\n";
+			os << underline << "\n";
 
 			// all ID-lines
 			for (cl_long id = node.solution->minId; id < node.solution->maxId; id++) {
@@ -114,10 +112,15 @@ namespace gpusat {
 				cl_double sol = getCount(id, node.solution->elements, var_count) * pow(2, node.correction);
 				// ONLY FOR THE ARRAY format:
 				// cl_double sol = *reinterpret_cast <cl_double*>(&tree->elements[i - tree->minId]);
-				os << " ||  ";
+				os << "   ||  ";
 				os.width(3);
-				os << sol << "  \n";
+				totalSol += sol;
+				os << sol << "    \n";
 			}
+			// underlined for total count of solutions
+			os << underline << "\n";
+			os.width(var_count * 3 + 10);
+			os << "sum: " << totalSol;
 		}
 		else
 		{
@@ -134,15 +137,6 @@ namespace gpusat {
 			printbagType(&bag, stream);
 		}
 		stream << "^^^ treedec " << dec->numb << "^^^\n";
-	}
-
-	inline void graphout(std::string filename, std::string string) {
-		std::ofstream stream(filename, std::ios_base::app);
-		if (stream.is_open()) {
-			stream << string;
-			stream.close();
-		}
-		else { std::cerr << "Failed to open file : " << filename << " with " << errno << std::endl; }
 	}
 
 }
