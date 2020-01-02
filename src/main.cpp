@@ -7,19 +7,21 @@
 #include <math.h>
 #include <chrono>
 #include <types.h>
+#include <graphoutput.h>
 #include <gpusatparser.h>
 #include <gpusatutils.h>
 #include <sys/stat.h>
 #include <numeric>
 #include <decomposer.h>
 #include <solver.h>
-#include <CLI11.hpp>
 #include <boost/multiprecision/cpp_bin_float.hpp>
+#include <CLI11.hpp>
 #include <gpusatpreprocessor.h>
 #include <FitnessFunctions/NumJoinFitnessFunction.h>
 #include <FitnessFunctions/JoinSizeFitnessFunction.h>
 #include <FitnessFunctions/WidthCutSetFitnessFunction.h>
 #include <FitnessFunctions/CutSetWidthFitnessFunction.h>
+
 
 std::string kernelStr =
 
@@ -114,27 +116,6 @@ void PrintDeviceInfo(cl_device_id device)
 	printf("    CL_DEVICE_MAX_COMPUTE_UNITS: %d\n", queryInt);
 }
 
-void graphOutput(std::string filename, treedecType& decomp) {
-	std::ofstream stream(filename);
-	if (stream.is_open()) {
-		stream << "graph\n[\n";
-		/// nodes
-		for (bagType b : decomp.bags) {
-			stream << "node\n[\n" << " id " << b.id << "\n";
-			stream << " label \"bag " << b.id << " var: " << b.variables << "\"\n]\n";
-		}
-		/// edges
-		for (auto b : decomp.bags) {
-			for (auto e : b.edges) {
-				stream << "edge\n[\n source " << b.id << "\n"
-					<< " target " << e->id << "\n]\n";
-			}
-		}
-		stream << "]";
-		stream.close();
-	}
-	else { std::cerr << "Failed to open file : " << filename << " with " << errno << std::endl; }
-}
 void device_query() {
 	int i, j, k, num_attributes;
 	char* info;
@@ -220,7 +201,7 @@ int main(int argc, char* argv[]) {
 	app.add_option("-g, --graph", graphfile, "filename for saving the decomposition graph")->set_default_str("");
 	CLI11_PARSE(app, argc, argv)
 
-	srand(seed);
+		srand(seed);
 
 	if (noExp) {
 		kernelStr = "#define NO_EXP\n" + kernelStr;
@@ -314,7 +295,7 @@ int main(int argc, char* argv[]) {
 		exit(20);
 	}
 
-	
+
 	if (type == "array") {
 		kernelStr = "#define ARRAY_TYPE\n" + kernelStr;
 		solutionType = dataStructure::ARRAY;
@@ -333,7 +314,7 @@ int main(int argc, char* argv[]) {
 	}
 	if (verbose) std::cout << "---Determining datastructure---\ninput:\n" << type
 		<< "treeDecomp.width : " << treeDecomp.width
-		<< "\nSOLUTIONTYPE : " << solutionType << "\n------\n";
+		<< "\nSOLUTIONTYPE : " << (solutionType==dataStructure::TREE ? "TREE" : "NOT TREE!")<< "\n------\n";
 
 	cl::Context context;
 	std::vector<cl::Device> devices;
@@ -362,14 +343,17 @@ int main(int argc, char* argv[]) {
 		std::cout.flush();
 
 		Solver* sol;
+		Graphoutput* graphout = new Graphoutput(graphfile);
+		graphout->graphStart(&treeDecomp);
 		bagType next;
-		sol = new Solver(context, queue, program, memorySize, maxMemoryBuffer, solutionType, maxBag, verbose, graphfile);
-
+		sol = new Solver(context, queue, program, memorySize, maxMemoryBuffer, solutionType, maxBag, verbose, graphout);
+		
 		next.variables.assign(treeDecomp.bags[0].variables.begin(), treeDecomp.bags[0].variables.begin() + std::min((cl_long)treeDecomp.bags[0].variables.size(), (cl_long)12));
 		long long int time_solving = getTime();
-		(*sol).solveProblem(treeDecomp, satFormula, treeDecomp.bags[0], next, INTRODUCEFORGET);
+		(*sol).solveProblem(treeDecomp, satFormula, treeDecomp.bags[0], next, nodeType::INTRODUCEFORGET);
 		time_solving = getTime() - time_solving;
-
+		if (verbose) std::cout << "GRAPH END" << std::endl;
+		graphout->graphEnd();
 
 		/// solution visualisation
 		if (verbose) {
@@ -381,11 +365,11 @@ int main(int argc, char* argv[]) {
 				for (cl_long i = sola.minId; i < std::min(maxlinesid, sola.maxId); i++) {
 					if (sola.elements != nullptr) {
 						std::cout << "id: " << i << " count: ";
-						if (solutionType == TREE) {
+						if (solutionType == dataStructure::TREE) {
 							cl_double newsolutions = getCount(i, sola.elements, treeDecomp.bags[0].variables.size());
 							std::cout << newsolutions;
 						}
-						else if (solutionType == ARRAY) {
+						else if (solutionType == dataStructure::ARRAY) {
 							cl_double newsolutions = *reinterpret_cast <cl_double*>(&sola.elements[i - sola.minId]);
 							std::cout << newsolutions;
 						}
@@ -409,10 +393,10 @@ int main(int argc, char* argv[]) {
 			for (cl_long a = 0; a < treeDecomp.bags[0].bags; a++) {
 				for (cl_long i = treeDecomp.bags[0].solution[a].minId; i < treeDecomp.bags[0].solution[a].maxId; i++) {
 					if (treeDecomp.bags[0].solution[a].elements != nullptr) {
-						if (solutionType == TREE) {
+						if (solutionType == dataStructure::TREE) {
 							sols = sols + getCount(i, treeDecomp.bags[0].solution[a].elements, treeDecomp.bags[0].variables.size());
 						}
-						else if (solutionType == ARRAY) {
+						else if (solutionType == dataStructure::ARRAY) {
 							sols = sols + *reinterpret_cast <cl_double*>(&treeDecomp.bags[0].solution[a].elements[i - treeDecomp.bags[0].solution[a].minId]);
 						}
 					}

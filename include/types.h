@@ -66,12 +66,12 @@ namespace gpusat {
     };
 
     /// the graph type which was the base for the tree decomposition
-    enum nodeType {
+    enum class nodeType {
         JOIN, INTRODUCEFORGET
     };
 
     ///
-    enum dataStructure {
+    enum class dataStructure {
         ARRAY, TREE
     };
 

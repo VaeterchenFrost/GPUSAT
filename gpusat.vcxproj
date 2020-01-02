@@ -325,6 +325,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\Bachelor\GPUSAT\GPUSAT\src\gpusatpreprocessor.cpp" />
     <ClCompile Include="D:\Bachelor\GPUSAT\GPUSAT\src\main.cpp" />
     <ClCompile Include="D:\Bachelor\GPUSAT\GPUSAT\src\solver.cpp" />
+    <ClCompile Include="src\graphoutput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="D:\Bachelor\GPUSAT\GPUSAT\ZERO_CHECK.vcxproj">

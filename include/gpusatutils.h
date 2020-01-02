@@ -5,10 +5,10 @@
 #endif
 
 #include <CL/cl_platform.h>
-#include <queue>
 #include <chrono>
 #include <numeric>
-#include <string>
+#include <fstream>
+#include <sstream>
 
 namespace gpusat {
 	/**
@@ -41,7 +41,7 @@ namespace gpusat {
 		return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 	}
 
-	/// print information from a treeType
+
 	inline void printtreeType(treeType* tree, std::ostream& stream, cl_long size, int depth = 0) {
 		stream << std::string(depth, ' ') << "treeType ( " << tree->minId << " - " << tree->maxId << "): size=" << tree->size
 			<< " sol=" << tree->numSolutions << "\n";
@@ -57,7 +57,7 @@ namespace gpusat {
 				stream << sol << "\n";
 			}
 		}
-	};
+	}
 
 	/// print information for a bag in the tree decomposition
 	inline void printbagType(bagType* bag, std::ostream& stream, int depth = 0) {
@@ -77,13 +77,57 @@ namespace gpusat {
 			}
 			stream << "]\n";
 		}
-		
+
 		if (bag->solution != nullptr) {
 			stream << "\n" << std::string(depth, ' ') << "solution: \n";
 			printtreeType(bag->solution, stream, bag->variables.size(), depth);
 		}
 
-	};
+	}
+	/// Generate a formatted stringoutput for a solved node with solutions
+	inline std::string solutiontable(bagType node) {
+		std::ostringstream os;
+		size_t var_count = node.variables.size();
+		cl_double totalSol = 0;
+		std::string underline = std::string(var_count * 3 + 12, '-');
+
+		if (node.solution->elements != nullptr) {
+			os << "id |";
+			for (int i = 0; i < var_count; ++i) {
+				os << " v" << node.variables[i];
+			}
+			os << " || n Sol\n";
+			os << underline << "\n";
+
+			// all ID-lines
+			for (cl_long id = node.solution->minId; id < node.solution->maxId; id++) {
+				os.width(3);
+				os << id << "|";
+				cl_long id_b = id;
+				for (int v = 0; v < var_count; ++v) { // find binary rep. of id
+					os << "  " << id_b % 2;
+					id_b /= 2;
+				}
+				// ONLY FOR TREE format, not ARRAY!!!
+				cl_double sol = getCount(id, node.solution->elements, var_count) * pow(2, node.correction);
+				// ONLY FOR THE ARRAY format:
+				// cl_double sol = *reinterpret_cast <cl_double*>(&tree->elements[i - tree->minId]);
+				os << "   ||  ";
+				os.width(3);
+				totalSol += sol;
+				os << sol << "    \n";
+			}
+			// underlined for total count of solutions
+			os << underline << "\n";
+			os.width(var_count * 3 + 10);
+			os << "sum: " << totalSol;
+		}
+		else
+		{
+			os << "no solutions (nullptr)";
+		}
+		return os.str();
+	}
 
 	/// print a tree decomposition
 	inline void printtreedecType(treedecType* dec, std::ostream& stream) {
@@ -93,6 +137,7 @@ namespace gpusat {
 			printbagType(&bag, stream);
 		}
 		stream << "^^^ treedec " << dec->numb << "^^^\n";
-	};
+	}
+
 }
 #endif //GPUSAT_GPUSAUTILS_H
