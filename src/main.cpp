@@ -155,12 +155,11 @@ void device_query() {
 			PrintDeviceInfo(device_list[k]);
 		}
 	}
-
-
 	free(platforms);
 	free(device_list);
 }
-///////////////
+////////
+
 int main(int argc, char* argv[]) {
 	long long int time_total = getTime();
 	std::string inputLine;
@@ -201,7 +200,7 @@ int main(int argc, char* argv[]) {
 	app.add_option("-g, --graph", graphfile, "filename for saving the decomposition graph")->set_default_str("");
 	CLI11_PARSE(app, argc, argv)
 
-		srand(seed);
+	srand(seed);
 
 	if (noExp) {
 		kernelStr = "#define NO_EXP\n" + kernelStr;

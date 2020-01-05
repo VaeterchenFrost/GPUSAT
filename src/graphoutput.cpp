@@ -124,6 +124,11 @@ namespace gpusat {
 	}
 
 
+	/// <summary>
+	/// Addes the edges from the tree-decomposition into the graph.
+	/// </summary>
+	/// <remarks>Any outgoing edges from id '0' are not added.</remarks>
+	/// <param name="dec">Pointer to the tree-decomposition containing used edges.</param>
 	void Graphoutput::graphEdgeSet(treedecType* dec)
 	{
 		for (auto b : dec->bags) {

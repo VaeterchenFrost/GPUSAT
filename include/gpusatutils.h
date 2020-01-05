@@ -85,7 +85,7 @@ namespace gpusat {
 
 	}
 	/// Generate a formatted stringoutput for a solved node with solutions
-	inline std::string solutiontable(bagType node) {
+	inline std::string solutiontable(bagType node, dataStructure solutionType) {
 		std::ostringstream os;
 		size_t var_count = node.variables.size();
 		cl_double totalSol = 0;
@@ -108,10 +108,18 @@ namespace gpusat {
 					os << "  " << id_b % 2;
 					id_b /= 2;
 				}
-				// ONLY FOR TREE format, not ARRAY!!!
-				cl_double sol = getCount(id, node.solution->elements, var_count) * pow(2, node.correction);
-				// ONLY FOR THE ARRAY format:
-				// cl_double sol = *reinterpret_cast <cl_double*>(&tree->elements[i - tree->minId]);
+				cl_double sol = -1.;
+
+				if (solutionType == dataStructure::TREE) {
+					 sol = getCount(id, node.solution->elements, var_count) 
+						 * pow(2, node.correction);
+				}
+				else
+				{
+					 sol = *reinterpret_cast <cl_double*>(node.solution->elements[id - node.solution->minId])
+						 * pow(2, node.correction);
+				}
+				
 				os << "   ||  ";
 				os.width(3);
 				totalSol += sol;
