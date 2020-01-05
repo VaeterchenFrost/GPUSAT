@@ -116,7 +116,7 @@ namespace gpusat {
 				}
 				else
 				{
-					 sol = *reinterpret_cast <cl_double*>(node.solution->elements[id - node.solution->minId])
+					 sol = *reinterpret_cast <cl_double*>(&node.solution->elements[id - node.solution->minId])
 						 * pow(2, node.correction);
 				}
 				

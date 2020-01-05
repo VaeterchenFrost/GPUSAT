@@ -160,6 +160,17 @@ void device_query() {
 }
 ////////
 
+std::ostream& operator<< (std::ostream& os, const dataStructure ds)
+{
+	switch (ds)
+	{
+	case dataStructure::ARRAY: return os << "ARRAY";
+	case dataStructure::TREE: return os << "TREE";
+		// omit default case to trigger compiler warning for missing cases
+	};
+	return os;
+}
+
 int main(int argc, char* argv[]) {
 	long long int time_total = getTime();
 	std::string inputLine;
@@ -200,7 +211,7 @@ int main(int argc, char* argv[]) {
 	app.add_option("-g, --graph", graphfile, "filename for saving the decomposition graph")->set_default_str("");
 	CLI11_PARSE(app, argc, argv)
 
-	srand(seed);
+		srand(seed);
 
 	if (noExp) {
 		kernelStr = "#define NO_EXP\n" + kernelStr;
@@ -311,9 +322,11 @@ int main(int argc, char* argv[]) {
 			solutionType = dataStructure::TREE;
 		}
 	}
-	if (verbose) std::cout << "---Determining datastructure---\ninput:\n" << type
-		<< "treeDecomp.width : " << treeDecomp.width
-		<< "\nSOLUTIONTYPE : " << (solutionType==dataStructure::TREE ? "TREE" : "NOT TREE!")<< "\n------\n";
+
+
+	if (verbose) std::cout << "---Determining datastructure---\ninput:" << type
+		<< "\nSOLUTIONTYPE : " << solutionType
+		<< "\ntreeDecomp.width : " << treeDecomp.width << "\n------\n";
 
 	cl::Context context;
 	std::vector<cl::Device> devices;
@@ -324,7 +337,7 @@ int main(int argc, char* argv[]) {
 
 	try {
 		if (verbose) {
-			std::cout << "-- Before preprocessing --\n" << "bags: " << treeDecomp.numb << "\n";
+			std::cout << "\n-- treeDecomp --\n" << "bags: " << treeDecomp.numb << "\n";
 			for (auto v : treeDecomp.bags) std::cout << v.id << " : " << v.variables << "\n\n";
 		}
 		// combine small bags
@@ -346,7 +359,7 @@ int main(int argc, char* argv[]) {
 		graphout->graphStart(&treeDecomp);
 		bagType next;
 		sol = new Solver(context, queue, program, memorySize, maxMemoryBuffer, solutionType, maxBag, verbose, graphout);
-		
+
 		next.variables.assign(treeDecomp.bags[0].variables.begin(), treeDecomp.bags[0].variables.begin() + std::min((cl_long)treeDecomp.bags[0].variables.size(), (cl_long)12));
 		long long int time_solving = getTime();
 		(*sol).solveProblem(treeDecomp, satFormula, treeDecomp.bags[0], next, nodeType::INTRODUCEFORGET);
