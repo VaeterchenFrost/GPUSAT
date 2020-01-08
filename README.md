@@ -1,11 +1,12 @@
 # gpusat
 
 A #SAT solver based on dynamic programming running on the GPU.
+Rework for CUDA & python in progress.
 
 ## Dependencies
 
 * htd 1.2.0 - https://github.com/mabseher/htd (build with cmake option -DBUILD_SHARED_LIBS=OFF)
-* OpenCL 1.2
+* (OpenCL 1.2) -> CUDA 10.0
 * cmake 3.2+
 * gcc 7+
 * Boost Multiprecision
@@ -23,7 +24,7 @@ A #SAT solver based on dynamic programming running on the GPU.
 
 The following commands can be used to build `GPUSAT`
 ```
-git clone https://github.com/Budddy/GPUSAT
+git clone [...]
 cd GPUSAT
 mkdir build && cd build
 cmake ..
@@ -54,6 +55,8 @@ Options:
 *  --AMD: run the solver on an AMD device
 *  --weighted: use weighted model count
 *  --noExp: don't use extended exponents
+*  -v,--verbose: print additional program information
+*  -p,--nopreprocess: skips the preprocessing step for debugging purpose and visualisation
 *  --dataStructure \<dataStructure\>: data structure for storing the solution.
     * Permitted Values:
         * array: use an array to store the solutions
@@ -61,3 +64,4 @@ Options:
         * combined: use a combination of tree and array structure (default)
 *  -m,--maxBagSize \<maxBagSize\>: fixes the number of variables after which we need to split the bags
 *  -w,--combineWidth \<combineWidth\>: fixes the maximum width to combine bags of the decomposition
+*  -g, --graph:filename for saving the decomposition graph
