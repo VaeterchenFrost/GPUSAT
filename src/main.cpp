@@ -3,7 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
-#include <regex>
+// #include <regex>
 #include <math.h>
 #include <chrono>
 #include <types.h>
@@ -171,6 +171,16 @@ std::ostream& operator<< (std::ostream& os, const dataStructure ds)
 	return os;
 }
 
+std::ostream& operator<< (std::ostream& os, const std::vector<bagType*> vec)
+{
+	os << "-(";
+	for (auto bag : vec)
+	{
+		os << bag->id << " ";
+	}
+	return os << ")-";
+}
+
 int main(int argc, char* argv[]) {
 	long long int time_total = getTime();
 	std::string inputLine;
@@ -284,6 +294,10 @@ int main(int argc, char* argv[]) {
 		if (verbose)
 		{
 			std::cout << "\n-- Computed Decomposition: --\n" << treeDString << "\n" << "---End of decomposition---\n";
+
+			std::cout << "\n-- treeDecomp Before --\n" << "bags: " << treeDecomp.numb << "\n";
+			for (auto v : treeDecomp.bags) std::cout << v.id << " : " << v.variables
+				<< v.edges << "\n";
 		}
 	}
 	std::cout.flush();
@@ -338,7 +352,7 @@ int main(int argc, char* argv[]) {
 	try {
 		if (verbose) {
 			std::cout << "\n-- treeDecomp --\n" << "bags: " << treeDecomp.numb << "\n";
-			for (auto v : treeDecomp.bags) std::cout << v.id << " : " << v.variables << "\n\n";
+			for (auto v : treeDecomp.bags) std::cout << v.id << " : " << v.variables << "\n";
 		}
 		// combine small bags
 		if (nopreprocess == false) {
@@ -364,7 +378,7 @@ int main(int argc, char* argv[]) {
 		long long int time_solving = getTime();
 		(*sol).solveProblem(treeDecomp, satFormula, treeDecomp.bags[0], next, nodeType::INTRODUCEFORGET);
 		time_solving = getTime() - time_solving;
-		if (verbose) std::cout << "GRAPH END" << std::endl;
+		if (verbose) std::cout << "\n==== GRAPH END ====" << std::endl;
 		graphout->graphEnd();
 
 		/// solution visualisation

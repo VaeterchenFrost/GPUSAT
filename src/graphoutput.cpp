@@ -12,6 +12,7 @@ namespace gpusat {
 	/// <param name="target">The target id.</param>
 	void Graphoutput::graphEdge(unsigned int source, unsigned int target)
 	{
+		if (!isEnabled()) return;
 		graphout(
 			"edge\n[\n"
 			"source " + std::to_string(source) + "\n"
@@ -27,6 +28,7 @@ namespace gpusat {
 	/// <param name="label">The label.</param>
 	void Graphoutput::graphNode(unsigned int id, std::string label)
 	{
+		if (!isEnabled()) return;
 		// find the original variables for this bag:
 		std::ostringstream variables;
 		auto search = variablesmap.find(id);
@@ -40,7 +42,7 @@ namespace gpusat {
 			variables << " ]";
 		}
 		else {
-			std::cerr << "No value for key " << id << "in variablesmap!";
+			std::cerr << "No value for key " << id << "in variablesmap!\n";
 		}
 		graphout(
 			"node\n"
@@ -74,6 +76,7 @@ namespace gpusat {
 	/// <param name="solution">The solution to create a label.</param>
 	void Graphoutput::graphSolutionNode(unsigned int id, std::string label, std::string solution)
 	{
+		if (!isEnabled()) return;
 		graphout(
 			"node\n"
 			"[\n id " + std::to_string(id) + "\n"
@@ -99,6 +102,7 @@ namespace gpusat {
 	/// <param name="solution">The solution in string form.</param>
 	void Graphoutput::nodeBag(unsigned int id, std::string solution)
 	{
+		if (!isEnabled()) return;
 		std::string label = "bag " + std::to_string(id);
 		graphNode(id, label);
 		graphSolutionNode(++countSol, label, solution);
@@ -116,6 +120,7 @@ namespace gpusat {
 	/// TODO Edit XML Comment Template for nodeJoin
 	void Graphoutput::nodeJoin(unsigned int id1, unsigned int id2, std::string solution)
 	{
+		if (!isEnabled()) return;
 		graphSolutionNode(++countJoin, "Join " + std::to_string(id1) + "~" + std::to_string(id2), solution);
 		graphEdge(id1, countJoin);
 		graphEdge(id2, countJoin);
@@ -131,6 +136,7 @@ namespace gpusat {
 	/// <param name="dec">Pointer to the tree-decomposition containing used edges.</param>
 	void Graphoutput::graphEdgeSet(treedecType* dec)
 	{
+		if (!isEnabled()) return;
 		for (auto b : dec->bags) {
 			for (auto e : b.edges) {
 				// no backward from 0	
@@ -162,6 +168,7 @@ namespace gpusat {
 
 	void Graphoutput::graphEnd()
 	{
+		if (!isEnabled()) return;
 		Graphoutput::graphout("\n]\n");
 	}
 

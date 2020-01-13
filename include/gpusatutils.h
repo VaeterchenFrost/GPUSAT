@@ -42,7 +42,8 @@ namespace gpusat {
 	}
 
 
-	inline void printtreeType(treeType* tree, std::ostream& stream, cl_long size, int depth = 0) {
+	inline void printtreeType(treeType* tree, std::ostream& stream, size_t size, int depth = 0) {
+
 		stream << std::string(depth, ' ') << "treeType ( " << tree->minId << " - " << tree->maxId << "): size=" << tree->size
 			<< " sol=" << tree->numSolutions << "\n";
 
@@ -51,7 +52,7 @@ namespace gpusat {
 			for (cl_long i = tree->minId; i < tree->maxId; i++) {
 				stream << std::string(depth, ' ') << "id: " << i << " # ";
 				// ONLY FOR TREE format, not ARRAY!!!
-				cl_double sol = getCount(i, tree->elements, size);
+				cl_double sol = getCount(i, tree->elements, (cl_long)size);
 				// ONLY FOR THE ARRAY format:
 				// cl_double sol = *reinterpret_cast <cl_double*>(&tree->elements[i - tree->minId]);
 				stream << sol << "\n";
@@ -78,10 +79,10 @@ namespace gpusat {
 			stream << "]\n";
 		}
 
-		if (bag->solution != nullptr) {
+		/*if (bag->solution != nullptr) {
 			stream << "\n" << std::string(depth, ' ') << "solution: \n";
 			printtreeType(bag->solution, stream, bag->variables.size(), depth);
-		}
+		}*/
 
 	}
 	/// Generate a formatted stringoutput for a solved node with solutions
