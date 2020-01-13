@@ -12,6 +12,7 @@
 
 namespace gpusat {
 
+
 	/// tree type for storing the models
 	struct treeType {
 		cl_long* elements = nullptr;
@@ -75,7 +76,7 @@ namespace gpusat {
 		ARRAY, TREE
 	};
 
-	
+
 	/**
 	 * Function that compares two variables.
 	 * @param a

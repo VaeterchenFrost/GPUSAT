@@ -160,26 +160,6 @@ void device_query() {
 }
 ////////
 
-std::ostream& operator<< (std::ostream& os, const dataStructure ds)
-{
-	switch (ds)
-	{
-	case dataStructure::ARRAY: return os << "ARRAY";
-	case dataStructure::TREE: return os << "TREE";
-		// omit default case to trigger compiler warning for missing cases
-	};
-	return os;
-}
-
-std::ostream& operator<< (std::ostream& os, const std::vector<bagType*> vec)
-{
-	os << "-(";
-	for (auto bag : vec)
-	{
-		os << bag->id << " ";
-	}
-	return os << ")-";
-}
 
 int main(int argc, char* argv[]) {
 	long long int time_total = getTime();
@@ -295,9 +275,8 @@ int main(int argc, char* argv[]) {
 		{
 			std::cout << "\n-- Computed Decomposition: --\n" << treeDString << "\n" << "---End of decomposition---\n";
 
-			std::cout << "\n-- treeDecomp Before --\n" << "bags: " << treeDecomp.numb << "\n";
-			for (auto v : treeDecomp.bags) std::cout << v.id << " : " << v.variables
-				<< v.edges << "\n";
+			std::cout << "\n-- treeDecomp Before --\n";
+			printtreedecType(&treeDecomp, std::cout);
 		}
 	}
 	std::cout.flush();
@@ -358,8 +337,8 @@ int main(int argc, char* argv[]) {
 		if (nopreprocess == false) {
 			Preprocessor::preprocessDecomp(&treeDecomp.bags[0], combineWidth);
 			if (verbose) {
-				std::cout << "-- After preprocessing --\n" << "bags: " << treeDecomp.numb << "\n";
-				for (auto v : treeDecomp.bags) std::cout << v.id << " : " << v.variables << "\n";
+				std::cout << "-- After preprocessing --\n";
+				printtreedecType(&treeDecomp, std::cout);
 				std::cout << "-- preprocessing ended --\n\n";
 			}
 		}

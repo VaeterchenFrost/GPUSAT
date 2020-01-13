@@ -5,7 +5,7 @@
 #include <errno.h>
 #include <sstream>
 #include <gpusatutils.h>
-#include <graphoutput.h>
+
 
 namespace gpusat {
 
