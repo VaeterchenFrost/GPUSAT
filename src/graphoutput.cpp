@@ -3,6 +3,7 @@
 #include <fstream>
 #include <types.h>
 #include <sstream>
+#include <gpusatutils.h>
 
 namespace gpusat {
 
@@ -179,23 +180,26 @@ namespace gpusat {
 	/// <param name="satFormula">The sat formula.</param>
 	void Graphoutput::neo4jSat(satformulaType* satFormula)
 	{
+		// ========== INCIDENCE GRAPH ===========
 		if (!isEnabled()) return;
 		std::ofstream file(satFile);
 		std::stringstream stream;
 		stream << "CREATE \n";
 		// Variables
 		for (int i = satFormula->numVars; i > 0; i--) {
-
+			stream << "(v" << i << ":Variable {id:" << i << "}),";
 		}
 		// Clauses
+		int clauseid = -1;
 		for (auto clause : satFormula->clauses) {
-			stream << "[";
+			++clauseid;
+			stream << "(c" << clauseid << ":Clause {id:" << clauseid << ",content:\"" << clause << "\"}),";
+			// Edges
 			for (auto var : clause) {
-				stream << var << " ";
+				stream << "("<<"c"<<clauseid<<")-[:CONTAINS]->(v"<<std::abs(var)<<"),";
 			}
-			stream << "]\n";
+		
 		}
-
 		if (file.is_open()) {
 			file << stream.str();
 			file.close();
