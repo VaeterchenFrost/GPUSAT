@@ -7,9 +7,9 @@
 #include <math.h>
 #include <chrono>
 #include <types.h>
+#include <gpusatutils.h>
 #include <graphoutput.h>
 #include <gpusatparser.h>
-#include <gpusatutils.h>
 #include <sys/stat.h>
 #include <numeric>
 #include <decomposer.h>
