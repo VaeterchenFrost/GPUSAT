@@ -34,6 +34,8 @@ namespace gpusat {
 			return outputEnabled;
 		}
 
+		void neo4jSat(satformulaType* satFormula);
+
 	private:
 		bool outputEnabled = false;
 		std::map<int, int> joinmap;
@@ -42,6 +44,7 @@ namespace gpusat {
 		unsigned int countJoin = baseIdJoin;
 		unsigned int countSol = baseIdSol;
 		std::string graphfile;
+		std::string satFile = "cypherSatFormula.txt";
 
 		void graphEdge(unsigned int source, unsigned int target);
 		void graphNode(unsigned int id, std::string label);

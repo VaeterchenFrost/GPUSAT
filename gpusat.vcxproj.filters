@@ -40,4 +40,7 @@
       <UniqueIdentifier>{7A7B3CED-7D6D-36E3-B9C7-F6883EBEA8AE}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\main.h" />
+  </ItemGroup>
 </Project>

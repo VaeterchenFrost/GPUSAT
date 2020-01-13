@@ -3,6 +3,7 @@
 #include <fstream>
 #include <types.h>
 #include <sstream>
+
 namespace gpusat {
 
 	/// <summary>
@@ -170,6 +171,36 @@ namespace gpusat {
 	{
 		if (!isEnabled()) return;
 		Graphoutput::graphout("\n]\n");
+	}
+
+	/// <summary>
+	/// Output Cypherquery to create the nodes from the SAT formula
+	/// </summary>
+	/// <param name="satFormula">The sat formula.</param>
+	void Graphoutput::neo4jSat(satformulaType* satFormula)
+	{
+		if (!isEnabled()) return;
+		std::ofstream file(satFile);
+		std::stringstream stream;
+		stream << "CREATE \n";
+		// Variables
+		for (int i = satFormula->numVars; i > 0; i--) {
+
+		}
+		// Clauses
+		for (auto clause : satFormula->clauses) {
+			stream << "[";
+			for (auto var : clause) {
+				stream << var << " ";
+			}
+			stream << "]\n";
+		}
+
+		if (file.is_open()) {
+			file << stream.str();
+			file.close();
+		}
+		else { std::cerr << "Failed to open file : " << satFile << " with " << errno << std::endl; }
 	}
 
 	void Graphoutput::graphout(std::string string, bool append)

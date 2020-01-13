@@ -12,8 +12,10 @@
 #include <types.h>
 
 namespace gpusat {
+
 	inline std::ostream& operator<< (std::ostream& os, const std::vector<bagType*> vec)
 	{
+		if (vec.empty()) return os << "()";
 		os << "-(";
 		for (auto bag : vec)
 		{
@@ -24,12 +26,12 @@ namespace gpusat {
 
 	inline std::ostream& operator<< (std::ostream& os, const std::vector<cl_long> vec)
 	{
-		os << "-(";
+		os << "[";
 		for (auto n : vec)
 		{
 			os << n << " ";
 		}
-		return os << ")-";
+		return os << "]";
 	};
 
 	inline std::ostream& operator<< (std::ostream& os, const dataStructure ds)

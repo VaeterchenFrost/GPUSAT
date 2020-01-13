@@ -273,8 +273,7 @@ int main(int argc, char* argv[]) {
 
 		if (verbose)
 		{
-			std::cout << "\n-- Computed Decomposition: --\n" << treeDString << "\n" << "---End of decomposition---\n";
-
+			//std::cout << "\n-- Computed Decomposition: --\n" << treeDString << "\n" << "---End of decomposition---\n";
 			std::cout << "\n-- treeDecomp Before --\n";
 			printtreedecType(&treeDecomp, std::cout);
 		}
@@ -297,7 +296,10 @@ int main(int argc, char* argv[]) {
 		std::cout << "\n}\n";
 		exit(20);
 	}
-
+	if (verbose) {
+		std::cout << "\n-- treeDecomp after preprocessFacts--\n";
+		printtreedecType(&treeDecomp, std::cout);
+	}
 
 	if (type == "array") {
 		kernelStr = "#define ARRAY_TYPE\n" + kernelStr;
@@ -316,7 +318,6 @@ int main(int argc, char* argv[]) {
 		}
 	}
 
-
 	if (verbose) std::cout << "---Determining datastructure---\ninput:" << type
 		<< "\nSOLUTIONTYPE : " << solutionType
 		<< "\ntreeDecomp.width : " << treeDecomp.width << "\n------\n";
@@ -329,10 +330,7 @@ int main(int argc, char* argv[]) {
 	cl_long maxMemoryBuffer = 0;
 
 	try {
-		if (verbose) {
-			std::cout << "\n-- treeDecomp --\n" << "bags: " << treeDecomp.numb << "\n";
-			for (auto v : treeDecomp.bags) std::cout << v.id << " : " << v.variables << "\n";
-		}
+		
 		// combine small bags
 		if (nopreprocess == false) {
 			Preprocessor::preprocessDecomp(&treeDecomp.bags[0], combineWidth);
@@ -359,6 +357,7 @@ int main(int argc, char* argv[]) {
 		time_solving = getTime() - time_solving;
 		if (verbose) std::cout << "\n==== GRAPH END ====" << std::endl;
 		graphout->graphEnd();
+		graphout->neo4jSat(&satFormula);
 
 		/// solution visualisation
 		if (verbose) {
