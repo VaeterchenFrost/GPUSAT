@@ -181,7 +181,10 @@ namespace gpusat {
 	void Graphoutput::neo4jSat(satformulaType* satFormula)
 	{
 		if (!isEnabled()) return;
-		
+		std::string
+			primaledge = "SHARECLAUSE",
+			incidenceedge = "CONTAINS",
+			dualedge = "SHAREVAR";
 
 		std::ofstream file(satFile);
 		if (file.is_open()) {
@@ -204,16 +207,16 @@ namespace gpusat {
 				stream << ",(c" << clauseid << ":Clause {id:" << clauseid << ",content:\"" << clause << "\"})";
 				// Edges
 				for (auto var : clause) {
-					stream << ",(" << "c" << clauseid << ")-[:CONTAINS]->(v" << std::abs(var) << ")";
+					stream << ",(" << "c" << clauseid << ")-[:" + incidenceedge + "]->(v" << std::abs(var) << ")";
 				}
-				
+
 			}
+
 			stream << "\n// ========== DUAL GRAPH ==========="
-				"\nMatch (cl1:Clause)-[]-(:Variable)-[]-(cl2:Clause) merge (cl1)-[:DUAL]-(cl2);"
+				"\nMATCH (cl1:Clause)-[]-(:Variable)-[]-(cl2:Clause) MERGE (cl1)-[:" + dualedge + "]-(cl2);"
 				"\n\n// ====== PRIMAL GRAPH ========="
-				"\nMatch(va1:Variable)<-[]-(:Clause)-[]->(va2:Variable) merge (va1)-[:SHARE]-(va2);";
-
-
+				"\nMATCH (va1:Variable)<-[]-(:Clause)-[]->(va2:Variable) MERGE (va1)-[:" + primaledge + "]-(va2);";
+			stream << "\n";
 			file << stream.str();
 			file.close();
 		}
