@@ -7,9 +7,9 @@
 
 namespace gpusat {
 
-	const std::string Graphoutput::primaledge = "SHARECLAUSE";
-	const std::string Graphoutput::incidenceedge = "CONTAINS";
 	const std::string Graphoutput::dualedge = "SHAREVAR";
+	const std::string Graphoutput::incidenceedge = "CONTAINS";
+	const std::string Graphoutput::primaledge = "SHARECLAUSE";
 
 	/// <summary>
 	/// Write out one edge between two nodes.
@@ -231,7 +231,16 @@ namespace gpusat {
 	void Graphoutput::neo4jTD(treedecType* treeDec)
 	{
 		if (!isEnabled()) return;
-
+		std::ofstream file(tdFile);
+		if (file.is_open()) {
+			std::stringstream stream;
+			stream << "CREATE \n";
+			
+			stream << "\n";
+			file << stream.str();
+			file.close();
+		}
+		else { std::cerr << "Failed to open file : " << satFile << " with " << errno << std::endl; }
 	}
 
 	void Graphoutput::graphout(std::string string, bool append)
