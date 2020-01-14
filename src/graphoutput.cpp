@@ -7,6 +7,10 @@
 
 namespace gpusat {
 
+	const std::string Graphoutput::primaledge = "SHARECLAUSE";
+	const std::string Graphoutput::incidenceedge = "CONTAINS";
+	const std::string Graphoutput::dualedge = "SHAREVAR";
+
 	/// <summary>
 	/// Write out one edge between two nodes.
 	/// </summary>
@@ -181,10 +185,6 @@ namespace gpusat {
 	void Graphoutput::neo4jSat(satformulaType* satFormula)
 	{
 		if (!isEnabled()) return;
-		const std::string
-			primaledge = "SHARECLAUSE",
-			incidenceedge = "CONTAINS",
-			dualedge = "SHAREVAR";
 
 		std::ofstream file(satFile);
 		if (file.is_open()) {
@@ -215,7 +215,7 @@ namespace gpusat {
 
 			stream << ";"
 				"\n\n// ====== DUAL GRAPH QUERY ==========="
-				"\nMATCH (cl1:Clause)-[]-(:Variable)-[]-(cl2:Clause)  WHERE cl1.id<>cl2.id MERGE (cl1)-[:" 
+				"\nMATCH (cl1:Clause)-[]-(:Variable)-[]-(cl2:Clause)  WHERE cl1.id<>cl2.id MERGE (cl1)-[:"
 				+ dualedge + "]-(cl2);"
 				"\n\n// ====== PRIMAL GRAPH QUERY ========="
 				"\nMATCH (va1:Variable)<-[]-(:Clause)-[]->(va2:Variable) WHERE va1.id<>va2.id MERGE (va1)-[:"
@@ -226,6 +226,12 @@ namespace gpusat {
 			file.close();
 		}
 		else { std::cerr << "Failed to open file : " << satFile << " with " << errno << std::endl; }
+	}
+
+	void Graphoutput::neo4jTD(treedecType* treeDec)
+	{
+		if (!isEnabled()) return;
+
 	}
 
 	void Graphoutput::graphout(std::string string, bool append)
