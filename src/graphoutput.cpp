@@ -181,7 +181,7 @@ namespace gpusat {
 	void Graphoutput::neo4jSat(satformulaType* satFormula)
 	{
 		if (!isEnabled()) return;
-		std::string
+		const std::string
 			primaledge = "SHARECLAUSE",
 			incidenceedge = "CONTAINS",
 			dualedge = "SHAREVAR";
@@ -192,10 +192,12 @@ namespace gpusat {
 			stream << "CREATE \n";
 			stream << "(:SatFormula{"
 				<< "numVars:" << satFormula->numVars
-				<< ",numClauses:" << satFormula->clauses.size() 
-				<< ",unsat:" << satFormula->unsat << "})";
+				<< ",numClauses:" << satFormula->clauses.size()
+				<< ",unsat:" << satFormula->unsat
+				<< ",facts:\"" << satFormula->facts << "\"})";
 
-			stream << "\n// ========== INCIDENCE GRAPH ===========\n";
+			// stream << "\n// ========== INCIDENCE GRAPH ===========\n";
+
 			// Variables
 			for (int i = satFormula->numVars; i > 0; i--) {
 				stream << ",(v" << i << ":Variable {id:" << i << "})";
@@ -204,18 +206,21 @@ namespace gpusat {
 			int clauseid = -1;
 			for (auto clause : satFormula->clauses) {
 				++clauseid;
-				stream << ",(c" << clauseid << ":Clause {id:" << clauseid << ",content:\"" << clause << "\"})";
+				stream << "\n,(c" << clauseid << ":Clause {id:" << clauseid << ",content:\"" << clause << "\"})";
 				// Edges
 				for (auto var : clause) {
 					stream << ",(" << "c" << clauseid << ")-[:" + incidenceedge + "]->(v" << std::abs(var) << ")";
 				}
-
 			}
 
-			stream << "\n// ========== DUAL GRAPH ==========="
-				"\nMATCH (cl1:Clause)-[]-(:Variable)-[]-(cl2:Clause) MERGE (cl1)-[:" + dualedge + "]-(cl2);"
-				"\n\n// ====== PRIMAL GRAPH ========="
-				"\nMATCH (va1:Variable)<-[]-(:Clause)-[]->(va2:Variable) MERGE (va1)-[:" + primaledge + "]-(va2);";
+			stream << ";"
+				"\n\n// ====== DUAL GRAPH QUERY ==========="
+				"\nMATCH (cl1:Clause)-[]-(:Variable)-[]-(cl2:Clause)  WHERE cl1.id<>cl2.id MERGE (cl1)-[:" 
+				+ dualedge + "]-(cl2);"
+				"\n\n// ====== PRIMAL GRAPH QUERY ========="
+				"\nMATCH (va1:Variable)<-[]-(:Clause)-[]->(va2:Variable) WHERE va1.id<>va2.id MERGE (va1)-[:"
+				+ primaledge + "]-(va2);";
+
 			stream << "\n";
 			file << stream.str();
 			file.close();
