@@ -330,7 +330,7 @@ int main(int argc, char* argv[]) {
 	cl_long maxMemoryBuffer = 0;
 
 	try {
-		
+
 		// combine small bags
 		if (nopreprocess == false) {
 			Preprocessor::preprocessDecomp(&treeDecomp.bags[0], combineWidth);
@@ -347,6 +347,8 @@ int main(int argc, char* argv[]) {
 
 		Solver* sol;
 		Graphoutput* graphout = new Graphoutput(graphfile);
+		graphout->neo4jSat(&satFormula);
+		graphout->neo4jTD(&treeDecomp);
 		graphout->graphStart(&treeDecomp);
 		bagType next;
 		sol = new Solver(context, queue, program, memorySize, maxMemoryBuffer, solutionType, maxBag, verbose, graphout);
@@ -357,7 +359,7 @@ int main(int argc, char* argv[]) {
 		time_solving = getTime() - time_solving;
 		if (verbose) std::cout << "\n==== GRAPH END ====" << std::endl;
 		graphout->graphEnd();
-		graphout->neo4jSat(&satFormula);
+
 
 		/// solution visualisation
 		if (verbose) {

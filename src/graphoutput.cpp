@@ -7,9 +7,11 @@
 
 namespace gpusat {
 
-	const std::string Graphoutput::dualedge = "SHAREVAR";
-	const std::string Graphoutput::incidenceedge = "CONTAINS";
-	const std::string Graphoutput::primaledge = "SHARECLAUSE";
+	const std::string Graphoutput::dualedge = "SHARE_VAR";
+	const std::string Graphoutput::incidenceedge = "VAR_IN_CLAUSE";
+	const std::string Graphoutput::primaledge = "SHARE_CLAUSE";
+	const std::string Graphoutput::inbag = "CONTAINS";
+	const std::string Graphoutput::connectbag = "USES_BAG";
 
 	/// <summary>
 	/// Write out one edge between two nodes.
@@ -115,7 +117,6 @@ namespace gpusat {
 		graphEdge(id, countSol);
 	}
 
-
 	/// <summary>
 	/// Creates a node with the solution that joins two bags.
 	/// Two edges are added to connect the solution.
@@ -133,7 +134,6 @@ namespace gpusat {
 		joinmap.emplace(id1, countJoin);
 		joinmap.emplace(id2, countJoin);
 	}
-
 
 	/// <summary>
 	/// Addes the edges from the tree-decomposition into the graph.
@@ -189,7 +189,8 @@ namespace gpusat {
 		std::ofstream file(satFile);
 		if (file.is_open()) {
 			std::stringstream stream;
-			stream << "CREATE \n";
+
+			stream << "MERGE \n";
 			stream << "(:SatFormula{"
 				<< "numVars:" << satFormula->numVars
 				<< ",numClauses:" << satFormula->clauses.size()
@@ -234,8 +235,32 @@ namespace gpusat {
 		std::ofstream file(tdFile);
 		if (file.is_open()) {
 			std::stringstream stream;
-			stream << "CREATE \n";
-			
+
+			for (int i = treeDec->numVars; i > 0; i--) {
+				stream << "MERGE (v" << i << ":Variable {id:" << i << "})\n";
+			}
+
+			stream << "CREATE ";
+			stream << "(:TreeDecomposition{"
+				<< "numVars:" << treeDec->numVars
+				<< ",numb:" << treeDec->numb
+				<< ",width:\"" << treeDec->width << "\"})";
+
+			for (auto bag : treeDec->bags) {
+				// Create Bag
+				stream << "\nCREATE (b" << bag.id << ":Bag{id:" << bag.id << "})";
+				// Edges to variables
+				for (auto var_id : bag.variables) {
+					stream << "\nMERGE (b" << bag.id << ")-[:" + inbag + "]->(v" << var_id << ")";
+				}
+			}
+			// Edges to bags
+			for (auto bag : treeDec->bags) {
+				for (auto e : bag.edges) {
+					stream << "\nMERGE (b" << bag.id << ")-[:" + connectbag + "]->(b" << e << ")";
+				}
+			}
+
 			stream << "\n";
 			file << stream.str();
 			file.close();

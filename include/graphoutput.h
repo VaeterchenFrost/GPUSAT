@@ -11,9 +11,12 @@ namespace gpusat {
 	class Graphoutput {
 
 	public:
+		static const std::string connectbag;
 		static const std::string dualedge;
+		static const std::string inbag;
 		static const std::string incidenceedge;
 		static const std::string primaledge;
+
 
 		static const int baseIdSol = 1'000'000;
 		static const int baseIdJoin = 4 * baseIdSol; // avoid factor 2 that would collide with adding two ids.
