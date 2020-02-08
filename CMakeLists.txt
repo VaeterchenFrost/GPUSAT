@@ -1,6 +1,7 @@
  cmake_minimum_required(VERSION 3.2)
 project(gpusat)
-include_directories(/home/roemar/Ba/htd/include)
+include_directories(C:/Users/Martin/Documents/Bachelor/htd/htd/include)
+
 
 if (DEFINED ENV{AMDAPPSDKROOT})
     # add amd opencl libraries if AMDAPPSDKROOT environment variable is set
@@ -27,11 +28,11 @@ elseif (UNIX)
     SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS}")
 endif ()
 
-find_library(HTD_LIB htd ../../htd/lib)
+find_library(HTD_LIB htd C:/Users/Martin/Documents/Bachelor/htd/htd/build/debug)
 add_library(htd SHARED IMPORTED)
 set_target_properties(htd PROPERTIES IMPORTED_LOCATION ${HTD_LIB})
 
-find_library(HTD_IO_LIB htd_io ../../htd/lib)
+find_library(HTD_IO_LIB htd_io C:/Users/Martin/Documents/Bachelor/htd/htd/build/debug)
 add_library(htd_io SHARED IMPORTED)
 set_target_properties(htd_io PROPERTIES IMPORTED_LOCATION ${HTD_IO_LIB})
 
