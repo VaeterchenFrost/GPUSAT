@@ -3,13 +3,13 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
-#include <regex>
+// #include <regex>
 #include <math.h>
 #include <chrono>
 #include <types.h>
+#include <gpusatutils.h>
 #include <graphoutput.h>
 #include <gpusatparser.h>
-#include <gpusatutils.h>
 #include <sys/stat.h>
 #include <numeric>
 #include <decomposer.h>
@@ -164,12 +164,12 @@ void device_query() {
 			PrintDeviceInfo(device_list[k]);
 		}
 	}
-
-
 	free(platforms);
 	free(device_list);
 }
-///////////////
+////////
+
+
 int main(int argc, char* argv[]) {
 	long long int time_total = getTime();
 	std::string inputLine;
@@ -282,7 +282,9 @@ int main(int argc, char* argv[]) {
 
 		if (verbose)
 		{
-			std::cout << "\n-- Computed Decomposition: --\n" << treeDString << "\n" << "---End of decomposition---\n";
+			//std::cout << "\n-- Computed Decomposition: --\n" << treeDString << "\n" << "---End of decomposition---\n";
+			std::cout << "\n-- treeDecomp Before --\n";
+			printtreedecType(&treeDecomp, std::cout);
 		}
 	}
 	std::cout.flush();
@@ -303,7 +305,10 @@ int main(int argc, char* argv[]) {
 		std::cout << "\n}\n";
 		exit(20);
 	}
-
+	if (verbose) {
+		std::cout << "\n-- treeDecomp after preprocessFacts--\n";
+		printtreedecType(&treeDecomp, std::cout);
+	}
 
 	if (type == "array") {
 		kernelStr = "#define ARRAY_TYPE\n" + kernelStr;
@@ -321,9 +326,10 @@ int main(int argc, char* argv[]) {
 			solutionType = dataStructure::TREE;
 		}
 	}
-	if (verbose) std::cout << "---Determining datastructure---\ninput:\n" << type
-		<< "treeDecomp.width : " << treeDecomp.width
-		<< "\nSOLUTIONTYPE : " << (solutionType==dataStructure::TREE ? "TREE" : "NOT TREE!")<< "\n------\n";
+
+	if (verbose) std::cout << "---Determining datastructure---\ninput:" << type
+		<< "\nSOLUTIONTYPE : " << solutionType
+		<< "\ntreeDecomp.width : " << treeDecomp.width << "\n------\n";
 
 	cl::Context context;
 	std::vector<cl::Device> devices;
@@ -333,16 +339,13 @@ int main(int argc, char* argv[]) {
 	cl_long maxMemoryBuffer = 0;
 
 	try {
-		if (verbose) {
-			std::cout << "-- Before preprocessing --\n" << "bags: " << treeDecomp.numb << "\n";
-			for (auto v : treeDecomp.bags) std::cout << v.id << " : " << v.variables << "\n\n";
-		}
+
 		// combine small bags
 		if (nopreprocess == false) {
 			Preprocessor::preprocessDecomp(&treeDecomp.bags[0], combineWidth);
 			if (verbose) {
-				std::cout << "-- After preprocessing --\n" << "bags: " << treeDecomp.numb << "\n";
-				for (auto v : treeDecomp.bags) std::cout << v.id << " : " << v.variables << "\n";
+				std::cout << "-- After preprocessing --\n";
+				printtreedecType(&treeDecomp, std::cout);
 				std::cout << "-- preprocessing ended --\n\n";
 			}
 		}
@@ -354,16 +357,19 @@ int main(int argc, char* argv[]) {
 
 		Solver* sol;
 		Graphoutput* graphout = new Graphoutput(graphfile);
+		graphout->neo4jSat(&satFormula);
+		graphout->neo4jTD(&treeDecomp);
 		graphout->graphStart(&treeDecomp);
 		bagType next;
 		sol = new Solver(context, queue, program, memorySize, maxMemoryBuffer, solutionType, maxBag, verbose, graphout);
-		
+
 		next.variables.assign(treeDecomp.bags[0].variables.begin(), treeDecomp.bags[0].variables.begin() + std::min((cl_long)treeDecomp.bags[0].variables.size(), (cl_long)12));
 		long long int time_solving = getTime();
 		(*sol).solveProblem(treeDecomp, satFormula, treeDecomp.bags[0], next, nodeType::INTRODUCEFORGET);
 		time_solving = getTime() - time_solving;
-		if (verbose) std::cout << "GRAPH END" << std::endl;
+		if (verbose) std::cout << "\n==== GRAPH END ====" << std::endl;
 		graphout->graphEnd();
+
 
 		/// solution visualisation
 		if (verbose) {
