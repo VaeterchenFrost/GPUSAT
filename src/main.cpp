@@ -75,7 +75,11 @@ void buildKernel(cl::Context& context, std::vector<cl::Device>& devices, cl::Com
 
 	cl::Program::Sources sources(1, std::make_pair(kernelStr.c_str(), kernelStr.length()));
 	program = cl::Program(context, sources);
-	program.build(devices);
+	// program.build(devices);
+	if (program.build({ devices[0] }) != CL_SUCCESS) {
+		std::cout << " Error building: " << program.getBuildInfo<CL_PROGRAM_BUILD_LOG>(devices[0]) << "\n";
+		exit(1);
+	}
 }
 
 //////https://github.com/yohanesgultom/parallel-programming-assignment/blob/master/PR2/opencl/device_query.c
@@ -99,6 +103,7 @@ void PrintDeviceInfo(cl_device_id device)
 {
 	char queryBuffer[1024];
 	int queryInt;
+	cl_ulong querylong;
 	cl_int clError;
 	clError = clGetDeviceInfo(device, CL_DEVICE_NAME, sizeof(queryBuffer), &queryBuffer, NULL);
 	printf("    CL_DEVICE_NAME: %s\n", queryBuffer);
@@ -114,6 +119,10 @@ void PrintDeviceInfo(cl_device_id device)
 	queryBuffer[0] = '\0';
 	clError = clGetDeviceInfo(device, CL_DEVICE_MAX_COMPUTE_UNITS, sizeof(int), &queryInt, NULL);
 	printf("    CL_DEVICE_MAX_COMPUTE_UNITS: %d\n", queryInt);
+	clError = clGetDeviceInfo(device, CL_DEVICE_MAX_CONSTANT_BUFFER_SIZE, sizeof(querylong), &querylong, NULL);
+	printf("    CL_DEVICE_MAX_CONSTANT_BUFFER_SIZE : %d\n", querylong);
+	clError = clGetDeviceInfo(device, CL_DEVICE_MAX_CONSTANT_ARGS, sizeof(int), &queryInt, NULL);
+	printf("    CL_DEVICE_MAX_CONSTANT_ARGS : %d\n", queryInt);
 }
 
 void device_query() {
@@ -339,6 +348,7 @@ int main(int argc, char* argv[]) {
 		}
 
 		buildKernel(context, devices, queue, program, memorySize, maxMemoryBuffer, nvidia, amd, cpu, combineWidth);
+		
 
 		std::cout.flush();
 

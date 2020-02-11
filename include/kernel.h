@@ -1,4 +1,5 @@
 R"=====(
+
 #if defined(cl_khr_fp64)
 # pragma OPENCL EXTENSION cl_khr_fp64: enable
 # pragma OPENCL EXTENSION cl_khr_int64_base_atomics : enable
@@ -294,43 +295,43 @@ double solveIntroduceF(__global long *clauses, __global long *numVarsC, long num
 /**
  * Operation to solve a Introduce and Forget node in the decomposition.
  *
- * @param solsF
+ * @param solsF 0
  *      the number of models for each assignment
- * @param varsF
+ * @param varsF 1
  *      the variables after the forget operation
- * @param solsE
+ * @param solsE 2
  *      the solutions from the last node
- * @param numVE
+ * @param numVE 3
  *      number of variables in the last node
- * @param varsE
+ * @param varsE 4
  *      the variables from the alst oepration
- * @param combinations
+ * @param combinations 5
  *      the number of assignments for which we have to collect the model counts
- * @param numVF
+ * @param numVF 6
  *      number of variables after the forget operation
- * @param minIdE
+ * @param minIdE 7
  *      start id of the chunk from the last node
- * @param maxIdE
+ * @param maxIdE 8
  *      end id of the chunk from the last node
- * @param startIDF
+ * @param startIDF 9
  *      start id of the chung from the current node
- * @param sols
+ * @param sols 10
   *     the number of assignments which lead to a solution
- * @param numVI
+ * @param numVI 11
  *      number of variables after the introduce
- * @param varsI
+ * @param varsI 12
  *      the variables after the introduce
- * @param clauses
+ * @param clauses 13
  *      the clauses which only contain variables from the introduce operation
- * @param numVarsC
+ * @param numVarsC 14
  *      the number of variables per clause
- * @param numclauses
+ * @param numclauses 15
  *      the number of clauses
- * @param weights
+ * @param weights 16
  *      the variables weights for weighted model counting
- * @param exponent
+ * @param exponent 17
   *     the max exponent of this run
- * @param value
+ * @param value 18
   *     correction value for the exponents
  */
 __kernel void solveIntroduceForget(__global long *solsF, __global long *varsF, __global long *solsE, long numVE, __global long *varsE, long combinations, long numVF, long minIdE, long maxIdE, long startIDF, long startIDE, __global long *sols, long numVI, __global long *varsI, __global long *clauses, __global long *numVarsC, long numclauses, __global double *weights, __global long *exponent, double value) {

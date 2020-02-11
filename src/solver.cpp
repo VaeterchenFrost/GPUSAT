@@ -594,7 +594,13 @@ namespace gpusat {
 				kernel.setArg(7, cnode.solution[b].minId);
 				kernel.setArg(8, cnode.solution[b].maxId);
 				kernel.setArg(10, cnode.solution[b].minId);
-
+				////////////
+				// (long* solsF,  long* varsF,  long* solsE, long numVE,  long* varsE, long combinations, long numVF, long minIdE, long maxIdE, long startIDF, long startIDE,  long* sols, long numVI,  long* varsI,  long* clauses,  long* numVarsC, long numclauses,  double* weights,  long* exponent, double value)
+				////////////
+				long argres;
+			
+				kernel.getArgInfo<long>(3, 0, &argres);
+				std::cout << "kernel.getArgInfo<long>(3, 0, & argres); " << argres << "\n";
 				cl_long error1 = 0, error2 = 0;
 				error1 = queue.enqueueNDRangeKernel(kernel, cl::NDRange(static_cast<size_t>(node.solution[a].minId)), cl::NDRange(static_cast<size_t>(node.solution[a].maxId - node.solution[a].minId)));
 				error2 = queue.finish();
