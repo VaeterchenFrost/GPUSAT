@@ -5,7 +5,7 @@
 #include <errno.h>
 #include <sstream>
 #include <gpusatutils.h>
-#include <graphoutput.h>
+
 
 namespace gpusat {
 
@@ -47,7 +47,7 @@ namespace gpusat {
 					std::cout << "Solved IF-0 on node " << node.id << "\n";
 					printbagType(&node, std::cout);
 				}
-				graphoutput->nodeBag(node.id, solutiontable(node));
+				graphoutput->nodeBag(node.id, solutiontable(node, solutionType));
 			}
 
 			else if (node.edges.size() == 1) {
@@ -60,7 +60,7 @@ namespace gpusat {
 						printbagType(&node, std::cout);
 					}
 
-					graphoutput->nodeBag(node.id, solutiontable(node));
+					graphoutput->nodeBag(node.id, solutiontable(node, solutionType));
 				}
 			}
 
@@ -91,7 +91,7 @@ namespace gpusat {
 								printbagType(&tmp, std::cout);
 							}
 							if (graphoutput->isEnabled()) {
-								graphoutput->nodeJoin(edge1.id, edge2.id, solutiontable(tmp));
+								graphoutput->nodeJoin(edge1.id, edge2.id, solutiontable(tmp, solutionType));
 							}
 							if (isSat <= 0) {
 								return;
@@ -103,7 +103,7 @@ namespace gpusat {
 								printbagType(&node, std::cout);
 							}
 
-							graphoutput->nodeBag(node.id, solutiontable(node));
+							graphoutput->nodeBag(node.id, solutiontable(node, solutionType));
 						}
 						else {
 							solveJoin(tmp, edge1, edge2, formula, nodeType::JOIN);
@@ -112,7 +112,7 @@ namespace gpusat {
 								printbagType(&tmp, std::cout);
 							}
 
-							graphoutput->nodeBag(tmp.id, solutiontable(tmp));
+							graphoutput->nodeBag(tmp.id, solutiontable(tmp, solutionType));
 
 							edge1 = tmp;
 						}

@@ -6,11 +6,45 @@
 
 #include <CL/cl_platform.h>
 #include <chrono>
-#include <numeric>
-#include <fstream>
 #include <sstream>
+#include <iostream>
+#include <vector>
+#include <types.h>
 
 namespace gpusat {
+
+	inline std::ostream& operator<< (std::ostream& os, const std::vector<bagType*> vec)
+	{
+		if (vec.empty()) return os << "()";
+		os << "-(";
+		for (auto bag : vec)
+		{
+			os << bag->id << " ";
+		}
+		return os << ")-";
+	}
+
+	inline std::ostream& operator<< (std::ostream& os, const std::vector<cl_long> vec)
+	{
+		os << "[";
+		for (auto n : vec)
+		{
+			os << n << " ";
+		}
+		return os << "]";
+	};
+
+	inline std::ostream& operator<< (std::ostream& os, const dataStructure ds)
+	{
+		switch (ds)
+		{
+		case dataStructure::ARRAY: return os << "ARRAY";
+		case dataStructure::TREE: return os << "TREE";
+			// omit default case to trigger compiler warning for missing cases
+		};
+		return os;
+	}
+
 	/**
 	 * returns the model count which corresponds to the given id
 	 *
@@ -42,7 +76,8 @@ namespace gpusat {
 	}
 
 
-	inline void printtreeType(treeType* tree, std::ostream& stream, cl_long size, int depth = 0) {
+	inline void printtreeType(treeType* tree, std::ostream& stream, size_t size, int depth = 0) {
+
 		stream << std::string(depth, ' ') << "treeType ( " << tree->minId << " - " << tree->maxId << "): size=" << tree->size
 			<< " sol=" << tree->numSolutions << "\n";
 
@@ -51,7 +86,7 @@ namespace gpusat {
 			for (cl_long i = tree->minId; i < tree->maxId; i++) {
 				stream << std::string(depth, ' ') << "id: " << i << " # ";
 				// ONLY FOR TREE format, not ARRAY!!!
-				cl_double sol = getCount(i, tree->elements, size);
+				cl_double sol = getCount(i, tree->elements, (cl_long)size);
 				// ONLY FOR THE ARRAY format:
 				// cl_double sol = *reinterpret_cast <cl_double*>(&tree->elements[i - tree->minId]);
 				stream << sol << "\n";
@@ -78,14 +113,14 @@ namespace gpusat {
 			stream << "]\n";
 		}
 
-		if (bag->solution != nullptr) {
+		/*if (bag->solution != nullptr) {
 			stream << "\n" << std::string(depth, ' ') << "solution: \n";
 			printtreeType(bag->solution, stream, bag->variables.size(), depth);
-		}
+		}*/
 
 	}
 	/// Generate a formatted stringoutput for a solved node with solutions
-	inline std::string solutiontable(bagType node) {
+	inline std::string solutiontable(bagType node, dataStructure solutionType) {
 		std::ostringstream os;
 		size_t var_count = node.variables.size();
 		cl_double totalSol = 0;
@@ -108,10 +143,18 @@ namespace gpusat {
 					os << "  " << id_b % 2;
 					id_b /= 2;
 				}
-				// ONLY FOR TREE format, not ARRAY!!!
-				cl_double sol = getCount(id, node.solution->elements, var_count) * pow(2, node.correction);
-				// ONLY FOR THE ARRAY format:
-				// cl_double sol = *reinterpret_cast <cl_double*>(&tree->elements[i - tree->minId]);
+				cl_double sol = -1.;
+
+				if (solutionType == dataStructure::TREE) {
+					 sol = getCount(id, node.solution->elements, var_count) 
+						 * pow(2, node.correction);
+				}
+				else
+				{
+					 sol = *reinterpret_cast <cl_double*>(&node.solution->elements[id - node.solution->minId])
+						 * pow(2, node.correction);
+				}
+				
 				os << "   ||  ";
 				os.width(3);
 				totalSol += sol;
@@ -131,12 +174,10 @@ namespace gpusat {
 
 	/// print a tree decomposition
 	inline void printtreedecType(treedecType* dec, std::ostream& stream) {
-		stream << "\nprinting treedec with numb:" << dec->numb << ", numVars:" << dec->numVars <<
-			", width:" << dec->width << "\nbags:\n";
-		for (auto bag : dec->bags) {
-			printbagType(&bag, stream);
-		}
-		stream << "^^^ treedec " << dec->numb << "^^^\n";
+		
+		stream << "bags: " << dec->numb << "\n";
+		for (auto v : dec->bags) stream << v.id << " : " << v.variables
+			<< v.edges << "\n";
 	}
 
 }

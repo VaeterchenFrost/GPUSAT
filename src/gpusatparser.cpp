@@ -7,7 +7,7 @@
 #include <iterator>
 
 namespace gpusat {
-
+    
     satformulaType CNFParser::parseSatFormula(std::string formula) {
         satformulaType ret = satformulaType();
         std::stringstream ss(formula);

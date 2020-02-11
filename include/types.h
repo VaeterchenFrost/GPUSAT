@@ -12,82 +12,83 @@
 
 namespace gpusat {
 
-    /// tree type for storing the models
-    struct treeType {
-        cl_long *elements = nullptr;
-        cl_long numSolutions = 0;
-        cl_long size = 0;
-        cl_long minId = 0;
-        cl_long maxId = 0;
-    };
 
-    /// type for a bag in the tree decomposition
-    struct bagType {
-        cl_long correction = 0;
-        cl_long exponent = 0;
-        cl_long id = 0;
-        std::vector<cl_long> variables;
-        std::vector<bagType *> edges;
-        cl_long bags = 0;
-        treeType *solution;
-        cl_long maxSize = 0;
-    };
+	/// tree type for storing the models
+	struct treeType {
+		cl_long* elements = nullptr;
+		cl_long numSolutions = 0;
+		cl_long size = 0;
+		cl_long minId = 0;
+		cl_long maxId = 0;
+	};
 
-    /// type for saving a tree decomposition
-    struct treedecType {
-        cl_long numb = 0;
-        cl_long numVars = 0;
-        cl_long width = 0;
-        std::vector<bagType> bags;
-    };
+	/// type for a bag in the tree decomposition
+	struct bagType {
+		cl_long correction = 0;
+		cl_long exponent = 0;
+		cl_long id = 0;
+		std::vector<cl_long> variables;
+		std::vector<bagType*> edges;
+		cl_long bags = 0;
+		treeType* solution;
+		cl_long maxSize = 0;
+	};
 
-    /**
-     * Function that compares two tree decompostions by id.
-     *
-     * @param a
-     *      the first tree decompostion
-     * @param b
-     *      the second tree decomposition
-     * @return
-     *      a < b
-     */
-    inline bool compTreedType(const bagType *a, const bagType *b) {
-        return a->id < b->id;
-    }
+	/// type for saving a tree decomposition
+	struct treedecType {
+		cl_long numb = 0;
+		cl_long numVars = 0;
+		cl_long width = 0;
+		std::vector<bagType> bags;
+	};
 
-    /// type for saving the sat formula
-    struct satformulaType {
-        cl_long numVars = 0;
-        cl_long numWeights = 0;
-        bool unsat = false;
-        cl_double *variableWeights = nullptr;
-        std::vector<std::vector<cl_long>> clauses;
-        std::vector<cl_long> facts;
-    };
+	/**
+	 * Function that compares two tree decompostions by id.
+	 *
+	 * @param a
+	 *      the first tree decompostion
+	 * @param b
+	 *      the second tree decomposition
+	 * @return
+	 *      a < b
+	 */
+	inline bool compTreedType(const bagType* a, const bagType* b) {
+		return a->id < b->id;
+	}
 
-    /// the graph type which was the base for the tree decomposition
-    enum class nodeType {
-        JOIN, INTRODUCEFORGET
-    };
+	/// type for saving the sat formula
+	struct satformulaType {
+		cl_long numVars = 0;
+		cl_long numWeights = 0;
+		bool unsat = false;
+		cl_double* variableWeights = nullptr;
+		std::vector<std::vector<cl_long>> clauses;
+		std::vector<cl_long> facts;
+	};
 
-    ///
-    enum class dataStructure {
-        ARRAY, TREE
-    };
 
-    /**
-     * Function that compares two variables.
-     *
-     * @param a
-     *      the first variable
-     * @param b
-     *      the second variable
-     * @return
-     *      true if abs a < b
-     */
-    inline bool compVars(const cl_long &a, const cl_long &b) {
-        return std::abs(a) < std::abs(b);
-    }
+	enum class nodeType {
+		JOIN, INTRODUCEFORGET
+	};
+
+
+	enum class dataStructure {
+		ARRAY, TREE
+	};
+
+
+	/**
+	 * Function that compares two variables.
+	 * @param a
+	 *      the first variable
+	 * @param b
+	 *      the second variable
+	 * @return
+	 *      true if abs a < b
+	 */
+	inline bool compVars(const cl_long& a, const cl_long& b) {
+		return std::abs(a) < std::abs(b);
+	}
 }
 
 #endif //GPUSAT_TYPES_H_H
