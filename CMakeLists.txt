@@ -1,9 +1,7 @@
  cmake_minimum_required(VERSION 3.2)
 project(gpusat)
-set(DCMAKE_TOOLCHAIN_FILE "C:/Users/Martin/Documents/GitHub/vcpkg/scripts/buildsystems/vcpkg.cmake")
-include_directories(C:/Users/Martin/Documents/Bachelor/htd/htd/include)
-
-
+include_directories(/home/roemar/Ba/htd/include)
+include_directories(~/Ba/jsoncpp/jsoncpp/include)
 if (DEFINED ENV{AMDAPPSDKROOT})
     # add amd opencl libraries if AMDAPPSDKROOT environment variable is set
     include_directories("$ENV{AMDAPPSDKROOT}/include")
@@ -29,14 +27,18 @@ elseif (UNIX)
     SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS}")
 endif ()
 
-find_library(HTD_LIB htd C:/Users/Martin/Documents/Bachelor/htd/htd/build/debug)
+find_library(HTD_LIB htd ../../htd/lib)
 add_library(htd SHARED IMPORTED)
 set_target_properties(htd PROPERTIES IMPORTED_LOCATION ${HTD_LIB})
 
-find_library(HTD_IO_LIB htd_io C:/Users/Martin/Documents/Bachelor/htd/htd/build/debug)
+find_library(HTD_IO_LIB htd_io ../../htd/lib)
 add_library(htd_io SHARED IMPORTED)
 set_target_properties(htd_io PROPERTIES IMPORTED_LOCATION ${HTD_IO_LIB})
 
+find_library(JSONCPP_LIB jsoncpp ../../jsoncpp/jsoncpp/build/debug/src/lib_json)
+add_library(jsoncpp STATIC IMPORTED)
+set_target_properties(jsoncpp PROPERTIES IMPORTED_LOCATION ${JSONCPP_LIB})
+
 file(GLOB gpusat_SRC "src/*.cpp" "src/*/*.cpp")
 add_executable(gpusat ${gpusat_SRC})
-target_link_libraries(gpusat OpenCL htd htd_io)
+target_link_libraries(gpusat OpenCL htd htd_io jsoncpp)
