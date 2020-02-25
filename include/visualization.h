@@ -38,11 +38,14 @@ namespace gpusat {
 
 		void testJson();
 		void visuTD(treedecType* treeDec);
+		Json::StreamWriterBuilder* getWriterBuilder();
+		void writeJsonToStdout(Json::StreamWriter::Factory const& factory, Json::Value const& value);
 
 	private:
 		bool outputEnabled = false;
 		std::string bagpre = "bag %d";
 		std::string visufile;
+		Json::StreamWriterBuilder* writerBuilder;
 
 		void visuout(std::string string, bool append = true);
 		void setFile(std::string filename);

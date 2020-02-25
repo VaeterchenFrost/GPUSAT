@@ -71,6 +71,14 @@ TIMELINE = (None, None,
 namespace gpusat
 {
 
+void Visualization::writeJsonToStdout(Json::StreamWriter::Factory const &factory, Json::Value const &value)
+{
+      std::unique_ptr<Json::StreamWriter> const writer(
+          factory.newStreamWriter());
+      writer->write(value, &std::cout);
+      std::cout << std::endl; // add lf and flush
+}
+
 void Visualization::testJson()
 {
 
@@ -88,22 +96,25 @@ void Visualization::testJson()
       output(fromScratch);
       std::cout << std::endl;
       // write in a nice readable way
-      Json::StyledWriter styledWriter;
-      std::cout << styledWriter.write(fromScratch);
+      writeJsonToStdout(*getWriterBuilder(), fromScratch);
 
       // ---- parse from string ----
 
       // write in a compact way
       Json::FastWriter fastWriter;
-      std::string jsonMessage = fastWriter.write(fromScratch);
-      std::cout << jsonMessage;
+      std::stringstream jsonMessage(fastWriter.write(fromScratch));
+      std::cout << jsonMessage.str();
 
       Json::Value parsedFromString;
-      Json::Reader reader;
-      bool parsingSuccessful = reader.parse(jsonMessage, parsedFromString);
+      Json::CharReaderBuilder builder;
+      builder.strictMode(0);
+
+      Json::String errs;
+      bool parsingSuccessful = parseFromStream(builder, jsonMessage, &parsedFromString, &errs);
+
       if (parsingSuccessful)
       {
-            std::cout << styledWriter.write(parsedFromString) << std::endl;
+            writeJsonToStdout(*getWriterBuilder(), parsedFromString);
       }
 }
 
@@ -123,7 +134,7 @@ void Visualization::visuTD(treedecType *treeDec)
 {
       Json::Value tdGraph;
       Json::Value labelarray;
-      Json::Value bag;
+      Json::Value edgearray;
 
       tdGraph["bagpre"] = "bag %d";
       for (auto bag : treeDec->bags)
@@ -142,9 +153,29 @@ void Visualization::visuTD(treedecType *treeDec)
 
             tdGraph["labelarray"][std::to_string(bag.id)] = labelarray;
             labelarray.clear();
+
+            for (auto e : bag.edges) // Edges to bags
+            {
+                  Json::Value edge;
+                  edge.append(bag.id);
+                  edge.append(e);
+
+                  edgearray.append(edge);
+            }
       }
-      Json::FastWriter writer;
-      std::cout << writer.write(tdGraph);
+      tdGraph["edgearray"] = edgearray;
+      writeJsonToStdout(*getWriterBuilder(), tdGraph);
+}
+
+Json::StreamWriterBuilder *Visualization::getWriterBuilder()
+{
+      if (writerBuilder == nullptr)
+      {
+            writerBuilder = new Json::StreamWriterBuilder();
+            (*writerBuilder)["commentStyle"] = "None";
+            (*writerBuilder)["indentation"] = "    ";
+      }
+      return writerBuilder;
 }
 
 void Visualization::visuout(std::string string, bool append)
