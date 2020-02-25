@@ -121,7 +121,7 @@ void PrintDeviceInfo(cl_device_id device)
 	clError = clGetDeviceInfo(device, CL_DEVICE_MAX_COMPUTE_UNITS, sizeof(int), &queryInt, NULL);
 	printf("    CL_DEVICE_MAX_COMPUTE_UNITS: %d\n", queryInt);
 	clError = clGetDeviceInfo(device, CL_DEVICE_MAX_CONSTANT_BUFFER_SIZE, sizeof(querylong), &querylong, NULL);
-	printf("    CL_DEVICE_MAX_CONSTANT_BUFFER_SIZE : %d\n", querylong);
+	printf("    CL_DEVICE_MAX_CONSTANT_BUFFER_SIZE : %lu\n", querylong);
 	clError = clGetDeviceInfo(device, CL_DEVICE_MAX_CONSTANT_ARGS, sizeof(int), &queryInt, NULL);
 	printf("    CL_DEVICE_MAX_CONSTANT_ARGS : %d\n", queryInt);
 }

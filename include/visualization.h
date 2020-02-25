@@ -15,7 +15,7 @@ namespace gpusat {
 			setFile(filename);
 		}
 
-		public static void testJson();
+		static void testJson();
 
 		std::string getFilename() {
 			return visufile;
@@ -25,7 +25,7 @@ namespace gpusat {
 			return outputEnabled;
 		}
 
-		public void output(const Json::Value& value)
+		void output(const Json::Value& value)
 		{
 			// querying the json object is very simple
 			std::cout << value["hello"];
