@@ -4,13 +4,14 @@
 #include <string>
 // #include <types.h>
 // #include <map>
+#include <json/writer.h>
 
 namespace gpusat {
 
-	class Visualisierung {
+	class Visualization {
 
 
-		Visualisierung(std::string filename = "visugpusat.json") {
+		Visualization(std::string filename = "visugpusat.json") {
 			setFile(filename);
 		}
 
@@ -25,7 +26,7 @@ namespace gpusat {
 
 	private:
 		bool outputEnabled = false;
-
+		std::string bagpre = "bag %d";
 		std::string visufile;
 
 		void visuout(std::string string, bool append = true);

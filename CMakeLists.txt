@@ -1,5 +1,6 @@
  cmake_minimum_required(VERSION 3.2)
 project(gpusat)
+set(DCMAKE_TOOLCHAIN_FILE "C:/Users/Martin/Documents/GitHub/vcpkg/scripts/buildsystems/vcpkg.cmake")
 include_directories(C:/Users/Martin/Documents/Bachelor/htd/htd/include)
 
 
