@@ -4,6 +4,7 @@
 #include <types.h>
 #include <sstream>
 #include <gpusatutils.h>
+#include <sstream>
 
 /*
 TD GRAPH:
@@ -67,98 +68,112 @@ TIMELINE = (None, None,
                 [1, 4, 7]
                 )
 */
-namespace gpusat {
-    
-    void Visualization::testJson() {
-       
-        // ---- create from scratch ----
+namespace gpusat
+{
 
-        Json::Value fromScratch;
-        Json::Value array;
-        array.append("hello");
-        array.append("world");
-        fromScratch["hello"] = "world";
-        fromScratch["number"] = 2;
-        fromScratch["array"] = array;
-        fromScratch["object"]["hello"] = "world";
+void Visualization::testJson()
+{
 
-        output(fromScratch);
+      // ---- create from scratch ----
 
-        // write in a nice readible way
-        Json::StyledWriter styledWriter;
-        std::cout << styledWriter.write(fromScratch);
+      Json::Value fromScratch;
+      Json::Value array;
+      array.append("hello");
+      array.append("world");
+      fromScratch["hello"] = "world";
+      fromScratch["number"] = 2;
+      fromScratch["array"] = array;
+      fromScratch["object"]["hello"] = "world";
 
-        // ---- parse from string ----
+      output(fromScratch);
+      std::cout << std::endl;
+      // write in a nice readable way
+      Json::StyledWriter styledWriter;
+      std::cout << styledWriter.write(fromScratch);
 
-        // write in a compact way
-        Json::FastWriter fastWriter;
-        std::string jsonMessage = fastWriter.write(fromScratch);
+      // ---- parse from string ----
 
-        Json::Value parsedFromString;
-        Json::Reader reader;
-        bool parsingSuccessful = reader.parse(jsonMessage, parsedFromString);
-        if (parsingSuccessful)
-        {
+      // write in a compact way
+      Json::FastWriter fastWriter;
+      std::string jsonMessage = fastWriter.write(fromScratch);
+      std::cout << jsonMessage;
+
+      Json::Value parsedFromString;
+      Json::Reader reader;
+      bool parsingSuccessful = reader.parse(jsonMessage, parsedFromString);
+      if (parsingSuccessful)
+      {
             std::cout << styledWriter.write(parsedFromString) << std::endl;
-        }
-
-        //=============================================================================
-        //=============================================================================
-        //std::ofstream file(tdFile);
-        //if (file.is_open()) {
-        //    std::stringstream stream;
-
-        //    for (int i = treeDec->numVars; i > 0; i--) {
-        //        stream << "MERGE (v" << i << ":Variable {id:" << i << "})\n";
-        //    }
-
-        //    stream << "CREATE ";
-        //    stream << "(:TreeDecomposition{"
-        //        << "numVars:" << treeDec->numVars
-        //        << ",numb:" << treeDec->numb
-        //        << ",width:\"" << treeDec->width << "\"})";
-
-        //    for (auto bag : treeDec->bags) {
-        //        // Create Bag
-        //        stream << "\nCREATE (b" << bag.id << ":Bag{id:" << bag.id << "})";
-        //        // Edges to variables
-        //        for (auto var_id : bag.variables) {
-        //            stream << "\nMERGE (b" << bag.id << ")-[:" + inbag + "]->(v" << var_id << ")";
-        //        }
-        //    }
-        //    // Edges to bags
-        //    for (auto bag : treeDec->bags) {
-        //        for (auto e : bag.edges) {
-        //            stream << "\nMERGE (b" << bag.id << ")-[:" + connectbag + "]->(b" << e << ")";
-        //        }
-        //    }
-
-        //    stream << "\n";
-        //    file << stream.str();
-        //    file.close();
-        //}
-        //else { std::cerr << "Failed to open file : " << satFile << " with " << errno << std::endl; }
-    }
-
-	void Visualization::visuout(std::string string, bool append) {
-		if (!isEnabled()) return;
-
-		std::ofstream stream(visufile, append ? std::ios_base::app : std::ios_base::out);
-
-		if (stream.is_open()) {
-			stream << string;
-			stream.close();
-		}
-		else { std::cerr << "Failed to open file : " << visufile << " with " << errno << std::endl; }
-	}
-
-
-	void Visualization::setFile(std::string filename) {
-		if (filename != "") {
-			outputEnabled = true;
-		}
-		else outputEnabled = false;
-		visufile = filename;
-	}
-
+      }
 }
+
+/*
+s.node(bagpre % 4, bagNode(bagpre % 4, ["[2 3 8]", "Test2"]))
+    s.node(bagpre % 3, bagNode(bagpre % 3, "[2 4 8]"))
+    # s.node('join1', bagNode("Join", "2~3"))
+    s.node(bagpre % 2, bagNode(bagpre % 2, "[1 2 5]"))
+    s.node(bagpre % 1, bagNode(bagpre % 1, "[1 2 4 6]"))
+    s.node(bagpre % 0, bagNode(bagpre % 0, "[1 4 7]"))
+
+    s.edges(
+        [(bagpre % 4, bagpre % 3), (bagpre % 2, bagpre % 1),
+         (bagpre % 3, bagpre % 1), (bagpre % 1, bagpre % 0)])
+         */
+void Visualization::visuTD(treedecType *treeDec)
+{
+      Json::Value tdGraph;
+      Json::Value labelarray;
+      Json::Value bag;
+
+      tdGraph["bagpre"] = "bag %d";
+      for (auto bag : treeDec->bags)
+      {
+            std::ostringstream variables;
+            variables << "["; // overwrite previous
+
+            for (auto var_id : bag.variables)
+            {
+                  variables << var_id << " ";
+            }
+            variables.seekp(-1, std::ios::end); // overwrite last space
+            variables << "]";
+
+            labelarray.append(variables.str()); // might be the only label...
+
+            tdGraph["labelarray"][std::to_string(bag.id)] = labelarray;
+            labelarray.clear();
+      }
+      Json::FastWriter writer;
+      std::cout << writer.write(tdGraph);
+}
+
+void Visualization::visuout(std::string string, bool append)
+{
+      if (!isEnabled())
+            return;
+
+      std::ofstream stream(visufile, append ? std::ios_base::app : std::ios_base::out);
+
+      if (stream.is_open())
+      {
+            stream << string;
+            stream.close();
+      }
+      else
+      {
+            std::cerr << "Failed to open file : " << visufile << " with " << errno << std::endl;
+      }
+}
+
+void Visualization::setFile(std::string filename)
+{
+      if (filename != "")
+      {
+            outputEnabled = true;
+      }
+      else
+            outputEnabled = false;
+      visufile = filename;
+}
+
+} // namespace gpusat

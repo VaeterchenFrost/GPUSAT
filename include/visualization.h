@@ -2,7 +2,7 @@
 #define GPUSAT_VISUALISIERUNG_H
 
 #include <string>
-// #include <types.h>
+#include <types.h>
 // #include <map>
 #include <json/writer.h>
 #include <json/reader.h>
@@ -37,6 +37,7 @@ namespace gpusat {
 		}
 
 		void testJson();
+		void visuTD(treedecType* treeDec);
 
 	private:
 		bool outputEnabled = false;

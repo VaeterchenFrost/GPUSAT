@@ -186,8 +186,7 @@ int main(int argc, char* argv[]) {
 	CLI::App app{};
 	std::size_t numDecomps = 30;
 	cl_long maxBag = -1;
-	Visualization myVisu = Visualization();
-	myVisu.testJson();
+	
 	//cmd options
 	app.add_option("-s,--seed", seed, "number used to initialize the pseudorandom number generator")->set_default_str("");
 	app.add_option("-f,--formula", formulaDir, "path to the file containing the sat formula")->set_default_str("");
@@ -358,9 +357,12 @@ int main(int argc, char* argv[]) {
 		std::cout.flush();
 
 		Solver* sol;
+		Visualization* myVisu = new Visualization();
+		// myVisu.testJson();
 		Graphoutput* graphout = new Graphoutput(graphfile);
 		graphout->neo4jSat(&satFormula);
 		graphout->neo4jTD(&treeDecomp);
+		myVisu->visuTD(&treeDecomp);
 		graphout->graphStart(&treeDecomp);
 		bagType next;
 		sol = new Solver(context, queue, program, memorySize, maxMemoryBuffer, solutionType, maxBag, verbose, graphout);
