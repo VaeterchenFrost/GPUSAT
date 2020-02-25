@@ -68,6 +68,77 @@ TIMELINE = (None, None,
                 )
 */
 namespace gpusat {
+    
+    static void Visualization::testJson() {
+       
+        // ---- create from scratch ----
+
+        Json::Value fromScratch;
+        Json::Value array;
+        array.append("hello");
+        array.append("world");
+        fromScratch["hello"] = "world";
+        fromScratch["number"] = 2;
+        fromScratch["array"] = array;
+        fromScratch["object"]["hello"] = "world";
+
+        output(fromScratch);
+
+        // write in a nice readible way
+        Json::StyledWriter styledWriter;
+        std::cout << styledWriter.write(fromScratch);
+
+        // ---- parse from string ----
+
+        // write in a compact way
+        Json::FastWriter fastWriter;
+        std::string jsonMessage = fastWriter.write(fromScratch);
+
+        Json::Value parsedFromString;
+        Json::Reader reader;
+        bool parsingSuccessful = reader.parse(jsonMessage, parsedFromString);
+        if (parsingSuccessful)
+        {
+            std::cout << styledWriter.write(parsedFromString) << std::endl;
+        }
+
+        //=============================================================================
+        //=============================================================================
+        //std::ofstream file(tdFile);
+        //if (file.is_open()) {
+        //    std::stringstream stream;
+
+        //    for (int i = treeDec->numVars; i > 0; i--) {
+        //        stream << "MERGE (v" << i << ":Variable {id:" << i << "})\n";
+        //    }
+
+        //    stream << "CREATE ";
+        //    stream << "(:TreeDecomposition{"
+        //        << "numVars:" << treeDec->numVars
+        //        << ",numb:" << treeDec->numb
+        //        << ",width:\"" << treeDec->width << "\"})";
+
+        //    for (auto bag : treeDec->bags) {
+        //        // Create Bag
+        //        stream << "\nCREATE (b" << bag.id << ":Bag{id:" << bag.id << "})";
+        //        // Edges to variables
+        //        for (auto var_id : bag.variables) {
+        //            stream << "\nMERGE (b" << bag.id << ")-[:" + inbag + "]->(v" << var_id << ")";
+        //        }
+        //    }
+        //    // Edges to bags
+        //    for (auto bag : treeDec->bags) {
+        //        for (auto e : bag.edges) {
+        //            stream << "\nMERGE (b" << bag.id << ")-[:" + connectbag + "]->(b" << e << ")";
+        //        }
+        //    }
+
+        //    stream << "\n";
+        //    file << stream.str();
+        //    file.close();
+        //}
+        //else { std::cerr << "Failed to open file : " << satFile << " with " << errno << std::endl; }
+    }
 
 	void Visualization::visuout(std::string string, bool append) {
 		if (!isEnabled()) return;

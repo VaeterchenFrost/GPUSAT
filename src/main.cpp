@@ -21,6 +21,7 @@
 #include <FitnessFunctions/JoinSizeFitnessFunction.h>
 #include <FitnessFunctions/WidthCutSetFitnessFunction.h>
 #include <FitnessFunctions/CutSetWidthFitnessFunction.h>
+#include <visualization.h>
 
 
 std::string kernelStr =
@@ -186,6 +187,7 @@ int main(int argc, char* argv[]) {
 	std::size_t numDecomps = 30;
 	cl_long maxBag = -1;
 
+	Visualization::testJson();
 	//cmd options
 	app.add_option("-s,--seed", seed, "number used to initialize the pseudorandom number generator")->set_default_str("");
 	app.add_option("-f,--formula", formulaDir, "path to the file containing the sat formula")->set_default_str("");
