@@ -5,6 +5,9 @@
 // #include <types.h>
 // #include <map>
 #include <json/writer.h>
+#include <json/reader.h>
+#include <json/value.h>
+#include <iostream>
 
 namespace gpusat {
 
