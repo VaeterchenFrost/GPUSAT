@@ -1,4 +1,4 @@
-#include <visualisierung.h>
+#include <visualization.h>
 #include <iostream>
 #include <fstream>
 #include <types.h>
