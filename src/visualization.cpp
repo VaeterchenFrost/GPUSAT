@@ -69,7 +69,7 @@ TIMELINE = (None, None,
 */
 namespace gpusat {
     
-    static void Visualization::testJson() {
+    void Visualization::testJson() {
        
         // ---- create from scratch ----
 

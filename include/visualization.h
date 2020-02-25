@@ -10,12 +10,11 @@ namespace gpusat {
 
 	class Visualization {
 
-		
+	public:
+
 		Visualization(std::string filename = "visugpusat.json") {
 			setFile(filename);
 		}
-
-	
 
 		std::string getFilename() {
 			return visufile;
@@ -33,8 +32,9 @@ namespace gpusat {
 			std::cout << value["array"][0] << value["array"][1];
 			std::cout << value["object"]["hello"];
 		}
-	public:
-		static void testJson();
+
+		void testJson();
+
 	private:
 		bool outputEnabled = false;
 		std::string bagpre = "bag %d";
