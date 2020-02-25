@@ -571,8 +571,8 @@ void Solver::solveIntroduceForget(satformulaType &formula, bagType &pnode, bagTy
             ////////////
             long argres;
 
-            kernel.getArgInfo<long>(3, 0, &argres);
-            std::cout << "kernel.getArgInfo<long>(3, 0, & argres); " << argres << "\n";
+            // kernel.getArgInfo<long>(3, 0, &argres);
+            // std::cout << "kernel.getArgInfo<long>(3, 0, & argres); " << argres << "\n";
             cl_long error1 = 0, error2 = 0;
             error1 = queue.enqueueNDRangeKernel(kernel, cl::NDRange(static_cast<size_t>(node.solution[a].minId)), cl::NDRange(static_cast<size_t>(node.solution[a].maxId - node.solution[a].minId)));
             error2 = queue.finish();

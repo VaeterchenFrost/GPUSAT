@@ -126,10 +126,10 @@ s.node(bagpre % 4, bagNode(bagpre % 4, ["[2 3 8]", "Test2"]))
          */
 void Visualization::visuTD(treedecType *treeDec) {
     Json::Value tdGraph;
-    Json::Value labelarray;
+    Json::Value labeldict;
     Json::Value edgearray;
 
-    tdGraph["bagpre"] = "bag %d";
+    tdGraph["bagpre"] = "bag %s";
     for (auto bag : treeDec->bags) {
         std::ostringstream variables;
         variables << "["; // overwrite previous
@@ -140,16 +140,16 @@ void Visualization::visuTD(treedecType *treeDec) {
         variables.seekp(-1, std::ios::end); // overwrite last space
         variables << "]";
 
-        labelarray.append(variables.str()); // might be the only label...
+        labeldict.append(variables.str()); // might be the only label...
 
-        tdGraph["labelarray"][std::to_string(bag.id)] = labelarray;
-        labelarray.clear();
+        tdGraph["labeldict"][std::to_string(bag.id)] = labeldict;
+        labeldict.clear();
 
-        for (auto e : bag.edges) // Edges to bags
+        for (bagType *e : bag.edges) // Edges to bags
         {
             Json::Value edge;
+            edge.append(e->id);
             edge.append(bag.id);
-            edge.append(e);
 
             edgearray.append(edge);
         }
