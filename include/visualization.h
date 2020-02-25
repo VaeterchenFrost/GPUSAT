@@ -4,52 +4,54 @@
 #include <string>
 #include <types.h>
 // #include <map>
-#include <json/writer.h>
+#include <iostream>
 #include <json/reader.h>
 #include <json/value.h>
-#include <iostream>
+#include <json/writer.h>
 
 namespace gpusat {
 
-	class Visualization {
+class Visualization {
 
-	public:
+  public:
+    Visualization(std::string filename = "visugpusat.json") {
+        setFile(filename);
 
-		Visualization(std::string filename = "visugpusat.json") {
-			setFile(filename);
-		}
+        writerBuilder = new Json::StreamWriterBuilder();
+        (*writerBuilder)["commentStyle"] = "None";
+        (*writerBuilder)["indentation"] = "    ";
+    }
 
-		std::string getFilename() {
-			return visufile;
-		}
+    std::string getFilename() {
+        return visufile;
+    }
 
-		bool isEnabled() {
-			return outputEnabled;
-		}
+    bool isEnabled() {
+        return outputEnabled;
+    }
 
-		void output(const Json::Value& value)
-		{
-			// querying the json object is very simple
-			std::cout << value["hello"];
-			std::cout << value["number"];
-			std::cout << value["array"][0] << value["array"][1];
-			std::cout << value["object"]["hello"];
-		}
+    void output(const Json::Value &value) {
+        // querying the json object is very simple
+        std::cout << value["hello"];
+        std::cout << value["number"];
+        std::cout << value["array"][0] << value["array"][1];
+        std::cout << value["object"]["hello"];
+    }
 
-		void testJson();
-		void visuTD(treedecType* treeDec);
-		Json::StreamWriterBuilder* getWriterBuilder();
-		void writeJsonToStdout(Json::StreamWriter::Factory const& factory, Json::Value const& value);
+    void testJson();
+    void visuTD(treedecType *treeDec);
+    Json::StreamWriterBuilder *getWriterBuilder();
+    void writeJsonToStdout(Json::StreamWriter::Factory const &factory, Json::Value const &value);
 
-	private:
-		bool outputEnabled = false;
-		std::string bagpre = "bag %d";
-		std::string visufile;
-		Json::StreamWriterBuilder* writerBuilder;
+  private:
+    bool outputEnabled = false;
+    std::string bagpre = "bag %d";
+    std::string visufile;
+    Json::StreamWriterBuilder *writerBuilder;
 
-		void visuout(std::string string, bool append = true);
-		void setFile(std::string filename);
-	};
-}
+    void visuout(std::string string, bool append = true);
+    void setFile(std::string filename);
+};
+} // namespace gpusat
 
 #endif

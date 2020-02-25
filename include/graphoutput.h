@@ -1,66 +1,64 @@
 #ifndef GPUSAT_GRAPHOUTPUT_H
 #define GPUSAT_GRAPHOUTPUT_H
 
-
+#include <map>
 #include <string>
 #include <types.h>
-#include <map>
 
 namespace gpusat {
 
-	class Graphoutput {
+class Graphoutput {
 
-	public:
-		static const std::string connectbag;
-		static const std::string dualedge;
-		static const std::string inbag;
-		static const std::string incidenceedge;
-		static const std::string primaledge;
+  public:
+    static const std::string connectbag;
+    static const std::string dualedge;
+    static const std::string inbag;
+    static const std::string incidenceedge;
+    static const std::string primaledge;
 
+    static const int baseIdSol = 1'000'000;
+    static const int baseIdJoin = 4 * baseIdSol; // avoid factor 2 that would collide with adding two ids.
 
-		static const int baseIdSol = 1'000'000;
-		static const int baseIdJoin = 4 * baseIdSol; // avoid factor 2 that would collide with adding two ids.
+    Graphoutput(std::string filename) {
+        setFile(filename);
+    }
 
-		Graphoutput(std::string filename) {
-			setFile(filename);
-		}
+    void nodeBag(unsigned int id, std::string solution);
+    void nodeJoin(unsigned int id1, unsigned int id2, std::string solution);
 
-		void nodeBag(unsigned int id, std::string solution);
-		void nodeJoin(unsigned int id1, unsigned int id2, std::string solution);
+    void graphEdgeSet(treedecType *dec);
+    void graphStart(treedecType *dec);
+    void graphEnd();
 
-		void graphEdgeSet(treedecType* dec);
-		void graphStart(treedecType* dec);
-		void graphEnd();
+    std::string getFilename() {
+        return graphfile;
+    }
 
-		std::string getFilename() {
-			return graphfile;
-		}
+    bool isEnabled() {
+        return outputEnabled;
+    }
 
-		bool isEnabled() {
-			return outputEnabled;
-		}
+    void neo4jSat(satformulaType *satFormula);
+    void neo4jTD(treedecType *treeDec);
 
-		void neo4jSat(satformulaType* satFormula);
-		void neo4jTD(treedecType* treeDec);
+  private:
+    bool outputEnabled = false;
+    std::map<int, int> joinmap;
+    std::map<int, std::vector<cl_long>> variablesmap;
 
-	private:
-		bool outputEnabled = false;
-		std::map<int, int> joinmap;
-		std::map<int, std::vector<cl_long>> variablesmap;
+    unsigned int countJoin = baseIdJoin;
+    unsigned int countSol = baseIdSol;
+    std::string graphfile;
+    std::string satFile = "cypherSatFormula.txt";
+    std::string tdFile = "cypherTreedec.txt";
 
-		unsigned int countJoin = baseIdJoin;
-		unsigned int countSol = baseIdSol;
-		std::string graphfile;
-		std::string satFile = "cypherSatFormula.txt";
-		std::string tdFile = "cypherTreedec.txt";
+    void graphEdge(unsigned int source, unsigned int target);
+    void graphNode(unsigned int id, std::string label);
+    void graphSolutionNode(unsigned int id, std::string label, std::string solution);
 
-		void graphEdge(unsigned int source, unsigned int target);
-		void graphNode(unsigned int id, std::string label);
-		void graphSolutionNode(unsigned int id, std::string label, std::string solution);
-
-		void graphout(std::string string, bool append = true);
-		void setFile(std::string filename);
-	};
-}
+    void graphout(std::string string, bool append = true);
+    void setFile(std::string filename);
+};
+} // namespace gpusat
 
 #endif // !GPUSAT_GRAPHOUTPUT_H

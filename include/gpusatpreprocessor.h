@@ -6,9 +6,9 @@
 #include <unordered_map>
 
 namespace gpusat {
-    class Preprocessor {
-    public:
-        /**
+class Preprocessor {
+  public:
+    /**
          * preprocess the tree decomposition
          *
          * @param decomp
@@ -16,9 +16,9 @@ namespace gpusat {
          * @param combineWidth
          *      max width to combine bags
          */
-        static void preprocessDecomp(bagType *decomp, cl_long combineWidth);
+    static void preprocessDecomp(bagType *decomp, cl_long combineWidth);
 
-        /**
+    /**
          * removes facts from the sat formula
          *
          * @param decomp
@@ -28,11 +28,10 @@ namespace gpusat {
          * @param defaultWeight
          *      for WMC the product of the weights of the removed literals
          */
-        static void preprocessFacts(treedecType &decomp, satformulaType &formula, cl_double &defaultWeight);
+    static void preprocessFacts(treedecType &decomp, satformulaType &formula, cl_double &defaultWeight);
 
-    private:
-
-        /**
+  private:
+    /**
          * used to relable a decomposition if a node is removed
          *
          * @param decomp
@@ -40,9 +39,9 @@ namespace gpusat {
          * @param id
          *      the id of the removed node
          */
-        static void relableDecomp(bagType *decomp, cl_long id);
+    static void relableDecomp(bagType *decomp, cl_long id);
 
-        /**
+    /**
          * used to relable a formula if a variable is removed
          *
          * @param formula
@@ -50,7 +49,7 @@ namespace gpusat {
          * @param id
          *      the id of the removed variable
          */
-        static void relableFormula(satformulaType &formula, cl_long id);
-    };
-}
+    static void relableFormula(satformulaType &formula, cl_long id);
+};
+} // namespace gpusat
 #endif //GPUSAT_GPUSATPREPROCESSOR_H

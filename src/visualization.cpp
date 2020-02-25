@@ -1,10 +1,9 @@
-#include <visualization.h>
-#include <iostream>
 #include <fstream>
-#include <types.h>
-#include <sstream>
 #include <gpusatutils.h>
+#include <iostream>
 #include <sstream>
+#include <types.h>
+#include <visualization.h>
 
 /*
 TD GRAPH:
@@ -22,13 +21,11 @@ TD GRAPH:
 TD-TIMEELINE:
 TIMELINE = [(0,), (1,),
                 (2, ([['id', 'v1', 'v2', 'n Sol'], [0, 0, 0, 0], [1, 1, 0, 1],
-                      [2, 0, 1, 1], [3, 1, 1, 2]], 'sol bag 2', 'sum: 4', True)),
-                (3,),
-                (4, ([["id", "v2", "v8", "n Sol"], [0, 0, 0, 1], [1, 1, 0, 2],
-                      [2, 0, 1, 1], [3, 1, 1, 1]], "sol bag 4", "sum: 5", True)),
-                (3, ([["id", "v2", "v4", "n Sol"],
-                      [0, 0, 0, 1], [1, 1, 0, 2], [2, 0, 1, 2],
-                      [3, 1, 1, 3]], "sol bag 3", "sum: 8", True)),
+                      [2, 0, 1, 1], [3, 1, 1, 2]], 'sol bag 2', 'sum: 4',
+True)), (3,), (4, ([["id", "v2", "v8", "n Sol"], [0, 0, 0, 1], [1, 1, 0, 2], [2,
+0, 1, 1], [3, 1, 1, 1]], "sol bag 4", "sum: 5", True)), (3, ([["id", "v2", "v4",
+"n Sol"], [0, 0, 0, 1], [1, 1, 0, 2], [2, 0, 1, 2], [3, 1, 1, 3]], "sol bag 3",
+"sum: 8", True)),
                 ((2, 3), ([["id", "v1", "v2", "v4", "n Sol"],
                            [0, 0, 0, 0, 0],
                            [1, 1, 0, 0, 1],
@@ -55,8 +52,8 @@ TIMELINE = [(0,), (1,),
                 ]
 
 INCIDENCE:
-EDGELIST = [[1, [1, 4, 6]], [2, [1, -5]], [3, [-1, 7]], [4, [2, 3]], [5, [2, 5]],
-                [6, [2, -6]], [7, [3, -8]], [8, [4, -8]], [9, [-4, 6]], [10, [-4, 7]]]
+EDGELIST = [[1, [1, 4, 6]], [2, [1, -5]], [3, [-1, 7]], [4, [2, 3]], [5, [2,
+5]], [6, [2, -6]], [7, [3, -8]], [8, [4, -8]], [9, [-4, 6]], [10, [-4, 7]]]
 TIMELINE = (None, None,
                 [1, 2, 5],
                 None,
@@ -68,54 +65,51 @@ TIMELINE = (None, None,
                 [1, 4, 7]
                 )
 */
-namespace gpusat
-{
+namespace gpusat {
 
-void Visualization::writeJsonToStdout(Json::StreamWriter::Factory const &factory, Json::Value const &value)
-{
-      std::unique_ptr<Json::StreamWriter> const writer(
-          factory.newStreamWriter());
-      writer->write(value, &std::cout);
-      std::cout << std::endl; // add lf and flush
+void Visualization::writeJsonToStdout(
+    Json::StreamWriter::Factory const &factory, Json::Value const &value) {
+    std::unique_ptr<Json::StreamWriter> const writer(factory.newStreamWriter());
+    writer->write(value, &std::cout);
+    std::cout << std::endl; // add lf and flush
 }
 
-void Visualization::testJson()
-{
+void Visualization::testJson() {
 
-      // ---- create from scratch ----
+    // ---- create from scratch ----
 
-      Json::Value fromScratch;
-      Json::Value array;
-      array.append("hello");
-      array.append("world");
-      fromScratch["hello"] = "world";
-      fromScratch["number"] = 2;
-      fromScratch["array"] = array;
-      fromScratch["object"]["hello"] = "world";
+    Json::Value fromScratch;
+    Json::Value array;
+    array.append("hello");
+    array.append("world");
+    fromScratch["hello"] = "world";
+    fromScratch["number"] = 2;
+    fromScratch["array"] = array;
+    fromScratch["object"]["hello"] = "world";
 
-      output(fromScratch);
-      std::cout << std::endl;
-      // write in a nice readable way
-      writeJsonToStdout(*getWriterBuilder(), fromScratch);
+    output(fromScratch);
+    std::cout << std::endl;
+    // write in a nice readable way
+    writeJsonToStdout(*getWriterBuilder(), fromScratch);
 
-      // ---- parse from string ----
+    // ---- parse from string ----
 
-      // write in a compact way
-      Json::FastWriter fastWriter;
-      std::stringstream jsonMessage(fastWriter.write(fromScratch));
-      std::cout << jsonMessage.str();
+    // write in a compact way
+    Json::FastWriter fastWriter;
+    std::stringstream jsonMessage(fastWriter.write(fromScratch));
+    std::cout << jsonMessage.str();
 
-      Json::Value parsedFromString;
-      Json::CharReaderBuilder builder;
-      builder.strictMode(0);
+    Json::Value parsedFromString;
+    Json::CharReaderBuilder builder;
+    builder.strictMode(0);
 
-      Json::String errs;
-      bool parsingSuccessful = parseFromStream(builder, jsonMessage, &parsedFromString, &errs);
+    Json::String errs;
+    bool parsingSuccessful =
+        parseFromStream(builder, jsonMessage, &parsedFromString, &errs);
 
-      if (parsingSuccessful)
-      {
-            writeJsonToStdout(*getWriterBuilder(), parsedFromString);
-      }
+    if (parsingSuccessful) {
+        writeJsonToStdout(*getWriterBuilder(), parsedFromString);
+    }
 }
 
 /*
@@ -130,81 +124,66 @@ s.node(bagpre % 4, bagNode(bagpre % 4, ["[2 3 8]", "Test2"]))
         [(bagpre % 4, bagpre % 3), (bagpre % 2, bagpre % 1),
          (bagpre % 3, bagpre % 1), (bagpre % 1, bagpre % 0)])
          */
-void Visualization::visuTD(treedecType *treeDec)
-{
-      Json::Value tdGraph;
-      Json::Value labelarray;
-      Json::Value edgearray;
+void Visualization::visuTD(treedecType *treeDec) {
+    Json::Value tdGraph;
+    Json::Value labelarray;
+    Json::Value edgearray;
 
-      tdGraph["bagpre"] = "bag %d";
-      for (auto bag : treeDec->bags)
-      {
-            std::ostringstream variables;
-            variables << "["; // overwrite previous
+    tdGraph["bagpre"] = "bag %d";
+    for (auto bag : treeDec->bags) {
+        std::ostringstream variables;
+        variables << "["; // overwrite previous
 
-            for (auto var_id : bag.variables)
-            {
-                  variables << var_id << " ";
-            }
-            variables.seekp(-1, std::ios::end); // overwrite last space
-            variables << "]";
+        for (auto var_id : bag.variables) {
+            variables << var_id << " ";
+        }
+        variables.seekp(-1, std::ios::end); // overwrite last space
+        variables << "]";
 
-            labelarray.append(variables.str()); // might be the only label...
+        labelarray.append(variables.str()); // might be the only label...
 
-            tdGraph["labelarray"][std::to_string(bag.id)] = labelarray;
-            labelarray.clear();
+        tdGraph["labelarray"][std::to_string(bag.id)] = labelarray;
+        labelarray.clear();
 
-            for (auto e : bag.edges) // Edges to bags
-            {
-                  Json::Value edge;
-                  edge.append(bag.id);
-                  edge.append(e);
+        for (auto e : bag.edges) // Edges to bags
+        {
+            Json::Value edge;
+            edge.append(bag.id);
+            edge.append(e);
 
-                  edgearray.append(edge);
-            }
-      }
-      tdGraph["edgearray"] = edgearray;
-      writeJsonToStdout(*getWriterBuilder(), tdGraph);
+            edgearray.append(edge);
+        }
+    }
+    tdGraph["edgearray"] = edgearray;
+    writeJsonToStdout(*getWriterBuilder(), tdGraph);
 }
 
-Json::StreamWriterBuilder *Visualization::getWriterBuilder()
-{
-      if (writerBuilder == nullptr)
-      {
-            writerBuilder = new Json::StreamWriterBuilder();
-            (*writerBuilder)["commentStyle"] = "None";
-            (*writerBuilder)["indentation"] = "    ";
-      }
-      return writerBuilder;
+Json::StreamWriterBuilder *Visualization::getWriterBuilder() {
+    return writerBuilder;
 }
 
-void Visualization::visuout(std::string string, bool append)
-{
-      if (!isEnabled())
-            return;
+void Visualization::visuout(std::string string, bool append) {
+    if (!isEnabled())
+        return;
 
-      std::ofstream stream(visufile, append ? std::ios_base::app : std::ios_base::out);
+    std::ofstream stream(visufile,
+                         append ? std::ios_base::app : std::ios_base::out);
 
-      if (stream.is_open())
-      {
-            stream << string;
-            stream.close();
-      }
-      else
-      {
-            std::cerr << "Failed to open file : " << visufile << " with " << errno << std::endl;
-      }
+    if (stream.is_open()) {
+        stream << string;
+        stream.close();
+    } else {
+        std::cerr << "Failed to open file : " << visufile << " with " << errno
+                  << std::endl;
+    }
 }
 
-void Visualization::setFile(std::string filename)
-{
-      if (filename != "")
-      {
-            outputEnabled = true;
-      }
-      else
-            outputEnabled = false;
-      visufile = filename;
+void Visualization::setFile(std::string filename) {
+    if (filename != "") {
+        outputEnabled = true;
+    } else
+        outputEnabled = false;
+    visufile = filename;
 }
 
 } // namespace gpusat
