@@ -87,6 +87,9 @@ void Solver::solveProblem(treedecType &decomp, satformulaType &formula, bagType 
 
                     if (i == node.edges.size() - 1) {
                         solveJoin(tmp, edge1, edge2, formula, nodeType::INTRODUCEFORGET);
+                        visualization->tdTimelineAppend(std::vector<cl_long>({edge1.id, edge2.id}),
+                        
+                        );
                         if (verbose) {
                             std::cout << "Solved JOIN-1 on nodes " << edge1.id << "~" << edge2.id << "\n";
                             printbagType(&tmp, std::cout);
