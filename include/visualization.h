@@ -63,8 +63,7 @@ class Grid {
  *  [3, 1, 1, 3]]
  */
 struct TABLELINES {
-    uint columns;
-    std::string *headline;
+    std::vector<std::string> headline;
     Grid solutions;
 };
 
@@ -94,6 +93,13 @@ class Visualization {
     // One step in the timeline
     void tdTimelineAppend(std::vector<BAGID> bag_ids, TABLELINES tablelines, std::string const toplabel = "", std::string const bottomlabel = "", bool transpose = true);
     void tdTimelineAppend(std::vector<BAGID> bag_ids);
+
+    // template <typename Iter>
+    // inline static Json::Value copyIntoJsonArray(Iter it, Iter end) {
+    //     Json::Value result;
+    //     for (; it!=end; ++it) { it. }
+    //     return result;
+    // }
 
   private:
     bool outputEnabled = false;

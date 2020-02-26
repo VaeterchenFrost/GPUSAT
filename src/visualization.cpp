@@ -1,3 +1,4 @@
+#include <assert.h>
 #include <fstream>
 #include <gpusatutils.h>
 #include <iostream>
@@ -166,7 +167,7 @@ void Visualization::visuTD(treedecType *treeDec) {
 }
 
 /**
- * bag_ids: 
+ * bag_ids: asserts not empty  
  *  - if one: one (IF) solution found
  *  - more: join solution found
  * tablelines: all lines for the table
@@ -175,12 +176,46 @@ void Visualization::visuTD(treedecType *treeDec) {
  * transpose: whether the tablelines are rowfirst (true) or not.
  */
 void Visualization::tdTimelineAppend(std::vector<BAGID> bag_ids, TABLELINES tablelines, std::string const toplabel, std::string const bottomlabel, bool transpose) {
+    assert(bag_ids.empty() == false);
+    Json::Value timestepJson;
+    if (bag_ids.size() == 1)
+        timestepJson.append(bag_ids[0]);
+    else {
+        Json::Value ids;
+        for (auto id : bag_ids)
+            ids.append(id);
+        timestepJson.append(ids);
+    }
+    // add table
+    Json::Value solutionArJson;
+    Json::Value rowJson;
+    for (auto val : tablelines.headline)
+        rowJson.append(val);
+    solutionArJson.append(rowJson);
+    rowJson.clear();
+    Grid *mygrid = &tablelines.solutions;
+    for (int r = 0; r < mygrid->rows(); r++) {          // add grid rows
+        for (int c = 0; c < mygrid->columns(); c++) {
+            rowJson.append(mygrid[r][c]);
+        }
+        solutionArJson.append(rowJson);
+        rowJson.clear();
+    }
+    timestepJson.append(solutionArJson);
+    timestepJson.append(toplabel);
+    timestepJson.append(bottomlabel);
+    timestepJson.append(transpose);
+    tdTimeline.append(timestepJson);
 }
 
 /**
- * Only highlight those bags
+ * Only append those bags as one array.
+ * Might even be only one bag.
+ * The behaviour with zero length is not implemented (yet).
 */
 void Visualization::tdTimelineAppend(std::vector<BAGID> bag_ids) {
+    assert(bag_ids.empty() == false);
+
     Json::Value ids;
     for (auto id : bag_ids)
         ids.append(id);
