@@ -42,10 +42,16 @@ class Visualization {
     void visuTD(treedecType *treeDec);
     Json::StreamWriterBuilder *getWriterBuilder();
     void writeJsonToStdout(Json::StreamWriter::Factory const &factory, Json::Value const &value);
+    void visuTimelineMain();
 
   private:
     bool outputEnabled = false;
-    std::string bagpre = "bag %d";
+    const std::string
+        BAGPRE = "bag %s",
+        TAG_BAGPRE = "bagpre",
+        TAG_LABELDICT = "labeldict",
+        TAG_EDGEARRAY = "edgearray";
+
     std::string visufile;
     Json::StreamWriterBuilder *writerBuilder;
 

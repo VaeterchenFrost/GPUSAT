@@ -113,23 +113,31 @@ void Visualization::testJson() {
 }
 
 /*
-s.node(bagpre % 4, bagNode(bagpre % 4, ["[2 3 8]", "Test2"]))
-    s.node(bagpre % 3, bagNode(bagpre % 3, "[2 4 8]"))
-    # s.node('join1', bagNode("Join", "2~3"))
-    s.node(bagpre % 2, bagNode(bagpre % 2, "[1 2 5]"))
-    s.node(bagpre % 1, bagNode(bagpre % 1, "[1 2 4 6]"))
-    s.node(bagpre % 0, bagNode(bagpre % 0, "[1 4 7]"))
-
-    s.edges(
-        [(bagpre % 4, bagpre % 3), (bagpre % 2, bagpre % 1),
-         (bagpre % 3, bagpre % 1), (bagpre % 1, bagpre % 0)])
+tdGraph = {
+        "bagpre" : "bag %s",
+        "edgearray" : 
+        [
+            [ 1, 0 ],
+            [ 2, 1 ],
+            [ 3, 1 ],
+            [ 4, 3 ]
+        ],
+        "labeldict" : 
+        {
+            "0" : [ "[1 4 7]" ],
+            "1" : [ "[1 2 4 6]" ],
+            "2" : [ "[1 2 5]" ],
+            "3" : [ "[2 4 8]" ],
+            "4" : [ "[2 3 8]" ]
+        }
+    }
          */
 void Visualization::visuTD(treedecType *treeDec) {
     Json::Value tdGraph;
     Json::Value labeldict;
     Json::Value edgearray;
 
-    tdGraph["bagpre"] = "bag %s";
+    tdGraph[TAG_BAGPRE] = BAGPRE;
     for (auto bag : treeDec->bags) {
         std::ostringstream variables;
         variables << "["; // overwrite previous
@@ -142,10 +150,10 @@ void Visualization::visuTD(treedecType *treeDec) {
 
         labeldict.append(variables.str()); // might be the only label...
 
-        tdGraph["labeldict"][std::to_string(bag.id)] = labeldict;
+        tdGraph[TAG_LABELDICT][std::to_string(bag.id)] = labeldict;
         labeldict.clear();
 
-        for (bagType *e : bag.edges) // Edges to bags
+        for (bagType *e : bag.edges) // Edges between bags
         {
             Json::Value edge;
             edge.append(e->id);
@@ -154,7 +162,7 @@ void Visualization::visuTD(treedecType *treeDec) {
             edgearray.append(edge);
         }
     }
-    tdGraph["edgearray"] = edgearray;
+    tdGraph[TAG_EDGEARRAY] = edgearray;
     writeJsonToStdout(*getWriterBuilder(), tdGraph);
 }
 
