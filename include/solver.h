@@ -29,6 +29,7 @@ class Solver {
     bool verbose = false;
     dataStructure solutionType = dataStructure::TREE;
     Graphoutput *graphoutput;
+	Visualization *visualization;
 
     /**
 		 *
@@ -41,8 +42,9 @@ class Solver {
 		 * @param maxBag_
 		 * @param verbose_
 		 * @param graphoutput_
+		 * @param visualization_
 		 */
-    Solver(cl::Context &context_, cl::CommandQueue &queue_, cl::Program &program_, cl_long memorySize_, cl_long maxMemoryBuffer_, dataStructure solutionType_, cl_long maxBag_, bool verbose_, Graphoutput *graphoutput_) : context(context_), queue(queue_), program(program_), memorySize(memorySize_), maxMemoryBuffer(maxMemoryBuffer_), solutionType(solutionType_), maxBag(maxBag_), verbose(verbose_), graphoutput(graphoutput_) {}
+    Solver(cl::Context &context_, cl::CommandQueue &queue_, cl::Program &program_, cl_long memorySize_, cl_long maxMemoryBuffer_, dataStructure solutionType_, cl_long maxBag_, bool verbose_, Graphoutput *graphoutput_, Visualization *visualization_) : context(context_), queue(queue_), program(program_), memorySize(memorySize_), maxMemoryBuffer(maxMemoryBuffer_), solutionType(solutionType_), maxBag(maxBag_), verbose(verbose_), graphoutput(graphoutput_),visualization(visualization_) {}
 
     /**
 		 * function to solve the sat problem

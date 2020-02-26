@@ -93,7 +93,9 @@ class Visualization {
     // One step in the timeline
     void tdTimelineAppend(std::vector<BAGID> bag_ids, TABLELINES tablelines, std::string const toplabel = "", std::string const bottomlabel = "", bool transpose = true);
     void tdTimelineAppend(std::vector<BAGID> bag_ids);
-
+    Json::Value getTdTimeline() {
+        return tdTimeline;
+    }
     // template <typename Iter>
     // inline static Json::Value copyIntoJsonArray(Iter it, Iter end) {
     //     Json::Value result;

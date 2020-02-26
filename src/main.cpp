@@ -349,7 +349,7 @@ int main(int argc, char *argv[]) {
         myVisu->visuTD(&treeDecomp);
         graphout->graphStart(&treeDecomp);
         bagType next;
-        sol = new Solver(context, queue, program, memorySize, maxMemoryBuffer, solutionType, maxBag, verbose, graphout);
+        sol = new Solver(context, queue, program, memorySize, maxMemoryBuffer, solutionType, maxBag, verbose, graphout, myVisu);
 
         next.variables.assign(treeDecomp.bags[0].variables.begin(), treeDecomp.bags[0].variables.begin() + std::min((cl_long)treeDecomp.bags[0].variables.size(), (cl_long)12));
         long long int time_solving = getTime();
@@ -358,7 +358,7 @@ int main(int argc, char *argv[]) {
         if (verbose)
             std::cout << "\n==== GRAPH END ====" << std::endl;
         graphout->graphEnd();
-
+        myVisu->getTdTimeline()
         /// solution visualisation
         if (verbose) {
             std::cout << "\n--- Solutions: ---\n";

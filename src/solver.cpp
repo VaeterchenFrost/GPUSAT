@@ -5,6 +5,7 @@
 #include <iostream>
 #include <solver.h>
 #include <sstream>
+#include <visualization.h>
 
 namespace gpusat {
 
@@ -19,7 +20,7 @@ namespace gpusat {
 void Solver::solveProblem(treedecType &decomp, satformulaType &formula, bagType &node, bagType &pnode, nodeType lastNode) {
     if (verbose)
         std::cout << "==> Entering solveProblem on id " << node.id << " <==\n";
-    // if (verbose && node.id == 0) printtreedecType(&decomp, std::cout);
+    visualization->tdTimelineAppend(std::vector<cl_long>({node.id}));
 
     if (isSat > 0) {
         if (node.edges.empty()) {

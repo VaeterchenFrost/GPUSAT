@@ -5,6 +5,7 @@
 #include <sstream>
 #include <types.h>
 #include <visualization.h>
+#define LOGGER(x) (std::cout << "LOGGING: " << x << "\n")
 
 /*
 TD GRAPH:
@@ -178,14 +179,17 @@ void Visualization::visuTD(treedecType *treeDec) {
 void Visualization::tdTimelineAppend(std::vector<BAGID> bag_ids, TABLELINES tablelines, std::string const toplabel, std::string const bottomlabel, bool transpose) {
     assert(bag_ids.empty() == false);
     Json::Value timestepJson;
-    if (bag_ids.size() == 1)
+    if (bag_ids.size() == 1){
         timestepJson.append(bag_ids[0]);
+        LOGGER("tdTimelineAppend Sol " + bag_ids[0]);}
     else {
         Json::Value ids;
         for (auto id : bag_ids)
             ids.append(id);
         timestepJson.append(ids);
+        LOGGER("tdTimelineAppend Sol " + ids.toStyledString());
     }
+    
     // add table
     Json::Value solutionArJson;
     Json::Value rowJson;
@@ -194,7 +198,7 @@ void Visualization::tdTimelineAppend(std::vector<BAGID> bag_ids, TABLELINES tabl
     solutionArJson.append(rowJson);
     rowJson.clear();
     Grid *mygrid = &tablelines.solutions;
-    for (int r = 0; r < mygrid->rows(); r++) {          // add grid rows
+    for (int r = 0; r < mygrid->rows(); r++) { // add grid rows
         for (int c = 0; c < mygrid->columns(); c++) {
             rowJson.append(mygrid[r][c]);
         }
@@ -214,12 +218,14 @@ void Visualization::tdTimelineAppend(std::vector<BAGID> bag_ids, TABLELINES tabl
  * The behaviour with zero length is not implemented (yet).
 */
 void Visualization::tdTimelineAppend(std::vector<BAGID> bag_ids) {
+
     assert(bag_ids.empty() == false);
 
     Json::Value ids;
     for (auto id : bag_ids)
         ids.append(id);
     tdTimeline.append(ids);
+    LOGGER("tdTimelineAppend " + ids.toStyledString);
 }
 
 Json::StreamWriterBuilder *Visualization::getWriterBuilder() {
