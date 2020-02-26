@@ -18,7 +18,7 @@ TD GRAPH:
         [(bagpre % 4, bagpre % 3), (bagpre % 2, bagpre % 1),
          (bagpre % 3, bagpre % 1), (bagpre % 1, bagpre % 0)])
 
-TD-TIMEELINE:
+TD-TIMELINE:
 TIMELINE = [(0,), (1,),
                 (2, ([['id', 'v1', 'v2', 'n Sol'], [0, 0, 0, 0], [1, 1, 0, 1],
                       [2, 0, 1, 1], [3, 1, 1, 2]], 'sol bag 2', 'sum: 4',
@@ -87,7 +87,6 @@ void Visualization::testJson() {
     fromScratch["array"] = array;
     fromScratch["object"]["hello"] = "world";
 
-    output(fromScratch);
     std::cout << std::endl;
     // write in a nice readable way
     writeJsonToStdout(*getWriterBuilder(), fromScratch);
@@ -164,6 +163,15 @@ void Visualization::visuTD(treedecType *treeDec) {
     }
     tdGraph[TAG_EDGEARRAY] = edgearray;
     writeJsonToStdout(*getWriterBuilder(), tdGraph);
+}
+
+/**
+ * bag_ids: 
+ *  - if one: one (IF) solution found
+ *  - more: join solution found
+ */
+void visuMainTimeline(BAGID &bag_ids, TABLELINES tablelines, std::string const toplabel, std::string const bottomlabel, bool transpose){
+
 }
 
 Json::StreamWriterBuilder *Visualization::getWriterBuilder() {
