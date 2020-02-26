@@ -8,9 +8,10 @@
 #include <memory>
 #include <string>
 #include <types.h>
+#include <vector>
 
 namespace gpusat {
-    typedef cl_long BAGID;
+typedef cl_long BAGID;
 /**
  * Class for storing 2dim 'ulong' values
  * using unique_ptr and a 1dim memory layout.
@@ -91,7 +92,8 @@ class Visualization {
     Json::StreamWriterBuilder *getWriterBuilder();
     void writeJsonToStdout(Json::StreamWriter::Factory const &factory, Json::Value const &value);
     // One step in the timeline
-    void visuMainTimeline(BAGID &bag_ids, TABLELINES tablelines, std::string const toplabel, std::string const bottomlabel, bool transpose);
+    void tdTimelineAppend(std::vector<BAGID> bag_ids, TABLELINES tablelines, std::string const toplabel = "", std::string const bottomlabel = "", bool transpose = true);
+    void tdTimelineAppend(std::vector<BAGID> bag_ids);
 
   private:
     bool outputEnabled = false;
@@ -103,7 +105,7 @@ class Visualization {
 
     std::string visufile;
     Json::StreamWriterBuilder *writerBuilder;
-
+    Json::Value tdTimeline;
     void visuout(std::string string, bool append = true);
     void setFile(std::string filename);
 };

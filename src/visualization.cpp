@@ -169,9 +169,22 @@ void Visualization::visuTD(treedecType *treeDec) {
  * bag_ids: 
  *  - if one: one (IF) solution found
  *  - more: join solution found
+ * tablelines: all lines for the table
+ * toplabel: string to label the whole solution
+ * bottomlabel: string to summarize the solution
+ * transpose: whether the tablelines are rowfirst (true) or not.
  */
-void visuMainTimeline(BAGID &bag_ids, TABLELINES tablelines, std::string const toplabel, std::string const bottomlabel, bool transpose){
+void Visualization::tdTimelineAppend(std::vector<BAGID> bag_ids, TABLELINES tablelines, std::string const toplabel, std::string const bottomlabel, bool transpose) {
+}
 
+/**
+ * Only highlight those bags
+*/
+void Visualization::tdTimelineAppend(std::vector<BAGID> bag_ids) {
+    Json::Value ids;
+    for (auto id : bag_ids)
+        ids.append(id);
+    tdTimeline.append(ids);
 }
 
 Json::StreamWriterBuilder *Visualization::getWriterBuilder() {
