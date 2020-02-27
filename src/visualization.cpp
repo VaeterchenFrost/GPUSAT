@@ -5,7 +5,8 @@
 #include <sstream>
 #include <types.h>
 #include <visualization.h>
-#define LOGGER(x) (std::cout << "LOGGING: " << x << "_LOGGING\n")
+#define LOGGER(x)
+// #define LOGGER(x) (std::cout << "LOGGING: " << x << std::endl)
 
 /*
 TD GRAPH:
@@ -176,18 +177,18 @@ void Visualization::visuTD(treedecType *treeDec) {
  * bottomlabel: string to summarize the solution
  * transpose: whether the tablelines are rowfirst (true) or not.
  */
-void Visualization::tdTimelineAppend(std::vector<BAGID> bag_ids, TableLines tablelines, std::string const toplabel, std::string const bottomlabel, bool transpose) {
+void Visualization::tdTimelineAppend(std::vector<cl_long> bag_ids, TableLines tablelines, std::string const toplabel, std::string const bottomlabel, bool transpose) {
     assert(bag_ids.empty() == false);
     Json::Value timestepJson;
     if (bag_ids.size() == 1) {
         timestepJson.append(bag_ids[0]);
-        LOGGER("tdTimelineAppend Sol " + bag_ids[0]);
+        LOGGER(bag_ids[0]);
     } else {
         Json::Value ids;
         for (auto id : bag_ids)
             ids.append(id);
         timestepJson.append(ids);
-        LOGGER("tdTimelineAppend Sol " + ids.toStyledString());
+        LOGGER(ids);
     }
 
     // add table
@@ -197,17 +198,17 @@ void Visualization::tdTimelineAppend(std::vector<BAGID> bag_ids, TableLines tabl
         rowJson.append(val);
     solutionArJson.append(rowJson);
     rowJson.clear();
-    Grid *mygrid = &tablelines.solutions;
-    for (int r = 0; r < mygrid->rows(); r++) { // add grid rows
-        for (int c = 0; c < mygrid->columns(); c++) {
-            rowJson.append(mygrid[r][c]);
+
+    for (int r = 0; r < tablelines.solutions.rows(); r++) { // add grid rows
+        for (int c = 0; c < tablelines.solutions.columns(); c++) {
+            rowJson.append(tablelines.solutions(r, c));
         }
         solutionArJson.append(rowJson);
         rowJson.clear();
     }
     timestepJson.append(solutionArJson);
     timestepJson.append(toplabel);
-    timestepJson.append("sum: " + std::to_string(tablelines.totalSol));
+    timestepJson.append("sum: " + std::to_string((ulong)tablelines.totalSol));
     timestepJson.append(transpose);
     tdTimeline.append(timestepJson);
 }
@@ -217,7 +218,7 @@ void Visualization::tdTimelineAppend(std::vector<BAGID> bag_ids, TableLines tabl
  * Might even be only one bag.
  * The behaviour with zero length is not implemented (yet).
 */
-void Visualization::tdTimelineAppend(std::vector<BAGID> bag_ids) {
+void Visualization::tdTimelineAppend(std::vector<cl_long> bag_ids) {
 
     assert(bag_ids.empty() == false);
 
@@ -225,7 +226,7 @@ void Visualization::tdTimelineAppend(std::vector<BAGID> bag_ids) {
     for (auto id : bag_ids)
         ids.append(id);
     tdTimeline.append(ids);
-    LOGGER("tdTimelineAppend " + ids.toStyledString());
+    LOGGER(ids);
 }
 
 Json::StreamWriterBuilder *Visualization::getWriterBuilder() {
@@ -255,5 +256,61 @@ void Visualization::setFile(std::string filename) {
         outputEnabled = false;
     visufile = filename;
 }
+BagMatrix::BagMatrix(size_t rows, size_t cols) : mRows(rows), mCols(cols), mData(rows * cols) {
+}
+BagMatrix::BagMatrix() : mRows(0), mCols(0), mData(0){};
 
+cl_long &BagMatrix::operator()(size_t i, size_t j) {
+    return mData[i * mCols + j];
+}
+
+cl_long BagMatrix::operator()(size_t i, size_t j) const {
+    return mData[i * mCols + j];
+}
+
+TableLines solJson(bagType node, dataStructure solutionType) {
+
+    size_t var_count = node.variables.size();
+    cl_double totalSol = 0;
+    TableLines lines;
+    std::vector<std::string> headline;
+    if (node.solution->elements != nullptr) {
+        headline.push_back("id");
+        for (int i = 0; i < var_count; ++i) {
+            headline.push_back("v" + std::to_string(node.variables[i]));
+        }
+        headline.push_back("n Sol");
+        lines.headline = headline;
+
+        BagMatrix mygrid(1 << var_count, var_count + 2); // Grid 2^var_count * ('id' + var_count + 'n Sol')
+        // all ID-lines
+        cl_long row_n;
+        for (cl_long id = node.solution->minId; id < node.solution->maxId; id++) {
+            row_n = id - node.solution->minId;
+            mygrid(row_n, 0) = id;
+            cl_long id_b = id;
+            for (int v = 0; v < var_count; ++v) { // find binary rep. of id
+                mygrid(row_n, v + 1) = id_b % 2;
+                id_b /= 2;
+            }
+            cl_double sol = -1.;
+
+            if (solutionType == dataStructure::TREE) {
+                sol = getCount(id, node.solution->elements, var_count) * pow(2, node.correction);
+            } else {
+                sol = *reinterpret_cast<cl_double *>(&node.solution->elements[id - node.solution->minId]) * pow(2, node.correction);
+            }
+            totalSol += sol;
+            // last slot filled with solution in row
+            mygrid(row_n, mygrid.columns() - 1) = sol; // Further cast from double to BAGID ?
+        }
+        lines.solutions = mygrid;
+
+        lines.totalSol = totalSol;
+        return {headline, mygrid, totalSol};
+    } else {
+        BagMatrix mygrid;
+        return {headline, mygrid, -1.};
+    }
+}
 } // namespace gpusat

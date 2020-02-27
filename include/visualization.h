@@ -11,14 +11,14 @@
 #include <vector>
 
 namespace gpusat {
-typedef cl_long BAGID;
+
 /**
  * Class for storing 2dim 'ulong' values
- * using unique_ptr and a 1dim memory layout.
- * See https://stackoverflow.com/a/32279494
+ * using vector and a 1dim memory layout.
+ * See https://stackoverflow.com/a/2076668
  * Example usage:
  * 
- * Grid mygrid (5, 5);
+ * BagMatrix mygrid (5, 5);
     for (int r = 0; r < mygrid.rows(); r++){
         for (int c = 0; c < mygrid.columns(); c++){
 	        mygrid[r][c] = r * c;
@@ -34,45 +34,19 @@ typedef cl_long BAGID;
     std::cout << std::endl;
     }
  */
-class Grid {
-    size_t _rows;
-    size_t _columns;
-    std::unique_ptr<BAGID[]> data;
-
+class BagMatrix {
   public:
-    Grid(size_t rows, size_t columns)
-        : _rows{rows},
-          _columns{columns},
-          data{std::make_unique<BAGID[]>(rows * columns)} {}
+    BagMatrix(size_t rows, size_t cols);
+    BagMatrix();
+    cl_long &operator()(size_t i, size_t j);
+    cl_long operator()(size_t i, size_t j) const;
+    size_t rows() { return mRows; }
+    size_t columns() { return mCols; }
 
-    Grid() : _rows(0), _columns(0), data(nullptr){};
-
-    Grid(const Grid &grid) {
-        _rows = grid._rows;
-        _columns = grid._columns;
-        data = std::make_unique<BAGID[]>(*grid.data.get());
-    }
-
-    void operator=(const Grid &grid) {
-        _rows = grid._rows;
-        _columns = grid._columns;
-        data = std::make_unique<BAGID[]>(*grid.data.get());
-    }
-    // ~Grid() = default;
-    // Grid(Grid const& other) : data(other.data->clone()) {}
-    // Grid(Grid && other) = default;
-    // Grid& operator=(Grid const& other) { data = other.data->clone(); return *this; }
-    // Grid& operator=(Grid && other) = default;
-
-    size_t rows() const { return _rows; }
-
-    size_t columns() const { return _columns; }
-
-    BAGID *operator[](size_t row) { return row * _columns + data.get(); }
-
-    BAGID &operator()(size_t row, size_t column) {
-        return data[row * _columns + column];
-    }
+  private:
+    size_t mRows;
+    size_t mCols;
+    std::vector<cl_long> mData;
 };
 
 /**
@@ -83,57 +57,13 @@ class Grid {
  */
 struct TableLines {
     std::vector<std::string> headline;
-    Grid solutions;
+    BagMatrix solutions;
     cl_double totalSol;
 };
 
 /// Construct Tablelines from a solved node of the tree decomposition
 /// If no solution is stored in this node return empty grid and totalSol -1.
-inline TableLines solJson(bagType node, dataStructure solutionType) {
-
-    size_t var_count = node.variables.size();
-    cl_double totalSol = 0;
-    TableLines lines;
-    std::vector<std::string> headline;
-    if (node.solution->elements != nullptr) {
-        headline.push_back("id");
-        for (int i = 0; i < var_count; ++i) {
-            headline.push_back("v" + node.variables[i]);
-        }
-        headline.push_back("n Sol");
-        lines.headline = headline;
-
-        Grid mygrid(1 << var_count, var_count + 2); // Grid 2^var_count * ('id' + var_count + 'n Sol')
-        // all ID-lines
-        cl_long row_n;
-        for (cl_long id = node.solution->minId; id < node.solution->maxId; id++) {
-            row_n = id - node.solution->minId;
-            mygrid[row_n][0] = id;
-            cl_long id_b = id;
-            for (int v = 0; v < var_count; ++v) { // find binary rep. of id
-                mygrid[row_n][v + 1] = id_b % 2;
-                id_b /= 2;
-            }
-            cl_double sol = -1.;
-
-            if (solutionType == dataStructure::TREE) {
-                sol = getCount(id, node.solution->elements, var_count) * pow(2, node.correction);
-            } else {
-                sol = *reinterpret_cast<cl_double *>(&node.solution->elements[id - node.solution->minId]) * pow(2, node.correction);
-            }
-            totalSol += sol;
-            // last slot filled with solution in row
-            mygrid[row_n][mygrid.columns() - 1] = (BAGID)sol; // Further cast from double to BAGID ?
-        }
-        lines.solutions = mygrid;
-
-        lines.totalSol = totalSol;
-        return {headline, mygrid, totalSol};
-    } else {
-        Grid mygrid;
-        return {headline, mygrid, -1.};
-    }
-}
+TableLines solJson(bagType node, dataStructure solutionType);
 
 class Visualization {
 
@@ -159,8 +89,8 @@ class Visualization {
     Json::StreamWriterBuilder *getWriterBuilder();
     void writeJsonToStdout(Json::StreamWriter::Factory const &factory, Json::Value const &value);
     // One step in the timeline
-    void tdTimelineAppend(std::vector<BAGID> bag_ids, TableLines tablelines, std::string const toplabel = "", std::string const bottomlabel = "", bool transpose = true);
-    void tdTimelineAppend(std::vector<BAGID> bag_ids);
+    void tdTimelineAppend(std::vector<cl_long> bag_ids, TableLines tablelines, std::string const toplabel = "", std::string const bottomlabel = "", bool transpose = true);
+    void tdTimelineAppend(std::vector<cl_long> bag_ids);
     Json::Value getTdTimeline() {
         return tdTimeline;
     }
