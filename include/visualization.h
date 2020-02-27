@@ -47,12 +47,23 @@ class Grid {
 
     Grid() : _rows(0), _columns(0), data(nullptr){};
 
-    void operator=(Grid &grid) {
+    Grid(const Grid &grid) {
         _rows = grid._rows;
         _columns = grid._columns;
-        data = std::move(grid.data);
+        data = std::make_unique<BAGID[]>(*grid.data.get());
     }
-    
+
+    void operator=(const Grid &grid) {
+        _rows = grid._rows;
+        _columns = grid._columns;
+        data = std::make_unique<BAGID[]>(*grid.data.get());
+    }
+    // ~Grid() = default;
+    // Grid(Grid const& other) : data(other.data->clone()) {}
+    // Grid(Grid && other) = default;
+    // Grid& operator=(Grid const& other) { data = other.data->clone(); return *this; }
+    // Grid& operator=(Grid && other) = default;
+
     size_t rows() const { return _rows; }
 
     size_t columns() const { return _columns; }
@@ -70,17 +81,19 @@ class Grid {
  *  [0, 0, 0, 1], [1, 1, 0, 2], [2, 0, 1, 2],
  *  [3, 1, 1, 3]]
  */
-struct TABLELINES {
+struct TableLines {
     std::vector<std::string> headline;
     Grid solutions;
+    cl_double totalSol;
 };
 
-/// Generate a formatted stringoutput for a solved node with solutions
-inline std::string solJson(bagType node, dataStructure solutionType) {
+/// Construct Tablelines from a solved node of the tree decomposition
+/// If no solution is stored in this node return empty grid and totalSol -1.
+inline TableLines solJson(bagType node, dataStructure solutionType) {
 
     size_t var_count = node.variables.size();
     cl_double totalSol = 0;
-    TABLELINES lines;
+    TableLines lines;
     std::vector<std::string> headline;
     if (node.solution->elements != nullptr) {
         headline.push_back("id");
@@ -110,15 +123,16 @@ inline std::string solJson(bagType node, dataStructure solutionType) {
             }
             totalSol += sol;
             // last slot filled with solution in row
-            mygrid[row_n][mygrid.columns - 1] = (BAGID)sol; // Further cast from double to BAGID ?
+            mygrid[row_n][mygrid.columns() - 1] = (BAGID)sol; // Further cast from double to BAGID ?
         }
         lines.solutions = mygrid;
 
-        os << "sum: " << totalSol;
+        lines.totalSol = totalSol;
+        return {headline, mygrid, totalSol};
     } else {
-        os << "no solutions (nullptr)";
+        Grid mygrid;
+        return {headline, mygrid, -1.};
     }
-    return os.str();
 }
 
 class Visualization {
@@ -145,7 +159,7 @@ class Visualization {
     Json::StreamWriterBuilder *getWriterBuilder();
     void writeJsonToStdout(Json::StreamWriter::Factory const &factory, Json::Value const &value);
     // One step in the timeline
-    void tdTimelineAppend(std::vector<BAGID> bag_ids, TABLELINES tablelines, std::string const toplabel = "", std::string const bottomlabel = "", bool transpose = true);
+    void tdTimelineAppend(std::vector<BAGID> bag_ids, TableLines tablelines, std::string const toplabel = "", std::string const bottomlabel = "", bool transpose = true);
     void tdTimelineAppend(std::vector<BAGID> bag_ids);
     Json::Value getTdTimeline() {
         return tdTimeline;

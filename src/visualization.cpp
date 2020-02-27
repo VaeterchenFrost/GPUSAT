@@ -5,7 +5,7 @@
 #include <sstream>
 #include <types.h>
 #include <visualization.h>
-#define LOGGER(x) (std::cout << "LOGGING: " << x << "\n")
+#define LOGGER(x) (std::cout << "LOGGING: " << x << "_LOGGING\n")
 
 /*
 TD GRAPH:
@@ -176,20 +176,20 @@ void Visualization::visuTD(treedecType *treeDec) {
  * bottomlabel: string to summarize the solution
  * transpose: whether the tablelines are rowfirst (true) or not.
  */
-void Visualization::tdTimelineAppend(std::vector<BAGID> bag_ids, TABLELINES tablelines, std::string const toplabel, std::string const bottomlabel, bool transpose) {
+void Visualization::tdTimelineAppend(std::vector<BAGID> bag_ids, TableLines tablelines, std::string const toplabel, std::string const bottomlabel, bool transpose) {
     assert(bag_ids.empty() == false);
     Json::Value timestepJson;
-    if (bag_ids.size() == 1){
+    if (bag_ids.size() == 1) {
         timestepJson.append(bag_ids[0]);
-        LOGGER("tdTimelineAppend Sol " + bag_ids[0]);}
-    else {
+        LOGGER("tdTimelineAppend Sol " + bag_ids[0]);
+    } else {
         Json::Value ids;
         for (auto id : bag_ids)
             ids.append(id);
         timestepJson.append(ids);
         LOGGER("tdTimelineAppend Sol " + ids.toStyledString());
     }
-    
+
     // add table
     Json::Value solutionArJson;
     Json::Value rowJson;
@@ -207,7 +207,7 @@ void Visualization::tdTimelineAppend(std::vector<BAGID> bag_ids, TABLELINES tabl
     }
     timestepJson.append(solutionArJson);
     timestepJson.append(toplabel);
-    timestepJson.append(bottomlabel);
+    timestepJson.append("sum: " + std::to_string(tablelines.totalSol));
     timestepJson.append(transpose);
     tdTimeline.append(timestepJson);
 }
@@ -225,7 +225,7 @@ void Visualization::tdTimelineAppend(std::vector<BAGID> bag_ids) {
     for (auto id : bag_ids)
         ids.append(id);
     tdTimeline.append(ids);
-    LOGGER("tdTimelineAppend " + ids.toStyledString);
+    LOGGER("tdTimelineAppend " + ids.toStyledString());
 }
 
 Json::StreamWriterBuilder *Visualization::getWriterBuilder() {

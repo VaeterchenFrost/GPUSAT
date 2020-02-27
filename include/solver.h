@@ -7,6 +7,7 @@
 #include <CL/cl.hpp>
 #include <graphoutput.h>
 #include <types.h>
+#include <visualization.h>
 
 namespace gpusat {
 /**

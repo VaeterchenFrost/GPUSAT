@@ -358,7 +358,7 @@ int main(int argc, char *argv[]) {
         if (verbose)
             std::cout << "\n==== GRAPH END ====" << std::endl;
         graphout->graphEnd();
-        myVisu->getTdTimeline()
+        myVisu->writeJsonToStdout(*myVisu->getWriterBuilder(), myVisu->getTdTimeline());
         /// solution visualisation
         if (verbose) {
             std::cout << "\n--- Solutions: ---\n";

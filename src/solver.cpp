@@ -44,6 +44,9 @@ void Solver::solveProblem(treedecType &decomp, satformulaType &formula, bagType 
             cNode.bags = 1;
             cNode.maxSize = 1;
             solveIntroduceForget(formula, pnode, node, cNode, true, lastNode);
+            visualization->tdTimelineAppend(std::vector<cl_long>({node.id}),
+                                                solJson(node, solutionType), "sol bag " + std::to_string(node.id));
+
             if (verbose) {
                 std::cout << "Solved IF-0 on node " << node.id << "\n";
                 printbagType(&node, std::cout);
@@ -56,6 +59,9 @@ void Solver::solveProblem(treedecType &decomp, satformulaType &formula, bagType 
             if (isSat == 1) {
                 bagType &cnode = *node.edges[0];
                 solveIntroduceForget(formula, pnode, node, cnode, false, lastNode);
+                visualization->tdTimelineAppend(std::vector<cl_long>({node.id}),
+                                                solJson(node, solutionType), "sol bag " + std::to_string(node.id));
+
                 if (verbose) {
                     std::cout << "Solved IF-1 on node " << node.id << "\n";
                     printbagType(&node, std::cout);
@@ -88,8 +94,7 @@ void Solver::solveProblem(treedecType &decomp, satformulaType &formula, bagType 
                     if (i == node.edges.size() - 1) {
                         solveJoin(tmp, edge1, edge2, formula, nodeType::INTRODUCEFORGET);
                         visualization->tdTimelineAppend(std::vector<cl_long>({edge1.id, edge2.id}),
-                        
-                        );
+                                                        solJson(tmp, solutionType), "sol Join " + std::to_string(edge1.id) + "~" + std::to_string(edge2.id));
                         if (verbose) {
                             std::cout << "Solved JOIN-1 on nodes " << edge1.id << "~" << edge2.id << "\n";
                             printbagType(&tmp, std::cout);
@@ -102,6 +107,9 @@ void Solver::solveProblem(treedecType &decomp, satformulaType &formula, bagType 
                         }
                         edge1 = tmp;
                         solveIntroduceForget(formula, pnode, node, tmp, false, lastNode);
+                        visualization->tdTimelineAppend(std::vector<cl_long>({node.id}),
+                                                        solJson(node, solutionType), "sol bag " + std::to_string(node.id));
+
                         if (verbose) {
                             std::cout << "Solved JOIN-IF on node " << node.id << "\n";
                             printbagType(&node, std::cout);
@@ -110,6 +118,9 @@ void Solver::solveProblem(treedecType &decomp, satformulaType &formula, bagType 
                         graphoutput->nodeBag(node.id, solutiontable(node, solutionType));
                     } else {
                         solveJoin(tmp, edge1, edge2, formula, nodeType::JOIN);
+                        visualization->tdTimelineAppend(std::vector<cl_long>({edge1.id, edge2.id}),
+                                                        solJson(tmp, solutionType), "sol Join " + std::to_string(edge1.id) + "~" + std::to_string(edge2.id));
+                        
                         if (verbose) {
                             std::cout << "Solved JOIN-0 on node " << tmp.id << "\n";
                             printbagType(&tmp, std::cout);
