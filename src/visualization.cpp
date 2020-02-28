@@ -134,7 +134,7 @@ tdGraph = {
         }
     }
          */
-void Visualization::visuTD(treedecType *treeDec) {
+void Visualization::visuTreeDec(treedecType *treeDec) {
     Json::Value tdGraph;
     Json::Value labeldict;
     Json::Value edgearray;
@@ -165,7 +165,7 @@ void Visualization::visuTD(treedecType *treeDec) {
         }
     }
     tdGraph[TAG_EDGEARRAY] = edgearray;
-    writeJsonToStdout(*getWriterBuilder(), tdGraph);
+    treeDecJson = tdGraph; // Store result in Visualization object
 }
 
 /**
@@ -248,7 +248,11 @@ void Visualization::visuout(std::string string, bool append) {
                   << std::endl;
     }
 }
-
+/**
+ * Store a new filename.
+ * In case the name has 0 length like "",
+ * we disable further output from the Visualization
+ */
 void Visualization::setFile(std::string filename) {
     if (filename != "") {
         outputEnabled = true;
@@ -312,5 +316,24 @@ TableLines solJson(bagType node, dataStructure solutionType) {
         BagMatrix mygrid;
         return {headline, mygrid, -1.};
     }
+}
+
+void Visualization::visuSatForm(satformulaType *sat) {
+    if (sat == nullptr || sat->clauses.empty()) {
+        std::cerr << "tried to read from empty satformulaType in Visualization::visuSatForm\n";
+        return;
+    }
+
+    Json::Value result;
+    Json::Value varsArr;
+    Json::UInt clause_counter = 0;
+    for (auto clause : sat->clauses) {
+        for (auto var : clause) {
+            varsArr.append(var);
+        }
+        result.append(varsArr);
+        varsArr.clear();
+    }
+    clausesJson = result;
 }
 } // namespace gpusat

@@ -85,7 +85,8 @@ class Visualization {
     }
 
     void testJson();
-    void visuTD(treedecType *treeDec);
+    void visuTreeDec(treedecType *treeDec);
+    void visuSatForm(satformulaType *sat);// consuming std::vector<std::vector<cl_long>> clauses;
     Json::StreamWriterBuilder *getWriterBuilder();
     void writeJsonToStdout(Json::StreamWriter::Factory const &factory, Json::Value const &value);
     // One step in the timeline
@@ -93,6 +94,12 @@ class Visualization {
     void tdTimelineAppend(std::vector<cl_long> bag_ids);
     Json::Value getTdTimeline() {
         return tdTimeline;
+    }
+    Json::Value getTreeDecJson() {
+        return treeDecJson;
+    }
+    Json::Value getClausesJson() {
+        return clausesJson;
     }
     // template <typename Iter>
     // inline static Json::Value copyIntoJsonArray(Iter it, Iter end) {
@@ -112,6 +119,8 @@ class Visualization {
     std::string visufile;
     Json::StreamWriterBuilder *writerBuilder;
     Json::Value tdTimeline;
+    Json::Value treeDecJson;
+    Json::Value clausesJson;
     void visuout(std::string string, bool append = true);
     void setFile(std::string filename);
 };

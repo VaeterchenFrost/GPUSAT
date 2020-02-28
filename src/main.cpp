@@ -345,8 +345,9 @@ int main(int argc, char *argv[]) {
         // myVisu.testJson();
         Graphoutput *graphout = new Graphoutput(graphfile);
         graphout->neo4jSat(&satFormula);
+        myVisu->visuSatForm(&satFormula);
         graphout->neo4jTD(&treeDecomp);
-        myVisu->visuTD(&treeDecomp);
+        myVisu->visuTreeDec(&treeDecomp);
         graphout->graphStart(&treeDecomp);
         bagType next;
         sol = new Solver(context, queue, program, memorySize, maxMemoryBuffer, solutionType, maxBag, verbose, graphout, myVisu);
@@ -359,6 +360,7 @@ int main(int argc, char *argv[]) {
             std::cout << "\n==== GRAPH END ====" << std::endl;
         graphout->graphEnd();
         myVisu->writeJsonToStdout(*myVisu->getWriterBuilder(), myVisu->getTdTimeline());
+        myVisu->writeJsonToStdout(*myVisu->getWriterBuilder(), myVisu->getClausesJson());
         /// solution visualisation
         if (verbose) {
             std::cout << "\n--- Solutions: ---\n";
