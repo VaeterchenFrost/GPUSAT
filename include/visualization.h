@@ -89,6 +89,7 @@ class Visualization {
     void visuSatForm(satformulaType *sat);// consuming std::vector<std::vector<cl_long>> clauses;
     Json::StreamWriterBuilder *getWriterBuilder();
     void writeJsonToStdout(Json::StreamWriter::Factory const &factory, Json::Value const &value);
+    void writeJsonToStdout(Json::Value const &value);
     // One step in the timeline
     void tdTimelineAppend(std::vector<cl_long> bag_ids, TableLines tablelines, std::string const toplabel = "", std::string const bottomlabel = "", bool transpose = true);
     void tdTimelineAppend(std::vector<cl_long> bag_ids);

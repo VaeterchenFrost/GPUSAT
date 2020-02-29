@@ -77,6 +77,10 @@ void Visualization::writeJsonToStdout(
     std::cout << std::endl; // add lf and flush
 }
 
+void Visualization::writeJsonToStdout(Json::Value const &value) {
+    Visualization::writeJsonToStdout(*writerBuilder, value);
+}
+
 void Visualization::testJson() {
 
     // ---- create from scratch ----
@@ -318,22 +322,34 @@ TableLines solJson(bagType node, dataStructure solutionType) {
     }
 }
 
+/**
+ * Save the clauses into the Visualization::clausesJson.
+ * Form: 
+ *  List[Dict{"id": List[Int]}]
+ * Error if:
+ *  sat formula is null or empty.
+ */
 void Visualization::visuSatForm(satformulaType *sat) {
     if (sat == nullptr || sat->clauses.empty()) {
         std::cerr << "tried to read from empty satformulaType in Visualization::visuSatForm\n";
         return;
     }
 
-    Json::Value result;
+    Json::Value resultJsom;
     Json::Value varsArr;
-    Json::UInt clause_counter = 0;
+    Json::Value clauseJ;
+    auto clause_counter = 0u;
+
     for (auto clause : sat->clauses) {
         for (auto var : clause) {
             varsArr.append(var);
         }
-        result.append(varsArr);
+        clauseJ[std::to_string(++clause_counter)] = varsArr;
+        resultJsom.append(clauseJ);
         varsArr.clear();
+        clauseJ.clear();
     }
-    clausesJson = result;
+
+    clausesJson = resultJsom;
 }
 } // namespace gpusat
