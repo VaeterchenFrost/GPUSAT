@@ -88,11 +88,12 @@ class Visualization {
     void visuTreeDec(treedecType *treeDec);
     void visuSatForm(satformulaType *sat); // consuming std::vector<std::vector<cl_long>> clauses;
     Json::StreamWriterBuilder *getWriterBuilder();
-    void writeJsonToStdout(Json::StreamWriter::Factory const &factory, Json::Value const &value);
-    void writeJsonToStdout(Json::Value const &value);
+    void writeJsonToStdout(Json::StreamWriter::Factory const &factory, Json::Value const &value, Json::OStream *sout = &std::cout);
+    void writeJsonToStdout(Json::Value const &value, Json::OStream *sout = &std::cout);
     // One step in the timeline
     void tdTimelineAppend(std::vector<cl_long> bag_ids, TableLines tablelines, std::string const toplabel = "", std::string const bottomlabel = "", bool transpose = true);
     void tdTimelineAppend(std::vector<cl_long> bag_ids);
+    void writeJsonFile(bool append = false);
 
     Json::Value getTdTimeline() {
         return tdTimeline;
@@ -119,7 +120,6 @@ class Visualization {
     Json::Value clausesJson;
     Json::Value tdTimeline;
     Json::Value variablesTimeline;
-    void visuout(std::string string, bool append = true);
     void setFile(std::string filename);
 };
 } // namespace gpusat

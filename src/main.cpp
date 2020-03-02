@@ -359,9 +359,10 @@ int main(int argc, char *argv[]) {
         if (verbose)
             std::cout << "\n==== GRAPH END ====" << std::endl;
         graphout->graphEnd();
-        myVisu->writeJsonToStdout(myVisu->getClausesJson());
-        myVisu->writeJsonToStdout(myVisu->getTreeDecJson());
-        myVisu->writeJsonToStdout(myVisu->getTdTimeline());
+        myVisu->writeJsonFile();
+        // myVisu->writeJsonToStdout(myVisu->getClausesJson());
+        // myVisu->writeJsonToStdout(myVisu->getTreeDecJson());
+        // myVisu->writeJsonToStdout(myVisu->getTdTimeline());
         /// solution visualisation
         if (verbose) {
             std::cout << "\n--- Solutions: ---\n";

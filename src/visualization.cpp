@@ -5,8 +5,8 @@
 #include <sstream>
 #include <types.h>
 #include <visualization.h>
-#define LOGGER(x)
-// #define LOGGER(x) (std::cout << "LOGGING: " << x << std::endl)
+#define LOGGER2(x)
+#define LOGGER(x) (std::cout << "LOGGING: " << x << std::endl)
 
 /*
 TD GRAPH:
@@ -71,14 +71,14 @@ TIMELINE = (None, None,
 namespace gpusat {
 
 void Visualization::writeJsonToStdout(
-    Json::StreamWriter::Factory const &factory, Json::Value const &value) {
+    Json::StreamWriter::Factory const &factory, Json::Value const &value, Json::OStream *sout) {
     std::unique_ptr<Json::StreamWriter> const writer(factory.newStreamWriter());
-    writer->write(value, &std::cout);
+    writer->write(value, sout);
     std::cout << std::endl; // add lf and flush
 }
 
-void Visualization::writeJsonToStdout(Json::Value const &value) {
-    Visualization::writeJsonToStdout(*writerBuilder, value);
+void Visualization::writeJsonToStdout(Json::Value const &value, Json::OStream *sout) {
+    Visualization::writeJsonToStdout(*writerBuilder, value, sout);
 }
 
 void Visualization::testJson() {
@@ -100,9 +100,13 @@ void Visualization::testJson() {
 
     // ---- parse from string ----
 
-    // write in a compact way
-    Json::FastWriter fastWriter;
-    std::stringstream jsonMessage(fastWriter.write(fromScratch));
+    // write in a compact way 
+    // JSONCPP_DEPRECATED("Use StreamWriterBuilder instead") JSON_API FastWriter
+    // Json::FastWriter fastWriter;
+    // std::stringstream jsonMessage(fastWriter.write(fromScratch));
+    // std::cout << jsonMessage.str();
+    std::stringstream jsonMessage;
+    jsonMessage << (fromScratch);
     std::cout << jsonMessage.str();
 
     Json::Value parsedFromString;
@@ -190,13 +194,13 @@ void Visualization::tdTimelineAppend(std::vector<cl_long> bag_ids, TableLines ta
     Json::Value timestepJson;
     if (bag_ids.size() == 1) {
         timestepJson.append(bag_ids[0]);
-        LOGGER(bag_ids[0]);
+        LOGGER2(bag_ids[0]);
     } else {
         Json::Value ids;
         for (auto id : bag_ids)
             ids.append(id);
         timestepJson.append(ids);
-        LOGGER(ids);
+        LOGGER2(ids);
     }
 
     // add table
@@ -234,14 +238,14 @@ void Visualization::tdTimelineAppend(std::vector<cl_long> bag_ids) {
     for (auto id : bag_ids)
         ids.append(id);
     tdTimeline.append(ids);
-    LOGGER(ids);
+    LOGGER2(ids);
 }
 
 Json::StreamWriterBuilder *Visualization::getWriterBuilder() {
     return writerBuilder;
 }
 
-void Visualization::visuout(std::string string, bool append) {
+void Visualization::writeJsonFile(bool append) {
     if (!isEnabled())
         return;
 
@@ -249,7 +253,25 @@ void Visualization::visuout(std::string string, bool append) {
                          append ? std::ios_base::app : std::ios_base::out);
 
     if (stream.is_open()) {
-        stream << string;
+        Json::Value visu_json;
+        if (clausesJson.type() == Json::ValueType::arrayValue) {
+            visu_json["clausesJson"] = clausesJson;
+        } else {
+            LOGGER("clausesJson not array-type");
+        }
+        if (treeDecJson.type() == Json::ValueType::objectValue) {
+            visu_json["treeDecJson"] = treeDecJson;
+        } else {
+            LOGGER("treeDecJson not object-type");
+        }
+        if (tdTimeline.type() == Json::ValueType::arrayValue) {
+            visu_json["tdTimeline"] = tdTimeline;
+        } else {
+            LOGGER("tdTimeline not array-type");
+        }
+
+        writeJsonToStdout(visu_json, &stream);
+
         stream.close();
     } else {
         std::cerr << "Failed to open file : " << visufile << " with " << errno
@@ -350,7 +372,7 @@ void Visualization::visuSatForm(satformulaType *sat) {
         }
         clauseJ["id"] = ++clause_counter;
         clauseJ["list"] = varsArr;
-        
+
         resultJsom.append(clauseJ);
         varsArr.clear();
         clauseJ.clear();
