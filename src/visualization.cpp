@@ -140,6 +140,7 @@ tdGraph = {
          */
 void Visualization::visuTreeDec(treedecType *treeDec) {
     Json::Value tdGraph;
+    Json::Value labelarray;
     Json::Value labeldict;
     Json::Value edgearray;
 
@@ -154,9 +155,12 @@ void Visualization::visuTreeDec(treedecType *treeDec) {
         variables.seekp(-1, std::ios::end); // overwrite last space
         variables << "]";
 
-        labeldict.append(variables.str()); // might be the only label...
+        labelarray.append(variables.str()); // might be the only label...
 
-        tdGraph[TAG_LABELDICT][std::to_string(bag.id)] = labeldict;
+        labeldict["id"] = bag.id;
+        labeldict["list"] = labelarray;
+        tdGraph[TAG_LABELDICT].append(labeldict);
+        labelarray.clear();
         labeldict.clear();
 
         for (bagType *e : bag.edges) // Edges between bags
@@ -344,7 +348,9 @@ void Visualization::visuSatForm(satformulaType *sat) {
         for (auto var : clause) {
             varsArr.append(var);
         }
-        clauseJ[std::to_string(++clause_counter)] = varsArr;
+        clauseJ["id"] = ++clause_counter;
+        clauseJ["list"] = varsArr;
+        
         resultJsom.append(clauseJ);
         varsArr.clear();
         clauseJ.clear();
