@@ -122,26 +122,7 @@ void Visualization::testJson() {
     }
 }
 
-/*
-tdGraph = {
-        "bagpre" : "bag %s",
-        "edgearray" : 
-        [
-            [ 1, 0 ],
-            [ 2, 1 ],
-            [ 3, 1 ],
-            [ 4, 3 ]
-        ],
-        "labeldict" : 
-        {
-            "0" : [ "[1 4 7]" ],
-            "1" : [ "[1 2 4 6]" ],
-            "2" : [ "[1 2 5]" ],
-            "3" : [ "[2 4 8]" ],
-            "4" : [ "[2 3 8]" ]
-        }
-    }
-         */
+
 void Visualization::visuTreeDec(treedecType *treeDec) {
     Json::Value tdGraph;
     Json::Value labelarray;
@@ -149,12 +130,15 @@ void Visualization::visuTreeDec(treedecType *treeDec) {
     Json::Value edgearray;
 
     tdGraph[TAG_BAGPRE] = BAGPRE;
+    tdGraph[TAG_NUMVARS] = treeDec->numVars;
     for (auto bag : treeDec->bags) {
         std::ostringstream variables;
+        Json::Value var_list;
         variables << "["; // overwrite previous
 
         for (auto var_id : bag.variables) {
             variables << var_id << " ";
+            var_list.append(var_id);
         }
         variables.seekp(-1, std::ios::end); // overwrite last space
         variables << "]";
@@ -162,7 +146,9 @@ void Visualization::visuTreeDec(treedecType *treeDec) {
         labelarray.append(variables.str()); // might be the only label...
 
         labeldict["id"] = bag.id;
-        labeldict["list"] = labelarray;
+        labeldict["labels"] = labelarray;
+        labeldict["items"] = var_list;
+        
         tdGraph[TAG_LABELDICT].append(labeldict);
         labelarray.clear();
         labeldict.clear();
@@ -206,6 +192,7 @@ void Visualization::tdTimelineAppend(std::vector<cl_long> bag_ids, TableLines ta
     // add table
     Json::Value solutionArJson;
     Json::Value rowJson;
+    Json::Value solutionInfo;
     for (auto val : tablelines.headline)
         rowJson.append(val);
     solutionArJson.append(rowJson);
@@ -218,10 +205,11 @@ void Visualization::tdTimelineAppend(std::vector<cl_long> bag_ids, TableLines ta
         solutionArJson.append(rowJson);
         rowJson.clear();
     }
-    timestepJson.append(solutionArJson);
-    timestepJson.append(toplabel);
-    timestepJson.append("sum: " + std::to_string((ulong)tablelines.totalSol));
-    timestepJson.append(transpose);
+    solutionInfo.append(solutionArJson);
+    solutionInfo.append(toplabel);
+    solutionInfo.append("sum: " + std::to_string((ulong)tablelines.totalSol));
+    solutionInfo.append(transpose);
+    timestepJson.append(solutionInfo);
     tdTimeline.append(timestepJson);
 }
 

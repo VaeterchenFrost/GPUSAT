@@ -111,7 +111,8 @@ class Visualization {
         BAGPRE = "bag %s",
         TAG_BAGPRE = "bagpre",
         TAG_LABELDICT = "labeldict",
-        TAG_EDGEARRAY = "edgearray";
+        TAG_EDGEARRAY = "edgearray",
+        TAG_NUMVARS = "numVars";
 
     std::string visufile;
     Json::StreamWriterBuilder *writerBuilder;

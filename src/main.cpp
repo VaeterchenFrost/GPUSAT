@@ -171,6 +171,7 @@ int main(int argc, char *argv[]) {
     std::string type;
     std::string decompDir;
     std::string graphfile;
+    std::string visufile;
     long combineWidth = 20;
     time_t seed = time(0);
     bool cpu, weighted, noExp, nvidia, amd, verbose, nopreprocess;
@@ -201,9 +202,13 @@ int main(int argc, char *argv[]) {
     app.add_set("--dataStructure", type, {"array", "tree", "combined"}, "data structure for storing the solution")->set_default_str("combined");
     app.add_option("-m,--maxBagSize", maxBag, "max size of a bag on the gpu")->set_default_str("-1");
     app.add_option("-w,--combineWidth", combineWidth, "maximum width to combine bags of the decomposition")->set_default_str("20");
-    app.add_option("-g, --graph", graphfile, "filename for saving the decomposition graph")->set_default_str("");
+    app.add_option("-g,--graph", graphfile, "filename for saving the decomposition graph")->set_default_str("");
+    app.add_option("--visu,--visualizationfile", visufile, "filename for saving the visualization file")->set_default_str("visugpusat.json");
     CLI11_PARSE(app, argc, argv)
 
+    if (verbose) {
+        std::cout << "Seed: " << seed << std::endl;
+    }
     srand(seed);
 
     if (noExp) {
@@ -341,7 +346,7 @@ int main(int argc, char *argv[]) {
         std::cout.flush();
 
         Solver *sol;
-        Visualization *myVisu = new Visualization();
+        Visualization *myVisu = new Visualization(visufile);
         // myVisu.testJson();
         Graphoutput *graphout = new Graphoutput(graphfile);
         graphout->neo4jSat(&satFormula);
