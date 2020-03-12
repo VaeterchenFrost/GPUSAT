@@ -27,7 +27,7 @@ std::string kernelStr =
 
 #include <kernel.h>
 
-    using namespace gpusat;
+using namespace gpusat;
 
 void buildKernel(cl::Context &context, std::vector<cl::Device> &devices, cl::CommandQueue &queue, cl::Program &program, cl_long &memorySize, cl_long &maxMemoryBuffer, bool nvidia, bool amd, bool cpu, long &combineWidth) {
     std::vector<cl::Platform> platforms;
