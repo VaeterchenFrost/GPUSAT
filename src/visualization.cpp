@@ -100,7 +100,7 @@ void Visualization::testJson() {
 
     // ---- parse from string ----
 
-    // write in a compact way 
+    // write in a compact way
     // JSONCPP_DEPRECATED("Use StreamWriterBuilder instead") JSON_API FastWriter
     // Json::FastWriter fastWriter;
     // std::stringstream jsonMessage(fastWriter.write(fromScratch));
@@ -121,7 +121,6 @@ void Visualization::testJson() {
         writeJsonToStdout(*getWriterBuilder(), parsedFromString);
     }
 }
-
 
 void Visualization::visuTreeDec(treedecType *treeDec) {
     Json::Value tdGraph;
@@ -148,7 +147,7 @@ void Visualization::visuTreeDec(treedecType *treeDec) {
         labeldict["id"] = bag.id;
         labeldict["labels"] = labelarray;
         labeldict["items"] = var_list;
-        
+
         tdGraph[TAG_LABELDICT].append(labeldict);
         labelarray.clear();
         labeldict.clear();
@@ -234,6 +233,7 @@ Json::StreamWriterBuilder *Visualization::getWriterBuilder() {
 }
 
 void Visualization::writeJsonFile(bool append) {
+    std::cout << "Entering writeJsonFile, enabled " << isEnabled();
     if (!isEnabled())
         return;
 
@@ -272,7 +272,7 @@ void Visualization::writeJsonFile(bool append) {
  * we disable further output from the Visualization
  */
 void Visualization::setFile(std::string filename) {
-    if (filename != "") {
+    if (filename.compare("")) {
         outputEnabled = true;
     } else
         outputEnabled = false;

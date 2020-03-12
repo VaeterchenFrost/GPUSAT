@@ -203,7 +203,7 @@ int main(int argc, char *argv[]) {
     app.add_option("-m,--maxBagSize", maxBag, "max size of a bag on the gpu")->set_default_str("-1");
     app.add_option("-w,--combineWidth", combineWidth, "maximum width to combine bags of the decomposition")->set_default_str("20");
     app.add_option("-g,--graph", graphfile, "filename for saving the decomposition graph")->set_default_str("");
-    app.add_option("--visu,--visualizationfile", visufile, "filename for saving the visualization file")->set_default_str("visugpusat.json");
+    app.add_option("--visufile", visufile, "filename for saving the visualization file")->set_default_str("");
     CLI11_PARSE(app, argc, argv)
 
     if (verbose) {

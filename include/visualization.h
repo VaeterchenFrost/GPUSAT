@@ -68,9 +68,9 @@ TableLines solJson(bagType node, dataStructure solutionType);
 class Visualization {
 
   public:
-    Visualization(std::string filename = "visugpusat.json") {
+    Visualization(std::string filename) {
         setFile(filename);
-
+        std::cout << "Opened visualization with file " << visufile << " " << (isEnabled() ? "true" : "false") << "\n----------" << std::endl;
         writerBuilder = new Json::StreamWriterBuilder();
         (*writerBuilder)["commentStyle"] = "None";
         (*writerBuilder)["indentation"] = "    ";
