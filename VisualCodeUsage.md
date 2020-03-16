@@ -12,16 +12,22 @@ First, we navigate to [Visual Code](https://code.visualstudio.com) and download 
 
 Run the installer
 ![Run the installer](/MarkdownImages/VSCodeInstallerRun.png)
+
 Accept License
 ![Accept License](/MarkdownImages/VSCodeLicence.png)
+
 Choose the destination for the application
 ![](/MarkdownImages/VSCodeDestInstall.png)
+
 Select the start menu folder
 ![](/MarkdownImages/StartMenuFolder.png)
+
 Select additional tasks - in my case I chose all for the easier workflows.
 ![](/MarkdownImages/SelAddTasks.png)
+
 We get an overview of the selecteed settings.
 ![](/MarkdownImages/InstallCheck.png)
+
 Now Visual Studio Code is ready to be installed.
 ![](/MarkdownImages/CompletingSetup.png)
 
