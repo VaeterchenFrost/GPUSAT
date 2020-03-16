@@ -151,9 +151,11 @@ void Visualization::visuTreeDec(treedecType *treeDec) {
     tdGraph[TAG_BAGPRE] = BAGPRE;
     for (auto bag : treeDec->bags) {
         std::ostringstream variables;
+        Json::Value var_list;
         variables << "["; // overwrite previous
 
         for (auto var_id : bag.variables) {
+            var_list.append(var_id);
             variables << var_id << " ";
         }
         variables.seekp(-1, std::ios::end); // overwrite last space
@@ -162,7 +164,7 @@ void Visualization::visuTreeDec(treedecType *treeDec) {
         labelarray.append(variables.str()); // might be the only label...
 
         labeldict["id"] = bag.id;
-        labeldict["list"] = labelarray;
+        labeldict["labels"] = labelarray;
         tdGraph[TAG_LABELDICT].append(labeldict);
         labelarray.clear();
         labeldict.clear();
