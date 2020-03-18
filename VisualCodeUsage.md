@@ -38,7 +38,7 @@ Now Visual Studio Code is ready to be installed.
 
 ![](/MarkdownImages/CompletingSetup.png)
 
-This is what the Welcome page looks like now:
+This is how the welcome window looks like today:
 
 ![](/MarkdownImages/VSCodeWelcome.png)
 
