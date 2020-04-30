@@ -34,3 +34,6 @@ cmake*/
 
 #build folder
 build*/
+gpusat.dir*/
+*.pdb
+CMakeSettings.json

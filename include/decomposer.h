@@ -1,15 +1,15 @@
 #ifndef GPUSAT_DECOMPOSER_H
 #define GPUSAT_DECOMPOSER_H
 
-#include <string>
-#include <htd/Hypergraph.hpp>
 #include <htd/Helpers.hpp>
+#include <htd/Hypergraph.hpp>
 #include <htd/ITreeDecompositionFitnessFunction.hpp>
+#include <string>
 
 namespace gpusat {
-    class Decomposer {
-    public:
-        /**
+class Decomposer {
+  public:
+    /**
          * computes the decomposition of the primal graph of the given formula
          *
          * @param formula
@@ -21,10 +21,10 @@ namespace gpusat {
          * @return
          *      the decomposition in td format
          */
-        static std::string computeDecomposition(std::string formula, htd::ITreeDecompositionFitnessFunction *fitness, size_t n);
+    static std::string computeDecomposition(std::string formula, htd::ITreeDecompositionFitnessFunction *fitness, size_t n);
 
-    private:
-        /**
+  private:
+    /**
          * parses the problem line from the cnf formula
          *
          * @param line
@@ -32,9 +32,9 @@ namespace gpusat {
          * @param hypergraph
          *      the graph to generate the decomposition from
          */
-        static void parseProblemLine(std::string line, htd::Hypergraph &hypergraph);
+    static void parseProblemLine(std::string line, htd::Hypergraph &hypergraph);
 
-        /**
+    /**
          * parses a clause line from the cnf formula
          *
          * @param line
@@ -42,7 +42,7 @@ namespace gpusat {
          * @param hypergraph
          *      the graph to generate the decomposition from
          */
-        static void parseClauseLine(std::string line, htd::Hypergraph &hypergraph);
-    };
-}
+    static void parseClauseLine(std::string line, htd::Hypergraph &hypergraph);
+};
+} // namespace gpusat
 #endif //GPUSAT_DECOMPOSER_H

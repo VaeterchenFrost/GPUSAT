@@ -5,86 +5,95 @@
 #endif
 
 #include <CL/cl.hpp>
+#include <graphoutput.h>
 #include <types.h>
+#include <visualization.h>
 
 namespace gpusat {
+/**
+	 * Organizes the process of solving a sat problem in the given context.
+	 */
+class Solver {
+  protected:
+    cl::Context &context;
+    cl::CommandQueue &queue;
+    cl::Program &program;
+    cl_long memorySize;
+
+  public:
+    cl_long isSat = 1;
+    cl_long numJoin = 0;
+    cl_long numIntroduceForget = 0;
+    cl_long maxTableSize = 0;
+    cl_long maxBag = 0;
+    cl_long maxMemoryBuffer = 0;
+    bool verbose = false;
+    dataStructure solutionType = dataStructure::TREE;
+    Graphoutput *graphoutput;
+	Visualization *visualization;
+
     /**
-     *
-     */
-    class Solver {
-    protected:
-        cl::Context &context;
-        cl::CommandQueue &queue;
-        cl::Program &program;
-        cl_long memorySize;
+		 *
+		 * @param context_ the given context as hardware
+		 * @param queue_
+		 * @param program_
+		 * @param memorySize_
+		 * @param maxMemoryBuffer_
+		 * @param solutionType_
+		 * @param maxBag_
+		 * @param verbose_
+		 * @param graphoutput_
+		 * @param visualization_
+		 */
+    Solver(cl::Context &context_, cl::CommandQueue &queue_, cl::Program &program_, cl_long memorySize_, cl_long maxMemoryBuffer_, dataStructure solutionType_, cl_long maxBag_, bool verbose_, Graphoutput *graphoutput_, Visualization *visualization_) : context(context_), queue(queue_), program(program_), memorySize(memorySize_), maxMemoryBuffer(maxMemoryBuffer_), solutionType(solutionType_), maxBag(maxBag_), verbose(verbose_), graphoutput(graphoutput_),visualization(visualization_) {}
 
-    public:
-        cl_long isSat = 1;
-        cl_long numJoin = 0;
-        cl_long numIntroduceForget = 0;
-        cl_long maxTableSize = 0;
-        cl_long maxBag = 0;
-        cl_long maxMemoryBuffer = 0;
-        dataStructure solutionType = TREE;
+    /**
+		 * function to solve the sat problem
+		 *
+		 * @param decomp    the tree decomposition
+		 * @param formula   the sat formula
+		 * @param node      the node to start from in the tree decompostion
+		 */
+    void solveProblem(treedecType &decomp, satformulaType &formula, bagType &node, bagType &pnode, nodeType lastNode);
 
-        /**
-         *
-         * @param context_
-         * @param queue_
-         * @param program_
-         * @param memorySize_
-         * @param maxMemoryBuffer_
-         */
-        Solver(cl::Context &context_, cl::CommandQueue &queue_, cl::Program &program_, cl_long memorySize_, cl_long maxMemoryBuffer_, dataStructure solutionType_, cl_long maxBag_) : context(context_), queue(queue_), program(program_), memorySize(memorySize_), maxMemoryBuffer(maxMemoryBuffer_), solutionType(solutionType_), maxBag(maxBag_) {}
+  protected:
+    /**
+		 * function to solve an introduce forget node
+		 *
+		 * @param formula   the sat formula
+		 * @param pnode     the parent of the current node
+		 * @param node      the current node
+		 * @param cnode     the child of the current node
+		 * @param leaf      indicates that the current node is a leaf node
+		 */
+    void solveIntroduceForget(satformulaType &formula, bagType &pnode, bagType &node, bagType &cnode, bool leaf, nodeType nextNode);
 
-        /**
-         * function to solve the sat problem
-         *
-         * @param decomp    the tree decomposition
-         * @param formula   the sat formula
-         * @param node      the node to start from in the tree decompostion
-         */
-        void solveProblem(treedecType &decomp, satformulaType &formula, bagType &node, bagType &pnode, nodeType lastNode);
+    /**
+		 * function to solve a join node
+		 *
+		 * @param node      the node to save the solutions in
+		 * @param edge1     the first child node
+		 * @param edge2     the second child node
+		 * @param formula   the sat formula
+		 */
+    void solveJoin(bagType &node, bagType &edge1, bagType &edge2, satformulaType &formula, nodeType nextNode);
 
-    protected:
+    /**
+		 *
+		 * @param table
+		 * @param size
+		 * @param numVars
+		 * @param node
+		 */
+    void cleanTree(treeType &table, cl_long size, cl_long numVars, bagType &node, cl_long nextSize);
 
-        /**
-         * function to solve an introduce forget node
-         *
-         * @param formula   the sat formula
-         * @param pnode     the parent of the current node
-         * @param node      the current node
-         * @param cnode     the child of the current node
-         * @param leaf      indicates that the current node is a leaf node
-         */
-        void solveIntroduceForget(satformulaType &formula, bagType &pnode, bagType &node, bagType &cnode, bool leaf, nodeType nextNode);
-
-        /**
-         * function to solve a join node
-         *
-         * @param node      the node to save the solutions in
-         * @param edge1     the first child node
-         * @param edge2     the second child node
-         * @param formula   the sat formula
-         */
-        void solveJoin(bagType &node, bagType &edge1, bagType &edge2, satformulaType &formula, nodeType nextNode);
-
-        /**
-         *
-         * @param table
-         * @param size
-         * @param numVars
-         * @param node
-         */
-        void cleanTree(treeType &table, cl_long size, cl_long numVars, bagType &node, cl_long nextSize);
-
-        /**
-         *
-         * @param to
-         * @param from
-         * @param numVars
-         */
-        void combineTree(treeType &to, treeType &from, cl_long numVars);
-    };
-}
+    /**
+		 *
+		 * @param to
+		 * @param from
+		 * @param numVars
+		 */
+    void combineTree(treeType &to, treeType &from, cl_long numVars);
+};
+} // namespace gpusat
 #endif //GPUSAT_SOLVER_H_H
