@@ -350,7 +350,7 @@ int main(int argc, char *argv[]) {
         // myVisu.testJson();
         Graphoutput *graphout = new Graphoutput(graphfile);
         graphout->neo4jSat(&satFormula);
-        myVisu->visuSatForm(&satFormula);
+        myVisu->visuClauses(&satFormula);
         graphout->neo4jTD(&treeDecomp);
         myVisu->visuTreeDec(&treeDecomp);
         graphout->graphStart(&treeDecomp);

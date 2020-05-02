@@ -186,7 +186,15 @@ void Visualization::writeJsonFile(bool append) {
     if (stream.is_open()) {
         Json::Value visu_json;
         if (clausesJson.type() == Json::ValueType::arrayValue) {
-            visu_json["clausesJson"] = clausesJson;
+            Json::Value incidenceGraph;
+            incidenceGraph["subgraphNameOne"] = "clauses";
+            incidenceGraph["subgraphNameTwo"] = "variables";
+            incidenceGraph["varNameOne"] = "c_";
+            incidenceGraph["varNameOne"] = "v_";
+            incidenceGraph["inferPrimal"] = true;
+            incidenceGraph["edges"] = clausesJson;
+
+            visu_json["incidenceGraph"] = incidenceGraph;
         } else {
             LOGGER("clausesJson not array-type");
         }
@@ -287,9 +295,9 @@ TableLines solJson(bagType node, dataStructure solutionType) {
  * Error if:
  *  sat formula is null or empty.
  */
-void Visualization::visuSatForm(satformulaType *sat) {
+void Visualization::visuClauses(satformulaType *sat) {
     if (sat == nullptr || sat->clauses.empty()) {
-        std::cerr << "tried to read from empty satformulaType in Visualization::visuSatForm\n";
+        std::cerr << "tried to read from empty satformulaType in Visualization::visuClauses\n";
         return;
     }
 

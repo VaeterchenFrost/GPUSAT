@@ -86,7 +86,7 @@ class Visualization {
 
     void testJson();
     void visuTreeDec(treedecType *treeDec);
-    void visuSatForm(satformulaType *sat); // consuming std::vector<std::vector<cl_long>> clauses;
+    void visuClauses(satformulaType *sat); // consuming std::vector<std::vector<cl_long>> clauses;
     Json::StreamWriterBuilder *getWriterBuilder();
     void writeJsonToStdout(Json::StreamWriter::Factory const &factory, Json::Value const &value, Json::OStream *sout = &std::cout);
     void writeJsonToStdout(Json::Value const &value, Json::OStream *sout = &std::cout);
