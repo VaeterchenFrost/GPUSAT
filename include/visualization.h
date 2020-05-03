@@ -112,7 +112,18 @@ class Visualization {
         TAG_BAGPRE = "bagpre",
         TAG_LABELDICT = "labeldict",
         TAG_EDGEARRAY = "edgearray",
-        TAG_NUMVARS = "numVars";
+        TAG_NUMVARS = "numVars",
+        TAG_LIST = "list",
+        TAG_ID = "id",
+        TAG_LABELS = "labels",
+        TAG_ITEMS = "items",
+        TAG_VARNAMEONE = "varNameOne",
+        TAG_VARNAMETWO = "varNameTwo",
+        TAG_INFERPRIMAL = "inferPrimal",
+        TAG_EDGES = "edges",
+        TAG_INCID = "incidenceGraph",
+        TAG_TDJ = "treeDecJson",
+        TAG_TDTIMELINE = "tdTimeline";
 
     std::string visufile;
     Json::StreamWriterBuilder *writerBuilder;

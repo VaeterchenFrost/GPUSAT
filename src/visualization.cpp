@@ -87,9 +87,9 @@ void Visualization::visuTreeDec(treedecType *treeDec) {
 
         labelarray.append(variables.str()); // might be the only label...
 
-        labeldict["id"] = bag.id;
-        labeldict["labels"] = labelarray;
-        labeldict["items"] = var_list;
+        labeldict[TAG_ID] = bag.id;
+        labeldict[TAG_LABELS] = labelarray;
+        labeldict[TAG_ITEMS] = var_list;
 
         tdGraph[TAG_LABELDICT].append(labeldict);
         labelarray.clear();
@@ -187,24 +187,22 @@ void Visualization::writeJsonFile(bool append) {
         Json::Value visu_json;
         if (clausesJson.type() == Json::ValueType::arrayValue) {
             Json::Value incidenceGraph;
-            incidenceGraph["subgraphNameOne"] = "clauses";
-            incidenceGraph["subgraphNameTwo"] = "variables";
-            incidenceGraph["varNameOne"] = "c_";
-            incidenceGraph["varNameOne"] = "v_";
-            incidenceGraph["inferPrimal"] = true;
-            incidenceGraph["edges"] = clausesJson;
+            incidenceGraph[TAG_VARNAMEONE] = "c_";
+            incidenceGraph[TAG_VARNAMETWO] = "v_";
+            incidenceGraph[TAG_INFERPRIMAL] = true;
+            incidenceGraph[TAG_EDGES] = clausesJson;
 
-            visu_json["incidenceGraph"] = incidenceGraph;
+            visu_json[TAG_INCID] = incidenceGraph;
         } else {
             LOGGER("clausesJson not array-type");
         }
         if (treeDecJson.type() == Json::ValueType::objectValue) {
-            visu_json["treeDecJson"] = treeDecJson;
+            visu_json[TAG_TDJ] = treeDecJson;
         } else {
             LOGGER("treeDecJson not object-type");
         }
         if (tdTimeline.type() == Json::ValueType::arrayValue) {
-            visu_json["tdTimeline"] = tdTimeline;
+            visu_json[TAG_TDTIMELINE] = tdTimeline;
         } else {
             LOGGER("tdTimeline not array-type");
         }
@@ -310,8 +308,8 @@ void Visualization::visuClauses(satformulaType *sat) {
         for (auto var : clause) {
             varsArr.append(var);
         }
-        clauseJ["id"] = ++clause_counter;
-        clauseJ["list"] = varsArr;
+        clauseJ[TAG_ID] = ++clause_counter;
+        clauseJ[TAG_LIST] = varsArr;
 
         resultJson.append(clauseJ);
         varsArr.clear();
