@@ -2,7 +2,7 @@
 
 A #SAT solver based on dynamic programming running on the GPU.
 
-Giving a filename to --visufile \<visufile\>, a json-object for [td-visu](https://github.com/VaeterchenFrost/gpusat-VISU/blob/master/JsonAPI_v1.1.md) for the run gets written for further use.
+Giving a filename to --visufile \<visufile\>, a json-object specified by [td-visu 1.1](https://github.com/VaeterchenFrost/gpusat-VISU/blob/master/JsonAPI_v1.1.md) from the run gets compiled for further visualization.
 
 ## Dependencies
 
@@ -11,7 +11,7 @@ Giving a filename to --visufile \<visufile\>, a json-object for [td-visu](https:
 * cmake 3.2+
 * gcc 7+
 * Boost Multiprecision
-* jsoncpp 
+* JsonCpp 
 
 ### Tested with
 
