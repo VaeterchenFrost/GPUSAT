@@ -2,6 +2,8 @@
 
 A #SAT solver based on dynamic programming running on the GPU.
 
+Giving a filename to --visufile \<visufile\>, a json-object for [td-visu](https://github.com/VaeterchenFrost/gpusat-VISU/blob/master/JsonAPI_v1.1.md) for the run gets written for further use.
+
 ## Dependencies
 
 * htd 1.2.0 - https://github.com/mabseher/htd (build with cmake option -DBUILD_SHARED_LIBS=OFF)
@@ -9,6 +11,7 @@ A #SAT solver based on dynamic programming running on the GPU.
 * cmake 3.2+
 * gcc 7+
 * Boost Multiprecision
+* jsoncpp 
 
 ### Tested with
 
@@ -18,6 +21,7 @@ A #SAT solver based on dynamic programming running on the GPU.
 * cmake 3.9.1
 * gcc 7.2.0
 * Boost Multiprecision 1.66
+* open-source-parsers/jsoncpp 1.9.2
 
 ## How to Build
 
@@ -25,6 +29,7 @@ The following commands can be used to build `GPUSAT`
 ```
 git clone https://github.com/Budddy/GPUSAT
 cd GPUSAT
+change *include_directories*, *find_library* to your needs
 mkdir build && cd build
 cmake ..
 make
@@ -34,7 +39,7 @@ make
 
 A program call is of the following form
 
-./gpusat [-h] [-s \<seed\>] [-f \<formulaPath\>] [-d \<decompositionPath\>] [-n \<numberOfDecompositions\>] [--fitnessFunction \<fitness\>] [--CPU] [--NVIDIA] [--AMD] [--weighted] [--noExp] [--dataStructure \<dataStructure\>] [-m \<maxBagSize\>] [-w \<combineWidth\>] < $CNFFILE
+./gpusat [-h] [-s \<seed\>] [-f \<formulaPath\>] [-d \<decompositionPath\>] [-n \<numberOfDecompositions\>] [--fitnessFunction \<fitness\>] [--CPU] [--NVIDIA] [--AMD] [--weighted] [--noExp] [-v] [-p] [--dataStructure \<dataStructure\>] [-m \<maxBagSize\>] [-w \<combineWidth\>] [-g \<graphfile\>] [--visufile \<visufile\>] < $CNFFILE
 
 
 Options:
@@ -54,6 +59,8 @@ Options:
 *  --AMD: run the solver on an AMD device
 *  --weighted: use weighted model count
 *  --noExp: don't use extended exponents
+*  -v,--verbose: output more verbose/debug information
+*  -p,--nopreprocess: skips the preprocessing step for debugging- and visualisation-purpose
 *  --dataStructure \<dataStructure\>: data structure for storing the solution.
     * Permitted Values:
         * array: use an array to store the solutions
@@ -61,3 +68,5 @@ Options:
         * combined: use a combination of tree and array structure (default)
 *  -m,--maxBagSize \<maxBagSize\>: fixes the number of variables after which we need to split the bags
 *  -w,--combineWidth \<combineWidth\>: fixes the maximum width to combine bags of the decomposition
+*  -g,--graph \<graphfile\>: filename for saving the decomposition graph
+*  --visufile \<visufile\>: filename for saving the visualization file
