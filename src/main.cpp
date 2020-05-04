@@ -198,7 +198,7 @@ int main(int argc, char *argv[]) {
     app.add_flag("--weighted", weighted, "use weighted model count");
     app.add_flag("--noExp", noExp, "don't use extended exponents");
     app.add_flag("-v,--verbose", verbose, "print additional program information");
-    app.add_flag("-p,--nopreprocess", nopreprocess, "skips the preprocessing step for debugging purpose and visualisation");
+    app.add_flag("-p,--nopreprocess", nopreprocess, "skips the preprocessing step for debugging and visualisation-purposes");
     app.add_set("--dataStructure", type, {"array", "tree", "combined"}, "data structure for storing the solution")->set_default_str("combined");
     app.add_option("-m,--maxBagSize", maxBag, "max size of a bag on the gpu")->set_default_str("-1");
     app.add_option("-w,--combineWidth", combineWidth, "maximum width to combine bags of the decomposition")->set_default_str("20");
