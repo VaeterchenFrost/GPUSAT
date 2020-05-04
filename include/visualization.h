@@ -123,7 +123,8 @@ class Visualization {
         TAG_EDGES = "edges",
         TAG_INCID = "incidenceGraph",
         TAG_TDJ = "treeDecJson",
-        TAG_TDTIMELINE = "tdTimeline";
+        TAG_TDTIMELINE = "tdTimeline",
+        TAG_GENERAL = "generalGraph";
 
     std::string visufile;
     Json::StreamWriterBuilder *writerBuilder;

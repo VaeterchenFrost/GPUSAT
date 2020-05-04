@@ -196,6 +196,8 @@ void Visualization::writeJsonFile(bool append) {
         } else {
             LOGGER("clausesJson not array-type");
         }
+        visu_json[TAG_GENERAL] = false;
+
         if (treeDecJson.type() == Json::ValueType::objectValue) {
             visu_json[TAG_TDJ] = treeDecJson;
         } else {
@@ -217,13 +219,14 @@ void Visualization::writeJsonFile(bool append) {
 /**
  * Store a new filename.
  * In case the name has 0 length like "",
- * we disable further output from the Visualization
+ * we disable further output from the Visualization.
  */
 void Visualization::setFile(std::string filename) {
     if (filename.compare("")) {
         outputEnabled = true;
     } else
         outputEnabled = false;
+
     visufile = filename;
 }
 
