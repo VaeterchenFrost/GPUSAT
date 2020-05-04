@@ -27,14 +27,14 @@ Giving a filename to --visufile \<visufile\>, a json-object specified by [td-vis
 
 The following commands can be used to build `GPUSAT`
 
-```sh
+```console
 git clone https://github.com/Budddy/GPUSAT
 cd GPUSAT
 ```
 
 change *include_directories*, *find_library* to your needs
 
-```sh
+```console
 mkdir build && cd build
 cmake ..
 make
