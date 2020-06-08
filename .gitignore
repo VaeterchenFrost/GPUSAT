@@ -37,3 +37,4 @@ build*/
 gpusat.dir*/
 *.pdb
 CMakeSettings.json
+.vscode/settings.json
