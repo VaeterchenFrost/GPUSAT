@@ -1,0 +1,33 @@
+digraph "gpusat::Graphoutput::isEnabled"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="gpusat::Graphoutput\l::isEnabled",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="gpusat::Graphoutput\l::graphEdgeSet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_graphoutput.html#a6a8698facb754dbd450edb04bba74b1c",tooltip="Addes the edges from the tree-decomposition into the graph."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="gpusat::Solver::solveProblem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_solver.html#ae0fed660431502c4ff23b011de6207ca",tooltip="Solves the sat formula with a given decomposition."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="gpusat::Graphoutput\l::graphEnd",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_graphoutput.html#a75b647b135cd9dbdc2eaed399eaf0ba3",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="gpusat::Graphoutput\l::graphStart",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_graphoutput.html#a2cd530c2bd234cd6fca065b8d504fc36",tooltip=" "];
+  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="gpusat::Graphoutput\l::neo4jSat",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_graphoutput.html#aed89def93056ef06a7c0969bfa2fcf1b",tooltip="Output Cypherquery to create the nodes from the SAT formula"];
+  Node7 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="gpusat::Graphoutput\l::neo4jTD",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_graphoutput.html#ae371f11ef89ad4507bc5f656fe932da7",tooltip=" "];
+  Node8 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="gpusat::Graphoutput\l::nodeBag",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_graphoutput.html#a7fbd40cc7da0b8ef4c1e08063b3c0749",tooltip="Create one node with the corresponding solution in a connected extra bag."];
+  Node9 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="gpusat::Graphoutput\l::nodeJoin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_graphoutput.html#abfe6c27af045e2dcff833c53069ccbfc",tooltip="Creates a node with the solution that joins two bags. Two edges are added to connect the solution."];
+  Node10 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+}

@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structgpusat_1_1treedec_type">
+<title>gpusat::treedecType Struct Reference</title>
+<indexterm><primary>gpusat::treedecType</primary></indexterm>
+<para>
+
+<para>type for saving a tree decomposition </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;types.h&gt;</computeroutput>
+</para>
+Collaboration diagram for gpusat::treedecType:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structgpusat_1_1treedec_type__coll__graph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::vector&lt; <link linkend="_structgpusat_1_1bag_type">bagType</link> &gt; <link linkend="_structgpusat_1_1treedec_type_1a223a09e5d2a520735a4d56bbbfa4f67f">bags</link></para>
+</listitem>
+            <listitem><para>cl_long <link linkend="_structgpusat_1_1treedec_type_1a12cb74e3c41170398b6672e083bd9fe0">numb</link> = 0</para>
+</listitem>
+            <listitem><para>cl_long <link linkend="_structgpusat_1_1treedec_type_1a8a61fa77cf140ef4b4124abddcb71de2">numVars</link> = 0</para>
+</listitem>
+            <listitem><para>cl_long <link linkend="_structgpusat_1_1treedec_type_1acdef8100bb46cd82431302a08244537f">width</link> = 0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>type for saving a tree decomposition </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structgpusat_1_1treedec_type_1a223a09e5d2a520735a4d56bbbfa4f67f"/>    <section>
+    <title>bags</title>
+<indexterm><primary>bags</primary><secondary>gpusat::treedecType</secondary></indexterm>
+<indexterm><primary>gpusat::treedecType</primary><secondary>bags</secondary></indexterm>
+<para><computeroutput>std::vector&lt;<link linkend="_structgpusat_1_1bag_type">bagType</link>&gt; gpusat::treedecType::bags</computeroutput></para><para>
+Referenced by gpusat::Graphoutput::graphEdgeSet(), gpusat::Graphoutput::graphStart(), main(), gpusat::Graphoutput::neo4jTD(), gpusat::TDParser::parseTreeDecomp(), gpusat::Preprocessor::preprocessFacts(), gpusat::printtreedecType(), and gpusat::Visualization::visuTreeDec().</para>
+    </section><anchor xml:id="_structgpusat_1_1treedec_type_1a12cb74e3c41170398b6672e083bd9fe0"/>    <section>
+    <title>numb</title>
+<indexterm><primary>numb</primary><secondary>gpusat::treedecType</secondary></indexterm>
+<indexterm><primary>gpusat::treedecType</primary><secondary>numb</secondary></indexterm>
+<para><computeroutput>cl_long gpusat::treedecType::numb = 0</computeroutput></para><para>
+Referenced by gpusat::Graphoutput::neo4jTD(), gpusat::TDParser::parseTreeDecomp(), and gpusat::printtreedecType().</para>
+    </section><anchor xml:id="_structgpusat_1_1treedec_type_1a8a61fa77cf140ef4b4124abddcb71de2"/>    <section>
+    <title>numVars</title>
+<indexterm><primary>numVars</primary><secondary>gpusat::treedecType</secondary></indexterm>
+<indexterm><primary>gpusat::treedecType</primary><secondary>numVars</secondary></indexterm>
+<para><computeroutput>cl_long gpusat::treedecType::numVars = 0</computeroutput></para><para>
+Referenced by gpusat::Graphoutput::neo4jTD(), gpusat::Preprocessor::preprocessFacts(), and gpusat::Visualization::visuTreeDec().</para>
+    </section><anchor xml:id="_structgpusat_1_1treedec_type_1acdef8100bb46cd82431302a08244537f"/>    <section>
+    <title>width</title>
+<indexterm><primary>width</primary><secondary>gpusat::treedecType</secondary></indexterm>
+<indexterm><primary>gpusat::treedecType</primary><secondary>width</secondary></indexterm>
+<para><computeroutput>cl_long gpusat::treedecType::width = 0</computeroutput></para><para>
+Referenced by main(), and gpusat::Graphoutput::neo4jTD().</para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+include/<link linkend="_types_8h">types.h</link></section>
+</section>

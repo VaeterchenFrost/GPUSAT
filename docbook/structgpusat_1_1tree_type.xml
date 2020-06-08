@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structgpusat_1_1tree_type">
+<title>gpusat::treeType Struct Reference</title>
+<indexterm><primary>gpusat::treeType</primary></indexterm>
+<para>
+
+<para>tree type for storing the models </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;types.h&gt;</computeroutput>
+</para>
+Collaboration diagram for gpusat::treeType:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structgpusat_1_1tree_type__coll__graph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>cl_long * <link linkend="_structgpusat_1_1tree_type_1a80bd88218e7a9b151fdddecb0d4ec52a">elements</link> = nullptr</para>
+</listitem>
+            <listitem><para>cl_long <link linkend="_structgpusat_1_1tree_type_1acebe4eae1ce19af79842d883ba73a0a3">maxId</link> = 0</para>
+</listitem>
+            <listitem><para>cl_long <link linkend="_structgpusat_1_1tree_type_1a7a08aec7ae2a685cc30d2593a9cd66c5">minId</link> = 0</para>
+</listitem>
+            <listitem><para>cl_long <link linkend="_structgpusat_1_1tree_type_1a0db8ebefeb76f225506af43a8b7c2b31">numSolutions</link> = 0</para>
+</listitem>
+            <listitem><para>cl_long <link linkend="_structgpusat_1_1tree_type_1a8205f4c7eab52bfdbee46d88adf1166e">size</link> = 0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>tree type for storing the models </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structgpusat_1_1tree_type_1a80bd88218e7a9b151fdddecb0d4ec52a"/>    <section>
+    <title>elements</title>
+<indexterm><primary>elements</primary><secondary>gpusat::treeType</secondary></indexterm>
+<indexterm><primary>gpusat::treeType</primary><secondary>elements</secondary></indexterm>
+<para><computeroutput>cl_long* gpusat::treeType::elements = nullptr</computeroutput></para><para>
+Referenced by gpusat::Solver::cleanTree(), gpusat::Solver::combineTree(), main(), gpusat::printtreeType(), gpusat::solJson(), gpusat::solutiontable(), gpusat::Solver::solveIntroduceForget(), gpusat::Solver::solveJoin(), and gpusat::Solver::solveProblem().</para>
+    </section><anchor xml:id="_structgpusat_1_1tree_type_1acebe4eae1ce19af79842d883ba73a0a3"/>    <section>
+    <title>maxId</title>
+<indexterm><primary>maxId</primary><secondary>gpusat::treeType</secondary></indexterm>
+<indexterm><primary>gpusat::treeType</primary><secondary>maxId</secondary></indexterm>
+<para><computeroutput>cl_long gpusat::treeType::maxId = 0</computeroutput></para><para>
+Referenced by gpusat::Solver::cleanTree(), gpusat::Solver::combineTree(), main(), gpusat::printtreeType(), gpusat::Solver::solveIntroduceForget(), gpusat::Solver::solveJoin(), and gpusat::Solver::solveProblem().</para>
+    </section><anchor xml:id="_structgpusat_1_1tree_type_1a7a08aec7ae2a685cc30d2593a9cd66c5"/>    <section>
+    <title>minId</title>
+<indexterm><primary>minId</primary><secondary>gpusat::treeType</secondary></indexterm>
+<indexterm><primary>gpusat::treeType</primary><secondary>minId</secondary></indexterm>
+<para><computeroutput>cl_long gpusat::treeType::minId = 0</computeroutput></para><para>
+Referenced by gpusat::Solver::cleanTree(), gpusat::Solver::combineTree(), main(), gpusat::printtreeType(), gpusat::solJson(), gpusat::solutiontable(), gpusat::Solver::solveIntroduceForget(), gpusat::Solver::solveJoin(), and gpusat::Solver::solveProblem().</para>
+    </section><anchor xml:id="_structgpusat_1_1tree_type_1a0db8ebefeb76f225506af43a8b7c2b31"/>    <section>
+    <title>numSolutions</title>
+<indexterm><primary>numSolutions</primary><secondary>gpusat::treeType</secondary></indexterm>
+<indexterm><primary>gpusat::treeType</primary><secondary>numSolutions</secondary></indexterm>
+<para><computeroutput>cl_long gpusat::treeType::numSolutions = 0</computeroutput></para><para>
+Referenced by gpusat::Solver::cleanTree(), gpusat::Solver::combineTree(), gpusat::printtreeType(), gpusat::Solver::solveIntroduceForget(), gpusat::Solver::solveJoin(), and gpusat::Solver::solveProblem().</para>
+    </section><anchor xml:id="_structgpusat_1_1tree_type_1a8205f4c7eab52bfdbee46d88adf1166e"/>    <section>
+    <title>size</title>
+<indexterm><primary>size</primary><secondary>gpusat::treeType</secondary></indexterm>
+<indexterm><primary>gpusat::treeType</primary><secondary>size</secondary></indexterm>
+<para><computeroutput>cl_long gpusat::treeType::size = 0</computeroutput></para><para>
+Referenced by gpusat::Solver::cleanTree(), gpusat::Solver::combineTree(), gpusat::printtreeType(), gpusat::Solver::solveIntroduceForget(), gpusat::Solver::solveJoin(), and gpusat::Solver::solveProblem().</para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+include/<link linkend="_types_8h">types.h</link></section>
+</section>

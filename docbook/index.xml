@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_index">
+    <info>
+    <title>GPUSAT</title>
+    </info>
+<chapter>
+    <title>Namespace Documentation</title>
+<xi:include href="namespacegpusat.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>Class Documentation</title>
+    <xi:include href="classgpusat_1_1_bag_matrix.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structgpusat_1_1bag_type.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classgpusat_1_1_c_n_f_parser.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classgpusat_1_1_cut_set_width_fitness_function.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classgpusat_1_1_decomposer.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classgpusat_1_1_graphoutput.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classgpusat_1_1_join_size_fitness_function.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classgpusat_1_1_num_join_fitness_function.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classgpusat_1_1_preprocessor.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structgpusat_1_1satformula_type.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classgpusat_1_1_solver.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structgpusat_1_1_table_lines.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classgpusat_1_1_t_d_parser.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structgpusat_1_1treedec_type.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structgpusat_1_1tree_type.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classgpusat_1_1_visualization.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classgpusat_1_1_width_cut_set_fitness_function.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>File Documentation</title>
+    <xi:include href="decomposer_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_cut_set_width_fitness_function_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_join_size_fitness_function_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_num_join_fitness_function_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_width_cut_set_fitness_function_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="gpusatparser_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="gpusatpreprocessor_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="gpusatutils_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="graphoutput_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="kernel_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="solver_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="types_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="visualization_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="decomposer_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_cut_set_width_fitness_function_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_join_size_fitness_function_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_num_join_fitness_function_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_width_cut_set_fitness_function_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="gpusatparser_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="gpusatpreprocessor_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="graphoutput_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="main_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="solver_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="visualization_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<index/>
+</book>

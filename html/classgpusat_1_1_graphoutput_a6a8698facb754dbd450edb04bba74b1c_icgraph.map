@@ -1,0 +1,4 @@
+<map id="gpusat::Graphoutput::graphEdgeSet" name="gpusat::Graphoutput::graphEdgeSet">
+<area shape="rect" id="node1" title="Addes the edges from the tree&#45;decomposition into the graph." alt="" coords="243,5,383,47"/>
+<area shape="rect" id="node2" href="$classgpusat_1_1_solver.html#ae0fed660431502c4ff23b011de6207ca" title="Solves the sat formula with a given decomposition." alt="" coords="5,13,195,39"/>
+</map>

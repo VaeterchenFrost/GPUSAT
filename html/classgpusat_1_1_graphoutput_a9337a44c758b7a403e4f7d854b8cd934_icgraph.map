@@ -1,0 +1,12 @@
+<map id="gpusat::Graphoutput::isEnabled" name="gpusat::Graphoutput::isEnabled">
+<area shape="rect" id="node1" title=" " alt="" coords="431,221,571,263"/>
+<area shape="rect" id="node2" href="$classgpusat_1_1_graphoutput.html#a6a8698facb754dbd450edb04bba74b1c" title="Addes the edges from the tree&#45;decomposition into the graph." alt="" coords="243,5,383,47"/>
+<area shape="rect" id="node3" href="$classgpusat_1_1_solver.html#ae0fed660431502c4ff23b011de6207ca" title="Solves the sat formula with a given decomposition." alt="" coords="5,101,195,127"/>
+<area shape="rect" id="node4" href="$classgpusat_1_1_graphoutput.html#a75b647b135cd9dbdc2eaed399eaf0ba3" title=" " alt="" coords="243,253,383,295"/>
+<area shape="rect" id="node6" href="$classgpusat_1_1_graphoutput.html#a2cd530c2bd234cd6fca065b8d504fc36" title=" " alt="" coords="243,319,383,360"/>
+<area shape="rect" id="node7" href="$classgpusat_1_1_graphoutput.html#aed89def93056ef06a7c0969bfa2fcf1b" title="Output Cypherquery to create the nodes from the SAT formula" alt="" coords="243,384,383,425"/>
+<area shape="rect" id="node8" href="$classgpusat_1_1_graphoutput.html#ae371f11ef89ad4507bc5f656fe932da7" title=" " alt="" coords="243,449,383,491"/>
+<area shape="rect" id="node9" href="$classgpusat_1_1_graphoutput.html#a7fbd40cc7da0b8ef4c1e08063b3c0749" title="Create one node with the corresponding solution in a connected extra bag." alt="" coords="243,123,383,164"/>
+<area shape="rect" id="node10" href="$classgpusat_1_1_graphoutput.html#abfe6c27af045e2dcff833c53069ccbfc" title="Creates a node with the solution that joins two bags. Two edges are added to connect the solution." alt="" coords="243,188,383,229"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="75,359,125,386"/>
+</map>

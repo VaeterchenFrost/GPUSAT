@@ -1,0 +1,417 @@
+\hypertarget{classgpusat_1_1_graphoutput}{}\doxysection{gpusat\+::Graphoutput Class Reference}
+\label{classgpusat_1_1_graphoutput}\index{gpusat::Graphoutput@{gpusat::Graphoutput}}
+
+
+{\ttfamily \#include $<$graphoutput.\+h$>$}
+
+
+
+Collaboration diagram for gpusat\+::Graphoutput\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{classgpusat_1_1_graphoutput__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgpusat_1_1_graphoutput_a09d825ff8177015c28b6c1d370158ff8}{Graphoutput}} (std\+::string filename)
+\item 
+std\+::string \mbox{\hyperlink{classgpusat_1_1_graphoutput_a097c11e5e274b341b1eca76f11548247}{get\+Filename}} ()
+\item 
+void \mbox{\hyperlink{classgpusat_1_1_graphoutput_a6a8698facb754dbd450edb04bba74b1c}{graph\+Edge\+Set}} (\mbox{\hyperlink{structgpusat_1_1treedec_type}{treedec\+Type}} $\ast$dec)
+\begin{DoxyCompactList}\small\item\em Addes the edges from the tree-\/decomposition into the graph. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgpusat_1_1_graphoutput_a75b647b135cd9dbdc2eaed399eaf0ba3}{graph\+End}} ()
+\item 
+void \mbox{\hyperlink{classgpusat_1_1_graphoutput_a2cd530c2bd234cd6fca065b8d504fc36}{graph\+Start}} (\mbox{\hyperlink{structgpusat_1_1treedec_type}{treedec\+Type}} $\ast$dec)
+\item 
+bool \mbox{\hyperlink{classgpusat_1_1_graphoutput_a9337a44c758b7a403e4f7d854b8cd934}{is\+Enabled}} ()
+\item 
+void \mbox{\hyperlink{classgpusat_1_1_graphoutput_aed89def93056ef06a7c0969bfa2fcf1b}{neo4j\+Sat}} (\mbox{\hyperlink{structgpusat_1_1satformula_type}{satformula\+Type}} $\ast$sat\+Formula)
+\begin{DoxyCompactList}\small\item\em Output Cypherquery to create the nodes from the S\+AT formula \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgpusat_1_1_graphoutput_ae371f11ef89ad4507bc5f656fe932da7}{neo4j\+TD}} (\mbox{\hyperlink{structgpusat_1_1treedec_type}{treedec\+Type}} $\ast$tree\+Dec)
+\item 
+void \mbox{\hyperlink{classgpusat_1_1_graphoutput_a7fbd40cc7da0b8ef4c1e08063b3c0749}{node\+Bag}} (unsigned int id, std\+::string solution)
+\begin{DoxyCompactList}\small\item\em Create one node with the corresponding solution in a connected extra bag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgpusat_1_1_graphoutput_abfe6c27af045e2dcff833c53069ccbfc}{node\+Join}} (unsigned int id1, unsigned int id2, std\+::string solution)
+\begin{DoxyCompactList}\small\item\em Creates a node with the solution that joins two bags. Two edges are added to connect the solution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{classgpusat_1_1_graphoutput_a8103a86b194a262012bc7263d2c5b965}{base\+Id\+Join}} = 4 $\ast$ \mbox{\hyperlink{classgpusat_1_1_graphoutput_a656abe5feaa0a6efa1fa746e303a90d2}{base\+Id\+Sol}}
+\item 
+static const int \mbox{\hyperlink{classgpusat_1_1_graphoutput_a656abe5feaa0a6efa1fa746e303a90d2}{base\+Id\+Sol}} = 1\textquotesingle{}000\textquotesingle{}000
+\item 
+static const std\+::string \mbox{\hyperlink{classgpusat_1_1_graphoutput_aac7f79d571ad2b8e2a146c4512b6d2f1}{connectbag}} = \char`\"{}U\+S\+E\+S\+\_\+\+B\+AG\char`\"{}
+\item 
+static const std\+::string \mbox{\hyperlink{classgpusat_1_1_graphoutput_a807dbc3c7b607bf1a213f9445bfec48e}{dualedge}} = \char`\"{}S\+H\+A\+R\+E\+\_\+\+V\+AR\char`\"{}
+\item 
+static const std\+::string \mbox{\hyperlink{classgpusat_1_1_graphoutput_ac0031c1c4dea09bef0cb54fc8b3de723}{inbag}} = \char`\"{}C\+O\+N\+T\+A\+I\+NS\char`\"{}
+\item 
+static const std\+::string \mbox{\hyperlink{classgpusat_1_1_graphoutput_a80c6029103d80354e68a734418304e6f}{incidenceedge}} = \char`\"{}V\+A\+R\+\_\+\+I\+N\+\_\+\+C\+L\+A\+U\+SE\char`\"{}
+\item 
+static const std\+::string \mbox{\hyperlink{classgpusat_1_1_graphoutput_a9b8f07ee5cd69c2e711752ecdaca4e5e}{primaledge}} = \char`\"{}S\+H\+A\+R\+E\+\_\+\+C\+L\+A\+U\+SE\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classgpusat_1_1_graphoutput_a09d825ff8177015c28b6c1d370158ff8}\label{classgpusat_1_1_graphoutput_a09d825ff8177015c28b6c1d370158ff8}} 
+\index{gpusat::Graphoutput@{gpusat::Graphoutput}!Graphoutput@{Graphoutput}}
+\index{Graphoutput@{Graphoutput}!gpusat::Graphoutput@{gpusat::Graphoutput}}
+\doxysubsubsection{\texorpdfstring{Graphoutput()}{Graphoutput()}}
+{\footnotesize\ttfamily gpusat\+::\+Graphoutput\+::\+Graphoutput (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classgpusat_1_1_graphoutput_a097c11e5e274b341b1eca76f11548247}\label{classgpusat_1_1_graphoutput_a097c11e5e274b341b1eca76f11548247}} 
+\index{gpusat::Graphoutput@{gpusat::Graphoutput}!getFilename@{getFilename}}
+\index{getFilename@{getFilename}!gpusat::Graphoutput@{gpusat::Graphoutput}}
+\doxysubsubsection{\texorpdfstring{getFilename()}{getFilename()}}
+{\footnotesize\ttfamily std\+::string gpusat\+::\+Graphoutput\+::get\+Filename (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classgpusat_1_1_graphoutput_a6a8698facb754dbd450edb04bba74b1c}\label{classgpusat_1_1_graphoutput_a6a8698facb754dbd450edb04bba74b1c}} 
+\index{gpusat::Graphoutput@{gpusat::Graphoutput}!graphEdgeSet@{graphEdgeSet}}
+\index{graphEdgeSet@{graphEdgeSet}!gpusat::Graphoutput@{gpusat::Graphoutput}}
+\doxysubsubsection{\texorpdfstring{graphEdgeSet()}{graphEdgeSet()}}
+{\footnotesize\ttfamily void gpusat\+::\+Graphoutput\+::graph\+Edge\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpusat_1_1treedec_type}{treedec\+Type}} $\ast$}]{dec }\end{DoxyParamCaption})}
+
+
+
+Addes the edges from the tree-\/decomposition into the graph. 
+
+Any outgoing edges from id \textquotesingle{}0\textquotesingle{} are not added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dec} & Pointer to the tree-\/decomposition containing used edges.\\
+\hline
+\end{DoxyParams}
+
+
+References gpusat\+::treedec\+Type\+::bags, and is\+Enabled().
+
+
+
+Referenced by gpusat\+::\+Solver\+::solve\+Problem().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{classgpusat_1_1_graphoutput_a6a8698facb754dbd450edb04bba74b1c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgpusat_1_1_graphoutput_a6a8698facb754dbd450edb04bba74b1c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_graphoutput_a75b647b135cd9dbdc2eaed399eaf0ba3}\label{classgpusat_1_1_graphoutput_a75b647b135cd9dbdc2eaed399eaf0ba3}} 
+\index{gpusat::Graphoutput@{gpusat::Graphoutput}!graphEnd@{graphEnd}}
+\index{graphEnd@{graphEnd}!gpusat::Graphoutput@{gpusat::Graphoutput}}
+\doxysubsubsection{\texorpdfstring{graphEnd()}{graphEnd()}}
+{\footnotesize\ttfamily void gpusat\+::\+Graphoutput\+::graph\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+References is\+Enabled().
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{classgpusat_1_1_graphoutput_a75b647b135cd9dbdc2eaed399eaf0ba3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classgpusat_1_1_graphoutput_a75b647b135cd9dbdc2eaed399eaf0ba3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_graphoutput_a2cd530c2bd234cd6fca065b8d504fc36}\label{classgpusat_1_1_graphoutput_a2cd530c2bd234cd6fca065b8d504fc36}} 
+\index{gpusat::Graphoutput@{gpusat::Graphoutput}!graphStart@{graphStart}}
+\index{graphStart@{graphStart}!gpusat::Graphoutput@{gpusat::Graphoutput}}
+\doxysubsubsection{\texorpdfstring{graphStart()}{graphStart()}}
+{\footnotesize\ttfamily void gpusat\+::\+Graphoutput\+::graph\+Start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpusat_1_1treedec_type}{treedec\+Type}} $\ast$}]{dec }\end{DoxyParamCaption})}
+
+
+
+References gpusat\+::treedec\+Type\+::bags, and is\+Enabled().
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{classgpusat_1_1_graphoutput_a2cd530c2bd234cd6fca065b8d504fc36_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classgpusat_1_1_graphoutput_a2cd530c2bd234cd6fca065b8d504fc36_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_graphoutput_a9337a44c758b7a403e4f7d854b8cd934}\label{classgpusat_1_1_graphoutput_a9337a44c758b7a403e4f7d854b8cd934}} 
+\index{gpusat::Graphoutput@{gpusat::Graphoutput}!isEnabled@{isEnabled}}
+\index{isEnabled@{isEnabled}!gpusat::Graphoutput@{gpusat::Graphoutput}}
+\doxysubsubsection{\texorpdfstring{isEnabled()}{isEnabled()}}
+{\footnotesize\ttfamily bool gpusat\+::\+Graphoutput\+::is\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Referenced by graph\+Edge\+Set(), graph\+End(), graph\+Start(), neo4j\+Sat(), neo4j\+T\+D(), node\+Bag(), node\+Join(), and gpusat\+::\+Solver\+::solve\+Problem().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgpusat_1_1_graphoutput_a9337a44c758b7a403e4f7d854b8cd934_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_graphoutput_aed89def93056ef06a7c0969bfa2fcf1b}\label{classgpusat_1_1_graphoutput_aed89def93056ef06a7c0969bfa2fcf1b}} 
+\index{gpusat::Graphoutput@{gpusat::Graphoutput}!neo4jSat@{neo4jSat}}
+\index{neo4jSat@{neo4jSat}!gpusat::Graphoutput@{gpusat::Graphoutput}}
+\doxysubsubsection{\texorpdfstring{neo4jSat()}{neo4jSat()}}
+{\footnotesize\ttfamily void gpusat\+::\+Graphoutput\+::neo4j\+Sat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpusat_1_1satformula_type}{satformula\+Type}} $\ast$}]{sat\+Formula }\end{DoxyParamCaption})}
+
+
+
+Output Cypherquery to create the nodes from the S\+AT formula 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sat\+Formula} & The sat formula.\\
+\hline
+\end{DoxyParams}
+
+
+References gpusat\+::satformula\+Type\+::clauses, dualedge, gpusat\+::satformula\+Type\+::facts, incidenceedge, is\+Enabled(), gpusat\+::satformula\+Type\+::num\+Vars, primaledge, and gpusat\+::satformula\+Type\+::unsat.
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{classgpusat_1_1_graphoutput_aed89def93056ef06a7c0969bfa2fcf1b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classgpusat_1_1_graphoutput_aed89def93056ef06a7c0969bfa2fcf1b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_graphoutput_ae371f11ef89ad4507bc5f656fe932da7}\label{classgpusat_1_1_graphoutput_ae371f11ef89ad4507bc5f656fe932da7}} 
+\index{gpusat::Graphoutput@{gpusat::Graphoutput}!neo4jTD@{neo4jTD}}
+\index{neo4jTD@{neo4jTD}!gpusat::Graphoutput@{gpusat::Graphoutput}}
+\doxysubsubsection{\texorpdfstring{neo4jTD()}{neo4jTD()}}
+{\footnotesize\ttfamily void gpusat\+::\+Graphoutput\+::neo4j\+TD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpusat_1_1treedec_type}{treedec\+Type}} $\ast$}]{tree\+Dec }\end{DoxyParamCaption})}
+
+
+
+References gpusat\+::treedec\+Type\+::bags, connectbag, inbag, is\+Enabled(), gpusat\+::treedec\+Type\+::numb, gpusat\+::treedec\+Type\+::num\+Vars, and gpusat\+::treedec\+Type\+::width.
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{classgpusat_1_1_graphoutput_ae371f11ef89ad4507bc5f656fe932da7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classgpusat_1_1_graphoutput_ae371f11ef89ad4507bc5f656fe932da7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_graphoutput_a7fbd40cc7da0b8ef4c1e08063b3c0749}\label{classgpusat_1_1_graphoutput_a7fbd40cc7da0b8ef4c1e08063b3c0749}} 
+\index{gpusat::Graphoutput@{gpusat::Graphoutput}!nodeBag@{nodeBag}}
+\index{nodeBag@{nodeBag}!gpusat::Graphoutput@{gpusat::Graphoutput}}
+\doxysubsubsection{\texorpdfstring{nodeBag()}{nodeBag()}}
+{\footnotesize\ttfamily void gpusat\+::\+Graphoutput\+::node\+Bag (\begin{DoxyParamCaption}\item[{unsigned int}]{id,  }\item[{std\+::string}]{solution }\end{DoxyParamCaption})}
+
+
+
+Create one node with the corresponding solution in a connected extra bag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The identifier of the bag.\\
+\hline
+{\em solution} & The solution in string form.\\
+\hline
+\end{DoxyParams}
+
+
+References is\+Enabled().
+
+
+
+Referenced by gpusat\+::\+Solver\+::solve\+Problem().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{classgpusat_1_1_graphoutput_a7fbd40cc7da0b8ef4c1e08063b3c0749_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgpusat_1_1_graphoutput_a7fbd40cc7da0b8ef4c1e08063b3c0749_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_graphoutput_abfe6c27af045e2dcff833c53069ccbfc}\label{classgpusat_1_1_graphoutput_abfe6c27af045e2dcff833c53069ccbfc}} 
+\index{gpusat::Graphoutput@{gpusat::Graphoutput}!nodeJoin@{nodeJoin}}
+\index{nodeJoin@{nodeJoin}!gpusat::Graphoutput@{gpusat::Graphoutput}}
+\doxysubsubsection{\texorpdfstring{nodeJoin()}{nodeJoin()}}
+{\footnotesize\ttfamily void gpusat\+::\+Graphoutput\+::node\+Join (\begin{DoxyParamCaption}\item[{unsigned int}]{id1,  }\item[{unsigned int}]{id2,  }\item[{std\+::string}]{solution }\end{DoxyParamCaption})}
+
+
+
+Creates a node with the solution that joins two bags. Two edges are added to connect the solution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id1} & The id1.\\
+\hline
+{\em id2} & The id2.\\
+\hline
+{\em solution} & The solution.\\
+\hline
+\end{DoxyParams}
+T\+O\+DO Edit X\+ML Comment Template for node\+Join 
+
+References is\+Enabled().
+
+
+
+Referenced by gpusat\+::\+Solver\+::solve\+Problem().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{classgpusat_1_1_graphoutput_abfe6c27af045e2dcff833c53069ccbfc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgpusat_1_1_graphoutput_abfe6c27af045e2dcff833c53069ccbfc_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classgpusat_1_1_graphoutput_a8103a86b194a262012bc7263d2c5b965}\label{classgpusat_1_1_graphoutput_a8103a86b194a262012bc7263d2c5b965}} 
+\index{gpusat::Graphoutput@{gpusat::Graphoutput}!baseIdJoin@{baseIdJoin}}
+\index{baseIdJoin@{baseIdJoin}!gpusat::Graphoutput@{gpusat::Graphoutput}}
+\doxysubsubsection{\texorpdfstring{baseIdJoin}{baseIdJoin}}
+{\footnotesize\ttfamily const int gpusat\+::\+Graphoutput\+::base\+Id\+Join = 4 $\ast$ \mbox{\hyperlink{classgpusat_1_1_graphoutput_a656abe5feaa0a6efa1fa746e303a90d2}{base\+Id\+Sol}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classgpusat_1_1_graphoutput_a656abe5feaa0a6efa1fa746e303a90d2}\label{classgpusat_1_1_graphoutput_a656abe5feaa0a6efa1fa746e303a90d2}} 
+\index{gpusat::Graphoutput@{gpusat::Graphoutput}!baseIdSol@{baseIdSol}}
+\index{baseIdSol@{baseIdSol}!gpusat::Graphoutput@{gpusat::Graphoutput}}
+\doxysubsubsection{\texorpdfstring{baseIdSol}{baseIdSol}}
+{\footnotesize\ttfamily const int gpusat\+::\+Graphoutput\+::base\+Id\+Sol = 1\textquotesingle{}000\textquotesingle{}000\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classgpusat_1_1_graphoutput_aac7f79d571ad2b8e2a146c4512b6d2f1}\label{classgpusat_1_1_graphoutput_aac7f79d571ad2b8e2a146c4512b6d2f1}} 
+\index{gpusat::Graphoutput@{gpusat::Graphoutput}!connectbag@{connectbag}}
+\index{connectbag@{connectbag}!gpusat::Graphoutput@{gpusat::Graphoutput}}
+\doxysubsubsection{\texorpdfstring{connectbag}{connectbag}}
+{\footnotesize\ttfamily const std\+::string gpusat\+::\+Graphoutput\+::connectbag = \char`\"{}U\+S\+E\+S\+\_\+\+B\+AG\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by neo4j\+T\+D().
+
+\mbox{\Hypertarget{classgpusat_1_1_graphoutput_a807dbc3c7b607bf1a213f9445bfec48e}\label{classgpusat_1_1_graphoutput_a807dbc3c7b607bf1a213f9445bfec48e}} 
+\index{gpusat::Graphoutput@{gpusat::Graphoutput}!dualedge@{dualedge}}
+\index{dualedge@{dualedge}!gpusat::Graphoutput@{gpusat::Graphoutput}}
+\doxysubsubsection{\texorpdfstring{dualedge}{dualedge}}
+{\footnotesize\ttfamily const std\+::string gpusat\+::\+Graphoutput\+::dualedge = \char`\"{}S\+H\+A\+R\+E\+\_\+\+V\+AR\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by neo4j\+Sat().
+
+\mbox{\Hypertarget{classgpusat_1_1_graphoutput_ac0031c1c4dea09bef0cb54fc8b3de723}\label{classgpusat_1_1_graphoutput_ac0031c1c4dea09bef0cb54fc8b3de723}} 
+\index{gpusat::Graphoutput@{gpusat::Graphoutput}!inbag@{inbag}}
+\index{inbag@{inbag}!gpusat::Graphoutput@{gpusat::Graphoutput}}
+\doxysubsubsection{\texorpdfstring{inbag}{inbag}}
+{\footnotesize\ttfamily const std\+::string gpusat\+::\+Graphoutput\+::inbag = \char`\"{}C\+O\+N\+T\+A\+I\+NS\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by neo4j\+T\+D().
+
+\mbox{\Hypertarget{classgpusat_1_1_graphoutput_a80c6029103d80354e68a734418304e6f}\label{classgpusat_1_1_graphoutput_a80c6029103d80354e68a734418304e6f}} 
+\index{gpusat::Graphoutput@{gpusat::Graphoutput}!incidenceedge@{incidenceedge}}
+\index{incidenceedge@{incidenceedge}!gpusat::Graphoutput@{gpusat::Graphoutput}}
+\doxysubsubsection{\texorpdfstring{incidenceedge}{incidenceedge}}
+{\footnotesize\ttfamily const std\+::string gpusat\+::\+Graphoutput\+::incidenceedge = \char`\"{}V\+A\+R\+\_\+\+I\+N\+\_\+\+C\+L\+A\+U\+SE\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by neo4j\+Sat().
+
+\mbox{\Hypertarget{classgpusat_1_1_graphoutput_a9b8f07ee5cd69c2e711752ecdaca4e5e}\label{classgpusat_1_1_graphoutput_a9b8f07ee5cd69c2e711752ecdaca4e5e}} 
+\index{gpusat::Graphoutput@{gpusat::Graphoutput}!primaledge@{primaledge}}
+\index{primaledge@{primaledge}!gpusat::Graphoutput@{gpusat::Graphoutput}}
+\doxysubsubsection{\texorpdfstring{primaledge}{primaledge}}
+{\footnotesize\ttfamily const std\+::string gpusat\+::\+Graphoutput\+::primaledge = \char`\"{}S\+H\+A\+R\+E\+\_\+\+C\+L\+A\+U\+SE\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by neo4j\+Sat().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{graphoutput_8h}{graphoutput.\+h}}\item 
+src/\mbox{\hyperlink{graphoutput_8cpp}{graphoutput.\+cpp}}\end{DoxyCompactItemize}

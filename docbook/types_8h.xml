@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_types_8h">
+<title>include/types.h File Reference</title>
+<indexterm><primary>include/types.h</primary></indexterm>
+<programlisting>#include &lt;CL/cl_platform.h&gt;
+#include &lt;cmath&gt;
+#include &lt;list&gt;
+#include &lt;set&gt;
+#include &lt;vector&gt;
+</programlisting>Include dependency graph for types.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="types_8h__incl.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="types_8h__dep__incl.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structgpusat_1_1bag_type">gpusat::bagType</link></para>
+
+<para>type for a bag in the tree decomposition </para>
+</listitem>
+            <listitem><para>struct <link linkend="_structgpusat_1_1satformula_type">gpusat::satformulaType</link></para>
+
+<para>type for saving the sat formula </para>
+</listitem>
+            <listitem><para>struct <link linkend="_structgpusat_1_1treedec_type">gpusat::treedecType</link></para>
+
+<para>type for saving a tree decomposition </para>
+</listitem>
+            <listitem><para>struct <link linkend="_structgpusat_1_1tree_type">gpusat::treeType</link></para>
+
+<para>tree type for storing the models </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_namespacegpusat">gpusat</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_namespacegpusat_1aa2c9537dea3bac582074032171a42ece">gpusat::dataStructure</link> { <link linkend="_namespacegpusat_1aa2c9537dea3bac582074032171a42eceacb4fb1757fb37c43cded35d3eb857c43">gpusat::dataStructure::ARRAY</link>, 
+<link linkend="_namespacegpusat_1aa2c9537dea3bac582074032171a42eceac0f8e24cf041639c4fc457ebec9490eb">gpusat::dataStructure::TREE</link>
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="_namespacegpusat_1a0992fa8d26c155d150e9f38f2f48f894">gpusat::nodeType</link> { <link linkend="_namespacegpusat_1a0992fa8d26c155d150e9f38f2f48f894aa6fa1cdf9c1a71978751b35b88763f8f">gpusat::nodeType::JOIN</link>, 
+<link linkend="_namespacegpusat_1a0992fa8d26c155d150e9f38f2f48f894a2294cf01b9f59404a05b89bfb81652f2">gpusat::nodeType::INTRODUCEFORGET</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_namespacegpusat_1a25859e1a162fb1712110b033239a3e06">gpusat::compTreedType</link> (const bagType *a, const bagType *b)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_namespacegpusat_1a1f445c345dcaf73f1835ce81473ef646">gpusat::compVars</link> (const cl_long &amp;a, const cl_long &amp;b)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

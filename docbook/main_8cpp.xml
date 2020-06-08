@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_main_8cpp">
+<title>src/main.cpp File Reference</title>
+<indexterm><primary>src/main.cpp</primary></indexterm>
+<programlisting>#include &lt;fstream&gt;
+#include &lt;iostream&gt;
+#include &lt;sstream&gt;
+#include &lt;CLI11.hpp&gt;
+#include &lt;FitnessFunctions/CutSetWidthFitnessFunction.h&gt;
+#include &lt;FitnessFunctions/JoinSizeFitnessFunction.h&gt;
+#include &lt;FitnessFunctions/NumJoinFitnessFunction.h&gt;
+#include &lt;FitnessFunctions/WidthCutSetFitnessFunction.h&gt;
+#include &lt;boost/multiprecision/cpp_bin_float.hpp&gt;
+#include &lt;chrono&gt;
+#include &lt;decomposer.h&gt;
+#include &lt;gpusatparser.h&gt;
+#include &lt;gpusatpreprocessor.h&gt;
+#include &lt;gpusatutils.h&gt;
+#include &lt;graphoutput.h&gt;
+#include &lt;math.h&gt;
+#include &lt;numeric&gt;
+#include &lt;solver.h&gt;
+#include &lt;sys/stat.h&gt;
+#include &lt;types.h&gt;
+#include &lt;visualization.h&gt;
+#include &lt;kernel.h&gt;
+</programlisting>Include dependency graph for main.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8cpp__incl.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_main_8cpp_1af1b68fb4ba71d72d397f46a730f03f2f">__CL_ENABLE_EXCEPTIONS</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="_main_8cpp_1a22dd9d967cbe39a94c26153f1e96ec1e">NELEMS</link>(x)   (sizeof(x) / sizeof((x)[0]))</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_main_8cpp_1af3536928e7b1436ef9490f76a9757bae">buildKernel</link> (cl::Context &amp;context, std::vector&lt; cl::Device &gt; &amp;devices, cl::CommandQueue &amp;queue, cl::Program &amp;program, cl_long &amp;memorySize, cl_long &amp;maxMemoryBuffer, bool nvidia, bool amd, bool cpu, long &amp;combineWidth)</para>
+</listitem>
+            <listitem><para>void <link linkend="_main_8cpp_1a98c043df78519ccb9ff49d98f2abc32f">device_query</link> ()</para>
+</listitem>
+            <listitem><para>int <link linkend="_main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97">main</link> (int argc, char *argv[])</para>
+</listitem>
+            <listitem><para>void <link linkend="_main_8cpp_1af779df65b45927d9fb2e79db96f9864b">PrintDeviceInfo</link> (cl_device_id device)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>const char *const <link linkend="_main_8cpp_1a140587bf145124a6310ce275e5e435f6">attributeNames</link> []</para>
+</listitem>
+            <listitem><para>const cl_platform_info <link linkend="_main_8cpp_1a5273668cb9947a05cac80ffcd1c2c499">attributeTypes</link> [5]</para>
+</listitem>
+            <listitem><para>std::string <link linkend="_main_8cpp_1a7e30b5dac3e2984592fda7100e82e9eb">kernelStr</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_main_8cpp_1af1b68fb4ba71d72d397f46a730f03f2f"/>    <section>
+    <title>__CL_ENABLE_EXCEPTIONS</title>
+<indexterm><primary>__CL_ENABLE_EXCEPTIONS</primary><secondary>main.cpp</secondary></indexterm>
+<indexterm><primary>main.cpp</primary><secondary>__CL_ENABLE_EXCEPTIONS</secondary></indexterm>
+<para><computeroutput>#define __CL_ENABLE_EXCEPTIONS</computeroutput></para>    </section><anchor xml:id="_main_8cpp_1a22dd9d967cbe39a94c26153f1e96ec1e"/>    <section>
+    <title>NELEMS</title>
+<indexterm><primary>NELEMS</primary><secondary>main.cpp</secondary></indexterm>
+<indexterm><primary>main.cpp</primary><secondary>NELEMS</secondary></indexterm>
+<para><computeroutput>#define NELEMS( x)   (sizeof(x) / sizeof((x)[0]))</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_main_8cpp_1af3536928e7b1436ef9490f76a9757bae"/>    <section>
+    <title>buildKernel()</title>
+<indexterm><primary>buildKernel</primary><secondary>main.cpp</secondary></indexterm>
+<indexterm><primary>main.cpp</primary><secondary>buildKernel</secondary></indexterm>
+<para><computeroutput>void buildKernel (cl::Context &amp; context, std::vector&lt; cl::Device &gt; &amp; devices, cl::CommandQueue &amp; queue, cl::Program &amp; program, cl_long &amp; memorySize, cl_long &amp; maxMemoryBuffer, bool nvidia, bool amd, bool cpu, long &amp; combineWidth)</computeroutput></para><para>
+References kernelStr.</para>
+<para>
+Referenced by main().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8cpp_af3536928e7b1436ef9490f76a9757bae_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_main_8cpp_1a98c043df78519ccb9ff49d98f2abc32f"/>    <section>
+    <title>device_query()</title>
+<indexterm><primary>device_query</primary><secondary>main.cpp</secondary></indexterm>
+<indexterm><primary>main.cpp</primary><secondary>device_query</secondary></indexterm>
+<para><computeroutput>void device_query ( )</computeroutput></para><para>
+References attributeNames, attributeTypes, NELEMS, and PrintDeviceInfo().</para>
+<para>
+Referenced by main().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8cpp_a98c043df78519ccb9ff49d98f2abc32f_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8cpp_a98c043df78519ccb9ff49d98f2abc32f_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>main.cpp</secondary></indexterm>
+<indexterm><primary>main.cpp</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main (int argc, char * argv[])</computeroutput></para>
+<para>solution visualisation</para>
+<para>
+References gpusat::ARRAY, gpusat::treedecType::bags, buildKernel(), gpusat::Decomposer::computeDecomposition(), gpusat::TDParser::defaultWeight, device_query(), gpusat::treeType::elements, gpusat::getCount(), gpusat::getTime(), gpusat::Graphoutput::graphEnd(), gpusat::Graphoutput::graphStart(), gpusat::INTRODUCEFORGET, kernelStr, gpusat::treeType::maxId, gpusat::Solver::maxTableSize, gpusat::treeType::minId, gpusat::Graphoutput::neo4jSat(), gpusat::Graphoutput::neo4jTD(), gpusat::Solver::numIntroduceForget, gpusat::Solver::numJoin, gpusat::CNFParser::parseSatFormula(), gpusat::TDParser::parseTreeDecomp(), gpusat::Preprocessor::preprocessDecomp(), gpusat::Preprocessor::preprocessFacts(), gpusat::printtreedecType(), gpusat::TREE, gpusat::satformulaType::unsat, gpusat::bagType::variables, gpusat::Visualization::visuClauses(), gpusat::Visualization::visuTreeDec(), gpusat::treedecType::width, and gpusat::Visualization::writeJsonFile().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_main_8cpp_1af779df65b45927d9fb2e79db96f9864b"/>    <section>
+    <title>PrintDeviceInfo()</title>
+<indexterm><primary>PrintDeviceInfo</primary><secondary>main.cpp</secondary></indexterm>
+<indexterm><primary>main.cpp</primary><secondary>PrintDeviceInfo</secondary></indexterm>
+<para><computeroutput>void PrintDeviceInfo (cl_device_id device)</computeroutput></para><para>
+Referenced by device_query().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8cpp_af779df65b45927d9fb2e79db96f9864b_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_main_8cpp_1a140587bf145124a6310ce275e5e435f6"/>    <section>
+    <title>attributeNames</title>
+<indexterm><primary>attributeNames</primary><secondary>main.cpp</secondary></indexterm>
+<indexterm><primary>main.cpp</primary><secondary>attributeNames</secondary></indexterm>
+<para><computeroutput>const char* const attributeNames[]</computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting>=&#32;{
+&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;CL_PLATFORM_NAME&quot;</emphasis>,
+&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;CL_PLATFORM_VENDOR&quot;</emphasis>,
+&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;CL_PLATFORM_VERSION&quot;</emphasis>,
+&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;CL_PLATFORM_PROFILE&quot;</emphasis>,
+&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;CL_PLATFORM_EXTENSIONS&quot;</emphasis>}
+</programlisting><para>
+Referenced by device_query().</para>
+    </section><anchor xml:id="_main_8cpp_1a5273668cb9947a05cac80ffcd1c2c499"/>    <section>
+    <title>attributeTypes</title>
+<indexterm><primary>attributeTypes</primary><secondary>main.cpp</secondary></indexterm>
+<indexterm><primary>main.cpp</primary><secondary>attributeTypes</secondary></indexterm>
+<para><computeroutput>const cl_platform_info attributeTypes[5]</computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting>=&#32;{
+&#32;&#32;&#32;&#32;CL_PLATFORM_NAME,
+&#32;&#32;&#32;&#32;CL_PLATFORM_VENDOR,
+&#32;&#32;&#32;&#32;CL_PLATFORM_VERSION,
+&#32;&#32;&#32;&#32;CL_PLATFORM_PROFILE,
+&#32;&#32;&#32;&#32;CL_PLATFORM_EXTENSIONS}
+</programlisting><para>
+Referenced by device_query().</para>
+    </section><anchor xml:id="_main_8cpp_1a7e30b5dac3e2984592fda7100e82e9eb"/>    <section>
+    <title>kernelStr</title>
+<indexterm><primary>kernelStr</primary><secondary>main.cpp</secondary></indexterm>
+<indexterm><primary>main.cpp</primary><secondary>kernelStr</secondary></indexterm>
+<para><computeroutput>std::string kernelStr</computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting>=
+
+
+
+<emphasis role="keyword">using&#32;namespace&#32;</emphasis><link linkend="_namespacegpusat">gpusat</link>
+</programlisting><para>
+Referenced by buildKernel(), and main().</para>
+</section>
+</section>
+</section>

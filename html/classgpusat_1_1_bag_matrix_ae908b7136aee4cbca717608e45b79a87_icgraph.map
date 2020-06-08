@@ -1,0 +1,5 @@
+<map id="gpusat::BagMatrix::rows" name="gpusat::BagMatrix::rows">
+<area shape="rect" id="node1" title=" " alt="" coords="433,13,596,39"/>
+<area shape="rect" id="node2" href="$classgpusat_1_1_visualization.html#aee01b172cd6c03b26143b1ae82193b9b" title=" " alt="" coords="243,5,385,47"/>
+<area shape="rect" id="node3" href="$classgpusat_1_1_solver.html#ae0fed660431502c4ff23b011de6207ca" title="Solves the sat formula with a given decomposition." alt="" coords="5,13,195,39"/>
+</map>

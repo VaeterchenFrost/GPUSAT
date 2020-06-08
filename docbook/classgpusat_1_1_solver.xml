@@ -1,0 +1,620 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classgpusat_1_1_solver">
+<title>gpusat::Solver Class Reference</title>
+<indexterm><primary>gpusat::Solver</primary></indexterm>
+<para>
+<computeroutput>#include &lt;solver.h&gt;</computeroutput>
+</para>
+Collaboration diagram for gpusat::Solver:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_solver__coll__graph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classgpusat_1_1_solver_1ad0da6d218b0f10f1ea7ec93328251f2c">Solver</link> (cl::Context &amp;context_, cl::CommandQueue &amp;queue_, cl::Program &amp;program_, cl_long memorySize_, cl_long maxMemoryBuffer_, <link linkend="_namespacegpusat_1aa2c9537dea3bac582074032171a42ece">dataStructure</link> solutionType_, cl_long maxBag_, bool verbose_, <link linkend="_classgpusat_1_1_graphoutput">Graphoutput</link> *graphoutput_, <link linkend="_classgpusat_1_1_visualization">Visualization</link> *visualization_)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classgpusat_1_1_solver_1ae0fed660431502c4ff23b011de6207ca">solveProblem</link> (<link linkend="_structgpusat_1_1treedec_type">treedecType</link> &amp;decomp, <link linkend="_structgpusat_1_1satformula_type">satformulaType</link> &amp;formula, <link linkend="_structgpusat_1_1bag_type">bagType</link> &amp;node, <link linkend="_structgpusat_1_1bag_type">bagType</link> &amp;pnode, <link linkend="_namespacegpusat_1a0992fa8d26c155d150e9f38f2f48f894">nodeType</link> lastNode)</para>
+
+<para>Solves the sat formula with a given decomposition. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classgpusat_1_1_graphoutput">Graphoutput</link> * <link linkend="_classgpusat_1_1_solver_1a12f1fd52fab31a81b122b390d492d5ab">graphoutput</link></para>
+</listitem>
+            <listitem><para>cl_long <link linkend="_classgpusat_1_1_solver_1ab90015acfdc00e872945b37fd640e0e1">isSat</link> = 1</para>
+</listitem>
+            <listitem><para>cl_long <link linkend="_classgpusat_1_1_solver_1a9d7f00f61d980b2df203bc7060ddbda6">maxBag</link> = 0</para>
+</listitem>
+            <listitem><para>cl_long <link linkend="_classgpusat_1_1_solver_1ad6cf2fc8d36e8f74833030edabb538ca">maxMemoryBuffer</link> = 0</para>
+</listitem>
+            <listitem><para>cl_long <link linkend="_classgpusat_1_1_solver_1ac09bff4a419f6c7e9a1235021afa101e">maxTableSize</link> = 0</para>
+</listitem>
+            <listitem><para>cl_long <link linkend="_classgpusat_1_1_solver_1a022a143d145ef806783ce358536cd81d">numIntroduceForget</link> = 0</para>
+</listitem>
+            <listitem><para>cl_long <link linkend="_classgpusat_1_1_solver_1ad92354c4b8a388f11c4325e7cf7d2e8b">numJoin</link> = 0</para>
+</listitem>
+            <listitem><para><link linkend="_namespacegpusat_1aa2c9537dea3bac582074032171a42ece">dataStructure</link> <link linkend="_classgpusat_1_1_solver_1a398107b6b00d8f1c5e05720221e29536">solutionType</link> = <link linkend="_namespacegpusat_1aa2c9537dea3bac582074032171a42eceac0f8e24cf041639c4fc457ebec9490eb">dataStructure::TREE</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_classgpusat_1_1_solver_1ae7295184458334b8fbe754bac2659f0e">verbose</link> = false</para>
+</listitem>
+            <listitem><para><link linkend="_classgpusat_1_1_visualization">Visualization</link> * <link linkend="_classgpusat_1_1_solver_1a968a41550472d9605bdf4daba3c3031c">visualization</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classgpusat_1_1_solver_1acec22223ccb8d99855775e71031c9719">cleanTree</link> (<link linkend="_structgpusat_1_1tree_type">treeType</link> &amp;table, cl_long size, cl_long numVars, <link linkend="_structgpusat_1_1bag_type">bagType</link> &amp;node, cl_long nextSize)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classgpusat_1_1_solver_1aeb736ac16e820137d6d0898960336783">combineTree</link> (<link linkend="_structgpusat_1_1tree_type">treeType</link> &amp;to, <link linkend="_structgpusat_1_1tree_type">treeType</link> &amp;from, cl_long numVars)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classgpusat_1_1_solver_1a40781bade0390fd7802658d5b3c545b9">solveIntroduceForget</link> (<link linkend="_structgpusat_1_1satformula_type">satformulaType</link> &amp;formula, <link linkend="_structgpusat_1_1bag_type">bagType</link> &amp;pnode, <link linkend="_structgpusat_1_1bag_type">bagType</link> &amp;node, <link linkend="_structgpusat_1_1bag_type">bagType</link> &amp;cnode, bool leaf, <link linkend="_namespacegpusat_1a0992fa8d26c155d150e9f38f2f48f894">nodeType</link> nextNode)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classgpusat_1_1_solver_1a023194e12a492df6c89aa6d85e133875">solveJoin</link> (<link linkend="_structgpusat_1_1bag_type">bagType</link> &amp;node, <link linkend="_structgpusat_1_1bag_type">bagType</link> &amp;edge1, <link linkend="_structgpusat_1_1bag_type">bagType</link> &amp;edge2, <link linkend="_structgpusat_1_1satformula_type">satformulaType</link> &amp;formula, <link linkend="_namespacegpusat_1a0992fa8d26c155d150e9f38f2f48f894">nodeType</link> nextNode)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para>cl::Context &amp; <link linkend="_classgpusat_1_1_solver_1aefd785c01f25da5496e97aba18052062">context</link></para>
+</listitem>
+            <listitem><para>cl_long <link linkend="_classgpusat_1_1_solver_1aaa51ccdd29ad77a9de503bcc4f0ed0fb">memorySize</link></para>
+</listitem>
+            <listitem><para>cl::Program &amp; <link linkend="_classgpusat_1_1_solver_1a61cf5914da279ca43a2700c18e9cda53">program</link></para>
+</listitem>
+            <listitem><para>cl::CommandQueue &amp; <link linkend="_classgpusat_1_1_solver_1abe26799798e17e545d72b21cdd8409c0">queue</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Organizes the process of solving a sat problem in the given context. </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classgpusat_1_1_solver_1ad0da6d218b0f10f1ea7ec93328251f2c"/>    <section>
+    <title>Solver()</title>
+<indexterm><primary>Solver</primary><secondary>gpusat::Solver</secondary></indexterm>
+<indexterm><primary>gpusat::Solver</primary><secondary>Solver</secondary></indexterm>
+<para><computeroutput>gpusat::Solver::Solver (cl::Context &amp; context_, cl::CommandQueue &amp; queue_, cl::Program &amp; program_, cl_long memorySize_, cl_long maxMemoryBuffer_, <link linkend="_namespacegpusat_1aa2c9537dea3bac582074032171a42ece">dataStructure</link> solutionType_, cl_long maxBag_, bool verbose_, <link linkend="_classgpusat_1_1_graphoutput">Graphoutput</link> * graphoutput_, <link linkend="_classgpusat_1_1_visualization">Visualization</link> * visualization_)<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>context_</entry>
+                                <entry>
+<para>the given context as hardware </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>queue_</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>program_</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>memorySize_</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>maxMemoryBuffer_</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>solutionType_</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>maxBag_</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>verbose_</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>graphoutput_</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>visualization_</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classgpusat_1_1_solver_1acec22223ccb8d99855775e71031c9719"/>    <section>
+    <title>cleanTree()</title>
+<indexterm><primary>cleanTree</primary><secondary>gpusat::Solver</secondary></indexterm>
+<indexterm><primary>gpusat::Solver</primary><secondary>cleanTree</secondary></indexterm>
+<para><computeroutput>void gpusat::Solver::cleanTree (<link linkend="_structgpusat_1_1tree_type">treeType</link> &amp; table, cl_long size, cl_long numVars, <link linkend="_structgpusat_1_1bag_type">bagType</link> &amp; node, cl_long nextSize)<computeroutput>[protected]</computeroutput></computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>table</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>size</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>numVars</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>node</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+References context, gpusat::treeType::elements, gpusat::bagType::exponent, gpusat::treeType::maxId, gpusat::treeType::minId, gpusat::treeType::numSolutions, program, queue, and gpusat::treeType::size.</para>
+<para>
+Referenced by solveJoin().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_solver_acec22223ccb8d99855775e71031c9719_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_solver_1aeb736ac16e820137d6d0898960336783"/>    <section>
+    <title>combineTree()</title>
+<indexterm><primary>combineTree</primary><secondary>gpusat::Solver</secondary></indexterm>
+<indexterm><primary>gpusat::Solver</primary><secondary>combineTree</secondary></indexterm>
+<para><computeroutput>void gpusat::Solver::combineTree (<link linkend="_structgpusat_1_1tree_type">treeType</link> &amp; to, <link linkend="_structgpusat_1_1tree_type">treeType</link> &amp; from, cl_long numVars)<computeroutput>[protected]</computeroutput></computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>to</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>from</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>numVars</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+References context, gpusat::treeType::elements, gpusat::treeType::maxId, gpusat::treeType::minId, gpusat::treeType::numSolutions, program, queue, and gpusat::treeType::size.</para>
+<para>
+Referenced by solveIntroduceForget(), and solveJoin().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_solver_aeb736ac16e820137d6d0898960336783_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_solver_1a40781bade0390fd7802658d5b3c545b9"/>    <section>
+    <title>solveIntroduceForget()</title>
+<indexterm><primary>solveIntroduceForget</primary><secondary>gpusat::Solver</secondary></indexterm>
+<indexterm><primary>gpusat::Solver</primary><secondary>solveIntroduceForget</secondary></indexterm>
+<para><computeroutput>void gpusat::Solver::solveIntroduceForget (<link linkend="_structgpusat_1_1satformula_type">satformulaType</link> &amp; formula, <link linkend="_structgpusat_1_1bag_type">bagType</link> &amp; pnode, <link linkend="_structgpusat_1_1bag_type">bagType</link> &amp; node, <link linkend="_structgpusat_1_1bag_type">bagType</link> &amp; cnode, bool leaf, <link linkend="_namespacegpusat_1a0992fa8d26c155d150e9f38f2f48f894">nodeType</link> nextNode)<computeroutput>[protected]</computeroutput></computeroutput></para>
+<para>function to solve an introduce forget node</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>formula</entry>
+                                <entry>
+<para>the sat formula </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>pnode</entry>
+                                <entry>
+<para>the parent of the current node </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>node</entry>
+                                <entry>
+<para>the current node </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>cnode</entry>
+                                <entry>
+<para>the child of the current node </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>leaf</entry>
+                                <entry>
+<para>indicates that the current node is a leaf node </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+References gpusat::ARRAY, gpusat::bagType::bags, gpusat::satformulaType::clauses, combineTree(), gpusat::compVars(), context, gpusat::bagType::correction, gpusat::treeType::elements, gpusat::bagType::exponent, gpusat::bagType::id, gpusat::INTRODUCEFORGET, isSat, gpusat::JOIN, maxBag, gpusat::treeType::maxId, maxMemoryBuffer, gpusat::bagType::maxSize, maxTableSize, memorySize, gpusat::treeType::minId, numIntroduceForget, gpusat::treeType::numSolutions, gpusat::satformulaType::numWeights, gpusat::printbagType(), program, queue, gpusat::treeType::size, gpusat::bagType::solution, solutionType, gpusat::TREE, gpusat::bagType::variables, gpusat::satformulaType::variableWeights, and verbose.</para>
+<para>
+Referenced by solveProblem().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_solver_a40781bade0390fd7802658d5b3c545b9_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_solver_a40781bade0390fd7802658d5b3c545b9_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_solver_1a023194e12a492df6c89aa6d85e133875"/>    <section>
+    <title>solveJoin()</title>
+<indexterm><primary>solveJoin</primary><secondary>gpusat::Solver</secondary></indexterm>
+<indexterm><primary>gpusat::Solver</primary><secondary>solveJoin</secondary></indexterm>
+<para><computeroutput>void gpusat::Solver::solveJoin (<link linkend="_structgpusat_1_1bag_type">bagType</link> &amp; node, <link linkend="_structgpusat_1_1bag_type">bagType</link> &amp; edge1, <link linkend="_structgpusat_1_1bag_type">bagType</link> &amp; edge2, <link linkend="_structgpusat_1_1satformula_type">satformulaType</link> &amp; formula, <link linkend="_namespacegpusat_1a0992fa8d26c155d150e9f38f2f48f894">nodeType</link> nextNode)<computeroutput>[protected]</computeroutput></computeroutput></para>
+<para>function to solve a join node</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>node</entry>
+                                <entry>
+<para>the node to save the solutions in </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>edge1</entry>
+                                <entry>
+<para>the first child node </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>edge2</entry>
+                                <entry>
+<para>the second child node </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>formula</entry>
+                                <entry>
+<para>the sat formula </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+References gpusat::ARRAY, gpusat::bagType::bags, cleanTree(), combineTree(), context, gpusat::bagType::correction, gpusat::treeType::elements, gpusat::bagType::exponent, gpusat::INTRODUCEFORGET, isSat, gpusat::JOIN, maxBag, gpusat::treeType::maxId, maxMemoryBuffer, gpusat::bagType::maxSize, maxTableSize, memorySize, gpusat::treeType::minId, numJoin, gpusat::treeType::numSolutions, gpusat::satformulaType::numWeights, program, queue, gpusat::treeType::size, gpusat::bagType::solution, solutionType, gpusat::TREE, gpusat::bagType::variables, and gpusat::satformulaType::variableWeights.</para>
+<para>
+Referenced by solveProblem().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_solver_a023194e12a492df6c89aa6d85e133875_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_solver_a023194e12a492df6c89aa6d85e133875_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_solver_1ae0fed660431502c4ff23b011de6207ca"/>    <section>
+    <title>solveProblem()</title>
+<indexterm><primary>solveProblem</primary><secondary>gpusat::Solver</secondary></indexterm>
+<indexterm><primary>gpusat::Solver</primary><secondary>solveProblem</secondary></indexterm>
+<para><computeroutput>void gpusat::Solver::solveProblem (<link linkend="_structgpusat_1_1treedec_type">treedecType</link> &amp; decomp, <link linkend="_structgpusat_1_1satformula_type">satformulaType</link> &amp; formula, <link linkend="_structgpusat_1_1bag_type">bagType</link> &amp; node, <link linkend="_structgpusat_1_1bag_type">bagType</link> &amp; pnode, <link linkend="_namespacegpusat_1a0992fa8d26c155d150e9f38f2f48f894">nodeType</link> lastNode)</computeroutput></para><para>
+
+<para>Solves the sat formula with a given decomposition. </para>
+</para>
+
+<para>function to solve the sat problem</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>decomp</entry>
+                                <entry>
+<para>the tree decomposition </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>formula</entry>
+                                <entry>
+<para>the sat formula </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>node</entry>
+                                <entry>
+<para>the node to start from in the tree decompostion</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>decomp</entry>
+                                <entry>
+<para>The decomposition of the </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>formula</entry>
+                                <entry>
+<para>The formula.</para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>node</entry>
+                                <entry>
+<para>The node.</para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>pnode</entry>
+                                <entry>
+<para>The pnode.</para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>lastNode</entry>
+                                <entry>
+<para>The last node.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+References gpusat::bagType::bags, gpusat::bagType::edges, gpusat::treeType::elements, gpusat::Graphoutput::graphEdgeSet(), graphoutput, gpusat::bagType::id, gpusat::INTRODUCEFORGET, gpusat::Graphoutput::isEnabled(), isSat, gpusat::JOIN, gpusat::treeType::maxId, gpusat::bagType::maxSize, gpusat::treeType::minId, gpusat::Graphoutput::nodeBag(), gpusat::Graphoutput::nodeJoin(), gpusat::treeType::numSolutions, gpusat::printbagType(), gpusat::treeType::size, gpusat::solJson(), gpusat::bagType::solution, gpusat::solutiontable(), solutionType, solveIntroduceForget(), solveJoin(), gpusat::Visualization::tdTimelineAppend(), gpusat::bagType::variables, verbose, and visualization.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_solver_ae0fed660431502c4ff23b011de6207ca_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classgpusat_1_1_solver_1aefd785c01f25da5496e97aba18052062"/>    <section>
+    <title>context</title>
+<indexterm><primary>context</primary><secondary>gpusat::Solver</secondary></indexterm>
+<indexterm><primary>gpusat::Solver</primary><secondary>context</secondary></indexterm>
+<para><computeroutput>cl::Context&amp; gpusat::Solver::context<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Referenced by cleanTree(), combineTree(), solveIntroduceForget(), and solveJoin().</para>
+    </section><anchor xml:id="_classgpusat_1_1_solver_1a12f1fd52fab31a81b122b390d492d5ab"/>    <section>
+    <title>graphoutput</title>
+<indexterm><primary>graphoutput</primary><secondary>gpusat::Solver</secondary></indexterm>
+<indexterm><primary>gpusat::Solver</primary><secondary>graphoutput</secondary></indexterm>
+<para><computeroutput><link linkend="_classgpusat_1_1_graphoutput">Graphoutput</link>* gpusat::Solver::graphoutput</computeroutput></para><para>
+Referenced by solveProblem().</para>
+    </section><anchor xml:id="_classgpusat_1_1_solver_1ab90015acfdc00e872945b37fd640e0e1"/>    <section>
+    <title>isSat</title>
+<indexterm><primary>isSat</primary><secondary>gpusat::Solver</secondary></indexterm>
+<indexterm><primary>gpusat::Solver</primary><secondary>isSat</secondary></indexterm>
+<para><computeroutput>cl_long gpusat::Solver::isSat = 1</computeroutput></para><para>
+Referenced by solveIntroduceForget(), solveJoin(), and solveProblem().</para>
+    </section><anchor xml:id="_classgpusat_1_1_solver_1a9d7f00f61d980b2df203bc7060ddbda6"/>    <section>
+    <title>maxBag</title>
+<indexterm><primary>maxBag</primary><secondary>gpusat::Solver</secondary></indexterm>
+<indexterm><primary>gpusat::Solver</primary><secondary>maxBag</secondary></indexterm>
+<para><computeroutput>cl_long gpusat::Solver::maxBag = 0</computeroutput></para><para>
+Referenced by solveIntroduceForget(), and solveJoin().</para>
+    </section><anchor xml:id="_classgpusat_1_1_solver_1ad6cf2fc8d36e8f74833030edabb538ca"/>    <section>
+    <title>maxMemoryBuffer</title>
+<indexterm><primary>maxMemoryBuffer</primary><secondary>gpusat::Solver</secondary></indexterm>
+<indexterm><primary>gpusat::Solver</primary><secondary>maxMemoryBuffer</secondary></indexterm>
+<para><computeroutput>cl_long gpusat::Solver::maxMemoryBuffer = 0</computeroutput></para><para>
+Referenced by solveIntroduceForget(), and solveJoin().</para>
+    </section><anchor xml:id="_classgpusat_1_1_solver_1ac09bff4a419f6c7e9a1235021afa101e"/>    <section>
+    <title>maxTableSize</title>
+<indexterm><primary>maxTableSize</primary><secondary>gpusat::Solver</secondary></indexterm>
+<indexterm><primary>gpusat::Solver</primary><secondary>maxTableSize</secondary></indexterm>
+<para><computeroutput>cl_long gpusat::Solver::maxTableSize = 0</computeroutput></para><para>
+Referenced by main(), solveIntroduceForget(), and solveJoin().</para>
+    </section><anchor xml:id="_classgpusat_1_1_solver_1aaa51ccdd29ad77a9de503bcc4f0ed0fb"/>    <section>
+    <title>memorySize</title>
+<indexterm><primary>memorySize</primary><secondary>gpusat::Solver</secondary></indexterm>
+<indexterm><primary>gpusat::Solver</primary><secondary>memorySize</secondary></indexterm>
+<para><computeroutput>cl_long gpusat::Solver::memorySize<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Referenced by solveIntroduceForget(), and solveJoin().</para>
+    </section><anchor xml:id="_classgpusat_1_1_solver_1a022a143d145ef806783ce358536cd81d"/>    <section>
+    <title>numIntroduceForget</title>
+<indexterm><primary>numIntroduceForget</primary><secondary>gpusat::Solver</secondary></indexterm>
+<indexterm><primary>gpusat::Solver</primary><secondary>numIntroduceForget</secondary></indexterm>
+<para><computeroutput>cl_long gpusat::Solver::numIntroduceForget = 0</computeroutput></para><para>
+Referenced by main(), and solveIntroduceForget().</para>
+    </section><anchor xml:id="_classgpusat_1_1_solver_1ad92354c4b8a388f11c4325e7cf7d2e8b"/>    <section>
+    <title>numJoin</title>
+<indexterm><primary>numJoin</primary><secondary>gpusat::Solver</secondary></indexterm>
+<indexterm><primary>gpusat::Solver</primary><secondary>numJoin</secondary></indexterm>
+<para><computeroutput>cl_long gpusat::Solver::numJoin = 0</computeroutput></para><para>
+Referenced by main(), and solveJoin().</para>
+    </section><anchor xml:id="_classgpusat_1_1_solver_1a61cf5914da279ca43a2700c18e9cda53"/>    <section>
+    <title>program</title>
+<indexterm><primary>program</primary><secondary>gpusat::Solver</secondary></indexterm>
+<indexterm><primary>gpusat::Solver</primary><secondary>program</secondary></indexterm>
+<para><computeroutput>cl::Program&amp; gpusat::Solver::program<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Referenced by cleanTree(), combineTree(), solveIntroduceForget(), and solveJoin().</para>
+    </section><anchor xml:id="_classgpusat_1_1_solver_1abe26799798e17e545d72b21cdd8409c0"/>    <section>
+    <title>queue</title>
+<indexterm><primary>queue</primary><secondary>gpusat::Solver</secondary></indexterm>
+<indexterm><primary>gpusat::Solver</primary><secondary>queue</secondary></indexterm>
+<para><computeroutput>cl::CommandQueue&amp; gpusat::Solver::queue<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Referenced by cleanTree(), combineTree(), solveIntroduceForget(), and solveJoin().</para>
+    </section><anchor xml:id="_classgpusat_1_1_solver_1a398107b6b00d8f1c5e05720221e29536"/>    <section>
+    <title>solutionType</title>
+<indexterm><primary>solutionType</primary><secondary>gpusat::Solver</secondary></indexterm>
+<indexterm><primary>gpusat::Solver</primary><secondary>solutionType</secondary></indexterm>
+<para><computeroutput><link linkend="_namespacegpusat_1aa2c9537dea3bac582074032171a42ece">dataStructure</link> gpusat::Solver::solutionType = <link linkend="_namespacegpusat_1aa2c9537dea3bac582074032171a42eceac0f8e24cf041639c4fc457ebec9490eb">dataStructure::TREE</link></computeroutput></para><para>
+Referenced by solveIntroduceForget(), solveJoin(), and solveProblem().</para>
+    </section><anchor xml:id="_classgpusat_1_1_solver_1ae7295184458334b8fbe754bac2659f0e"/>    <section>
+    <title>verbose</title>
+<indexterm><primary>verbose</primary><secondary>gpusat::Solver</secondary></indexterm>
+<indexterm><primary>gpusat::Solver</primary><secondary>verbose</secondary></indexterm>
+<para><computeroutput>bool gpusat::Solver::verbose = false</computeroutput></para><para>
+Referenced by solveIntroduceForget(), and solveProblem().</para>
+    </section><anchor xml:id="_classgpusat_1_1_solver_1a968a41550472d9605bdf4daba3c3031c"/>    <section>
+    <title>visualization</title>
+<indexterm><primary>visualization</primary><secondary>gpusat::Solver</secondary></indexterm>
+<indexterm><primary>gpusat::Solver</primary><secondary>visualization</secondary></indexterm>
+<para><computeroutput><link linkend="_classgpusat_1_1_visualization">Visualization</link>* gpusat::Solver::visualization</computeroutput></para><para>
+Referenced by solveProblem().</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+include/<link linkend="_solver_8h">solver.h</link>src/<link linkend="_solver_8cpp">solver.cpp</link></section>
+</section>

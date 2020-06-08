@@ -1,0 +1,450 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespacegpusat">
+<title>gpusat Namespace Reference</title>
+<indexterm><primary>gpusat</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classgpusat_1_1_bag_matrix">BagMatrix</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structgpusat_1_1bag_type">bagType</link></para>
+
+<para>type for a bag in the tree decomposition </para>
+</listitem>
+            <listitem><para>class <link linkend="_classgpusat_1_1_c_n_f_parser">CNFParser</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classgpusat_1_1_cut_set_width_fitness_function">CutSetWidthFitnessFunction</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classgpusat_1_1_decomposer">Decomposer</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classgpusat_1_1_graphoutput">Graphoutput</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classgpusat_1_1_join_size_fitness_function">JoinSizeFitnessFunction</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classgpusat_1_1_num_join_fitness_function">NumJoinFitnessFunction</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classgpusat_1_1_preprocessor">Preprocessor</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structgpusat_1_1satformula_type">satformulaType</link></para>
+
+<para>type for saving the sat formula </para>
+</listitem>
+            <listitem><para>class <link linkend="_classgpusat_1_1_solver">Solver</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structgpusat_1_1_table_lines">TableLines</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classgpusat_1_1_t_d_parser">TDParser</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structgpusat_1_1treedec_type">treedecType</link></para>
+
+<para>type for saving a tree decomposition </para>
+</listitem>
+            <listitem><para>struct <link linkend="_structgpusat_1_1tree_type">treeType</link></para>
+
+<para>tree type for storing the models </para>
+</listitem>
+            <listitem><para>class <link linkend="_classgpusat_1_1_visualization">Visualization</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classgpusat_1_1_width_cut_set_fitness_function">WidthCutSetFitnessFunction</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_namespacegpusat_1aa2c9537dea3bac582074032171a42ece">dataStructure</link> { <link linkend="_namespacegpusat_1aa2c9537dea3bac582074032171a42eceacb4fb1757fb37c43cded35d3eb857c43">dataStructure::ARRAY</link>, 
+<link linkend="_namespacegpusat_1aa2c9537dea3bac582074032171a42eceac0f8e24cf041639c4fc457ebec9490eb">dataStructure::TREE</link>
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="_namespacegpusat_1a0992fa8d26c155d150e9f38f2f48f894">nodeType</link> { <link linkend="_namespacegpusat_1a0992fa8d26c155d150e9f38f2f48f894aa6fa1cdf9c1a71978751b35b88763f8f">nodeType::JOIN</link>, 
+<link linkend="_namespacegpusat_1a0992fa8d26c155d150e9f38f2f48f894a2294cf01b9f59404a05b89bfb81652f2">nodeType::INTRODUCEFORGET</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_namespacegpusat_1a25859e1a162fb1712110b033239a3e06">compTreedType</link> (const <link linkend="_structgpusat_1_1bag_type">bagType</link> *a, const <link linkend="_structgpusat_1_1bag_type">bagType</link> *b)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_namespacegpusat_1a1f445c345dcaf73f1835ce81473ef646">compVars</link> (const cl_long &amp;a, const cl_long &amp;b)</para>
+</listitem>
+            <listitem><para>cl_double <link linkend="_namespacegpusat_1a607a57fced4760564963f4c707f28449">getCount</link> (cl_long id, cl_long *tree, cl_long numVars)</para>
+</listitem>
+            <listitem><para>long long int <link linkend="_namespacegpusat_1a9fab9fd5dc1462ce9508314fc13d3be2">getTime</link> ()</para>
+</listitem>
+            <listitem><para>std::ostream &amp; <link linkend="_namespacegpusat_1ac905553f8d2449bbc3ab7cc2138dc47c">operator&lt;&lt;</link> (std::ostream &amp;os, const <link linkend="_namespacegpusat_1aa2c9537dea3bac582074032171a42ece">dataStructure</link> ds)</para>
+</listitem>
+            <listitem><para>std::ostream &amp; <link linkend="_namespacegpusat_1abb6472078bea74414c52c4f95b7685b1">operator&lt;&lt;</link> (std::ostream &amp;os, const std::vector&lt; <link linkend="_structgpusat_1_1bag_type">bagType</link> * &gt; vec)</para>
+</listitem>
+            <listitem><para>std::ostream &amp; <link linkend="_namespacegpusat_1a7a133b7de343b7f8f1b5147cb151c24f">operator&lt;&lt;</link> (std::ostream &amp;os, const std::vector&lt; cl_long &gt; vec)</para>
+</listitem>
+            <listitem><para>void <link linkend="_namespacegpusat_1aa117816b931264c9a291041b047d0c56">printbagType</link> (<link linkend="_structgpusat_1_1bag_type">bagType</link> *bag, std::ostream &amp;stream, int depth=0)</para>
+
+<para>print information for a bag in the tree decomposition </para>
+</listitem>
+            <listitem><para>void <link linkend="_namespacegpusat_1ad9dbd68f848e49cd275592926da7a27c">printtreedecType</link> (<link linkend="_structgpusat_1_1treedec_type">treedecType</link> *dec, std::ostream &amp;stream)</para>
+
+<para>print a tree decomposition </para>
+</listitem>
+            <listitem><para>void <link linkend="_namespacegpusat_1adb6dc0944ae7b3c703b74287e26d6038">printtreeType</link> (<link linkend="_structgpusat_1_1tree_type">treeType</link> *tree, std::ostream &amp;stream, size_t size, int depth=0)</para>
+</listitem>
+            <listitem><para><link linkend="_structgpusat_1_1_table_lines">TableLines</link> <link linkend="_namespacegpusat_1ae780028fdecbf7e4891b55159b33f3c1">solJson</link> (<link linkend="_structgpusat_1_1bag_type">bagType</link> node, <link linkend="_namespacegpusat_1aa2c9537dea3bac582074032171a42ece">dataStructure</link> solutionType)</para>
+</listitem>
+            <listitem><para>std::string <link linkend="_namespacegpusat_1a62a1b8c2535766854537a608378b737f">solutiontable</link> (<link linkend="_structgpusat_1_1bag_type">bagType</link> node, <link linkend="_namespacegpusat_1aa2c9537dea3bac582074032171a42ece">dataStructure</link> solutionType)</para>
+
+<para>Generate a formatted stringoutput for a solved node with solutions. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="_namespacegpusat_1aa2c9537dea3bac582074032171a42ece"/>    <section>
+    <title>dataStructure</title>
+<indexterm><primary>dataStructure</primary><secondary>gpusat</secondary></indexterm>
+<indexterm><primary>gpusat</primary><secondary>dataStructure</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_namespacegpusat_1aa2c9537dea3bac582074032171a42ece">gpusat::dataStructure</link><computeroutput>[strong]</computeroutput></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>ARRAY</primary><secondary>gpusat</secondary></indexterm>
+<indexterm><primary>gpusat</primary><secondary>ARRAY</secondary></indexterm>
+<anchor xml:id="_namespacegpusat_1aa2c9537dea3bac582074032171a42eceacb4fb1757fb37c43cded35d3eb857c43"/>ARRAY</entry><entry></entry></row><row><entry><indexterm><primary>TREE</primary><secondary>gpusat</secondary></indexterm>
+<indexterm><primary>gpusat</primary><secondary>TREE</secondary></indexterm>
+<anchor xml:id="_namespacegpusat_1aa2c9537dea3bac582074032171a42eceac0f8e24cf041639c4fc457ebec9490eb"/>TREE</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+    </section><anchor xml:id="_namespacegpusat_1a0992fa8d26c155d150e9f38f2f48f894"/>    <section>
+    <title>nodeType</title>
+<indexterm><primary>nodeType</primary><secondary>gpusat</secondary></indexterm>
+<indexterm><primary>gpusat</primary><secondary>nodeType</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_namespacegpusat_1a0992fa8d26c155d150e9f38f2f48f894">gpusat::nodeType</link><computeroutput>[strong]</computeroutput></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>JOIN</primary><secondary>gpusat</secondary></indexterm>
+<indexterm><primary>gpusat</primary><secondary>JOIN</secondary></indexterm>
+<anchor xml:id="_namespacegpusat_1a0992fa8d26c155d150e9f38f2f48f894aa6fa1cdf9c1a71978751b35b88763f8f"/>JOIN</entry><entry></entry></row><row><entry><indexterm><primary>INTRODUCEFORGET</primary><secondary>gpusat</secondary></indexterm>
+<indexterm><primary>gpusat</primary><secondary>INTRODUCEFORGET</secondary></indexterm>
+<anchor xml:id="_namespacegpusat_1a0992fa8d26c155d150e9f38f2f48f894a2294cf01b9f59404a05b89bfb81652f2"/>INTRODUCEFORGET</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_namespacegpusat_1a25859e1a162fb1712110b033239a3e06"/>    <section>
+    <title>compTreedType()</title>
+<indexterm><primary>compTreedType</primary><secondary>gpusat</secondary></indexterm>
+<indexterm><primary>gpusat</primary><secondary>compTreedType</secondary></indexterm>
+<para><computeroutput>bool gpusat::compTreedType (const <link linkend="_structgpusat_1_1bag_type">bagType</link> * a, const <link linkend="_structgpusat_1_1bag_type">bagType</link> * b)<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Function that compares two tree decompostions by id.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>a</entry>
+                                <entry>
+<para>the first tree decompostion </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>b</entry>
+                                <entry>
+<para>the second tree decomposition </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a &lt; b </para>
+</formalpara>
+</para>
+<para>
+References gpusat::bagType::id.</para>
+<para>
+Referenced by gpusat::TDParser::parseTreeDecomp(), and gpusat::Preprocessor::preprocessDecomp().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="namespacegpusat_a25859e1a162fb1712110b033239a3e06_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_namespacegpusat_1a1f445c345dcaf73f1835ce81473ef646"/>    <section>
+    <title>compVars()</title>
+<indexterm><primary>compVars</primary><secondary>gpusat</secondary></indexterm>
+<indexterm><primary>gpusat</primary><secondary>compVars</secondary></indexterm>
+<para><computeroutput>bool gpusat::compVars (const cl_long &amp; a, const cl_long &amp; b)<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Function that compares two variables. 
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>a</entry>
+                                <entry>
+<para>the first variable </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>b</entry>
+                                <entry>
+<para>the second variable </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if abs a &lt; b </para>
+</formalpara>
+</para>
+<para>
+Referenced by gpusat::Preprocessor::preprocessFacts(), and gpusat::Solver::solveIntroduceForget().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="namespacegpusat_a1f445c345dcaf73f1835ce81473ef646_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_namespacegpusat_1a607a57fced4760564963f4c707f28449"/>    <section>
+    <title>getCount()</title>
+<indexterm><primary>getCount</primary><secondary>gpusat</secondary></indexterm>
+<indexterm><primary>gpusat</primary><secondary>getCount</secondary></indexterm>
+<para><computeroutput>cl_double gpusat::getCount (cl_long id, cl_long * tree, cl_long numVars)<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>returns the model count which corresponds to the given id</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>id</entry>
+                                <entry>
+<para>the id for which the model count should be returned </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>tree</entry>
+                                <entry>
+<para>a pointer to the tree structure </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>numVars</entry>
+                                <entry>
+<para>the number of variables in the bag </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the model count </para>
+</formalpara>
+</para>
+<para>
+Referenced by main(), printtreeType(), solJson(), and solutiontable().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="namespacegpusat_a607a57fced4760564963f4c707f28449_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_namespacegpusat_1a9fab9fd5dc1462ce9508314fc13d3be2"/>    <section>
+    <title>getTime()</title>
+<indexterm><primary>getTime</primary><secondary>gpusat</secondary></indexterm>
+<indexterm><primary>gpusat</primary><secondary>getTime</secondary></indexterm>
+<para><computeroutput>long long int gpusat::getTime ( )<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para><formalpara><title>Returns</title>
+
+<para>the time in millisecons since the epoch </para>
+</formalpara>
+</para>
+<para>
+Referenced by main().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="namespacegpusat_a9fab9fd5dc1462ce9508314fc13d3be2_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_namespacegpusat_1ac905553f8d2449bbc3ab7cc2138dc47c"/>    <section>
+    <title>operator&lt;&lt;()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>gpusat</secondary></indexterm>
+<indexterm><primary>gpusat</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<para><computeroutput>std::ostream&amp; gpusat::operator&lt;&lt; (std::ostream &amp; os, const <link linkend="_namespacegpusat_1aa2c9537dea3bac582074032171a42ece">dataStructure</link> ds)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+References ARRAY, and TREE.</para>
+    </section><anchor xml:id="_namespacegpusat_1abb6472078bea74414c52c4f95b7685b1"/>    <section>
+    <title>operator&lt;&lt;()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>gpusat</secondary></indexterm>
+<indexterm><primary>gpusat</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<para><computeroutput>std::ostream&amp; gpusat::operator&lt;&lt; (std::ostream &amp; os, const std::vector&lt; <link linkend="_structgpusat_1_1bag_type">bagType</link> * &gt; vec)<computeroutput>[inline]</computeroutput></computeroutput></para>    </section><anchor xml:id="_namespacegpusat_1a7a133b7de343b7f8f1b5147cb151c24f"/>    <section>
+    <title>operator&lt;&lt;()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>gpusat</secondary></indexterm>
+<indexterm><primary>gpusat</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<para><computeroutput>std::ostream&amp; gpusat::operator&lt;&lt; (std::ostream &amp; os, const std::vector&lt; cl_long &gt; vec)<computeroutput>[inline]</computeroutput></computeroutput></para>    </section><anchor xml:id="_namespacegpusat_1aa117816b931264c9a291041b047d0c56"/>    <section>
+    <title>printbagType()</title>
+<indexterm><primary>printbagType</primary><secondary>gpusat</secondary></indexterm>
+<indexterm><primary>gpusat</primary><secondary>printbagType</secondary></indexterm>
+<para><computeroutput>void gpusat::printbagType (<link linkend="_structgpusat_1_1bag_type">bagType</link> * bag, std::ostream &amp; stream, int depth = <computeroutput>0</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>print information for a bag in the tree decomposition </para>
+</para>
+<para>
+References gpusat::bagType::bags, gpusat::bagType::correction, gpusat::bagType::edges, gpusat::bagType::exponent, gpusat::bagType::id, and gpusat::bagType::variables.</para>
+<para>
+Referenced by gpusat::Solver::solveIntroduceForget(), and gpusat::Solver::solveProblem().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="namespacegpusat_aa117816b931264c9a291041b047d0c56_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_namespacegpusat_1ad9dbd68f848e49cd275592926da7a27c"/>    <section>
+    <title>printtreedecType()</title>
+<indexterm><primary>printtreedecType</primary><secondary>gpusat</secondary></indexterm>
+<indexterm><primary>gpusat</primary><secondary>printtreedecType</secondary></indexterm>
+<para><computeroutput>void gpusat::printtreedecType (<link linkend="_structgpusat_1_1treedec_type">treedecType</link> * dec, std::ostream &amp; stream)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>print a tree decomposition </para>
+</para>
+<para>
+References gpusat::treedecType::bags, and gpusat::treedecType::numb.</para>
+<para>
+Referenced by main().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="namespacegpusat_ad9dbd68f848e49cd275592926da7a27c_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_namespacegpusat_1adb6dc0944ae7b3c703b74287e26d6038"/>    <section>
+    <title>printtreeType()</title>
+<indexterm><primary>printtreeType</primary><secondary>gpusat</secondary></indexterm>
+<indexterm><primary>gpusat</primary><secondary>printtreeType</secondary></indexterm>
+<para><computeroutput>void gpusat::printtreeType (<link linkend="_structgpusat_1_1tree_type">treeType</link> * tree, std::ostream &amp; stream, size_t size, int depth = <computeroutput>0</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+References gpusat::treeType::elements, getCount(), gpusat::treeType::maxId, gpusat::treeType::minId, gpusat::treeType::numSolutions, and gpusat::treeType::size.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="namespacegpusat_adb6dc0944ae7b3c703b74287e26d6038_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_namespacegpusat_1ae780028fdecbf7e4891b55159b33f3c1"/>    <section>
+    <title>solJson()</title>
+<indexterm><primary>solJson</primary><secondary>gpusat</secondary></indexterm>
+<indexterm><primary>gpusat</primary><secondary>solJson</secondary></indexterm>
+<para><computeroutput><link linkend="_structgpusat_1_1_table_lines">TableLines</link> gpusat::solJson (<link linkend="_structgpusat_1_1bag_type">bagType</link> node, <link linkend="_namespacegpusat_1aa2c9537dea3bac582074032171a42ece">dataStructure</link> solutionType)</computeroutput></para>
+<para>Construct Tablelines from a solved node of the tree decomposition If no solution is stored in this node return empty grid and totalSol -1. </para>
+<para>
+References gpusat::BagMatrix::columns(), gpusat::bagType::correction, gpusat::treeType::elements, getCount(), gpusat::TableLines::headline, gpusat::treeType::minId, gpusat::bagType::solution, gpusat::TableLines::solutions, gpusat::TableLines::totalSol, TREE, and gpusat::bagType::variables.</para>
+<para>
+Referenced by gpusat::Solver::solveProblem().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="namespacegpusat_ae780028fdecbf7e4891b55159b33f3c1_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="namespacegpusat_ae780028fdecbf7e4891b55159b33f3c1_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_namespacegpusat_1a62a1b8c2535766854537a608378b737f"/>    <section>
+    <title>solutiontable()</title>
+<indexterm><primary>solutiontable</primary><secondary>gpusat</secondary></indexterm>
+<indexterm><primary>gpusat</primary><secondary>solutiontable</secondary></indexterm>
+<para><computeroutput>std::string gpusat::solutiontable (<link linkend="_structgpusat_1_1bag_type">bagType</link> node, <link linkend="_namespacegpusat_1aa2c9537dea3bac582074032171a42ece">dataStructure</link> solutionType)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Generate a formatted stringoutput for a solved node with solutions. </para>
+</para>
+<para>
+References gpusat::bagType::correction, gpusat::treeType::elements, getCount(), gpusat::treeType::minId, gpusat::bagType::solution, TREE, and gpusat::bagType::variables.</para>
+<para>
+Referenced by gpusat::Solver::solveProblem().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="namespacegpusat_a62a1b8c2535766854537a608378b737f_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="namespacegpusat_a62a1b8c2535766854537a608378b737f_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

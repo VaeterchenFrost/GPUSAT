@@ -1,0 +1,132 @@
+\hypertarget{classgpusat_1_1_cut_set_width_fitness_function}{}\doxysection{gpusat\+::Cut\+Set\+Width\+Fitness\+Function Class Reference}
+\label{classgpusat_1_1_cut_set_width_fitness_function}\index{gpusat::CutSetWidthFitnessFunction@{gpusat::CutSetWidthFitnessFunction}}
+
+
+{\ttfamily \#include $<$Cut\+Set\+Width\+Fitness\+Function.\+h$>$}
+
+
+
+Inheritance diagram for gpusat\+::Cut\+Set\+Width\+Fitness\+Function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classgpusat_1_1_cut_set_width_fitness_function__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for gpusat\+::Cut\+Set\+Width\+Fitness\+Function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classgpusat_1_1_cut_set_width_fitness_function__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgpusat_1_1_cut_set_width_fitness_function_aca921ea8015a85e1cc3daa5c85a7478b}{Cut\+Set\+Width\+Fitness\+Function}} ()=default
+\item 
+\mbox{\hyperlink{classgpusat_1_1_cut_set_width_fitness_function_ab5645416fefedd9571e65a48f48f593c}{$\sim$\+Cut\+Set\+Width\+Fitness\+Function}} ()=default
+\item 
+\mbox{\hyperlink{classgpusat_1_1_cut_set_width_fitness_function}{Cut\+Set\+Width\+Fitness\+Function}} $\ast$ \mbox{\hyperlink{classgpusat_1_1_cut_set_width_fitness_function_a3f392357f0366a2f9b0b3e711ce8b199}{clone}} (void) const override
+\item 
+htd\+::\+Fitness\+Evaluation $\ast$ \mbox{\hyperlink{classgpusat_1_1_cut_set_width_fitness_function_a652393418a4f28551bf7cd3ec72f5dc8}{fitness}} (const htd\+::\+I\+Multi\+Hypergraph \&graph, const htd\+::\+I\+Tree\+Decomposition \&decomposition) const override
+\item 
+double \mbox{\hyperlink{classgpusat_1_1_cut_set_width_fitness_function_abf407b83efa13413aad8f4cdd5dc0c94}{get\+Max\+Cut\+Set\+Size}} (const htd\+::\+I\+Tree\+Decomposition \&decomposition) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fitness function that first minimizes the cut set size and then the width. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classgpusat_1_1_cut_set_width_fitness_function_aca921ea8015a85e1cc3daa5c85a7478b}\label{classgpusat_1_1_cut_set_width_fitness_function_aca921ea8015a85e1cc3daa5c85a7478b}} 
+\index{gpusat::CutSetWidthFitnessFunction@{gpusat::CutSetWidthFitnessFunction}!CutSetWidthFitnessFunction@{CutSetWidthFitnessFunction}}
+\index{CutSetWidthFitnessFunction@{CutSetWidthFitnessFunction}!gpusat::CutSetWidthFitnessFunction@{gpusat::CutSetWidthFitnessFunction}}
+\doxysubsubsection{\texorpdfstring{CutSetWidthFitnessFunction()}{CutSetWidthFitnessFunction()}}
+{\footnotesize\ttfamily gpusat\+::\+Cut\+Set\+Width\+Fitness\+Function\+::\+Cut\+Set\+Width\+Fitness\+Function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Referenced by clone().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgpusat_1_1_cut_set_width_fitness_function_aca921ea8015a85e1cc3daa5c85a7478b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_cut_set_width_fitness_function_ab5645416fefedd9571e65a48f48f593c}\label{classgpusat_1_1_cut_set_width_fitness_function_ab5645416fefedd9571e65a48f48f593c}} 
+\index{gpusat::CutSetWidthFitnessFunction@{gpusat::CutSetWidthFitnessFunction}!````~CutSetWidthFitnessFunction@{$\sim$CutSetWidthFitnessFunction}}
+\index{````~CutSetWidthFitnessFunction@{$\sim$CutSetWidthFitnessFunction}!gpusat::CutSetWidthFitnessFunction@{gpusat::CutSetWidthFitnessFunction}}
+\doxysubsubsection{\texorpdfstring{$\sim$CutSetWidthFitnessFunction()}{~CutSetWidthFitnessFunction()}}
+{\footnotesize\ttfamily gpusat\+::\+Cut\+Set\+Width\+Fitness\+Function\+::$\sim$\+Cut\+Set\+Width\+Fitness\+Function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classgpusat_1_1_cut_set_width_fitness_function_a3f392357f0366a2f9b0b3e711ce8b199}\label{classgpusat_1_1_cut_set_width_fitness_function_a3f392357f0366a2f9b0b3e711ce8b199}} 
+\index{gpusat::CutSetWidthFitnessFunction@{gpusat::CutSetWidthFitnessFunction}!clone@{clone}}
+\index{clone@{clone}!gpusat::CutSetWidthFitnessFunction@{gpusat::CutSetWidthFitnessFunction}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classgpusat_1_1_cut_set_width_fitness_function}{Cut\+Set\+Width\+Fitness\+Function}} $\ast$ gpusat\+::\+Cut\+Set\+Width\+Fitness\+Function\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+References Cut\+Set\+Width\+Fitness\+Function().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgpusat_1_1_cut_set_width_fitness_function_a3f392357f0366a2f9b0b3e711ce8b199_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_cut_set_width_fitness_function_a652393418a4f28551bf7cd3ec72f5dc8}\label{classgpusat_1_1_cut_set_width_fitness_function_a652393418a4f28551bf7cd3ec72f5dc8}} 
+\index{gpusat::CutSetWidthFitnessFunction@{gpusat::CutSetWidthFitnessFunction}!fitness@{fitness}}
+\index{fitness@{fitness}!gpusat::CutSetWidthFitnessFunction@{gpusat::CutSetWidthFitnessFunction}}
+\doxysubsubsection{\texorpdfstring{fitness()}{fitness()}}
+{\footnotesize\ttfamily htd\+::\+Fitness\+Evaluation $\ast$ gpusat\+::\+Cut\+Set\+Width\+Fitness\+Function\+::fitness (\begin{DoxyParamCaption}\item[{const htd\+::\+I\+Multi\+Hypergraph \&}]{graph,  }\item[{const htd\+::\+I\+Tree\+Decomposition \&}]{decomposition }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+References get\+Max\+Cut\+Set\+Size().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgpusat_1_1_cut_set_width_fitness_function_a652393418a4f28551bf7cd3ec72f5dc8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_cut_set_width_fitness_function_abf407b83efa13413aad8f4cdd5dc0c94}\label{classgpusat_1_1_cut_set_width_fitness_function_abf407b83efa13413aad8f4cdd5dc0c94}} 
+\index{gpusat::CutSetWidthFitnessFunction@{gpusat::CutSetWidthFitnessFunction}!getMaxCutSetSize@{getMaxCutSetSize}}
+\index{getMaxCutSetSize@{getMaxCutSetSize}!gpusat::CutSetWidthFitnessFunction@{gpusat::CutSetWidthFitnessFunction}}
+\doxysubsubsection{\texorpdfstring{getMaxCutSetSize()}{getMaxCutSetSize()}}
+{\footnotesize\ttfamily double gpusat\+::\+Cut\+Set\+Width\+Fitness\+Function\+::get\+Max\+Cut\+Set\+Size (\begin{DoxyParamCaption}\item[{const htd\+::\+I\+Tree\+Decomposition \&}]{decomposition }\end{DoxyParamCaption}) const}
+
+
+
+Referenced by fitness().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgpusat_1_1_cut_set_width_fitness_function_abf407b83efa13413aad8f4cdd5dc0c94_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Fitness\+Functions/\mbox{\hyperlink{_cut_set_width_fitness_function_8h}{Cut\+Set\+Width\+Fitness\+Function.\+h}}\item 
+src/\+Fitness\+Functions/\mbox{\hyperlink{_cut_set_width_fitness_function_8cpp}{Cut\+Set\+Width\+Fitness\+Function.\+cpp}}\end{DoxyCompactItemize}

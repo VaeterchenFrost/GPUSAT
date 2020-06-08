@@ -1,0 +1,227 @@
+\hypertarget{main_8cpp}{}\doxysection{src/main.cpp File Reference}
+\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$C\+L\+I11.\+hpp$>$}\newline
+{\ttfamily \#include $<$Fitness\+Functions/\+Cut\+Set\+Width\+Fitness\+Function.\+h$>$}\newline
+{\ttfamily \#include $<$Fitness\+Functions/\+Join\+Size\+Fitness\+Function.\+h$>$}\newline
+{\ttfamily \#include $<$Fitness\+Functions/\+Num\+Join\+Fitness\+Function.\+h$>$}\newline
+{\ttfamily \#include $<$Fitness\+Functions/\+Width\+Cut\+Set\+Fitness\+Function.\+h$>$}\newline
+{\ttfamily \#include $<$boost/multiprecision/cpp\+\_\+bin\+\_\+float.\+hpp$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$decomposer.\+h$>$}\newline
+{\ttfamily \#include $<$gpusatparser.\+h$>$}\newline
+{\ttfamily \#include $<$gpusatpreprocessor.\+h$>$}\newline
+{\ttfamily \#include $<$gpusatutils.\+h$>$}\newline
+{\ttfamily \#include $<$graphoutput.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$solver.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$types.\+h$>$}\newline
+{\ttfamily \#include $<$visualization.\+h$>$}\newline
+{\ttfamily \#include $<$kernel.\+h$>$}\newline
+Include dependency graph for main.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_af1b68fb4ba71d72d397f46a730f03f2f}{\+\_\+\+\_\+\+C\+L\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+E\+X\+C\+E\+P\+T\+I\+O\+NS}}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a22dd9d967cbe39a94c26153f1e96ec1e}{N\+E\+L\+E\+MS}}(x)~(sizeof(x) / sizeof((x)\mbox{[}0\mbox{]}))
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_af3536928e7b1436ef9490f76a9757bae}{build\+Kernel}} (cl\+::\+Context \&context, std\+::vector$<$ cl\+::\+Device $>$ \&devices, cl\+::\+Command\+Queue \&queue, cl\+::\+Program \&program, cl\+\_\+long \&memory\+Size, cl\+\_\+long \&max\+Memory\+Buffer, bool nvidia, bool amd, bool cpu, long \&combine\+Width)
+\item 
+void \mbox{\hyperlink{main_8cpp_a98c043df78519ccb9ff49d98f2abc32f}{device\+\_\+query}} ()
+\item 
+int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{main_8cpp_af779df65b45927d9fb2e79db96f9864b}{Print\+Device\+Info}} (cl\+\_\+device\+\_\+id device)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$const \mbox{\hyperlink{main_8cpp_a140587bf145124a6310ce275e5e435f6}{attribute\+Names}} \mbox{[}$\,$\mbox{]}
+\item 
+const cl\+\_\+platform\+\_\+info \mbox{\hyperlink{main_8cpp_a5273668cb9947a05cac80ffcd1c2c499}{attribute\+Types}} \mbox{[}5\mbox{]}
+\item 
+std\+::string \mbox{\hyperlink{main_8cpp_a7e30b5dac3e2984592fda7100e82e9eb}{kernel\+Str}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8cpp_af1b68fb4ba71d72d397f46a730f03f2f}\label{main_8cpp_af1b68fb4ba71d72d397f46a730f03f2f}} 
+\index{main.cpp@{main.cpp}!\_\_CL\_ENABLE\_EXCEPTIONS@{\_\_CL\_ENABLE\_EXCEPTIONS}}
+\index{\_\_CL\_ENABLE\_EXCEPTIONS@{\_\_CL\_ENABLE\_EXCEPTIONS}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{\_\_CL\_ENABLE\_EXCEPTIONS}{\_\_CL\_ENABLE\_EXCEPTIONS}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+C\+L\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+E\+X\+C\+E\+P\+T\+I\+O\+NS}
+
+\mbox{\Hypertarget{main_8cpp_a22dd9d967cbe39a94c26153f1e96ec1e}\label{main_8cpp_a22dd9d967cbe39a94c26153f1e96ec1e}} 
+\index{main.cpp@{main.cpp}!NELEMS@{NELEMS}}
+\index{NELEMS@{NELEMS}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{NELEMS}{NELEMS}}
+{\footnotesize\ttfamily \#define N\+E\+L\+E\+MS(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(sizeof(x) / sizeof((x)\mbox{[}0\mbox{]}))}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_af3536928e7b1436ef9490f76a9757bae}\label{main_8cpp_af3536928e7b1436ef9490f76a9757bae}} 
+\index{main.cpp@{main.cpp}!buildKernel@{buildKernel}}
+\index{buildKernel@{buildKernel}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{buildKernel()}{buildKernel()}}
+{\footnotesize\ttfamily void build\+Kernel (\begin{DoxyParamCaption}\item[{cl\+::\+Context \&}]{context,  }\item[{std\+::vector$<$ cl\+::\+Device $>$ \&}]{devices,  }\item[{cl\+::\+Command\+Queue \&}]{queue,  }\item[{cl\+::\+Program \&}]{program,  }\item[{cl\+\_\+long \&}]{memory\+Size,  }\item[{cl\+\_\+long \&}]{max\+Memory\+Buffer,  }\item[{bool}]{nvidia,  }\item[{bool}]{amd,  }\item[{bool}]{cpu,  }\item[{long \&}]{combine\+Width }\end{DoxyParamCaption})}
+
+
+
+References kernel\+Str.
+
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{main_8cpp_af3536928e7b1436ef9490f76a9757bae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_a98c043df78519ccb9ff49d98f2abc32f}\label{main_8cpp_a98c043df78519ccb9ff49d98f2abc32f}} 
+\index{main.cpp@{main.cpp}!device\_query@{device\_query}}
+\index{device\_query@{device\_query}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{device\_query()}{device\_query()}}
+{\footnotesize\ttfamily void device\+\_\+query (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+References attribute\+Names, attribute\+Types, N\+E\+L\+E\+MS, and Print\+Device\+Info().
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{main_8cpp_a98c043df78519ccb9ff49d98f2abc32f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{main_8cpp_a98c043df78519ccb9ff49d98f2abc32f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+solution visualisation
+
+References gpusat\+::\+A\+R\+R\+AY, gpusat\+::treedec\+Type\+::bags, build\+Kernel(), gpusat\+::\+Decomposer\+::compute\+Decomposition(), gpusat\+::\+T\+D\+Parser\+::default\+Weight, device\+\_\+query(), gpusat\+::tree\+Type\+::elements, gpusat\+::get\+Count(), gpusat\+::get\+Time(), gpusat\+::\+Graphoutput\+::graph\+End(), gpusat\+::\+Graphoutput\+::graph\+Start(), gpusat\+::\+I\+N\+T\+R\+O\+D\+U\+C\+E\+F\+O\+R\+G\+ET, kernel\+Str, gpusat\+::tree\+Type\+::max\+Id, gpusat\+::\+Solver\+::max\+Table\+Size, gpusat\+::tree\+Type\+::min\+Id, gpusat\+::\+Graphoutput\+::neo4j\+Sat(), gpusat\+::\+Graphoutput\+::neo4j\+T\+D(), gpusat\+::\+Solver\+::num\+Introduce\+Forget, gpusat\+::\+Solver\+::num\+Join, gpusat\+::\+C\+N\+F\+Parser\+::parse\+Sat\+Formula(), gpusat\+::\+T\+D\+Parser\+::parse\+Tree\+Decomp(), gpusat\+::\+Preprocessor\+::preprocess\+Decomp(), gpusat\+::\+Preprocessor\+::preprocess\+Facts(), gpusat\+::printtreedec\+Type(), gpusat\+::\+T\+R\+EE, gpusat\+::satformula\+Type\+::unsat, gpusat\+::bag\+Type\+::variables, gpusat\+::\+Visualization\+::visu\+Clauses(), gpusat\+::\+Visualization\+::visu\+Tree\+Dec(), gpusat\+::treedec\+Type\+::width, and gpusat\+::\+Visualization\+::write\+Json\+File().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_af779df65b45927d9fb2e79db96f9864b}\label{main_8cpp_af779df65b45927d9fb2e79db96f9864b}} 
+\index{main.cpp@{main.cpp}!PrintDeviceInfo@{PrintDeviceInfo}}
+\index{PrintDeviceInfo@{PrintDeviceInfo}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{PrintDeviceInfo()}{PrintDeviceInfo()}}
+{\footnotesize\ttfamily void Print\+Device\+Info (\begin{DoxyParamCaption}\item[{cl\+\_\+device\+\_\+id}]{device }\end{DoxyParamCaption})}
+
+
+
+Referenced by device\+\_\+query().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{main_8cpp_af779df65b45927d9fb2e79db96f9864b_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_a140587bf145124a6310ce275e5e435f6}\label{main_8cpp_a140587bf145124a6310ce275e5e435f6}} 
+\index{main.cpp@{main.cpp}!attributeNames@{attributeNames}}
+\index{attributeNames@{attributeNames}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{attributeNames}{attributeNames}}
+{\footnotesize\ttfamily const char$\ast$ const attribute\+Names\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \textcolor{stringliteral}{"CL\_PLATFORM\_NAME"},}
+\DoxyCodeLine{    \textcolor{stringliteral}{"CL\_PLATFORM\_VENDOR"},}
+\DoxyCodeLine{    \textcolor{stringliteral}{"CL\_PLATFORM\_VERSION"},}
+\DoxyCodeLine{    \textcolor{stringliteral}{"CL\_PLATFORM\_PROFILE"},}
+\DoxyCodeLine{    \textcolor{stringliteral}{"CL\_PLATFORM\_EXTENSIONS"}\}}
+
+\end{DoxyCode}
+
+
+Referenced by device\+\_\+query().
+
+\mbox{\Hypertarget{main_8cpp_a5273668cb9947a05cac80ffcd1c2c499}\label{main_8cpp_a5273668cb9947a05cac80ffcd1c2c499}} 
+\index{main.cpp@{main.cpp}!attributeTypes@{attributeTypes}}
+\index{attributeTypes@{attributeTypes}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{attributeTypes}{attributeTypes}}
+{\footnotesize\ttfamily const cl\+\_\+platform\+\_\+info attribute\+Types\mbox{[}5\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    CL\_PLATFORM\_NAME,}
+\DoxyCodeLine{    CL\_PLATFORM\_VENDOR,}
+\DoxyCodeLine{    CL\_PLATFORM\_VERSION,}
+\DoxyCodeLine{    CL\_PLATFORM\_PROFILE,}
+\DoxyCodeLine{    CL\_PLATFORM\_EXTENSIONS\}}
+
+\end{DoxyCode}
+
+
+Referenced by device\+\_\+query().
+
+\mbox{\Hypertarget{main_8cpp_a7e30b5dac3e2984592fda7100e82e9eb}\label{main_8cpp_a7e30b5dac3e2984592fda7100e82e9eb}} 
+\index{main.cpp@{main.cpp}!kernelStr@{kernelStr}}
+\index{kernelStr@{kernelStr}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{kernelStr}{kernelStr}}
+{\footnotesize\ttfamily std\+::string kernel\+Str}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacegpusat}{gpusat}}}
+
+\end{DoxyCode}
+
+
+Referenced by build\+Kernel(), and main().
+

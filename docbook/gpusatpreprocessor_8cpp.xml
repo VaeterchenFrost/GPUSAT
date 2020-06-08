@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_gpusatpreprocessor_8cpp">
+<title>src/gpusatpreprocessor.cpp File Reference</title>
+<indexterm><primary>src/gpusatpreprocessor.cpp</primary></indexterm>
+<programlisting>#include &lt;algorithm&gt;
+#include &lt;cmath&gt;
+#include &lt;fstream&gt;
+#include &lt;gpusatparser.h&gt;
+#include &lt;gpusatpreprocessor.h&gt;
+#include &lt;iostream&gt;
+#include &lt;sstream&gt;
+</programlisting>Include dependency graph for gpusatpreprocessor.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="gpusatpreprocessor_8cpp__incl.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_namespacegpusat">gpusat</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

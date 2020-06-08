@@ -1,0 +1,13 @@
+digraph "gpusat::Solver::cleanTree"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="gpusat::Solver::cleanTree",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="gpusat::Solver::solveJoin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_solver.html#a023194e12a492df6c89aa6d85e133875",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="gpusat::Solver::solveProblem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_solver.html#ae0fed660431502c4ff23b011de6207ca",tooltip="Solves the sat formula with a given decomposition."];
+}

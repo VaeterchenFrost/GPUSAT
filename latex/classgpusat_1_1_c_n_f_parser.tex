@@ -1,0 +1,70 @@
+\hypertarget{classgpusat_1_1_c_n_f_parser}{}\doxysection{gpusat\+::C\+N\+F\+Parser Class Reference}
+\label{classgpusat_1_1_c_n_f_parser}\index{gpusat::CNFParser@{gpusat::CNFParser}}
+
+
+{\ttfamily \#include $<$gpusatparser.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgpusat_1_1_c_n_f_parser_a1d516813b9e1953588f3c053c98358a1}{C\+N\+F\+Parser}} (bool weighted)
+\item 
+\mbox{\hyperlink{structgpusat_1_1satformula_type}{satformula\+Type}} \mbox{\hyperlink{classgpusat_1_1_c_n_f_parser_a2373aa1870f6723404ed276c6cbf9d13}{parse\+Sat\+Formula}} (std\+::string formula)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classgpusat_1_1_c_n_f_parser_a1d516813b9e1953588f3c053c98358a1}\label{classgpusat_1_1_c_n_f_parser_a1d516813b9e1953588f3c053c98358a1}} 
+\index{gpusat::CNFParser@{gpusat::CNFParser}!CNFParser@{CNFParser}}
+\index{CNFParser@{CNFParser}!gpusat::CNFParser@{gpusat::CNFParser}}
+\doxysubsubsection{\texorpdfstring{CNFParser()}{CNFParser()}}
+{\footnotesize\ttfamily gpusat\+::\+C\+N\+F\+Parser\+::\+C\+N\+F\+Parser (\begin{DoxyParamCaption}\item[{bool}]{weighted }\end{DoxyParamCaption})}
+
+Constructor for an C\+NF parser.
+
+
+\begin{DoxyParams}{Parameters}
+{\em weighted} & indicates if weights should be assiciated with literals \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classgpusat_1_1_c_n_f_parser_a2373aa1870f6723404ed276c6cbf9d13}\label{classgpusat_1_1_c_n_f_parser_a2373aa1870f6723404ed276c6cbf9d13}} 
+\index{gpusat::CNFParser@{gpusat::CNFParser}!parseSatFormula@{parseSatFormula}}
+\index{parseSatFormula@{parseSatFormula}!gpusat::CNFParser@{gpusat::CNFParser}}
+\doxysubsubsection{\texorpdfstring{parseSatFormula()}{parseSatFormula()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structgpusat_1_1satformula_type}{satformula\+Type}} gpusat\+::\+C\+N\+F\+Parser\+::parse\+Sat\+Formula (\begin{DoxyParamCaption}\item[{std\+::string}]{formula }\end{DoxyParamCaption})}
+
+generates a sat formula from a given string
+
+
+\begin{DoxyParams}{Parameters}
+{\em formula} & the string representation of the sat formula \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the sat formula 
+\end{DoxyReturn}
+
+
+References gpusat\+::satformula\+Type\+::num\+Vars, gpusat\+::satformula\+Type\+::num\+Weights, and gpusat\+::satformula\+Type\+::variable\+Weights.
+
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{classgpusat_1_1_c_n_f_parser_a2373aa1870f6723404ed276c6cbf9d13_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{gpusatparser_8h}{gpusatparser.\+h}}\item 
+src/\mbox{\hyperlink{gpusatparser_8cpp}{gpusatparser.\+cpp}}\end{DoxyCompactItemize}

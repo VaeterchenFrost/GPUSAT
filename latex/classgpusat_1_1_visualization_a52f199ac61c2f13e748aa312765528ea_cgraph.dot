@@ -1,0 +1,13 @@
+digraph "gpusat::Visualization::testJson"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="gpusat::Visualization\l::testJson",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="gpusat::Visualization\l::getWriterBuilder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_visualization.html#af841b2d46c254ddd2c7dc9fe5c8814e6",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="gpusat::Visualization\l::writeJsonToStdout",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_visualization.html#a2a9d9571adc1b706bcdc2f1de26d2345",tooltip=" "];
+}

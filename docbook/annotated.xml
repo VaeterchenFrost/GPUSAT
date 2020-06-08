@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_annotated">
+<title>Class List</title>
+Here are the classes, structs, unions and interfaces with brief descriptions:<link linkend="_classgpusat_1_1_bag_matrix">gpusat::BagMatrix</link><link linkend="_structgpusat_1_1bag_type">gpusat::bagType</link>
+<para>Type for a bag in the tree decomposition </para>
+<link linkend="_classgpusat_1_1_c_n_f_parser">gpusat::CNFParser</link><link linkend="_classgpusat_1_1_cut_set_width_fitness_function">gpusat::CutSetWidthFitnessFunction</link><link linkend="_classgpusat_1_1_decomposer">gpusat::Decomposer</link><link linkend="_classgpusat_1_1_graphoutput">gpusat::Graphoutput</link><link linkend="_classgpusat_1_1_join_size_fitness_function">gpusat::JoinSizeFitnessFunction</link><link linkend="_classgpusat_1_1_num_join_fitness_function">gpusat::NumJoinFitnessFunction</link><link linkend="_classgpusat_1_1_preprocessor">gpusat::Preprocessor</link><link linkend="_structgpusat_1_1satformula_type">gpusat::satformulaType</link>
+<para>Type for saving the sat formula </para>
+<link linkend="_classgpusat_1_1_solver">gpusat::Solver</link><link linkend="_structgpusat_1_1_table_lines">gpusat::TableLines</link><link linkend="_classgpusat_1_1_t_d_parser">gpusat::TDParser</link><link linkend="_structgpusat_1_1treedec_type">gpusat::treedecType</link>
+<para>Type for saving a tree decomposition </para>
+<link linkend="_structgpusat_1_1tree_type">gpusat::treeType</link>
+<para>Tree type for storing the models </para>
+<link linkend="_classgpusat_1_1_visualization">gpusat::Visualization</link><link linkend="_classgpusat_1_1_width_cut_set_fitness_function">gpusat::WidthCutSetFitnessFunction</link></section>

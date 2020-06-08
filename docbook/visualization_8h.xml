@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_visualization_8h">
+<title>include/visualization.h File Reference</title>
+<indexterm><primary>include/visualization.h</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+#include &lt;json/reader.h&gt;
+#include &lt;json/value.h&gt;
+#include &lt;json/writer.h&gt;
+#include &lt;memory&gt;
+#include &lt;string&gt;
+#include &lt;types.h&gt;
+#include &lt;vector&gt;
+</programlisting>Include dependency graph for visualization.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="visualization_8h__incl.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="visualization_8h__dep__incl.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classgpusat_1_1_bag_matrix">gpusat::BagMatrix</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structgpusat_1_1_table_lines">gpusat::TableLines</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classgpusat_1_1_visualization">gpusat::Visualization</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_namespacegpusat">gpusat</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>TableLines <link linkend="_namespacegpusat_1ae780028fdecbf7e4891b55159b33f3c1">gpusat::solJson</link> (bagType node, dataStructure solutionType)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

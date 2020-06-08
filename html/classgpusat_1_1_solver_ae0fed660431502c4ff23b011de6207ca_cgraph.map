@@ -1,0 +1,19 @@
+<map id="gpusat::Solver::solveProblem" name="gpusat::Solver::solveProblem">
+<area shape="rect" id="node1" title="Solves the sat formula with a given decomposition." alt="" coords="5,282,195,309"/>
+<area shape="rect" id="node2" href="$classgpusat_1_1_graphoutput.html#a6a8698facb754dbd450edb04bba74b1c" title="Addes the edges from the tree&#45;decomposition into the graph." alt="" coords="270,136,410,177"/>
+<area shape="rect" id="node3" href="$classgpusat_1_1_graphoutput.html#a9337a44c758b7a403e4f7d854b8cd934" title=" " alt="" coords="509,104,649,145"/>
+<area shape="rect" id="node4" href="$classgpusat_1_1_graphoutput.html#a7fbd40cc7da0b8ef4c1e08063b3c0749" title="Create one node with the corresponding solution in a connected extra bag." alt="" coords="270,5,410,47"/>
+<area shape="rect" id="node5" href="$classgpusat_1_1_graphoutput.html#abfe6c27af045e2dcff833c53069ccbfc" title="Creates a node with the solution that joins two bags. Two edges are added to connect the solution." alt="" coords="270,71,410,112"/>
+<area shape="rect" id="node6" href="$namespacegpusat.html#aa117816b931264c9a291041b047d0c56" title="print information for a bag in the tree decomposition" alt="" coords="507,253,650,279"/>
+<area shape="rect" id="node7" href="$namespacegpusat.html#ae780028fdecbf7e4891b55159b33f3c1" title=" " alt="" coords="283,471,397,498"/>
+<area shape="rect" id="node10" href="$namespacegpusat.html#a62a1b8c2535766854537a608378b737f" title="Generate a formatted stringoutput for a solved node with solutions." alt="" coords="269,421,411,447"/>
+<area shape="rect" id="node11" href="$classgpusat_1_1_solver.html#a40781bade0390fd7802658d5b3c545b9" title=" " alt="" coords="243,304,437,345"/>
+<area shape="rect" id="node14" href="$classgpusat_1_1_solver.html#a023194e12a492df6c89aa6d85e133875" title=" " alt="" coords="258,370,422,397"/>
+<area shape="rect" id="node16" href="$classgpusat_1_1_visualization.html#aee01b172cd6c03b26143b1ae82193b9b" title=" " alt="" coords="269,523,411,564"/>
+<area shape="rect" id="node8" href="$classgpusat_1_1_bag_matrix.html#ac3ca0894fea2e196b1f80da4906920c3" title=" " alt="" coords="511,507,647,548"/>
+<area shape="rect" id="node9" href="$namespacegpusat.html#a607a57fced4760564963f4c707f28449" title=" " alt="" coords="518,455,639,482"/>
+<area shape="rect" id="node12" href="$classgpusat_1_1_solver.html#aeb736ac16e820137d6d0898960336783" title=" " alt="" coords="485,354,672,381"/>
+<area shape="rect" id="node13" href="$namespacegpusat.html#a1f445c345dcaf73f1835ce81473ef646" title=" " alt="" coords="515,303,643,330"/>
+<area shape="rect" id="node15" href="$classgpusat_1_1_solver.html#acec22223ccb8d99855775e71031c9719" title=" " alt="" coords="495,405,663,431"/>
+<area shape="rect" id="node17" href="$classgpusat_1_1_bag_matrix.html#ae908b7136aee4cbca717608e45b79a87" title=" " alt="" coords="497,573,660,599"/>
+</map>

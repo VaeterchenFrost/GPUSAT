@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_a926255627f3dcee451c24ca06599aca">
+<title>include/FitnessFunctions Directory Reference</title>
+<indexterm><primary>include/FitnessFunctions Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="__cut_set_width_fitness_function_8h">CutSetWidthFitnessFunction.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__join_size_fitness_function_8h">JoinSizeFitnessFunction.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__num_join_fitness_function_8h">NumJoinFitnessFunction.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__width_cut_set_fitness_function_8h">WidthCutSetFitnessFunction.h</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

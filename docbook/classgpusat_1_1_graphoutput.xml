@@ -1,0 +1,454 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classgpusat_1_1_graphoutput">
+<title>gpusat::Graphoutput Class Reference</title>
+<indexterm><primary>gpusat::Graphoutput</primary></indexterm>
+<para>
+<computeroutput>#include &lt;graphoutput.h&gt;</computeroutput>
+</para>
+Collaboration diagram for gpusat::Graphoutput:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_graphoutput__coll__graph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classgpusat_1_1_graphoutput_1a09d825ff8177015c28b6c1d370158ff8">Graphoutput</link> (std::string filename)</para>
+</listitem>
+            <listitem><para>std::string <link linkend="_classgpusat_1_1_graphoutput_1a097c11e5e274b341b1eca76f11548247">getFilename</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classgpusat_1_1_graphoutput_1a6a8698facb754dbd450edb04bba74b1c">graphEdgeSet</link> (<link linkend="_structgpusat_1_1treedec_type">treedecType</link> *dec)</para>
+
+<para>Addes the edges from the tree-decomposition into the graph. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classgpusat_1_1_graphoutput_1a75b647b135cd9dbdc2eaed399eaf0ba3">graphEnd</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classgpusat_1_1_graphoutput_1a2cd530c2bd234cd6fca065b8d504fc36">graphStart</link> (<link linkend="_structgpusat_1_1treedec_type">treedecType</link> *dec)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classgpusat_1_1_graphoutput_1a9337a44c758b7a403e4f7d854b8cd934">isEnabled</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classgpusat_1_1_graphoutput_1aed89def93056ef06a7c0969bfa2fcf1b">neo4jSat</link> (<link linkend="_structgpusat_1_1satformula_type">satformulaType</link> *satFormula)</para>
+
+<para>Output Cypherquery to create the nodes from the SAT formula </para>
+</listitem>
+            <listitem><para>void <link linkend="_classgpusat_1_1_graphoutput_1ae371f11ef89ad4507bc5f656fe932da7">neo4jTD</link> (<link linkend="_structgpusat_1_1treedec_type">treedecType</link> *treeDec)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classgpusat_1_1_graphoutput_1a7fbd40cc7da0b8ef4c1e08063b3c0749">nodeBag</link> (unsigned int id, std::string solution)</para>
+
+<para>Create one node with the corresponding solution in a connected extra bag. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classgpusat_1_1_graphoutput_1abfe6c27af045e2dcff833c53069ccbfc">nodeJoin</link> (unsigned int id1, unsigned int id2, std::string solution)</para>
+
+<para>Creates a node with the solution that joins two bags. Two edges are added to connect the solution. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>static const int <link linkend="_classgpusat_1_1_graphoutput_1a8103a86b194a262012bc7263d2c5b965">baseIdJoin</link> = 4 * <link linkend="_classgpusat_1_1_graphoutput_1a656abe5feaa0a6efa1fa746e303a90d2">baseIdSol</link></para>
+</listitem>
+            <listitem><para>static const int <link linkend="_classgpusat_1_1_graphoutput_1a656abe5feaa0a6efa1fa746e303a90d2">baseIdSol</link> = 1&apos;000&apos;000</para>
+</listitem>
+            <listitem><para>static const std::string <link linkend="_classgpusat_1_1_graphoutput_1aac7f79d571ad2b8e2a146c4512b6d2f1">connectbag</link> = &quot;USES_BAG&quot;</para>
+</listitem>
+            <listitem><para>static const std::string <link linkend="_classgpusat_1_1_graphoutput_1a807dbc3c7b607bf1a213f9445bfec48e">dualedge</link> = &quot;SHARE_VAR&quot;</para>
+</listitem>
+            <listitem><para>static const std::string <link linkend="_classgpusat_1_1_graphoutput_1ac0031c1c4dea09bef0cb54fc8b3de723">inbag</link> = &quot;CONTAINS&quot;</para>
+</listitem>
+            <listitem><para>static const std::string <link linkend="_classgpusat_1_1_graphoutput_1a80c6029103d80354e68a734418304e6f">incidenceedge</link> = &quot;VAR_IN_CLAUSE&quot;</para>
+</listitem>
+            <listitem><para>static const std::string <link linkend="_classgpusat_1_1_graphoutput_1a9b8f07ee5cd69c2e711752ecdaca4e5e">primaledge</link> = &quot;SHARE_CLAUSE&quot;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classgpusat_1_1_graphoutput_1a09d825ff8177015c28b6c1d370158ff8"/>    <section>
+    <title>Graphoutput()</title>
+<indexterm><primary>Graphoutput</primary><secondary>gpusat::Graphoutput</secondary></indexterm>
+<indexterm><primary>gpusat::Graphoutput</primary><secondary>Graphoutput</secondary></indexterm>
+<para><computeroutput>gpusat::Graphoutput::Graphoutput (std::string filename)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classgpusat_1_1_graphoutput_1a097c11e5e274b341b1eca76f11548247"/>    <section>
+    <title>getFilename()</title>
+<indexterm><primary>getFilename</primary><secondary>gpusat::Graphoutput</secondary></indexterm>
+<indexterm><primary>gpusat::Graphoutput</primary><secondary>getFilename</secondary></indexterm>
+<para><computeroutput>std::string gpusat::Graphoutput::getFilename ( )<computeroutput>[inline]</computeroutput></computeroutput></para>    </section><anchor xml:id="_classgpusat_1_1_graphoutput_1a6a8698facb754dbd450edb04bba74b1c"/>    <section>
+    <title>graphEdgeSet()</title>
+<indexterm><primary>graphEdgeSet</primary><secondary>gpusat::Graphoutput</secondary></indexterm>
+<indexterm><primary>gpusat::Graphoutput</primary><secondary>graphEdgeSet</secondary></indexterm>
+<para><computeroutput>void gpusat::Graphoutput::graphEdgeSet (<link linkend="_structgpusat_1_1treedec_type">treedecType</link> * dec)</computeroutput></para><para>
+
+<para>Addes the edges from the tree-decomposition into the graph. </para>
+</para>
+
+<para>Any outgoing edges from id &apos;0&apos; are not added.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>dec</entry>
+                                <entry>
+<para>Pointer to the tree-decomposition containing used edges.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+References gpusat::treedecType::bags, and isEnabled().</para>
+<para>
+Referenced by gpusat::Solver::solveProblem().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_graphoutput_a6a8698facb754dbd450edb04bba74b1c_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_graphoutput_a6a8698facb754dbd450edb04bba74b1c_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_graphoutput_1a75b647b135cd9dbdc2eaed399eaf0ba3"/>    <section>
+    <title>graphEnd()</title>
+<indexterm><primary>graphEnd</primary><secondary>gpusat::Graphoutput</secondary></indexterm>
+<indexterm><primary>gpusat::Graphoutput</primary><secondary>graphEnd</secondary></indexterm>
+<para><computeroutput>void gpusat::Graphoutput::graphEnd ( )</computeroutput></para><para>
+References isEnabled().</para>
+<para>
+Referenced by main().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_graphoutput_a75b647b135cd9dbdc2eaed399eaf0ba3_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_graphoutput_a75b647b135cd9dbdc2eaed399eaf0ba3_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_graphoutput_1a2cd530c2bd234cd6fca065b8d504fc36"/>    <section>
+    <title>graphStart()</title>
+<indexterm><primary>graphStart</primary><secondary>gpusat::Graphoutput</secondary></indexterm>
+<indexterm><primary>gpusat::Graphoutput</primary><secondary>graphStart</secondary></indexterm>
+<para><computeroutput>void gpusat::Graphoutput::graphStart (<link linkend="_structgpusat_1_1treedec_type">treedecType</link> * dec)</computeroutput></para><para>
+References gpusat::treedecType::bags, and isEnabled().</para>
+<para>
+Referenced by main().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_graphoutput_a2cd530c2bd234cd6fca065b8d504fc36_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_graphoutput_a2cd530c2bd234cd6fca065b8d504fc36_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_graphoutput_1a9337a44c758b7a403e4f7d854b8cd934"/>    <section>
+    <title>isEnabled()</title>
+<indexterm><primary>isEnabled</primary><secondary>gpusat::Graphoutput</secondary></indexterm>
+<indexterm><primary>gpusat::Graphoutput</primary><secondary>isEnabled</secondary></indexterm>
+<para><computeroutput>bool gpusat::Graphoutput::isEnabled ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Referenced by graphEdgeSet(), graphEnd(), graphStart(), neo4jSat(), neo4jTD(), nodeBag(), nodeJoin(), and gpusat::Solver::solveProblem().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_graphoutput_a9337a44c758b7a403e4f7d854b8cd934_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_graphoutput_1aed89def93056ef06a7c0969bfa2fcf1b"/>    <section>
+    <title>neo4jSat()</title>
+<indexterm><primary>neo4jSat</primary><secondary>gpusat::Graphoutput</secondary></indexterm>
+<indexterm><primary>gpusat::Graphoutput</primary><secondary>neo4jSat</secondary></indexterm>
+<para><computeroutput>void gpusat::Graphoutput::neo4jSat (<link linkend="_structgpusat_1_1satformula_type">satformulaType</link> * satFormula)</computeroutput></para><para>
+
+<para>Output Cypherquery to create the nodes from the SAT formula </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>satFormula</entry>
+                                <entry>
+<para>The sat formula.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+References gpusat::satformulaType::clauses, dualedge, gpusat::satformulaType::facts, incidenceedge, isEnabled(), gpusat::satformulaType::numVars, primaledge, and gpusat::satformulaType::unsat.</para>
+<para>
+Referenced by main().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_graphoutput_aed89def93056ef06a7c0969bfa2fcf1b_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_graphoutput_aed89def93056ef06a7c0969bfa2fcf1b_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_graphoutput_1ae371f11ef89ad4507bc5f656fe932da7"/>    <section>
+    <title>neo4jTD()</title>
+<indexterm><primary>neo4jTD</primary><secondary>gpusat::Graphoutput</secondary></indexterm>
+<indexterm><primary>gpusat::Graphoutput</primary><secondary>neo4jTD</secondary></indexterm>
+<para><computeroutput>void gpusat::Graphoutput::neo4jTD (<link linkend="_structgpusat_1_1treedec_type">treedecType</link> * treeDec)</computeroutput></para><para>
+References gpusat::treedecType::bags, connectbag, inbag, isEnabled(), gpusat::treedecType::numb, gpusat::treedecType::numVars, and gpusat::treedecType::width.</para>
+<para>
+Referenced by main().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_graphoutput_ae371f11ef89ad4507bc5f656fe932da7_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_graphoutput_ae371f11ef89ad4507bc5f656fe932da7_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_graphoutput_1a7fbd40cc7da0b8ef4c1e08063b3c0749"/>    <section>
+    <title>nodeBag()</title>
+<indexterm><primary>nodeBag</primary><secondary>gpusat::Graphoutput</secondary></indexterm>
+<indexterm><primary>gpusat::Graphoutput</primary><secondary>nodeBag</secondary></indexterm>
+<para><computeroutput>void gpusat::Graphoutput::nodeBag (unsigned int id, std::string solution)</computeroutput></para><para>
+
+<para>Create one node with the corresponding solution in a connected extra bag. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>id</entry>
+                                <entry>
+<para>The identifier of the bag.</para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>solution</entry>
+                                <entry>
+<para>The solution in string form.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+References isEnabled().</para>
+<para>
+Referenced by gpusat::Solver::solveProblem().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_graphoutput_a7fbd40cc7da0b8ef4c1e08063b3c0749_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_graphoutput_a7fbd40cc7da0b8ef4c1e08063b3c0749_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_graphoutput_1abfe6c27af045e2dcff833c53069ccbfc"/>    <section>
+    <title>nodeJoin()</title>
+<indexterm><primary>nodeJoin</primary><secondary>gpusat::Graphoutput</secondary></indexterm>
+<indexterm><primary>gpusat::Graphoutput</primary><secondary>nodeJoin</secondary></indexterm>
+<para><computeroutput>void gpusat::Graphoutput::nodeJoin (unsigned int id1, unsigned int id2, std::string solution)</computeroutput></para><para>
+
+<para>Creates a node with the solution that joins two bags. Two edges are added to connect the solution. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>id1</entry>
+                                <entry>
+<para>The id1.</para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>id2</entry>
+                                <entry>
+<para>The id2.</para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>solution</entry>
+                                <entry>
+<para>The solution.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                TODO Edit XML Comment Template for nodeJoin </para>
+<para>
+References isEnabled().</para>
+<para>
+Referenced by gpusat::Solver::solveProblem().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_graphoutput_abfe6c27af045e2dcff833c53069ccbfc_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_graphoutput_abfe6c27af045e2dcff833c53069ccbfc_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classgpusat_1_1_graphoutput_1a8103a86b194a262012bc7263d2c5b965"/>    <section>
+    <title>baseIdJoin</title>
+<indexterm><primary>baseIdJoin</primary><secondary>gpusat::Graphoutput</secondary></indexterm>
+<indexterm><primary>gpusat::Graphoutput</primary><secondary>baseIdJoin</secondary></indexterm>
+<para><computeroutput>const int gpusat::Graphoutput::baseIdJoin = 4 * <link linkend="_classgpusat_1_1_graphoutput_1a656abe5feaa0a6efa1fa746e303a90d2">baseIdSol</link><computeroutput>[static]</computeroutput></computeroutput></para>    </section><anchor xml:id="_classgpusat_1_1_graphoutput_1a656abe5feaa0a6efa1fa746e303a90d2"/>    <section>
+    <title>baseIdSol</title>
+<indexterm><primary>baseIdSol</primary><secondary>gpusat::Graphoutput</secondary></indexterm>
+<indexterm><primary>gpusat::Graphoutput</primary><secondary>baseIdSol</secondary></indexterm>
+<para><computeroutput>const int gpusat::Graphoutput::baseIdSol = 1&apos;000&apos;000<computeroutput>[static]</computeroutput></computeroutput></para>    </section><anchor xml:id="_classgpusat_1_1_graphoutput_1aac7f79d571ad2b8e2a146c4512b6d2f1"/>    <section>
+    <title>connectbag</title>
+<indexterm><primary>connectbag</primary><secondary>gpusat::Graphoutput</secondary></indexterm>
+<indexterm><primary>gpusat::Graphoutput</primary><secondary>connectbag</secondary></indexterm>
+<para><computeroutput>const std::string gpusat::Graphoutput::connectbag = &quot;USES_BAG&quot;<computeroutput>[static]</computeroutput></computeroutput></para><para>
+Referenced by neo4jTD().</para>
+    </section><anchor xml:id="_classgpusat_1_1_graphoutput_1a807dbc3c7b607bf1a213f9445bfec48e"/>    <section>
+    <title>dualedge</title>
+<indexterm><primary>dualedge</primary><secondary>gpusat::Graphoutput</secondary></indexterm>
+<indexterm><primary>gpusat::Graphoutput</primary><secondary>dualedge</secondary></indexterm>
+<para><computeroutput>const std::string gpusat::Graphoutput::dualedge = &quot;SHARE_VAR&quot;<computeroutput>[static]</computeroutput></computeroutput></para><para>
+Referenced by neo4jSat().</para>
+    </section><anchor xml:id="_classgpusat_1_1_graphoutput_1ac0031c1c4dea09bef0cb54fc8b3de723"/>    <section>
+    <title>inbag</title>
+<indexterm><primary>inbag</primary><secondary>gpusat::Graphoutput</secondary></indexterm>
+<indexterm><primary>gpusat::Graphoutput</primary><secondary>inbag</secondary></indexterm>
+<para><computeroutput>const std::string gpusat::Graphoutput::inbag = &quot;CONTAINS&quot;<computeroutput>[static]</computeroutput></computeroutput></para><para>
+Referenced by neo4jTD().</para>
+    </section><anchor xml:id="_classgpusat_1_1_graphoutput_1a80c6029103d80354e68a734418304e6f"/>    <section>
+    <title>incidenceedge</title>
+<indexterm><primary>incidenceedge</primary><secondary>gpusat::Graphoutput</secondary></indexterm>
+<indexterm><primary>gpusat::Graphoutput</primary><secondary>incidenceedge</secondary></indexterm>
+<para><computeroutput>const std::string gpusat::Graphoutput::incidenceedge = &quot;VAR_IN_CLAUSE&quot;<computeroutput>[static]</computeroutput></computeroutput></para><para>
+Referenced by neo4jSat().</para>
+    </section><anchor xml:id="_classgpusat_1_1_graphoutput_1a9b8f07ee5cd69c2e711752ecdaca4e5e"/>    <section>
+    <title>primaledge</title>
+<indexterm><primary>primaledge</primary><secondary>gpusat::Graphoutput</secondary></indexterm>
+<indexterm><primary>gpusat::Graphoutput</primary><secondary>primaledge</secondary></indexterm>
+<para><computeroutput>const std::string gpusat::Graphoutput::primaledge = &quot;SHARE_CLAUSE&quot;<computeroutput>[static]</computeroutput></computeroutput></para><para>
+Referenced by neo4jSat().</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+include/<link linkend="_graphoutput_8h">graphoutput.h</link>src/<link linkend="_graphoutput_8cpp">graphoutput.cpp</link></section>
+</section>

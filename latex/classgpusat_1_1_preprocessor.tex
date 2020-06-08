@@ -1,0 +1,102 @@
+\hypertarget{classgpusat_1_1_preprocessor}{}\doxysection{gpusat\+::Preprocessor Class Reference}
+\label{classgpusat_1_1_preprocessor}\index{gpusat::Preprocessor@{gpusat::Preprocessor}}
+
+
+{\ttfamily \#include $<$gpusatpreprocessor.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classgpusat_1_1_preprocessor_a3f7a765eda39dc7b5b41a24972b77354}{preprocess\+Decomp}} (\mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} $\ast$decomp, cl\+\_\+long combine\+Width)
+\item 
+static void \mbox{\hyperlink{classgpusat_1_1_preprocessor_a0eb30c75fad0b216ca501b86605c2c58}{preprocess\+Facts}} (\mbox{\hyperlink{structgpusat_1_1treedec_type}{treedec\+Type}} \&decomp, \mbox{\hyperlink{structgpusat_1_1satformula_type}{satformula\+Type}} \&formula, cl\+\_\+double \&default\+Weight)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classgpusat_1_1_preprocessor_a3f7a765eda39dc7b5b41a24972b77354}\label{classgpusat_1_1_preprocessor_a3f7a765eda39dc7b5b41a24972b77354}} 
+\index{gpusat::Preprocessor@{gpusat::Preprocessor}!preprocessDecomp@{preprocessDecomp}}
+\index{preprocessDecomp@{preprocessDecomp}!gpusat::Preprocessor@{gpusat::Preprocessor}}
+\doxysubsubsection{\texorpdfstring{preprocessDecomp()}{preprocessDecomp()}}
+{\footnotesize\ttfamily void gpusat\+::\+Preprocessor\+::preprocess\+Decomp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} $\ast$}]{decomp,  }\item[{cl\+\_\+long}]{combine\+Width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+preprocess the tree decomposition
+
+
+\begin{DoxyParams}{Parameters}
+{\em decomp} & the tree decomposition \\
+\hline
+{\em combine\+Width} & max width to combine bags \\
+\hline
+\end{DoxyParams}
+
+
+References gpusat\+::comp\+Treed\+Type(), gpusat\+::bag\+Type\+::edges, and gpusat\+::bag\+Type\+::variables.
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{classgpusat_1_1_preprocessor_a3f7a765eda39dc7b5b41a24972b77354_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{classgpusat_1_1_preprocessor_a3f7a765eda39dc7b5b41a24972b77354_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_preprocessor_a0eb30c75fad0b216ca501b86605c2c58}\label{classgpusat_1_1_preprocessor_a0eb30c75fad0b216ca501b86605c2c58}} 
+\index{gpusat::Preprocessor@{gpusat::Preprocessor}!preprocessFacts@{preprocessFacts}}
+\index{preprocessFacts@{preprocessFacts}!gpusat::Preprocessor@{gpusat::Preprocessor}}
+\doxysubsubsection{\texorpdfstring{preprocessFacts()}{preprocessFacts()}}
+{\footnotesize\ttfamily void gpusat\+::\+Preprocessor\+::preprocess\+Facts (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpusat_1_1treedec_type}{treedec\+Type}} \&}]{decomp,  }\item[{\mbox{\hyperlink{structgpusat_1_1satformula_type}{satformula\+Type}} \&}]{formula,  }\item[{cl\+\_\+double \&}]{default\+Weight }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+removes facts from the sat formula
+
+
+\begin{DoxyParams}{Parameters}
+{\em decomp} & the tree decomposition \\
+\hline
+{\em formula} & the sat formula \\
+\hline
+{\em default\+Weight} & for W\+MC the product of the weights of the removed literals \\
+\hline
+\end{DoxyParams}
+
+
+References gpusat\+::treedec\+Type\+::bags, gpusat\+::satformula\+Type\+::clauses, gpusat\+::comp\+Vars(), gpusat\+::satformula\+Type\+::facts, gpusat\+::treedec\+Type\+::num\+Vars, gpusat\+::satformula\+Type\+::num\+Vars, gpusat\+::satformula\+Type\+::num\+Weights, gpusat\+::satformula\+Type\+::unsat, and gpusat\+::satformula\+Type\+::variable\+Weights.
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classgpusat_1_1_preprocessor_a0eb30c75fad0b216ca501b86605c2c58_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{classgpusat_1_1_preprocessor_a0eb30c75fad0b216ca501b86605c2c58_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{gpusatpreprocessor_8h}{gpusatpreprocessor.\+h}}\item 
+src/\mbox{\hyperlink{gpusatpreprocessor_8cpp}{gpusatpreprocessor.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+<map id="gpusat::Solver::combineTree" name="gpusat::Solver::combineTree">
+<area shape="rect" id="node1" title=" " alt="" coords="485,42,672,69"/>
+<area shape="rect" id="node2" href="$classgpusat_1_1_solver.html#a40781bade0390fd7802658d5b3c545b9" title=" " alt="" coords="243,5,437,47"/>
+<area shape="rect" id="node4" href="$classgpusat_1_1_solver.html#a023194e12a492df6c89aa6d85e133875" title=" " alt="" coords="258,71,422,98"/>
+<area shape="rect" id="node3" href="$classgpusat_1_1_solver.html#ae0fed660431502c4ff23b011de6207ca" title="Solves the sat formula with a given decomposition." alt="" coords="5,42,195,69"/>
+</map>

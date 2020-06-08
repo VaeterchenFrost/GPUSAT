@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structgpusat_1_1_table_lines">
+<title>gpusat::TableLines Struct Reference</title>
+<indexterm><primary>gpusat::TableLines</primary></indexterm>
+<para>
+<computeroutput>#include &lt;visualization.h&gt;</computeroutput>
+</para>
+Collaboration diagram for gpusat::TableLines:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structgpusat_1_1_table_lines__coll__graph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::vector&lt; std::string &gt; <link linkend="_structgpusat_1_1_table_lines_1a88d42060a40d5ea5fec3c5dc18eb1303">headline</link></para>
+</listitem>
+            <listitem><para><link linkend="_classgpusat_1_1_bag_matrix">BagMatrix</link> <link linkend="_structgpusat_1_1_table_lines_1ae0b94f36fe0fe68426848c052a36c504">solutions</link></para>
+</listitem>
+            <listitem><para>cl_double <link linkend="_structgpusat_1_1_table_lines_1a087cf0b2db4bb2af0d960bec2191ae31">totalSol</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Solutions in Timeline. Example: [[&quot;id&quot;, &quot;v2&quot;, &quot;v4&quot;, &quot;n Sol&quot;], [0, 0, 0, 1], [1, 1, 0, 2], [2, 0, 1, 2], [3, 1, 1, 3]] </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structgpusat_1_1_table_lines_1a88d42060a40d5ea5fec3c5dc18eb1303"/>    <section>
+    <title>headline</title>
+<indexterm><primary>headline</primary><secondary>gpusat::TableLines</secondary></indexterm>
+<indexterm><primary>gpusat::TableLines</primary><secondary>headline</secondary></indexterm>
+<para><computeroutput>std::vector&lt;std::string&gt; gpusat::TableLines::headline</computeroutput></para><para>
+Referenced by gpusat::solJson(), and gpusat::Visualization::tdTimelineAppend().</para>
+    </section><anchor xml:id="_structgpusat_1_1_table_lines_1ae0b94f36fe0fe68426848c052a36c504"/>    <section>
+    <title>solutions</title>
+<indexterm><primary>solutions</primary><secondary>gpusat::TableLines</secondary></indexterm>
+<indexterm><primary>gpusat::TableLines</primary><secondary>solutions</secondary></indexterm>
+<para><computeroutput><link linkend="_classgpusat_1_1_bag_matrix">BagMatrix</link> gpusat::TableLines::solutions</computeroutput></para><para>
+Referenced by gpusat::solJson(), and gpusat::Visualization::tdTimelineAppend().</para>
+    </section><anchor xml:id="_structgpusat_1_1_table_lines_1a087cf0b2db4bb2af0d960bec2191ae31"/>    <section>
+    <title>totalSol</title>
+<indexterm><primary>totalSol</primary><secondary>gpusat::TableLines</secondary></indexterm>
+<indexterm><primary>gpusat::TableLines</primary><secondary>totalSol</secondary></indexterm>
+<para><computeroutput>cl_double gpusat::TableLines::totalSol</computeroutput></para><para>
+Referenced by gpusat::solJson(), and gpusat::Visualization::tdTimelineAppend().</para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+include/<link linkend="_visualization_8h">visualization.h</link></section>
+</section>

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_decomposer_8cpp">
+<title>src/decomposer.cpp File Reference</title>
+<indexterm><primary>src/decomposer.cpp</primary></indexterm>
+<programlisting>#include &lt;decomposer.h&gt;
+#include &lt;htd/BucketEliminationTreeDecompositionAlgorithm.hpp&gt;
+#include &lt;htd/GraphPreprocessor.hpp&gt;
+#include &lt;htd/ITreeDecompositionAlgorithm.hpp&gt;
+#include &lt;htd/IterativeImprovementTreeDecompositionAlgorithm.hpp&gt;
+#include &lt;htd/TreeDecompositionOptimizationOperation.hpp&gt;
+#include &lt;htd_io/TdFormatExporter.hpp&gt;
+#include &lt;sstream&gt;
+</programlisting>Include dependency graph for decomposer.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="decomposer_8cpp__incl.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_namespacegpusat">gpusat</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

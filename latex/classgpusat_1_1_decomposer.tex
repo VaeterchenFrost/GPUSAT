@@ -1,0 +1,52 @@
+\hypertarget{classgpusat_1_1_decomposer}{}\doxysection{gpusat\+::Decomposer Class Reference}
+\label{classgpusat_1_1_decomposer}\index{gpusat::Decomposer@{gpusat::Decomposer}}
+
+
+{\ttfamily \#include $<$decomposer.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classgpusat_1_1_decomposer_a5e0c5e1696b2088b8ad66261022abcea}{compute\+Decomposition}} (std\+::string formula, htd\+::\+I\+Tree\+Decomposition\+Fitness\+Function $\ast$fitness, size\+\_\+t n)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classgpusat_1_1_decomposer_a5e0c5e1696b2088b8ad66261022abcea}\label{classgpusat_1_1_decomposer_a5e0c5e1696b2088b8ad66261022abcea}} 
+\index{gpusat::Decomposer@{gpusat::Decomposer}!computeDecomposition@{computeDecomposition}}
+\index{computeDecomposition@{computeDecomposition}!gpusat::Decomposer@{gpusat::Decomposer}}
+\doxysubsubsection{\texorpdfstring{computeDecomposition()}{computeDecomposition()}}
+{\footnotesize\ttfamily std\+::string gpusat\+::\+Decomposer\+::compute\+Decomposition (\begin{DoxyParamCaption}\item[{std\+::string}]{formula,  }\item[{htd\+::\+I\+Tree\+Decomposition\+Fitness\+Function $\ast$}]{fitness,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+computes the decomposition of the primal graph of the given formula
+
+
+\begin{DoxyParams}{Parameters}
+{\em formula} & the formula in cnf format \\
+\hline
+{\em fitness} & the fitness function \\
+\hline
+{\em n} & number of iterations for the fitness function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the decomposition in td format 
+\end{DoxyReturn}
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{classgpusat_1_1_decomposer_a5e0c5e1696b2088b8ad66261022abcea_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{decomposer_8h}{decomposer.\+h}}\item 
+src/\mbox{\hyperlink{decomposer_8cpp}{decomposer.\+cpp}}\end{DoxyCompactItemize}

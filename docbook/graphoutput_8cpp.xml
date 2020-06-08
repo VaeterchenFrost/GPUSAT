@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_graphoutput_8cpp">
+<title>src/graphoutput.cpp File Reference</title>
+<indexterm><primary>src/graphoutput.cpp</primary></indexterm>
+<programlisting>#include &lt;fstream&gt;
+#include &lt;gpusatutils.h&gt;
+#include &lt;graphoutput.h&gt;
+#include &lt;iostream&gt;
+#include &lt;sstream&gt;
+#include &lt;types.h&gt;
+</programlisting>Include dependency graph for graphoutput.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="graphoutput_8cpp__incl.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_namespacegpusat">gpusat</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

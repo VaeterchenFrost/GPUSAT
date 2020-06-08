@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classgpusat_1_1_num_join_fitness_function">
+<title>gpusat::NumJoinFitnessFunction Class Reference</title>
+<indexterm><primary>gpusat::NumJoinFitnessFunction</primary></indexterm>
+<para>
+<computeroutput>#include &lt;NumJoinFitnessFunction.h&gt;</computeroutput>
+</para>
+Inheritance diagram for gpusat::NumJoinFitnessFunction:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_num_join_fitness_function__inherit__graph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for gpusat::NumJoinFitnessFunction:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_num_join_fitness_function__coll__graph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classgpusat_1_1_num_join_fitness_function_1ab7c9aca4494c2eb6adbcba11cbe4cfad">NumJoinFitnessFunction</link> ()=default</para>
+</listitem>
+            <listitem><para><link linkend="_classgpusat_1_1_num_join_fitness_function_1ac0f576235082f18b7d6381e4ab44ce12">~NumJoinFitnessFunction</link> ()=default</para>
+</listitem>
+            <listitem><para><link linkend="_classgpusat_1_1_num_join_fitness_function">NumJoinFitnessFunction</link> * <link linkend="_classgpusat_1_1_num_join_fitness_function_1afa831f90737e2ea72a7343dfdf1b58cb">clone</link> (void) const override</para>
+</listitem>
+            <listitem><para>htd::FitnessEvaluation * <link linkend="_classgpusat_1_1_num_join_fitness_function_1a1c405fc41516ab7f40e0efec9f879b6c">fitness</link> (const htd::IMultiHypergraph &amp;graph, const htd::ITreeDecomposition &amp;decomposition) const override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Fitness function that minimizes the number of join nodes and then the width. </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classgpusat_1_1_num_join_fitness_function_1ab7c9aca4494c2eb6adbcba11cbe4cfad"/>    <section>
+    <title>NumJoinFitnessFunction()</title>
+<indexterm><primary>NumJoinFitnessFunction</primary><secondary>gpusat::NumJoinFitnessFunction</secondary></indexterm>
+<indexterm><primary>gpusat::NumJoinFitnessFunction</primary><secondary>NumJoinFitnessFunction</secondary></indexterm>
+<para><computeroutput>gpusat::NumJoinFitnessFunction::NumJoinFitnessFunction ( )<computeroutput>[default]</computeroutput></computeroutput></para><para>
+Referenced by clone().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_num_join_fitness_function_ab7c9aca4494c2eb6adbcba11cbe4cfad_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_num_join_fitness_function_1ac0f576235082f18b7d6381e4ab44ce12"/>    <section>
+    <title>~NumJoinFitnessFunction()</title>
+<indexterm><primary>~NumJoinFitnessFunction</primary><secondary>gpusat::NumJoinFitnessFunction</secondary></indexterm>
+<indexterm><primary>gpusat::NumJoinFitnessFunction</primary><secondary>~NumJoinFitnessFunction</secondary></indexterm>
+<para><computeroutput>gpusat::NumJoinFitnessFunction::~NumJoinFitnessFunction ( )<computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classgpusat_1_1_num_join_fitness_function_1afa831f90737e2ea72a7343dfdf1b58cb"/>    <section>
+    <title>clone()</title>
+<indexterm><primary>clone</primary><secondary>gpusat::NumJoinFitnessFunction</secondary></indexterm>
+<indexterm><primary>gpusat::NumJoinFitnessFunction</primary><secondary>clone</secondary></indexterm>
+<para><computeroutput><link linkend="_classgpusat_1_1_num_join_fitness_function">NumJoinFitnessFunction</link> * gpusat::NumJoinFitnessFunction::clone (void ) const<computeroutput>[override]</computeroutput></computeroutput></para><para>
+References NumJoinFitnessFunction().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_num_join_fitness_function_afa831f90737e2ea72a7343dfdf1b58cb_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_num_join_fitness_function_1a1c405fc41516ab7f40e0efec9f879b6c"/>    <section>
+    <title>fitness()</title>
+<indexterm><primary>fitness</primary><secondary>gpusat::NumJoinFitnessFunction</secondary></indexterm>
+<indexterm><primary>gpusat::NumJoinFitnessFunction</primary><secondary>fitness</secondary></indexterm>
+<para><computeroutput>htd::FitnessEvaluation * gpusat::NumJoinFitnessFunction::fitness (const htd::IMultiHypergraph &amp; graph, const htd::ITreeDecomposition &amp; decomposition) const<computeroutput>[override]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following files:</para>
+include/FitnessFunctions/<link linkend="__num_join_fitness_function_8h">NumJoinFitnessFunction.h</link>src/FitnessFunctions/<link linkend="__num_join_fitness_function_8cpp">NumJoinFitnessFunction.cpp</link></section>
+</section>

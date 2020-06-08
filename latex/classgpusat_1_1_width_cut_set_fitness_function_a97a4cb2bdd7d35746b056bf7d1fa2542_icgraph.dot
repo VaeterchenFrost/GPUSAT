@@ -1,0 +1,11 @@
+digraph "gpusat::WidthCutSetFitnessFunction::getMaxCutSetSize"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="gpusat::WidthCutSetFitness\lFunction::getMaxCutSetSize",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="gpusat::WidthCutSetFitness\lFunction::fitness",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_width_cut_set_fitness_function.html#a0465739d729f70878e7fbcb8258db3a5",tooltip=" "];
+}

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__join_size_fitness_function_8cpp">
+<title>src/FitnessFunctions/JoinSizeFitnessFunction.cpp File Reference</title>
+<indexterm><primary>src/FitnessFunctions/JoinSizeFitnessFunction.cpp</primary></indexterm>
+<programlisting>#include &lt;FitnessFunctions/JoinSizeFitnessFunction.h&gt;
+#include &lt;htd/ITreeDecomposition.hpp&gt;
+#include &lt;unordered_set&gt;
+#include &lt;algorithm&gt;
+</programlisting>Include dependency graph for JoinSizeFitnessFunction.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_join_size_fitness_function_8cpp__incl.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_namespacegpusat">gpusat</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

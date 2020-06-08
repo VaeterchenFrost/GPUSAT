@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classgpusat_1_1_width_cut_set_fitness_function">
+<title>gpusat::WidthCutSetFitnessFunction Class Reference</title>
+<indexterm><primary>gpusat::WidthCutSetFitnessFunction</primary></indexterm>
+<para>
+<computeroutput>#include &lt;WidthCutSetFitnessFunction.h&gt;</computeroutput>
+</para>
+Inheritance diagram for gpusat::WidthCutSetFitnessFunction:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_width_cut_set_fitness_function__inherit__graph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for gpusat::WidthCutSetFitnessFunction:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_width_cut_set_fitness_function__coll__graph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classgpusat_1_1_width_cut_set_fitness_function_1acdfbd4aaf12a1090562c6c75d798a72d">WidthCutSetFitnessFunction</link> ()=default</para>
+</listitem>
+            <listitem><para><link linkend="_classgpusat_1_1_width_cut_set_fitness_function_1a4a30450c9ae90ec23340212e5567795d">~WidthCutSetFitnessFunction</link> ()=default</para>
+</listitem>
+            <listitem><para><link linkend="_classgpusat_1_1_width_cut_set_fitness_function">WidthCutSetFitnessFunction</link> * <link linkend="_classgpusat_1_1_width_cut_set_fitness_function_1a0f101fea0762ee81046477fd67542950">clone</link> (void) const override</para>
+</listitem>
+            <listitem><para>htd::FitnessEvaluation * <link linkend="_classgpusat_1_1_width_cut_set_fitness_function_1a0465739d729f70878e7fbcb8258db3a5">fitness</link> (const htd::IMultiHypergraph &amp;graph, const htd::ITreeDecomposition &amp;decomposition) const override</para>
+</listitem>
+            <listitem><para>double <link linkend="_classgpusat_1_1_width_cut_set_fitness_function_1a97a4cb2bdd7d35746b056bf7d1fa2542">getMaxCutSetSize</link> (const htd::ITreeDecomposition &amp;decomposition) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Fitness function that first minimizes the width and then the cut set size. </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classgpusat_1_1_width_cut_set_fitness_function_1acdfbd4aaf12a1090562c6c75d798a72d"/>    <section>
+    <title>WidthCutSetFitnessFunction()</title>
+<indexterm><primary>WidthCutSetFitnessFunction</primary><secondary>gpusat::WidthCutSetFitnessFunction</secondary></indexterm>
+<indexterm><primary>gpusat::WidthCutSetFitnessFunction</primary><secondary>WidthCutSetFitnessFunction</secondary></indexterm>
+<para><computeroutput>gpusat::WidthCutSetFitnessFunction::WidthCutSetFitnessFunction ( )<computeroutput>[default]</computeroutput></computeroutput></para><para>
+Referenced by clone().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_width_cut_set_fitness_function_acdfbd4aaf12a1090562c6c75d798a72d_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_width_cut_set_fitness_function_1a4a30450c9ae90ec23340212e5567795d"/>    <section>
+    <title>~WidthCutSetFitnessFunction()</title>
+<indexterm><primary>~WidthCutSetFitnessFunction</primary><secondary>gpusat::WidthCutSetFitnessFunction</secondary></indexterm>
+<indexterm><primary>gpusat::WidthCutSetFitnessFunction</primary><secondary>~WidthCutSetFitnessFunction</secondary></indexterm>
+<para><computeroutput>gpusat::WidthCutSetFitnessFunction::~WidthCutSetFitnessFunction ( )<computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classgpusat_1_1_width_cut_set_fitness_function_1a0f101fea0762ee81046477fd67542950"/>    <section>
+    <title>clone()</title>
+<indexterm><primary>clone</primary><secondary>gpusat::WidthCutSetFitnessFunction</secondary></indexterm>
+<indexterm><primary>gpusat::WidthCutSetFitnessFunction</primary><secondary>clone</secondary></indexterm>
+<para><computeroutput><link linkend="_classgpusat_1_1_width_cut_set_fitness_function">WidthCutSetFitnessFunction</link> * gpusat::WidthCutSetFitnessFunction::clone (void ) const<computeroutput>[override]</computeroutput></computeroutput></para><para>
+References WidthCutSetFitnessFunction().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_width_cut_set_fitness_function_a0f101fea0762ee81046477fd67542950_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_width_cut_set_fitness_function_1a0465739d729f70878e7fbcb8258db3a5"/>    <section>
+    <title>fitness()</title>
+<indexterm><primary>fitness</primary><secondary>gpusat::WidthCutSetFitnessFunction</secondary></indexterm>
+<indexterm><primary>gpusat::WidthCutSetFitnessFunction</primary><secondary>fitness</secondary></indexterm>
+<para><computeroutput>htd::FitnessEvaluation * gpusat::WidthCutSetFitnessFunction::fitness (const htd::IMultiHypergraph &amp; graph, const htd::ITreeDecomposition &amp; decomposition) const<computeroutput>[override]</computeroutput></computeroutput></para><para>
+References getMaxCutSetSize().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_width_cut_set_fitness_function_a0465739d729f70878e7fbcb8258db3a5_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_width_cut_set_fitness_function_1a97a4cb2bdd7d35746b056bf7d1fa2542"/>    <section>
+    <title>getMaxCutSetSize()</title>
+<indexterm><primary>getMaxCutSetSize</primary><secondary>gpusat::WidthCutSetFitnessFunction</secondary></indexterm>
+<indexterm><primary>gpusat::WidthCutSetFitnessFunction</primary><secondary>getMaxCutSetSize</secondary></indexterm>
+<para><computeroutput>double gpusat::WidthCutSetFitnessFunction::getMaxCutSetSize (const htd::ITreeDecomposition &amp; decomposition) const</computeroutput></para><para>
+Referenced by fitness().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_width_cut_set_fitness_function_a97a4cb2bdd7d35746b056bf7d1fa2542_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+include/FitnessFunctions/<link linkend="__width_cut_set_fitness_function_8h">WidthCutSetFitnessFunction.h</link>src/FitnessFunctions/<link linkend="__width_cut_set_fitness_function_8cpp">WidthCutSetFitnessFunction.cpp</link></section>
+</section>

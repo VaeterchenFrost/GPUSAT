@@ -1,0 +1,59 @@
+digraph "main"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="main",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="buildKernel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#af3536928e7b1436ef9490f76a9757bae",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="gpusat::Decomposer\l::computeDecomposition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_decomposer.html#a5e0c5e1696b2088b8ad66261022abcea",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="device_query",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#a98c043df78519ccb9ff49d98f2abc32f",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="PrintDeviceInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#af779df65b45927d9fb2e79db96f9864b",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="gpusat::getCount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacegpusat.html#a607a57fced4760564963f4c707f28449",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="gpusat::getTime",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacegpusat.html#a9fab9fd5dc1462ce9508314fc13d3be2",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="gpusat::Graphoutput\l::graphEnd",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_graphoutput.html#a75b647b135cd9dbdc2eaed399eaf0ba3",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="gpusat::Graphoutput\l::isEnabled",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_graphoutput.html#a9337a44c758b7a403e4f7d854b8cd934",tooltip=" "];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="gpusat::Graphoutput\l::graphStart",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_graphoutput.html#a2cd530c2bd234cd6fca065b8d504fc36",tooltip=" "];
+  Node10 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="gpusat::Graphoutput\l::neo4jSat",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_graphoutput.html#aed89def93056ef06a7c0969bfa2fcf1b",tooltip="Output Cypherquery to create the nodes from the SAT formula"];
+  Node11 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="gpusat::Graphoutput\l::neo4jTD",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_graphoutput.html#ae371f11ef89ad4507bc5f656fe932da7",tooltip=" "];
+  Node12 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="gpusat::CNFParser::\lparseSatFormula",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_c_n_f_parser.html#a2373aa1870f6723404ed276c6cbf9d13",tooltip=" "];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="gpusat::TDParser::parseTree\lDecomp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_t_d_parser.html#af5ee31072b0c9f1ddfdd032e93a7d8d4",tooltip=" "];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="gpusat::compTreedType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacegpusat.html#a25859e1a162fb1712110b033239a3e06",tooltip=" "];
+  Node1 -> Node16 [color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="gpusat::Preprocessor\l::preprocessDecomp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_preprocessor.html#a3f7a765eda39dc7b5b41a24972b77354",tooltip=" "];
+  Node16 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node17 [color="midnightblue",fontsize="10",style="solid"];
+  Node17 [label="gpusat::Preprocessor\l::preprocessFacts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_preprocessor.html#a0eb30c75fad0b216ca501b86605c2c58",tooltip=" "];
+  Node17 -> Node18 [color="midnightblue",fontsize="10",style="solid"];
+  Node18 [label="gpusat::compVars",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacegpusat.html#a1f445c345dcaf73f1835ce81473ef646",tooltip=" "];
+  Node1 -> Node19 [color="midnightblue",fontsize="10",style="solid"];
+  Node19 [label="gpusat::printtreedecType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacegpusat.html#ad9dbd68f848e49cd275592926da7a27c",tooltip="print a tree decomposition"];
+  Node1 -> Node20 [color="midnightblue",fontsize="10",style="solid"];
+  Node20 [label="gpusat::Visualization\l::visuClauses",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_visualization.html#af628a778e4606cbd0c15b20b6e558816",tooltip=" "];
+  Node1 -> Node21 [color="midnightblue",fontsize="10",style="solid"];
+  Node21 [label="gpusat::Visualization\l::visuTreeDec",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_visualization.html#ace2a5d3b44bed0ad4a40d827373a5339",tooltip=" "];
+  Node1 -> Node22 [color="midnightblue",fontsize="10",style="solid"];
+  Node22 [label="gpusat::Visualization\l::writeJsonFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_visualization.html#a81123313bcffe5cd041d3d3897f7d5d1",tooltip=" "];
+  Node22 -> Node23 [color="midnightblue",fontsize="10",style="solid"];
+  Node23 [label="gpusat::Visualization\l::isEnabled",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_visualization.html#a9c947b84d850f20947ee459854c31251",tooltip=" "];
+  Node22 -> Node24 [color="midnightblue",fontsize="10",style="solid"];
+  Node24 [label="gpusat::Visualization\l::writeJsonToStdout",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_visualization.html#a2a9d9571adc1b706bcdc2f1de26d2345",tooltip=" "];
+}

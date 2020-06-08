@@ -1,0 +1,386 @@
+\hypertarget{namespacegpusat}{}\doxysection{gpusat Namespace Reference}
+\label{namespacegpusat}\index{gpusat@{gpusat}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classgpusat_1_1_bag_matrix}{Bag\+Matrix}}
+\item 
+struct \mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}}
+\begin{DoxyCompactList}\small\item\em type for a bag in the tree decomposition \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classgpusat_1_1_c_n_f_parser}{C\+N\+F\+Parser}}
+\item 
+class \mbox{\hyperlink{classgpusat_1_1_cut_set_width_fitness_function}{Cut\+Set\+Width\+Fitness\+Function}}
+\item 
+class \mbox{\hyperlink{classgpusat_1_1_decomposer}{Decomposer}}
+\item 
+class \mbox{\hyperlink{classgpusat_1_1_graphoutput}{Graphoutput}}
+\item 
+class \mbox{\hyperlink{classgpusat_1_1_join_size_fitness_function}{Join\+Size\+Fitness\+Function}}
+\item 
+class \mbox{\hyperlink{classgpusat_1_1_num_join_fitness_function}{Num\+Join\+Fitness\+Function}}
+\item 
+class \mbox{\hyperlink{classgpusat_1_1_preprocessor}{Preprocessor}}
+\item 
+struct \mbox{\hyperlink{structgpusat_1_1satformula_type}{satformula\+Type}}
+\begin{DoxyCompactList}\small\item\em type for saving the sat formula \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classgpusat_1_1_solver}{Solver}}
+\item 
+struct \mbox{\hyperlink{structgpusat_1_1_table_lines}{Table\+Lines}}
+\item 
+class \mbox{\hyperlink{classgpusat_1_1_t_d_parser}{T\+D\+Parser}}
+\item 
+struct \mbox{\hyperlink{structgpusat_1_1treedec_type}{treedec\+Type}}
+\begin{DoxyCompactList}\small\item\em type for saving a tree decomposition \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structgpusat_1_1tree_type}{tree\+Type}}
+\begin{DoxyCompactList}\small\item\em tree type for storing the models \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classgpusat_1_1_visualization}{Visualization}}
+\item 
+class \mbox{\hyperlink{classgpusat_1_1_width_cut_set_fitness_function}{Width\+Cut\+Set\+Fitness\+Function}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacegpusat_aa2c9537dea3bac582074032171a42ece}{data\+Structure}} \{ \mbox{\hyperlink{namespacegpusat_aa2c9537dea3bac582074032171a42eceacb4fb1757fb37c43cded35d3eb857c43}{data\+Structure\+::\+A\+R\+R\+AY}}, 
+\mbox{\hyperlink{namespacegpusat_aa2c9537dea3bac582074032171a42eceac0f8e24cf041639c4fc457ebec9490eb}{data\+Structure\+::\+T\+R\+EE}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespacegpusat_a0992fa8d26c155d150e9f38f2f48f894}{node\+Type}} \{ \mbox{\hyperlink{namespacegpusat_a0992fa8d26c155d150e9f38f2f48f894aa6fa1cdf9c1a71978751b35b88763f8f}{node\+Type\+::\+J\+O\+IN}}, 
+\mbox{\hyperlink{namespacegpusat_a0992fa8d26c155d150e9f38f2f48f894a2294cf01b9f59404a05b89bfb81652f2}{node\+Type\+::\+I\+N\+T\+R\+O\+D\+U\+C\+E\+F\+O\+R\+G\+ET}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacegpusat_a25859e1a162fb1712110b033239a3e06}{comp\+Treed\+Type}} (const \mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} $\ast$a, const \mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} $\ast$b)
+\item 
+bool \mbox{\hyperlink{namespacegpusat_a1f445c345dcaf73f1835ce81473ef646}{comp\+Vars}} (const cl\+\_\+long \&a, const cl\+\_\+long \&b)
+\item 
+cl\+\_\+double \mbox{\hyperlink{namespacegpusat_a607a57fced4760564963f4c707f28449}{get\+Count}} (cl\+\_\+long id, cl\+\_\+long $\ast$tree, cl\+\_\+long num\+Vars)
+\item 
+long long int \mbox{\hyperlink{namespacegpusat_a9fab9fd5dc1462ce9508314fc13d3be2}{get\+Time}} ()
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespacegpusat_ac905553f8d2449bbc3ab7cc2138dc47c}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{namespacegpusat_aa2c9537dea3bac582074032171a42ece}{data\+Structure}} ds)
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespacegpusat_abb6472078bea74414c52c4f95b7685b1}{operator$<$$<$}} (std\+::ostream \&os, const std\+::vector$<$ \mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} $\ast$ $>$ vec)
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespacegpusat_a7a133b7de343b7f8f1b5147cb151c24f}{operator$<$$<$}} (std\+::ostream \&os, const std\+::vector$<$ cl\+\_\+long $>$ vec)
+\item 
+void \mbox{\hyperlink{namespacegpusat_aa117816b931264c9a291041b047d0c56}{printbag\+Type}} (\mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} $\ast$bag, std\+::ostream \&stream, int depth=0)
+\begin{DoxyCompactList}\small\item\em print information for a bag in the tree decomposition \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacegpusat_ad9dbd68f848e49cd275592926da7a27c}{printtreedec\+Type}} (\mbox{\hyperlink{structgpusat_1_1treedec_type}{treedec\+Type}} $\ast$dec, std\+::ostream \&stream)
+\begin{DoxyCompactList}\small\item\em print a tree decomposition \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacegpusat_adb6dc0944ae7b3c703b74287e26d6038}{printtree\+Type}} (\mbox{\hyperlink{structgpusat_1_1tree_type}{tree\+Type}} $\ast$tree, std\+::ostream \&stream, size\+\_\+t size, int depth=0)
+\item 
+\mbox{\hyperlink{structgpusat_1_1_table_lines}{Table\+Lines}} \mbox{\hyperlink{namespacegpusat_ae780028fdecbf7e4891b55159b33f3c1}{sol\+Json}} (\mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} node, \mbox{\hyperlink{namespacegpusat_aa2c9537dea3bac582074032171a42ece}{data\+Structure}} solution\+Type)
+\item 
+std\+::string \mbox{\hyperlink{namespacegpusat_a62a1b8c2535766854537a608378b737f}{solutiontable}} (\mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} node, \mbox{\hyperlink{namespacegpusat_aa2c9537dea3bac582074032171a42ece}{data\+Structure}} solution\+Type)
+\begin{DoxyCompactList}\small\item\em Generate a formatted stringoutput for a solved node with solutions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespacegpusat_aa2c9537dea3bac582074032171a42ece}\label{namespacegpusat_aa2c9537dea3bac582074032171a42ece}} 
+\index{gpusat@{gpusat}!dataStructure@{dataStructure}}
+\index{dataStructure@{dataStructure}!gpusat@{gpusat}}
+\doxysubsubsection{\texorpdfstring{dataStructure}{dataStructure}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacegpusat_aa2c9537dea3bac582074032171a42ece}{gpusat\+::data\+Structure}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ARRAY@{ARRAY}!gpusat@{gpusat}}\index{gpusat@{gpusat}!ARRAY@{ARRAY}}}\mbox{\Hypertarget{namespacegpusat_aa2c9537dea3bac582074032171a42eceacb4fb1757fb37c43cded35d3eb857c43}\label{namespacegpusat_aa2c9537dea3bac582074032171a42eceacb4fb1757fb37c43cded35d3eb857c43}} 
+A\+R\+R\+AY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TREE@{TREE}!gpusat@{gpusat}}\index{gpusat@{gpusat}!TREE@{TREE}}}\mbox{\Hypertarget{namespacegpusat_aa2c9537dea3bac582074032171a42eceac0f8e24cf041639c4fc457ebec9490eb}\label{namespacegpusat_aa2c9537dea3bac582074032171a42eceac0f8e24cf041639c4fc457ebec9490eb}} 
+T\+R\+EE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespacegpusat_a0992fa8d26c155d150e9f38f2f48f894}\label{namespacegpusat_a0992fa8d26c155d150e9f38f2f48f894}} 
+\index{gpusat@{gpusat}!nodeType@{nodeType}}
+\index{nodeType@{nodeType}!gpusat@{gpusat}}
+\doxysubsubsection{\texorpdfstring{nodeType}{nodeType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacegpusat_a0992fa8d26c155d150e9f38f2f48f894}{gpusat\+::node\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JOIN@{JOIN}!gpusat@{gpusat}}\index{gpusat@{gpusat}!JOIN@{JOIN}}}\mbox{\Hypertarget{namespacegpusat_a0992fa8d26c155d150e9f38f2f48f894aa6fa1cdf9c1a71978751b35b88763f8f}\label{namespacegpusat_a0992fa8d26c155d150e9f38f2f48f894aa6fa1cdf9c1a71978751b35b88763f8f}} 
+J\+O\+IN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INTRODUCEFORGET@{INTRODUCEFORGET}!gpusat@{gpusat}}\index{gpusat@{gpusat}!INTRODUCEFORGET@{INTRODUCEFORGET}}}\mbox{\Hypertarget{namespacegpusat_a0992fa8d26c155d150e9f38f2f48f894a2294cf01b9f59404a05b89bfb81652f2}\label{namespacegpusat_a0992fa8d26c155d150e9f38f2f48f894a2294cf01b9f59404a05b89bfb81652f2}} 
+I\+N\+T\+R\+O\+D\+U\+C\+E\+F\+O\+R\+G\+ET&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacegpusat_a25859e1a162fb1712110b033239a3e06}\label{namespacegpusat_a25859e1a162fb1712110b033239a3e06}} 
+\index{gpusat@{gpusat}!compTreedType@{compTreedType}}
+\index{compTreedType@{compTreedType}!gpusat@{gpusat}}
+\doxysubsubsection{\texorpdfstring{compTreedType()}{compTreedType()}}
+{\footnotesize\ttfamily bool gpusat\+::comp\+Treed\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} $\ast$}]{a,  }\item[{const \mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Function that compares two tree decompostions by id.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the first tree decompostion \\
+\hline
+{\em b} & the second tree decomposition \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a $<$ b 
+\end{DoxyReturn}
+
+
+References gpusat\+::bag\+Type\+::id.
+
+
+
+Referenced by gpusat\+::\+T\+D\+Parser\+::parse\+Tree\+Decomp(), and gpusat\+::\+Preprocessor\+::preprocess\+Decomp().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacegpusat_a25859e1a162fb1712110b033239a3e06_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacegpusat_a1f445c345dcaf73f1835ce81473ef646}\label{namespacegpusat_a1f445c345dcaf73f1835ce81473ef646}} 
+\index{gpusat@{gpusat}!compVars@{compVars}}
+\index{compVars@{compVars}!gpusat@{gpusat}}
+\doxysubsubsection{\texorpdfstring{compVars()}{compVars()}}
+{\footnotesize\ttfamily bool gpusat\+::comp\+Vars (\begin{DoxyParamCaption}\item[{const cl\+\_\+long \&}]{a,  }\item[{const cl\+\_\+long \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Function that compares two variables. 
+\begin{DoxyParams}{Parameters}
+{\em a} & the first variable \\
+\hline
+{\em b} & the second variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if abs a $<$ b 
+\end{DoxyReturn}
+
+
+Referenced by gpusat\+::\+Preprocessor\+::preprocess\+Facts(), and gpusat\+::\+Solver\+::solve\+Introduce\+Forget().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacegpusat_a1f445c345dcaf73f1835ce81473ef646_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacegpusat_a607a57fced4760564963f4c707f28449}\label{namespacegpusat_a607a57fced4760564963f4c707f28449}} 
+\index{gpusat@{gpusat}!getCount@{getCount}}
+\index{getCount@{getCount}!gpusat@{gpusat}}
+\doxysubsubsection{\texorpdfstring{getCount()}{getCount()}}
+{\footnotesize\ttfamily cl\+\_\+double gpusat\+::get\+Count (\begin{DoxyParamCaption}\item[{cl\+\_\+long}]{id,  }\item[{cl\+\_\+long $\ast$}]{tree,  }\item[{cl\+\_\+long}]{num\+Vars }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns the model count which corresponds to the given id
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id for which the model count should be returned \\
+\hline
+{\em tree} & a pointer to the tree structure \\
+\hline
+{\em num\+Vars} & the number of variables in the bag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the model count 
+\end{DoxyReturn}
+
+
+Referenced by main(), printtree\+Type(), sol\+Json(), and solutiontable().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacegpusat_a607a57fced4760564963f4c707f28449_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacegpusat_a9fab9fd5dc1462ce9508314fc13d3be2}\label{namespacegpusat_a9fab9fd5dc1462ce9508314fc13d3be2}} 
+\index{gpusat@{gpusat}!getTime@{getTime}}
+\index{getTime@{getTime}!gpusat@{gpusat}}
+\doxysubsubsection{\texorpdfstring{getTime()}{getTime()}}
+{\footnotesize\ttfamily long long int gpusat\+::get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the time in millisecons since the epoch 
+\end{DoxyReturn}
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{namespacegpusat_a9fab9fd5dc1462ce9508314fc13d3be2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacegpusat_ac905553f8d2449bbc3ab7cc2138dc47c}\label{namespacegpusat_ac905553f8d2449bbc3ab7cc2138dc47c}} 
+\index{gpusat@{gpusat}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!gpusat@{gpusat}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily std\+::ostream\& gpusat\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{namespacegpusat_aa2c9537dea3bac582074032171a42ece}{data\+Structure}}}]{ds }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+References A\+R\+R\+AY, and T\+R\+EE.
+
+\mbox{\Hypertarget{namespacegpusat_abb6472078bea74414c52c4f95b7685b1}\label{namespacegpusat_abb6472078bea74414c52c4f95b7685b1}} 
+\index{gpusat@{gpusat}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!gpusat@{gpusat}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::ostream\& gpusat\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} $\ast$ $>$}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{namespacegpusat_a7a133b7de343b7f8f1b5147cb151c24f}\label{namespacegpusat_a7a133b7de343b7f8f1b5147cb151c24f}} 
+\index{gpusat@{gpusat}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!gpusat@{gpusat}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::ostream\& gpusat\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const std\+::vector$<$ cl\+\_\+long $>$}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{namespacegpusat_aa117816b931264c9a291041b047d0c56}\label{namespacegpusat_aa117816b931264c9a291041b047d0c56}} 
+\index{gpusat@{gpusat}!printbagType@{printbagType}}
+\index{printbagType@{printbagType}!gpusat@{gpusat}}
+\doxysubsubsection{\texorpdfstring{printbagType()}{printbagType()}}
+{\footnotesize\ttfamily void gpusat\+::printbag\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} $\ast$}]{bag,  }\item[{std\+::ostream \&}]{stream,  }\item[{int}]{depth = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+print information for a bag in the tree decomposition 
+
+
+
+References gpusat\+::bag\+Type\+::bags, gpusat\+::bag\+Type\+::correction, gpusat\+::bag\+Type\+::edges, gpusat\+::bag\+Type\+::exponent, gpusat\+::bag\+Type\+::id, and gpusat\+::bag\+Type\+::variables.
+
+
+
+Referenced by gpusat\+::\+Solver\+::solve\+Introduce\+Forget(), and gpusat\+::\+Solver\+::solve\+Problem().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacegpusat_aa117816b931264c9a291041b047d0c56_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacegpusat_ad9dbd68f848e49cd275592926da7a27c}\label{namespacegpusat_ad9dbd68f848e49cd275592926da7a27c}} 
+\index{gpusat@{gpusat}!printtreedecType@{printtreedecType}}
+\index{printtreedecType@{printtreedecType}!gpusat@{gpusat}}
+\doxysubsubsection{\texorpdfstring{printtreedecType()}{printtreedecType()}}
+{\footnotesize\ttfamily void gpusat\+::printtreedec\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpusat_1_1treedec_type}{treedec\+Type}} $\ast$}]{dec,  }\item[{std\+::ostream \&}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+print a tree decomposition 
+
+
+
+References gpusat\+::treedec\+Type\+::bags, and gpusat\+::treedec\+Type\+::numb.
+
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{namespacegpusat_ad9dbd68f848e49cd275592926da7a27c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacegpusat_adb6dc0944ae7b3c703b74287e26d6038}\label{namespacegpusat_adb6dc0944ae7b3c703b74287e26d6038}} 
+\index{gpusat@{gpusat}!printtreeType@{printtreeType}}
+\index{printtreeType@{printtreeType}!gpusat@{gpusat}}
+\doxysubsubsection{\texorpdfstring{printtreeType()}{printtreeType()}}
+{\footnotesize\ttfamily void gpusat\+::printtree\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpusat_1_1tree_type}{tree\+Type}} $\ast$}]{tree,  }\item[{std\+::ostream \&}]{stream,  }\item[{size\+\_\+t}]{size,  }\item[{int}]{depth = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+References gpusat\+::tree\+Type\+::elements, get\+Count(), gpusat\+::tree\+Type\+::max\+Id, gpusat\+::tree\+Type\+::min\+Id, gpusat\+::tree\+Type\+::num\+Solutions, and gpusat\+::tree\+Type\+::size.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{namespacegpusat_adb6dc0944ae7b3c703b74287e26d6038_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacegpusat_ae780028fdecbf7e4891b55159b33f3c1}\label{namespacegpusat_ae780028fdecbf7e4891b55159b33f3c1}} 
+\index{gpusat@{gpusat}!solJson@{solJson}}
+\index{solJson@{solJson}!gpusat@{gpusat}}
+\doxysubsubsection{\texorpdfstring{solJson()}{solJson()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structgpusat_1_1_table_lines}{Table\+Lines}} gpusat\+::sol\+Json (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}}}]{node,  }\item[{\mbox{\hyperlink{namespacegpusat_aa2c9537dea3bac582074032171a42ece}{data\+Structure}}}]{solution\+Type }\end{DoxyParamCaption})}
+
+Construct Tablelines from a solved node of the tree decomposition If no solution is stored in this node return empty grid and total\+Sol -\/1. 
+
+References gpusat\+::\+Bag\+Matrix\+::columns(), gpusat\+::bag\+Type\+::correction, gpusat\+::tree\+Type\+::elements, get\+Count(), gpusat\+::\+Table\+Lines\+::headline, gpusat\+::tree\+Type\+::min\+Id, gpusat\+::bag\+Type\+::solution, gpusat\+::\+Table\+Lines\+::solutions, gpusat\+::\+Table\+Lines\+::total\+Sol, T\+R\+EE, and gpusat\+::bag\+Type\+::variables.
+
+
+
+Referenced by gpusat\+::\+Solver\+::solve\+Problem().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{namespacegpusat_ae780028fdecbf7e4891b55159b33f3c1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{namespacegpusat_ae780028fdecbf7e4891b55159b33f3c1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacegpusat_a62a1b8c2535766854537a608378b737f}\label{namespacegpusat_a62a1b8c2535766854537a608378b737f}} 
+\index{gpusat@{gpusat}!solutiontable@{solutiontable}}
+\index{solutiontable@{solutiontable}!gpusat@{gpusat}}
+\doxysubsubsection{\texorpdfstring{solutiontable()}{solutiontable()}}
+{\footnotesize\ttfamily std\+::string gpusat\+::solutiontable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}}}]{node,  }\item[{\mbox{\hyperlink{namespacegpusat_aa2c9537dea3bac582074032171a42ece}{data\+Structure}}}]{solution\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generate a formatted stringoutput for a solved node with solutions. 
+
+
+
+References gpusat\+::bag\+Type\+::correction, gpusat\+::tree\+Type\+::elements, get\+Count(), gpusat\+::tree\+Type\+::min\+Id, gpusat\+::bag\+Type\+::solution, T\+R\+EE, and gpusat\+::bag\+Type\+::variables.
+
+
+
+Referenced by gpusat\+::\+Solver\+::solve\+Problem().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{namespacegpusat_a62a1b8c2535766854537a608378b737f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacegpusat_a62a1b8c2535766854537a608378b737f_icgraph}
+\end{center}
+\end{figure}

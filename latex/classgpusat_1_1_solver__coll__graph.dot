@@ -1,0 +1,29 @@
+digraph "gpusat::Solver"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="gpusat::Solver",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" context" ];
+  Node2 [label="Context &",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" graphoutput" ];
+  Node3 [label="gpusat::Graphoutput",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_graphoutput.html",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" baseIdSol\nbaseIdJoin" ];
+  Node4 [label="static const int",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" primaledge\ndualedge\nconnectbag\nincidenceedge\ninbag" ];
+  Node5 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" maxMemoryBuffer\nmaxTableSize\nnumJoin\nisSat\nmaxBag\nnumIntroduceForget\nmemorySize" ];
+  Node6 [label="cl_long",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" program" ];
+  Node7 [label="Program &",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node8 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" solutionType" ];
+  Node8 [label="dataStructure",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node9 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" verbose" ];
+  Node9 [label="bool",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node10 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" queue" ];
+  Node10 [label="CommandQueue &",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node11 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" visualization" ];
+  Node11 [label="gpusat::Visualization",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_visualization.html",tooltip=" "];
+}

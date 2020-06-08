@@ -1,0 +1,302 @@
+\hypertarget{classgpusat_1_1_visualization}{}\doxysection{gpusat\+::Visualization Class Reference}
+\label{classgpusat_1_1_visualization}\index{gpusat::Visualization@{gpusat::Visualization}}
+
+
+{\ttfamily \#include $<$visualization.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgpusat_1_1_visualization_a6b548a71d2aaf1d49fa2caac8a7484a9}{Visualization}} (std\+::string filename)
+\item 
+Json\+::\+Value \mbox{\hyperlink{classgpusat_1_1_visualization_af4588f3aa3763db2cab198b3e35f5540}{get\+Clauses\+Json}} ()
+\item 
+std\+::string \mbox{\hyperlink{classgpusat_1_1_visualization_a144d3c4292e447443c5829913de1f0e5}{get\+Filename}} ()
+\item 
+Json\+::\+Value \mbox{\hyperlink{classgpusat_1_1_visualization_a775289fa51e1bacd9c7d5a7906159826}{get\+Td\+Timeline}} ()
+\item 
+Json\+::\+Value \mbox{\hyperlink{classgpusat_1_1_visualization_a8c22927f54be8c6acc574b0f9f9f72d5}{get\+Tree\+Dec\+Json}} ()
+\item 
+Json\+::\+Stream\+Writer\+Builder $\ast$ \mbox{\hyperlink{classgpusat_1_1_visualization_af841b2d46c254ddd2c7dc9fe5c8814e6}{get\+Writer\+Builder}} ()
+\item 
+bool \mbox{\hyperlink{classgpusat_1_1_visualization_a9c947b84d850f20947ee459854c31251}{is\+Enabled}} ()
+\item 
+void \mbox{\hyperlink{classgpusat_1_1_visualization_ab4e903d8555a40d44ef98c09a39d8941}{td\+Timeline\+Append}} (std\+::vector$<$ cl\+\_\+long $>$ bag\+\_\+ids)
+\item 
+void \mbox{\hyperlink{classgpusat_1_1_visualization_aee01b172cd6c03b26143b1ae82193b9b}{td\+Timeline\+Append}} (std\+::vector$<$ cl\+\_\+long $>$ bag\+\_\+ids, \mbox{\hyperlink{structgpusat_1_1_table_lines}{Table\+Lines}} tablelines, std\+::string const toplabel=\char`\"{}\char`\"{}, std\+::string const bottomlabel=\char`\"{}\char`\"{}, bool transpose=true)
+\item 
+void \mbox{\hyperlink{classgpusat_1_1_visualization_a52f199ac61c2f13e748aa312765528ea}{test\+Json}} ()
+\item 
+void \mbox{\hyperlink{classgpusat_1_1_visualization_af628a778e4606cbd0c15b20b6e558816}{visu\+Clauses}} (\mbox{\hyperlink{structgpusat_1_1satformula_type}{satformula\+Type}} $\ast$sat)
+\item 
+void \mbox{\hyperlink{classgpusat_1_1_visualization_ace2a5d3b44bed0ad4a40d827373a5339}{visu\+Tree\+Dec}} (\mbox{\hyperlink{structgpusat_1_1treedec_type}{treedec\+Type}} $\ast$tree\+Dec)
+\item 
+void \mbox{\hyperlink{classgpusat_1_1_visualization_a81123313bcffe5cd041d3d3897f7d5d1}{write\+Json\+File}} (bool append=false)
+\item 
+void \mbox{\hyperlink{classgpusat_1_1_visualization_a2a9d9571adc1b706bcdc2f1de26d2345}{write\+Json\+To\+Stdout}} (Json\+::\+Stream\+Writer\+::\+Factory const \&factory, Json\+::\+Value const \&value, Json\+::\+O\+Stream $\ast$sout=\&std\+::cout)
+\item 
+void \mbox{\hyperlink{classgpusat_1_1_visualization_a67d917c287d6e6020ee8ca4f10a12221}{write\+Json\+To\+Stdout}} (Json\+::\+Value const \&value, Json\+::\+O\+Stream $\ast$sout=\&std\+::cout)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classgpusat_1_1_visualization_a6b548a71d2aaf1d49fa2caac8a7484a9}\label{classgpusat_1_1_visualization_a6b548a71d2aaf1d49fa2caac8a7484a9}} 
+\index{gpusat::Visualization@{gpusat::Visualization}!Visualization@{Visualization}}
+\index{Visualization@{Visualization}!gpusat::Visualization@{gpusat::Visualization}}
+\doxysubsubsection{\texorpdfstring{Visualization()}{Visualization()}}
+{\footnotesize\ttfamily gpusat\+::\+Visualization\+::\+Visualization (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+References is\+Enabled().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classgpusat_1_1_visualization_a6b548a71d2aaf1d49fa2caac8a7484a9_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classgpusat_1_1_visualization_af4588f3aa3763db2cab198b3e35f5540}\label{classgpusat_1_1_visualization_af4588f3aa3763db2cab198b3e35f5540}} 
+\index{gpusat::Visualization@{gpusat::Visualization}!getClausesJson@{getClausesJson}}
+\index{getClausesJson@{getClausesJson}!gpusat::Visualization@{gpusat::Visualization}}
+\doxysubsubsection{\texorpdfstring{getClausesJson()}{getClausesJson()}}
+{\footnotesize\ttfamily Json\+::\+Value gpusat\+::\+Visualization\+::get\+Clauses\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classgpusat_1_1_visualization_a144d3c4292e447443c5829913de1f0e5}\label{classgpusat_1_1_visualization_a144d3c4292e447443c5829913de1f0e5}} 
+\index{gpusat::Visualization@{gpusat::Visualization}!getFilename@{getFilename}}
+\index{getFilename@{getFilename}!gpusat::Visualization@{gpusat::Visualization}}
+\doxysubsubsection{\texorpdfstring{getFilename()}{getFilename()}}
+{\footnotesize\ttfamily std\+::string gpusat\+::\+Visualization\+::get\+Filename (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classgpusat_1_1_visualization_a775289fa51e1bacd9c7d5a7906159826}\label{classgpusat_1_1_visualization_a775289fa51e1bacd9c7d5a7906159826}} 
+\index{gpusat::Visualization@{gpusat::Visualization}!getTdTimeline@{getTdTimeline}}
+\index{getTdTimeline@{getTdTimeline}!gpusat::Visualization@{gpusat::Visualization}}
+\doxysubsubsection{\texorpdfstring{getTdTimeline()}{getTdTimeline()}}
+{\footnotesize\ttfamily Json\+::\+Value gpusat\+::\+Visualization\+::get\+Td\+Timeline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classgpusat_1_1_visualization_a8c22927f54be8c6acc574b0f9f9f72d5}\label{classgpusat_1_1_visualization_a8c22927f54be8c6acc574b0f9f9f72d5}} 
+\index{gpusat::Visualization@{gpusat::Visualization}!getTreeDecJson@{getTreeDecJson}}
+\index{getTreeDecJson@{getTreeDecJson}!gpusat::Visualization@{gpusat::Visualization}}
+\doxysubsubsection{\texorpdfstring{getTreeDecJson()}{getTreeDecJson()}}
+{\footnotesize\ttfamily Json\+::\+Value gpusat\+::\+Visualization\+::get\+Tree\+Dec\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classgpusat_1_1_visualization_af841b2d46c254ddd2c7dc9fe5c8814e6}\label{classgpusat_1_1_visualization_af841b2d46c254ddd2c7dc9fe5c8814e6}} 
+\index{gpusat::Visualization@{gpusat::Visualization}!getWriterBuilder@{getWriterBuilder}}
+\index{getWriterBuilder@{getWriterBuilder}!gpusat::Visualization@{gpusat::Visualization}}
+\doxysubsubsection{\texorpdfstring{getWriterBuilder()}{getWriterBuilder()}}
+{\footnotesize\ttfamily Json\+::\+Stream\+Writer\+Builder $\ast$ gpusat\+::\+Visualization\+::get\+Writer\+Builder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Referenced by test\+Json().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classgpusat_1_1_visualization_af841b2d46c254ddd2c7dc9fe5c8814e6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_visualization_a9c947b84d850f20947ee459854c31251}\label{classgpusat_1_1_visualization_a9c947b84d850f20947ee459854c31251}} 
+\index{gpusat::Visualization@{gpusat::Visualization}!isEnabled@{isEnabled}}
+\index{isEnabled@{isEnabled}!gpusat::Visualization@{gpusat::Visualization}}
+\doxysubsubsection{\texorpdfstring{isEnabled()}{isEnabled()}}
+{\footnotesize\ttfamily bool gpusat\+::\+Visualization\+::is\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Referenced by Visualization(), and write\+Json\+File().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgpusat_1_1_visualization_a9c947b84d850f20947ee459854c31251_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_visualization_ab4e903d8555a40d44ef98c09a39d8941}\label{classgpusat_1_1_visualization_ab4e903d8555a40d44ef98c09a39d8941}} 
+\index{gpusat::Visualization@{gpusat::Visualization}!tdTimelineAppend@{tdTimelineAppend}}
+\index{tdTimelineAppend@{tdTimelineAppend}!gpusat::Visualization@{gpusat::Visualization}}
+\doxysubsubsection{\texorpdfstring{tdTimelineAppend()}{tdTimelineAppend()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void gpusat\+::\+Visualization\+::td\+Timeline\+Append (\begin{DoxyParamCaption}\item[{std\+::vector$<$ cl\+\_\+long $>$}]{bag\+\_\+ids }\end{DoxyParamCaption})}
+
+Only append those bags as one array. Might even be only one bag. The behaviour with zero length is not implemented (yet). 
+
+References L\+O\+G\+G\+E\+R2.
+
+\mbox{\Hypertarget{classgpusat_1_1_visualization_aee01b172cd6c03b26143b1ae82193b9b}\label{classgpusat_1_1_visualization_aee01b172cd6c03b26143b1ae82193b9b}} 
+\index{gpusat::Visualization@{gpusat::Visualization}!tdTimelineAppend@{tdTimelineAppend}}
+\index{tdTimelineAppend@{tdTimelineAppend}!gpusat::Visualization@{gpusat::Visualization}}
+\doxysubsubsection{\texorpdfstring{tdTimelineAppend()}{tdTimelineAppend()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void gpusat\+::\+Visualization\+::td\+Timeline\+Append (\begin{DoxyParamCaption}\item[{std\+::vector$<$ cl\+\_\+long $>$}]{bag\+\_\+ids,  }\item[{\mbox{\hyperlink{structgpusat_1_1_table_lines}{Table\+Lines}}}]{tablelines,  }\item[{std\+::string const}]{toplabel = {\ttfamily \char`\"{}\char`\"{}},  }\item[{std\+::string const}]{bottomlabel = {\ttfamily \char`\"{}\char`\"{}},  }\item[{bool}]{transpose = {\ttfamily true} }\end{DoxyParamCaption})}
+
+bag\+\_\+ids\+: asserts not empty ~\newline
+
+\begin{DoxyItemize}
+\item if one\+: one (IF) solution found
+\item more\+: join solution found tablelines\+: all lines for the table toplabel\+: string to label the whole solution bottomlabel\+: string to summarize the solution transpose\+: whether the tablelines are rowfirst (true) or not. 
+\end{DoxyItemize}
+
+References gpusat\+::\+Bag\+Matrix\+::columns(), gpusat\+::\+Table\+Lines\+::headline, L\+O\+G\+G\+E\+R2, gpusat\+::\+Bag\+Matrix\+::rows(), gpusat\+::\+Table\+Lines\+::solutions, and gpusat\+::\+Table\+Lines\+::total\+Sol.
+
+
+
+Referenced by gpusat\+::\+Solver\+::solve\+Problem().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classgpusat_1_1_visualization_aee01b172cd6c03b26143b1ae82193b9b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgpusat_1_1_visualization_aee01b172cd6c03b26143b1ae82193b9b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_visualization_a52f199ac61c2f13e748aa312765528ea}\label{classgpusat_1_1_visualization_a52f199ac61c2f13e748aa312765528ea}} 
+\index{gpusat::Visualization@{gpusat::Visualization}!testJson@{testJson}}
+\index{testJson@{testJson}!gpusat::Visualization@{gpusat::Visualization}}
+\doxysubsubsection{\texorpdfstring{testJson()}{testJson()}}
+{\footnotesize\ttfamily void gpusat\+::\+Visualization\+::test\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+References get\+Writer\+Builder(), and write\+Json\+To\+Stdout().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classgpusat_1_1_visualization_a52f199ac61c2f13e748aa312765528ea_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_visualization_af628a778e4606cbd0c15b20b6e558816}\label{classgpusat_1_1_visualization_af628a778e4606cbd0c15b20b6e558816}} 
+\index{gpusat::Visualization@{gpusat::Visualization}!visuClauses@{visuClauses}}
+\index{visuClauses@{visuClauses}!gpusat::Visualization@{gpusat::Visualization}}
+\doxysubsubsection{\texorpdfstring{visuClauses()}{visuClauses()}}
+{\footnotesize\ttfamily void gpusat\+::\+Visualization\+::visu\+Clauses (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpusat_1_1satformula_type}{satformula\+Type}} $\ast$}]{sat }\end{DoxyParamCaption})}
+
+Save the clauses into the Visualization\+::clauses\+Json. Form\+: List\mbox{[}Dict\{I\+NT\+: List\mbox{[}Int\mbox{]}\}\mbox{]} Error if\+: sat formula is null or empty. 
+
+References gpusat\+::satformula\+Type\+::clauses.
+
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{classgpusat_1_1_visualization_af628a778e4606cbd0c15b20b6e558816_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_visualization_ace2a5d3b44bed0ad4a40d827373a5339}\label{classgpusat_1_1_visualization_ace2a5d3b44bed0ad4a40d827373a5339}} 
+\index{gpusat::Visualization@{gpusat::Visualization}!visuTreeDec@{visuTreeDec}}
+\index{visuTreeDec@{visuTreeDec}!gpusat::Visualization@{gpusat::Visualization}}
+\doxysubsubsection{\texorpdfstring{visuTreeDec()}{visuTreeDec()}}
+{\footnotesize\ttfamily void gpusat\+::\+Visualization\+::visu\+Tree\+Dec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpusat_1_1treedec_type}{treedec\+Type}} $\ast$}]{tree\+Dec }\end{DoxyParamCaption})}
+
+
+
+References gpusat\+::treedec\+Type\+::bags, gpusat\+::bag\+Type\+::edges, gpusat\+::bag\+Type\+::id, and gpusat\+::treedec\+Type\+::num\+Vars.
+
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{classgpusat_1_1_visualization_ace2a5d3b44bed0ad4a40d827373a5339_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_visualization_a81123313bcffe5cd041d3d3897f7d5d1}\label{classgpusat_1_1_visualization_a81123313bcffe5cd041d3d3897f7d5d1}} 
+\index{gpusat::Visualization@{gpusat::Visualization}!writeJsonFile@{writeJsonFile}}
+\index{writeJsonFile@{writeJsonFile}!gpusat::Visualization@{gpusat::Visualization}}
+\doxysubsubsection{\texorpdfstring{writeJsonFile()}{writeJsonFile()}}
+{\footnotesize\ttfamily void gpusat\+::\+Visualization\+::write\+Json\+File (\begin{DoxyParamCaption}\item[{bool}]{append = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+References is\+Enabled(), L\+O\+G\+G\+ER, and write\+Json\+To\+Stdout().
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classgpusat_1_1_visualization_a81123313bcffe5cd041d3d3897f7d5d1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{classgpusat_1_1_visualization_a81123313bcffe5cd041d3d3897f7d5d1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_visualization_a2a9d9571adc1b706bcdc2f1de26d2345}\label{classgpusat_1_1_visualization_a2a9d9571adc1b706bcdc2f1de26d2345}} 
+\index{gpusat::Visualization@{gpusat::Visualization}!writeJsonToStdout@{writeJsonToStdout}}
+\index{writeJsonToStdout@{writeJsonToStdout}!gpusat::Visualization@{gpusat::Visualization}}
+\doxysubsubsection{\texorpdfstring{writeJsonToStdout()}{writeJsonToStdout()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void gpusat\+::\+Visualization\+::write\+Json\+To\+Stdout (\begin{DoxyParamCaption}\item[{Json\+::\+Stream\+Writer\+::\+Factory const \&}]{factory,  }\item[{Json\+::\+Value const \&}]{value,  }\item[{Json\+::\+O\+Stream $\ast$}]{sout = {\ttfamily \&std\+:\+:cout} }\end{DoxyParamCaption})}
+
+
+
+Referenced by test\+Json(), write\+Json\+File(), and write\+Json\+To\+Stdout().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgpusat_1_1_visualization_a2a9d9571adc1b706bcdc2f1de26d2345_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_visualization_a67d917c287d6e6020ee8ca4f10a12221}\label{classgpusat_1_1_visualization_a67d917c287d6e6020ee8ca4f10a12221}} 
+\index{gpusat::Visualization@{gpusat::Visualization}!writeJsonToStdout@{writeJsonToStdout}}
+\index{writeJsonToStdout@{writeJsonToStdout}!gpusat::Visualization@{gpusat::Visualization}}
+\doxysubsubsection{\texorpdfstring{writeJsonToStdout()}{writeJsonToStdout()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void gpusat\+::\+Visualization\+::write\+Json\+To\+Stdout (\begin{DoxyParamCaption}\item[{Json\+::\+Value const \&}]{value,  }\item[{Json\+::\+O\+Stream $\ast$}]{sout = {\ttfamily \&std\+:\+:cout} }\end{DoxyParamCaption})}
+
+
+
+References write\+Json\+To\+Stdout().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classgpusat_1_1_visualization_a67d917c287d6e6020ee8ca4f10a12221_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{visualization_8h}{visualization.\+h}}\item 
+src/\mbox{\hyperlink{visualization_8cpp}{visualization.\+cpp}}\end{DoxyCompactItemize}

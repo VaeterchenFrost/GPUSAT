@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_visualization_8cpp">
+<title>src/visualization.cpp File Reference</title>
+<indexterm><primary>src/visualization.cpp</primary></indexterm>
+<programlisting>#include &lt;assert.h&gt;
+#include &lt;fstream&gt;
+#include &lt;gpusatutils.h&gt;
+#include &lt;iostream&gt;
+#include &lt;sstream&gt;
+#include &lt;types.h&gt;
+#include &lt;visualization.h&gt;
+</programlisting>Include dependency graph for visualization.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="visualization_8cpp__incl.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_namespacegpusat">gpusat</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_visualization_8cpp_1a4a7ef9950560b2fafc778bac6bcb039b">LOGGER</link>(x)   (std::cout &lt;&lt; &quot;LOGGING: &quot; &lt;&lt; x &lt;&lt; std::endl)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_visualization_8cpp_1abf785b912db37119d344680bc62be05e">LOGGER2</link>(x)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>TableLines <link linkend="_namespacegpusat_1ae780028fdecbf7e4891b55159b33f3c1">gpusat::solJson</link> (bagType node, dataStructure solutionType)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_visualization_8cpp_1a4a7ef9950560b2fafc778bac6bcb039b"/>    <section>
+    <title>LOGGER</title>
+<indexterm><primary>LOGGER</primary><secondary>visualization.cpp</secondary></indexterm>
+<indexterm><primary>visualization.cpp</primary><secondary>LOGGER</secondary></indexterm>
+<para><computeroutput>#define LOGGER( x)   (std::cout &lt;&lt; &quot;LOGGING: &quot; &lt;&lt; x &lt;&lt; std::endl)</computeroutput></para>    </section><anchor xml:id="_visualization_8cpp_1abf785b912db37119d344680bc62be05e"/>    <section>
+    <title>LOGGER2</title>
+<indexterm><primary>LOGGER2</primary><secondary>visualization.cpp</secondary></indexterm>
+<indexterm><primary>visualization.cpp</primary><secondary>LOGGER2</secondary></indexterm>
+<para><computeroutput>#define LOGGER2( x)</computeroutput></para></section>
+</section>
+</section>

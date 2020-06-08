@@ -1,0 +1,455 @@
+\hypertarget{classgpusat_1_1_solver}{}\doxysection{gpusat\+::Solver Class Reference}
+\label{classgpusat_1_1_solver}\index{gpusat::Solver@{gpusat::Solver}}
+
+
+{\ttfamily \#include $<$solver.\+h$>$}
+
+
+
+Collaboration diagram for gpusat\+::Solver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgpusat_1_1_solver__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgpusat_1_1_solver_ad0da6d218b0f10f1ea7ec93328251f2c}{Solver}} (cl\+::\+Context \&context\+\_\+, cl\+::\+Command\+Queue \&queue\+\_\+, cl\+::\+Program \&program\+\_\+, cl\+\_\+long memory\+Size\+\_\+, cl\+\_\+long max\+Memory\+Buffer\+\_\+, \mbox{\hyperlink{namespacegpusat_aa2c9537dea3bac582074032171a42ece}{data\+Structure}} solution\+Type\+\_\+, cl\+\_\+long max\+Bag\+\_\+, bool verbose\+\_\+, \mbox{\hyperlink{classgpusat_1_1_graphoutput}{Graphoutput}} $\ast$graphoutput\+\_\+, \mbox{\hyperlink{classgpusat_1_1_visualization}{Visualization}} $\ast$visualization\+\_\+)
+\item 
+void \mbox{\hyperlink{classgpusat_1_1_solver_ae0fed660431502c4ff23b011de6207ca}{solve\+Problem}} (\mbox{\hyperlink{structgpusat_1_1treedec_type}{treedec\+Type}} \&decomp, \mbox{\hyperlink{structgpusat_1_1satformula_type}{satformula\+Type}} \&formula, \mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} \&node, \mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} \&pnode, \mbox{\hyperlink{namespacegpusat_a0992fa8d26c155d150e9f38f2f48f894}{node\+Type}} last\+Node)
+\begin{DoxyCompactList}\small\item\em Solves the sat formula with a given decomposition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgpusat_1_1_graphoutput}{Graphoutput}} $\ast$ \mbox{\hyperlink{classgpusat_1_1_solver_a12f1fd52fab31a81b122b390d492d5ab}{graphoutput}}
+\item 
+cl\+\_\+long \mbox{\hyperlink{classgpusat_1_1_solver_ab90015acfdc00e872945b37fd640e0e1}{is\+Sat}} = 1
+\item 
+cl\+\_\+long \mbox{\hyperlink{classgpusat_1_1_solver_a9d7f00f61d980b2df203bc7060ddbda6}{max\+Bag}} = 0
+\item 
+cl\+\_\+long \mbox{\hyperlink{classgpusat_1_1_solver_ad6cf2fc8d36e8f74833030edabb538ca}{max\+Memory\+Buffer}} = 0
+\item 
+cl\+\_\+long \mbox{\hyperlink{classgpusat_1_1_solver_ac09bff4a419f6c7e9a1235021afa101e}{max\+Table\+Size}} = 0
+\item 
+cl\+\_\+long \mbox{\hyperlink{classgpusat_1_1_solver_a022a143d145ef806783ce358536cd81d}{num\+Introduce\+Forget}} = 0
+\item 
+cl\+\_\+long \mbox{\hyperlink{classgpusat_1_1_solver_ad92354c4b8a388f11c4325e7cf7d2e8b}{num\+Join}} = 0
+\item 
+\mbox{\hyperlink{namespacegpusat_aa2c9537dea3bac582074032171a42ece}{data\+Structure}} \mbox{\hyperlink{classgpusat_1_1_solver_a398107b6b00d8f1c5e05720221e29536}{solution\+Type}} = \mbox{\hyperlink{namespacegpusat_aa2c9537dea3bac582074032171a42eceac0f8e24cf041639c4fc457ebec9490eb}{data\+Structure\+::\+T\+R\+EE}}
+\item 
+bool \mbox{\hyperlink{classgpusat_1_1_solver_ae7295184458334b8fbe754bac2659f0e}{verbose}} = false
+\item 
+\mbox{\hyperlink{classgpusat_1_1_visualization}{Visualization}} $\ast$ \mbox{\hyperlink{classgpusat_1_1_solver_a968a41550472d9605bdf4daba3c3031c}{visualization}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classgpusat_1_1_solver_acec22223ccb8d99855775e71031c9719}{clean\+Tree}} (\mbox{\hyperlink{structgpusat_1_1tree_type}{tree\+Type}} \&table, cl\+\_\+long size, cl\+\_\+long num\+Vars, \mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} \&node, cl\+\_\+long next\+Size)
+\item 
+void \mbox{\hyperlink{classgpusat_1_1_solver_aeb736ac16e820137d6d0898960336783}{combine\+Tree}} (\mbox{\hyperlink{structgpusat_1_1tree_type}{tree\+Type}} \&to, \mbox{\hyperlink{structgpusat_1_1tree_type}{tree\+Type}} \&from, cl\+\_\+long num\+Vars)
+\item 
+void \mbox{\hyperlink{classgpusat_1_1_solver_a40781bade0390fd7802658d5b3c545b9}{solve\+Introduce\+Forget}} (\mbox{\hyperlink{structgpusat_1_1satformula_type}{satformula\+Type}} \&formula, \mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} \&pnode, \mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} \&node, \mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} \&cnode, bool leaf, \mbox{\hyperlink{namespacegpusat_a0992fa8d26c155d150e9f38f2f48f894}{node\+Type}} next\+Node)
+\item 
+void \mbox{\hyperlink{classgpusat_1_1_solver_a023194e12a492df6c89aa6d85e133875}{solve\+Join}} (\mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} \&node, \mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} \&edge1, \mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} \&edge2, \mbox{\hyperlink{structgpusat_1_1satformula_type}{satformula\+Type}} \&formula, \mbox{\hyperlink{namespacegpusat_a0992fa8d26c155d150e9f38f2f48f894}{node\+Type}} next\+Node)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+cl\+::\+Context \& \mbox{\hyperlink{classgpusat_1_1_solver_aefd785c01f25da5496e97aba18052062}{context}}
+\item 
+cl\+\_\+long \mbox{\hyperlink{classgpusat_1_1_solver_aaa51ccdd29ad77a9de503bcc4f0ed0fb}{memory\+Size}}
+\item 
+cl\+::\+Program \& \mbox{\hyperlink{classgpusat_1_1_solver_a61cf5914da279ca43a2700c18e9cda53}{program}}
+\item 
+cl\+::\+Command\+Queue \& \mbox{\hyperlink{classgpusat_1_1_solver_abe26799798e17e545d72b21cdd8409c0}{queue}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Organizes the process of solving a sat problem in the given context. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classgpusat_1_1_solver_ad0da6d218b0f10f1ea7ec93328251f2c}\label{classgpusat_1_1_solver_ad0da6d218b0f10f1ea7ec93328251f2c}} 
+\index{gpusat::Solver@{gpusat::Solver}!Solver@{Solver}}
+\index{Solver@{Solver}!gpusat::Solver@{gpusat::Solver}}
+\doxysubsubsection{\texorpdfstring{Solver()}{Solver()}}
+{\footnotesize\ttfamily gpusat\+::\+Solver\+::\+Solver (\begin{DoxyParamCaption}\item[{cl\+::\+Context \&}]{context\+\_\+,  }\item[{cl\+::\+Command\+Queue \&}]{queue\+\_\+,  }\item[{cl\+::\+Program \&}]{program\+\_\+,  }\item[{cl\+\_\+long}]{memory\+Size\+\_\+,  }\item[{cl\+\_\+long}]{max\+Memory\+Buffer\+\_\+,  }\item[{\mbox{\hyperlink{namespacegpusat_aa2c9537dea3bac582074032171a42ece}{data\+Structure}}}]{solution\+Type\+\_\+,  }\item[{cl\+\_\+long}]{max\+Bag\+\_\+,  }\item[{bool}]{verbose\+\_\+,  }\item[{\mbox{\hyperlink{classgpusat_1_1_graphoutput}{Graphoutput}} $\ast$}]{graphoutput\+\_\+,  }\item[{\mbox{\hyperlink{classgpusat_1_1_visualization}{Visualization}} $\ast$}]{visualization\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em context\+\_\+} & the given context as hardware \\
+\hline
+{\em queue\+\_\+} & \\
+\hline
+{\em program\+\_\+} & \\
+\hline
+{\em memory\+Size\+\_\+} & \\
+\hline
+{\em max\+Memory\+Buffer\+\_\+} & \\
+\hline
+{\em solution\+Type\+\_\+} & \\
+\hline
+{\em max\+Bag\+\_\+} & \\
+\hline
+{\em verbose\+\_\+} & \\
+\hline
+{\em graphoutput\+\_\+} & \\
+\hline
+{\em visualization\+\_\+} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classgpusat_1_1_solver_acec22223ccb8d99855775e71031c9719}\label{classgpusat_1_1_solver_acec22223ccb8d99855775e71031c9719}} 
+\index{gpusat::Solver@{gpusat::Solver}!cleanTree@{cleanTree}}
+\index{cleanTree@{cleanTree}!gpusat::Solver@{gpusat::Solver}}
+\doxysubsubsection{\texorpdfstring{cleanTree()}{cleanTree()}}
+{\footnotesize\ttfamily void gpusat\+::\+Solver\+::clean\+Tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpusat_1_1tree_type}{tree\+Type}} \&}]{table,  }\item[{cl\+\_\+long}]{size,  }\item[{cl\+\_\+long}]{num\+Vars,  }\item[{\mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} \&}]{node,  }\item[{cl\+\_\+long}]{next\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & \\
+\hline
+{\em size} & \\
+\hline
+{\em num\+Vars} & \\
+\hline
+{\em node} & \\
+\hline
+\end{DoxyParams}
+
+
+References context, gpusat\+::tree\+Type\+::elements, gpusat\+::bag\+Type\+::exponent, gpusat\+::tree\+Type\+::max\+Id, gpusat\+::tree\+Type\+::min\+Id, gpusat\+::tree\+Type\+::num\+Solutions, program, queue, and gpusat\+::tree\+Type\+::size.
+
+
+
+Referenced by solve\+Join().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgpusat_1_1_solver_acec22223ccb8d99855775e71031c9719_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_solver_aeb736ac16e820137d6d0898960336783}\label{classgpusat_1_1_solver_aeb736ac16e820137d6d0898960336783}} 
+\index{gpusat::Solver@{gpusat::Solver}!combineTree@{combineTree}}
+\index{combineTree@{combineTree}!gpusat::Solver@{gpusat::Solver}}
+\doxysubsubsection{\texorpdfstring{combineTree()}{combineTree()}}
+{\footnotesize\ttfamily void gpusat\+::\+Solver\+::combine\+Tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpusat_1_1tree_type}{tree\+Type}} \&}]{to,  }\item[{\mbox{\hyperlink{structgpusat_1_1tree_type}{tree\+Type}} \&}]{from,  }\item[{cl\+\_\+long}]{num\+Vars }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em to} & \\
+\hline
+{\em from} & \\
+\hline
+{\em num\+Vars} & \\
+\hline
+\end{DoxyParams}
+
+
+References context, gpusat\+::tree\+Type\+::elements, gpusat\+::tree\+Type\+::max\+Id, gpusat\+::tree\+Type\+::min\+Id, gpusat\+::tree\+Type\+::num\+Solutions, program, queue, and gpusat\+::tree\+Type\+::size.
+
+
+
+Referenced by solve\+Introduce\+Forget(), and solve\+Join().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgpusat_1_1_solver_aeb736ac16e820137d6d0898960336783_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_solver_a40781bade0390fd7802658d5b3c545b9}\label{classgpusat_1_1_solver_a40781bade0390fd7802658d5b3c545b9}} 
+\index{gpusat::Solver@{gpusat::Solver}!solveIntroduceForget@{solveIntroduceForget}}
+\index{solveIntroduceForget@{solveIntroduceForget}!gpusat::Solver@{gpusat::Solver}}
+\doxysubsubsection{\texorpdfstring{solveIntroduceForget()}{solveIntroduceForget()}}
+{\footnotesize\ttfamily void gpusat\+::\+Solver\+::solve\+Introduce\+Forget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpusat_1_1satformula_type}{satformula\+Type}} \&}]{formula,  }\item[{\mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} \&}]{pnode,  }\item[{\mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} \&}]{node,  }\item[{\mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} \&}]{cnode,  }\item[{bool}]{leaf,  }\item[{\mbox{\hyperlink{namespacegpusat_a0992fa8d26c155d150e9f38f2f48f894}{node\+Type}}}]{next\+Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+function to solve an introduce forget node
+
+
+\begin{DoxyParams}{Parameters}
+{\em formula} & the sat formula \\
+\hline
+{\em pnode} & the parent of the current node \\
+\hline
+{\em node} & the current node \\
+\hline
+{\em cnode} & the child of the current node \\
+\hline
+{\em leaf} & indicates that the current node is a leaf node \\
+\hline
+\end{DoxyParams}
+
+
+References gpusat\+::\+A\+R\+R\+AY, gpusat\+::bag\+Type\+::bags, gpusat\+::satformula\+Type\+::clauses, combine\+Tree(), gpusat\+::comp\+Vars(), context, gpusat\+::bag\+Type\+::correction, gpusat\+::tree\+Type\+::elements, gpusat\+::bag\+Type\+::exponent, gpusat\+::bag\+Type\+::id, gpusat\+::\+I\+N\+T\+R\+O\+D\+U\+C\+E\+F\+O\+R\+G\+ET, is\+Sat, gpusat\+::\+J\+O\+IN, max\+Bag, gpusat\+::tree\+Type\+::max\+Id, max\+Memory\+Buffer, gpusat\+::bag\+Type\+::max\+Size, max\+Table\+Size, memory\+Size, gpusat\+::tree\+Type\+::min\+Id, num\+Introduce\+Forget, gpusat\+::tree\+Type\+::num\+Solutions, gpusat\+::satformula\+Type\+::num\+Weights, gpusat\+::printbag\+Type(), program, queue, gpusat\+::tree\+Type\+::size, gpusat\+::bag\+Type\+::solution, solution\+Type, gpusat\+::\+T\+R\+EE, gpusat\+::bag\+Type\+::variables, gpusat\+::satformula\+Type\+::variable\+Weights, and verbose.
+
+
+
+Referenced by solve\+Problem().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgpusat_1_1_solver_a40781bade0390fd7802658d5b3c545b9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgpusat_1_1_solver_a40781bade0390fd7802658d5b3c545b9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_solver_a023194e12a492df6c89aa6d85e133875}\label{classgpusat_1_1_solver_a023194e12a492df6c89aa6d85e133875}} 
+\index{gpusat::Solver@{gpusat::Solver}!solveJoin@{solveJoin}}
+\index{solveJoin@{solveJoin}!gpusat::Solver@{gpusat::Solver}}
+\doxysubsubsection{\texorpdfstring{solveJoin()}{solveJoin()}}
+{\footnotesize\ttfamily void gpusat\+::\+Solver\+::solve\+Join (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} \&}]{node,  }\item[{\mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} \&}]{edge1,  }\item[{\mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} \&}]{edge2,  }\item[{\mbox{\hyperlink{structgpusat_1_1satformula_type}{satformula\+Type}} \&}]{formula,  }\item[{\mbox{\hyperlink{namespacegpusat_a0992fa8d26c155d150e9f38f2f48f894}{node\+Type}}}]{next\+Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+function to solve a join node
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & the node to save the solutions in \\
+\hline
+{\em edge1} & the first child node \\
+\hline
+{\em edge2} & the second child node \\
+\hline
+{\em formula} & the sat formula \\
+\hline
+\end{DoxyParams}
+
+
+References gpusat\+::\+A\+R\+R\+AY, gpusat\+::bag\+Type\+::bags, clean\+Tree(), combine\+Tree(), context, gpusat\+::bag\+Type\+::correction, gpusat\+::tree\+Type\+::elements, gpusat\+::bag\+Type\+::exponent, gpusat\+::\+I\+N\+T\+R\+O\+D\+U\+C\+E\+F\+O\+R\+G\+ET, is\+Sat, gpusat\+::\+J\+O\+IN, max\+Bag, gpusat\+::tree\+Type\+::max\+Id, max\+Memory\+Buffer, gpusat\+::bag\+Type\+::max\+Size, max\+Table\+Size, memory\+Size, gpusat\+::tree\+Type\+::min\+Id, num\+Join, gpusat\+::tree\+Type\+::num\+Solutions, gpusat\+::satformula\+Type\+::num\+Weights, program, queue, gpusat\+::tree\+Type\+::size, gpusat\+::bag\+Type\+::solution, solution\+Type, gpusat\+::\+T\+R\+EE, gpusat\+::bag\+Type\+::variables, and gpusat\+::satformula\+Type\+::variable\+Weights.
+
+
+
+Referenced by solve\+Problem().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgpusat_1_1_solver_a023194e12a492df6c89aa6d85e133875_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgpusat_1_1_solver_a023194e12a492df6c89aa6d85e133875_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_solver_ae0fed660431502c4ff23b011de6207ca}\label{classgpusat_1_1_solver_ae0fed660431502c4ff23b011de6207ca}} 
+\index{gpusat::Solver@{gpusat::Solver}!solveProblem@{solveProblem}}
+\index{solveProblem@{solveProblem}!gpusat::Solver@{gpusat::Solver}}
+\doxysubsubsection{\texorpdfstring{solveProblem()}{solveProblem()}}
+{\footnotesize\ttfamily void gpusat\+::\+Solver\+::solve\+Problem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpusat_1_1treedec_type}{treedec\+Type}} \&}]{decomp,  }\item[{\mbox{\hyperlink{structgpusat_1_1satformula_type}{satformula\+Type}} \&}]{formula,  }\item[{\mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} \&}]{node,  }\item[{\mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} \&}]{pnode,  }\item[{\mbox{\hyperlink{namespacegpusat_a0992fa8d26c155d150e9f38f2f48f894}{node\+Type}}}]{last\+Node }\end{DoxyParamCaption})}
+
+
+
+Solves the sat formula with a given decomposition. 
+
+function to solve the sat problem
+
+
+\begin{DoxyParams}{Parameters}
+{\em decomp} & the tree decomposition \\
+\hline
+{\em formula} & the sat formula \\
+\hline
+{\em node} & the node to start from in the tree decompostion\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em decomp} & The decomposition of the \\
+\hline
+{\em formula} & The formula.\\
+\hline
+{\em node} & The node.\\
+\hline
+{\em pnode} & The pnode.\\
+\hline
+{\em last\+Node} & The last node.\\
+\hline
+\end{DoxyParams}
+
+
+References gpusat\+::bag\+Type\+::bags, gpusat\+::bag\+Type\+::edges, gpusat\+::tree\+Type\+::elements, gpusat\+::\+Graphoutput\+::graph\+Edge\+Set(), graphoutput, gpusat\+::bag\+Type\+::id, gpusat\+::\+I\+N\+T\+R\+O\+D\+U\+C\+E\+F\+O\+R\+G\+ET, gpusat\+::\+Graphoutput\+::is\+Enabled(), is\+Sat, gpusat\+::\+J\+O\+IN, gpusat\+::tree\+Type\+::max\+Id, gpusat\+::bag\+Type\+::max\+Size, gpusat\+::tree\+Type\+::min\+Id, gpusat\+::\+Graphoutput\+::node\+Bag(), gpusat\+::\+Graphoutput\+::node\+Join(), gpusat\+::tree\+Type\+::num\+Solutions, gpusat\+::printbag\+Type(), gpusat\+::tree\+Type\+::size, gpusat\+::sol\+Json(), gpusat\+::bag\+Type\+::solution, gpusat\+::solutiontable(), solution\+Type, solve\+Introduce\+Forget(), solve\+Join(), gpusat\+::\+Visualization\+::td\+Timeline\+Append(), gpusat\+::bag\+Type\+::variables, verbose, and visualization.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgpusat_1_1_solver_ae0fed660431502c4ff23b011de6207ca_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classgpusat_1_1_solver_aefd785c01f25da5496e97aba18052062}\label{classgpusat_1_1_solver_aefd785c01f25da5496e97aba18052062}} 
+\index{gpusat::Solver@{gpusat::Solver}!context@{context}}
+\index{context@{context}!gpusat::Solver@{gpusat::Solver}}
+\doxysubsubsection{\texorpdfstring{context}{context}}
+{\footnotesize\ttfamily cl\+::\+Context\& gpusat\+::\+Solver\+::context\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Referenced by clean\+Tree(), combine\+Tree(), solve\+Introduce\+Forget(), and solve\+Join().
+
+\mbox{\Hypertarget{classgpusat_1_1_solver_a12f1fd52fab31a81b122b390d492d5ab}\label{classgpusat_1_1_solver_a12f1fd52fab31a81b122b390d492d5ab}} 
+\index{gpusat::Solver@{gpusat::Solver}!graphoutput@{graphoutput}}
+\index{graphoutput@{graphoutput}!gpusat::Solver@{gpusat::Solver}}
+\doxysubsubsection{\texorpdfstring{graphoutput}{graphoutput}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classgpusat_1_1_graphoutput}{Graphoutput}}$\ast$ gpusat\+::\+Solver\+::graphoutput}
+
+
+
+Referenced by solve\+Problem().
+
+\mbox{\Hypertarget{classgpusat_1_1_solver_ab90015acfdc00e872945b37fd640e0e1}\label{classgpusat_1_1_solver_ab90015acfdc00e872945b37fd640e0e1}} 
+\index{gpusat::Solver@{gpusat::Solver}!isSat@{isSat}}
+\index{isSat@{isSat}!gpusat::Solver@{gpusat::Solver}}
+\doxysubsubsection{\texorpdfstring{isSat}{isSat}}
+{\footnotesize\ttfamily cl\+\_\+long gpusat\+::\+Solver\+::is\+Sat = 1}
+
+
+
+Referenced by solve\+Introduce\+Forget(), solve\+Join(), and solve\+Problem().
+
+\mbox{\Hypertarget{classgpusat_1_1_solver_a9d7f00f61d980b2df203bc7060ddbda6}\label{classgpusat_1_1_solver_a9d7f00f61d980b2df203bc7060ddbda6}} 
+\index{gpusat::Solver@{gpusat::Solver}!maxBag@{maxBag}}
+\index{maxBag@{maxBag}!gpusat::Solver@{gpusat::Solver}}
+\doxysubsubsection{\texorpdfstring{maxBag}{maxBag}}
+{\footnotesize\ttfamily cl\+\_\+long gpusat\+::\+Solver\+::max\+Bag = 0}
+
+
+
+Referenced by solve\+Introduce\+Forget(), and solve\+Join().
+
+\mbox{\Hypertarget{classgpusat_1_1_solver_ad6cf2fc8d36e8f74833030edabb538ca}\label{classgpusat_1_1_solver_ad6cf2fc8d36e8f74833030edabb538ca}} 
+\index{gpusat::Solver@{gpusat::Solver}!maxMemoryBuffer@{maxMemoryBuffer}}
+\index{maxMemoryBuffer@{maxMemoryBuffer}!gpusat::Solver@{gpusat::Solver}}
+\doxysubsubsection{\texorpdfstring{maxMemoryBuffer}{maxMemoryBuffer}}
+{\footnotesize\ttfamily cl\+\_\+long gpusat\+::\+Solver\+::max\+Memory\+Buffer = 0}
+
+
+
+Referenced by solve\+Introduce\+Forget(), and solve\+Join().
+
+\mbox{\Hypertarget{classgpusat_1_1_solver_ac09bff4a419f6c7e9a1235021afa101e}\label{classgpusat_1_1_solver_ac09bff4a419f6c7e9a1235021afa101e}} 
+\index{gpusat::Solver@{gpusat::Solver}!maxTableSize@{maxTableSize}}
+\index{maxTableSize@{maxTableSize}!gpusat::Solver@{gpusat::Solver}}
+\doxysubsubsection{\texorpdfstring{maxTableSize}{maxTableSize}}
+{\footnotesize\ttfamily cl\+\_\+long gpusat\+::\+Solver\+::max\+Table\+Size = 0}
+
+
+
+Referenced by main(), solve\+Introduce\+Forget(), and solve\+Join().
+
+\mbox{\Hypertarget{classgpusat_1_1_solver_aaa51ccdd29ad77a9de503bcc4f0ed0fb}\label{classgpusat_1_1_solver_aaa51ccdd29ad77a9de503bcc4f0ed0fb}} 
+\index{gpusat::Solver@{gpusat::Solver}!memorySize@{memorySize}}
+\index{memorySize@{memorySize}!gpusat::Solver@{gpusat::Solver}}
+\doxysubsubsection{\texorpdfstring{memorySize}{memorySize}}
+{\footnotesize\ttfamily cl\+\_\+long gpusat\+::\+Solver\+::memory\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Referenced by solve\+Introduce\+Forget(), and solve\+Join().
+
+\mbox{\Hypertarget{classgpusat_1_1_solver_a022a143d145ef806783ce358536cd81d}\label{classgpusat_1_1_solver_a022a143d145ef806783ce358536cd81d}} 
+\index{gpusat::Solver@{gpusat::Solver}!numIntroduceForget@{numIntroduceForget}}
+\index{numIntroduceForget@{numIntroduceForget}!gpusat::Solver@{gpusat::Solver}}
+\doxysubsubsection{\texorpdfstring{numIntroduceForget}{numIntroduceForget}}
+{\footnotesize\ttfamily cl\+\_\+long gpusat\+::\+Solver\+::num\+Introduce\+Forget = 0}
+
+
+
+Referenced by main(), and solve\+Introduce\+Forget().
+
+\mbox{\Hypertarget{classgpusat_1_1_solver_ad92354c4b8a388f11c4325e7cf7d2e8b}\label{classgpusat_1_1_solver_ad92354c4b8a388f11c4325e7cf7d2e8b}} 
+\index{gpusat::Solver@{gpusat::Solver}!numJoin@{numJoin}}
+\index{numJoin@{numJoin}!gpusat::Solver@{gpusat::Solver}}
+\doxysubsubsection{\texorpdfstring{numJoin}{numJoin}}
+{\footnotesize\ttfamily cl\+\_\+long gpusat\+::\+Solver\+::num\+Join = 0}
+
+
+
+Referenced by main(), and solve\+Join().
+
+\mbox{\Hypertarget{classgpusat_1_1_solver_a61cf5914da279ca43a2700c18e9cda53}\label{classgpusat_1_1_solver_a61cf5914da279ca43a2700c18e9cda53}} 
+\index{gpusat::Solver@{gpusat::Solver}!program@{program}}
+\index{program@{program}!gpusat::Solver@{gpusat::Solver}}
+\doxysubsubsection{\texorpdfstring{program}{program}}
+{\footnotesize\ttfamily cl\+::\+Program\& gpusat\+::\+Solver\+::program\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Referenced by clean\+Tree(), combine\+Tree(), solve\+Introduce\+Forget(), and solve\+Join().
+
+\mbox{\Hypertarget{classgpusat_1_1_solver_abe26799798e17e545d72b21cdd8409c0}\label{classgpusat_1_1_solver_abe26799798e17e545d72b21cdd8409c0}} 
+\index{gpusat::Solver@{gpusat::Solver}!queue@{queue}}
+\index{queue@{queue}!gpusat::Solver@{gpusat::Solver}}
+\doxysubsubsection{\texorpdfstring{queue}{queue}}
+{\footnotesize\ttfamily cl\+::\+Command\+Queue\& gpusat\+::\+Solver\+::queue\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Referenced by clean\+Tree(), combine\+Tree(), solve\+Introduce\+Forget(), and solve\+Join().
+
+\mbox{\Hypertarget{classgpusat_1_1_solver_a398107b6b00d8f1c5e05720221e29536}\label{classgpusat_1_1_solver_a398107b6b00d8f1c5e05720221e29536}} 
+\index{gpusat::Solver@{gpusat::Solver}!solutionType@{solutionType}}
+\index{solutionType@{solutionType}!gpusat::Solver@{gpusat::Solver}}
+\doxysubsubsection{\texorpdfstring{solutionType}{solutionType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacegpusat_aa2c9537dea3bac582074032171a42ece}{data\+Structure}} gpusat\+::\+Solver\+::solution\+Type = \mbox{\hyperlink{namespacegpusat_aa2c9537dea3bac582074032171a42eceac0f8e24cf041639c4fc457ebec9490eb}{data\+Structure\+::\+T\+R\+EE}}}
+
+
+
+Referenced by solve\+Introduce\+Forget(), solve\+Join(), and solve\+Problem().
+
+\mbox{\Hypertarget{classgpusat_1_1_solver_ae7295184458334b8fbe754bac2659f0e}\label{classgpusat_1_1_solver_ae7295184458334b8fbe754bac2659f0e}} 
+\index{gpusat::Solver@{gpusat::Solver}!verbose@{verbose}}
+\index{verbose@{verbose}!gpusat::Solver@{gpusat::Solver}}
+\doxysubsubsection{\texorpdfstring{verbose}{verbose}}
+{\footnotesize\ttfamily bool gpusat\+::\+Solver\+::verbose = false}
+
+
+
+Referenced by solve\+Introduce\+Forget(), and solve\+Problem().
+
+\mbox{\Hypertarget{classgpusat_1_1_solver_a968a41550472d9605bdf4daba3c3031c}\label{classgpusat_1_1_solver_a968a41550472d9605bdf4daba3c3031c}} 
+\index{gpusat::Solver@{gpusat::Solver}!visualization@{visualization}}
+\index{visualization@{visualization}!gpusat::Solver@{gpusat::Solver}}
+\doxysubsubsection{\texorpdfstring{visualization}{visualization}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classgpusat_1_1_visualization}{Visualization}}$\ast$ gpusat\+::\+Solver\+::visualization}
+
+
+
+Referenced by solve\+Problem().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{solver_8h}{solver.\+h}}\item 
+src/\mbox{\hyperlink{solver_8cpp}{solver.\+cpp}}\end{DoxyCompactItemize}

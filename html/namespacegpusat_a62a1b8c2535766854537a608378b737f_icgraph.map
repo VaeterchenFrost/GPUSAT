@@ -1,0 +1,4 @@
+<map id="gpusat::solutiontable" name="gpusat::solutiontable">
+<area shape="rect" id="node1" title="Generate a formatted stringoutput for a solved node with solutions." alt="" coords="243,5,385,32"/>
+<area shape="rect" id="node2" href="$classgpusat_1_1_solver.html#ae0fed660431502c4ff23b011de6207ca" title="Solves the sat formula with a given decomposition." alt="" coords="5,5,195,32"/>
+</map>

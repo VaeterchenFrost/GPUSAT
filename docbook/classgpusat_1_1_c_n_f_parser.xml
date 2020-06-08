@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classgpusat_1_1_c_n_f_parser">
+<title>gpusat::CNFParser Class Reference</title>
+<indexterm><primary>gpusat::CNFParser</primary></indexterm>
+<para>
+<computeroutput>#include &lt;gpusatparser.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classgpusat_1_1_c_n_f_parser_1a1d516813b9e1953588f3c053c98358a1">CNFParser</link> (bool weighted)</para>
+</listitem>
+            <listitem><para><link linkend="_structgpusat_1_1satformula_type">satformulaType</link> <link linkend="_classgpusat_1_1_c_n_f_parser_1a2373aa1870f6723404ed276c6cbf9d13">parseSatFormula</link> (std::string formula)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classgpusat_1_1_c_n_f_parser_1a1d516813b9e1953588f3c053c98358a1"/>    <section>
+    <title>CNFParser()</title>
+<indexterm><primary>CNFParser</primary><secondary>gpusat::CNFParser</secondary></indexterm>
+<indexterm><primary>gpusat::CNFParser</primary><secondary>CNFParser</secondary></indexterm>
+<para><computeroutput>gpusat::CNFParser::CNFParser (bool weighted)</computeroutput></para>
+<para>Constructor for an CNF parser.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>weighted</entry>
+                                <entry>
+<para>indicates if weights should be assiciated with literals </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classgpusat_1_1_c_n_f_parser_1a2373aa1870f6723404ed276c6cbf9d13"/>    <section>
+    <title>parseSatFormula()</title>
+<indexterm><primary>parseSatFormula</primary><secondary>gpusat::CNFParser</secondary></indexterm>
+<indexterm><primary>gpusat::CNFParser</primary><secondary>parseSatFormula</secondary></indexterm>
+<para><computeroutput><link linkend="_structgpusat_1_1satformula_type">satformulaType</link> gpusat::CNFParser::parseSatFormula (std::string formula)</computeroutput></para>
+<para>generates a sat formula from a given string</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>formula</entry>
+                                <entry>
+<para>the string representation of the sat formula </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the sat formula </para>
+</formalpara>
+</para>
+<para>
+References gpusat::satformulaType::numVars, gpusat::satformulaType::numWeights, and gpusat::satformulaType::variableWeights.</para>
+<para>
+Referenced by main().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_c_n_f_parser_a2373aa1870f6723404ed276c6cbf9d13_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+include/<link linkend="_gpusatparser_8h">gpusatparser.h</link>src/<link linkend="_gpusatparser_8cpp">gpusatparser.cpp</link></section>
+</section>

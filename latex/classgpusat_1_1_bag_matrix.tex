@@ -1,0 +1,98 @@
+\hypertarget{classgpusat_1_1_bag_matrix}{}\doxysection{gpusat\+::Bag\+Matrix Class Reference}
+\label{classgpusat_1_1_bag_matrix}\index{gpusat::BagMatrix@{gpusat::BagMatrix}}
+
+
+{\ttfamily \#include $<$visualization.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgpusat_1_1_bag_matrix_a3fb572769d5aaa784294588065aaa28f}{Bag\+Matrix}} ()
+\item 
+\mbox{\hyperlink{classgpusat_1_1_bag_matrix_a0cd1a0a593586eaba07ea6cd21026741}{Bag\+Matrix}} (size\+\_\+t \mbox{\hyperlink{classgpusat_1_1_bag_matrix_ae908b7136aee4cbca717608e45b79a87}{rows}}, size\+\_\+t cols)
+\item 
+size\+\_\+t \mbox{\hyperlink{classgpusat_1_1_bag_matrix_ac3ca0894fea2e196b1f80da4906920c3}{columns}} ()
+\item 
+cl\+\_\+long \& \mbox{\hyperlink{classgpusat_1_1_bag_matrix_a5ef505265371eaed5f56d0f60eef026d}{operator()}} (size\+\_\+t i, size\+\_\+t j)
+\item 
+cl\+\_\+long \mbox{\hyperlink{classgpusat_1_1_bag_matrix_a066deb0aec2976c7f2851c197787e133}{operator()}} (size\+\_\+t i, size\+\_\+t j) const
+\item 
+size\+\_\+t \mbox{\hyperlink{classgpusat_1_1_bag_matrix_ae908b7136aee4cbca717608e45b79a87}{rows}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for storing 2dim \textquotesingle{}ulong\textquotesingle{} values using vector and a 1dim memory layout. See \href{https://stackoverflow.com/a/2076668}{\texttt{ https\+://stackoverflow.\+com/a/2076668}} Example usage\+:
+
+\mbox{\hyperlink{classgpusat_1_1_bag_matrix}{Bag\+Matrix}} mygrid (5, 5); for (int r = 0; r $<$ mygrid.\+rows(); r++)\{ for (int c = 0; c $<$ mygrid.\+columns(); c++)\{ mygrid\mbox{[}r\mbox{]}\mbox{[}c\mbox{]} = r $\ast$ c; \} \} Print the array for (int r = 0; r $<$ mygrid.\+rows(); r++)\{ std\+::cout $<$$<$ std\+::hex $<$$<$ \&(mygrid\mbox{[}r\mbox{]}\mbox{[}0\mbox{]}) $<$$<$ std\+::dec; std\+::cout $<$$<$ \char`\"{}\+: \char`\"{}; for (int c = 0; c $<$ mygrid.\+columns(); c++)\{ std\+::cout $<$$<$ mygrid\mbox{[}r\mbox{]}\mbox{[}c\mbox{]} $<$$<$ \textquotesingle{} \textquotesingle{}; \} std\+::cout $<$$<$ std\+::endl; \} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classgpusat_1_1_bag_matrix_a0cd1a0a593586eaba07ea6cd21026741}\label{classgpusat_1_1_bag_matrix_a0cd1a0a593586eaba07ea6cd21026741}} 
+\index{gpusat::BagMatrix@{gpusat::BagMatrix}!BagMatrix@{BagMatrix}}
+\index{BagMatrix@{BagMatrix}!gpusat::BagMatrix@{gpusat::BagMatrix}}
+\doxysubsubsection{\texorpdfstring{BagMatrix()}{BagMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily gpusat\+::\+Bag\+Matrix\+::\+Bag\+Matrix (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{rows,  }\item[{size\+\_\+t}]{cols }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classgpusat_1_1_bag_matrix_a3fb572769d5aaa784294588065aaa28f}\label{classgpusat_1_1_bag_matrix_a3fb572769d5aaa784294588065aaa28f}} 
+\index{gpusat::BagMatrix@{gpusat::BagMatrix}!BagMatrix@{BagMatrix}}
+\index{BagMatrix@{BagMatrix}!gpusat::BagMatrix@{gpusat::BagMatrix}}
+\doxysubsubsection{\texorpdfstring{BagMatrix()}{BagMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily gpusat\+::\+Bag\+Matrix\+::\+Bag\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classgpusat_1_1_bag_matrix_ac3ca0894fea2e196b1f80da4906920c3}\label{classgpusat_1_1_bag_matrix_ac3ca0894fea2e196b1f80da4906920c3}} 
+\index{gpusat::BagMatrix@{gpusat::BagMatrix}!columns@{columns}}
+\index{columns@{columns}!gpusat::BagMatrix@{gpusat::BagMatrix}}
+\doxysubsubsection{\texorpdfstring{columns()}{columns()}}
+{\footnotesize\ttfamily size\+\_\+t gpusat\+::\+Bag\+Matrix\+::columns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Referenced by gpusat\+::sol\+Json(), and gpusat\+::\+Visualization\+::td\+Timeline\+Append().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgpusat_1_1_bag_matrix_ac3ca0894fea2e196b1f80da4906920c3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgpusat_1_1_bag_matrix_a5ef505265371eaed5f56d0f60eef026d}\label{classgpusat_1_1_bag_matrix_a5ef505265371eaed5f56d0f60eef026d}} 
+\index{gpusat::BagMatrix@{gpusat::BagMatrix}!operator()@{operator()}}
+\index{operator()@{operator()}!gpusat::BagMatrix@{gpusat::BagMatrix}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily cl\+\_\+long \& gpusat\+::\+Bag\+Matrix\+::operator() (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i,  }\item[{size\+\_\+t}]{j }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classgpusat_1_1_bag_matrix_a066deb0aec2976c7f2851c197787e133}\label{classgpusat_1_1_bag_matrix_a066deb0aec2976c7f2851c197787e133}} 
+\index{gpusat::BagMatrix@{gpusat::BagMatrix}!operator()@{operator()}}
+\index{operator()@{operator()}!gpusat::BagMatrix@{gpusat::BagMatrix}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily cl\+\_\+long gpusat\+::\+Bag\+Matrix\+::operator() (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i,  }\item[{size\+\_\+t}]{j }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classgpusat_1_1_bag_matrix_ae908b7136aee4cbca717608e45b79a87}\label{classgpusat_1_1_bag_matrix_ae908b7136aee4cbca717608e45b79a87}} 
+\index{gpusat::BagMatrix@{gpusat::BagMatrix}!rows@{rows}}
+\index{rows@{rows}!gpusat::BagMatrix@{gpusat::BagMatrix}}
+\doxysubsubsection{\texorpdfstring{rows()}{rows()}}
+{\footnotesize\ttfamily size\+\_\+t gpusat\+::\+Bag\+Matrix\+::rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Referenced by gpusat\+::\+Visualization\+::td\+Timeline\+Append().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgpusat_1_1_bag_matrix_ae908b7136aee4cbca717608e45b79a87_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{visualization_8h}{visualization.\+h}}\item 
+src/\mbox{\hyperlink{visualization_8cpp}{visualization.\+cpp}}\end{DoxyCompactItemize}

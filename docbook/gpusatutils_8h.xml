@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_gpusatutils_8h">
+<title>include/gpusatutils.h File Reference</title>
+<indexterm><primary>include/gpusatutils.h</primary></indexterm>
+<programlisting>#include &lt;CL/cl_platform.h&gt;
+#include &lt;chrono&gt;
+#include &lt;iostream&gt;
+#include &lt;sstream&gt;
+#include &lt;types.h&gt;
+#include &lt;vector&gt;
+</programlisting>Include dependency graph for gpusatutils.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="gpusatutils_8h__incl.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="gpusatutils_8h__dep__incl.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_namespacegpusat">gpusat</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>cl_double <link linkend="_namespacegpusat_1a607a57fced4760564963f4c707f28449">gpusat::getCount</link> (cl_long id, cl_long *tree, cl_long numVars)</para>
+</listitem>
+            <listitem><para>long long int <link linkend="_namespacegpusat_1a9fab9fd5dc1462ce9508314fc13d3be2">gpusat::getTime</link> ()</para>
+</listitem>
+            <listitem><para>std::ostream &amp; <link linkend="_namespacegpusat_1ac905553f8d2449bbc3ab7cc2138dc47c">gpusat::operator&lt;&lt;</link> (std::ostream &amp;os, const dataStructure ds)</para>
+</listitem>
+            <listitem><para>std::ostream &amp; <link linkend="_namespacegpusat_1abb6472078bea74414c52c4f95b7685b1">gpusat::operator&lt;&lt;</link> (std::ostream &amp;os, const std::vector&lt; bagType * &gt; vec)</para>
+</listitem>
+            <listitem><para>std::ostream &amp; <link linkend="_namespacegpusat_1a7a133b7de343b7f8f1b5147cb151c24f">gpusat::operator&lt;&lt;</link> (std::ostream &amp;os, const std::vector&lt; cl_long &gt; vec)</para>
+</listitem>
+            <listitem><para>void <link linkend="_namespacegpusat_1aa117816b931264c9a291041b047d0c56">gpusat::printbagType</link> (bagType *bag, std::ostream &amp;stream, int depth=0)</para>
+
+<para>print information for a bag in the tree decomposition </para>
+</listitem>
+            <listitem><para>void <link linkend="_namespacegpusat_1ad9dbd68f848e49cd275592926da7a27c">gpusat::printtreedecType</link> (treedecType *dec, std::ostream &amp;stream)</para>
+
+<para>print a tree decomposition </para>
+</listitem>
+            <listitem><para>void <link linkend="_namespacegpusat_1adb6dc0944ae7b3c703b74287e26d6038">gpusat::printtreeType</link> (treeType *tree, std::ostream &amp;stream, size_t size, int depth=0)</para>
+</listitem>
+            <listitem><para>std::string <link linkend="_namespacegpusat_1a62a1b8c2535766854537a608378b737f">gpusat::solutiontable</link> (bagType node, dataStructure solutionType)</para>
+
+<para>Generate a formatted stringoutput for a solved node with solutions. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

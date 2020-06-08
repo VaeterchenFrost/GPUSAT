@@ -1,0 +1,50 @@
+\hypertarget{gpusatutils_8h}{}\doxysection{include/gpusatutils.h File Reference}
+\label{gpusatutils_8h}\index{include/gpusatutils.h@{include/gpusatutils.h}}
+{\ttfamily \#include $<$C\+L/cl\+\_\+platform.\+h$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$types.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for gpusatutils.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gpusatutils_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gpusatutils_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacegpusat}{gpusat}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+cl\+\_\+double \mbox{\hyperlink{namespacegpusat_a607a57fced4760564963f4c707f28449}{gpusat\+::get\+Count}} (cl\+\_\+long id, cl\+\_\+long $\ast$tree, cl\+\_\+long num\+Vars)
+\item 
+long long int \mbox{\hyperlink{namespacegpusat_a9fab9fd5dc1462ce9508314fc13d3be2}{gpusat\+::get\+Time}} ()
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespacegpusat_ac905553f8d2449bbc3ab7cc2138dc47c}{gpusat\+::operator$<$$<$}} (std\+::ostream \&os, const data\+Structure ds)
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespacegpusat_abb6472078bea74414c52c4f95b7685b1}{gpusat\+::operator$<$$<$}} (std\+::ostream \&os, const std\+::vector$<$ bag\+Type $\ast$ $>$ vec)
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespacegpusat_a7a133b7de343b7f8f1b5147cb151c24f}{gpusat\+::operator$<$$<$}} (std\+::ostream \&os, const std\+::vector$<$ cl\+\_\+long $>$ vec)
+\item 
+void \mbox{\hyperlink{namespacegpusat_aa117816b931264c9a291041b047d0c56}{gpusat\+::printbag\+Type}} (bag\+Type $\ast$bag, std\+::ostream \&stream, int depth=0)
+\begin{DoxyCompactList}\small\item\em print information for a bag in the tree decomposition \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacegpusat_ad9dbd68f848e49cd275592926da7a27c}{gpusat\+::printtreedec\+Type}} (treedec\+Type $\ast$dec, std\+::ostream \&stream)
+\begin{DoxyCompactList}\small\item\em print a tree decomposition \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacegpusat_adb6dc0944ae7b3c703b74287e26d6038}{gpusat\+::printtree\+Type}} (tree\+Type $\ast$tree, std\+::ostream \&stream, size\+\_\+t size, int depth=0)
+\item 
+std\+::string \mbox{\hyperlink{namespacegpusat_a62a1b8c2535766854537a608378b737f}{gpusat\+::solutiontable}} (bag\+Type node, data\+Structure solution\+Type)
+\begin{DoxyCompactList}\small\item\em Generate a formatted stringoutput for a solved node with solutions. \end{DoxyCompactList}\end{DoxyCompactItemize}

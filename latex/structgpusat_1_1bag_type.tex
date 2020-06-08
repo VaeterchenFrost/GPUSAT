@@ -1,0 +1,131 @@
+\hypertarget{structgpusat_1_1bag_type}{}\doxysection{gpusat\+::bag\+Type Struct Reference}
+\label{structgpusat_1_1bag_type}\index{gpusat::bagType@{gpusat::bagType}}
+
+
+type for a bag in the tree decomposition  
+
+
+
+
+{\ttfamily \#include $<$types.\+h$>$}
+
+
+
+Collaboration diagram for gpusat\+::bag\+Type\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structgpusat_1_1bag_type__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+cl\+\_\+long \mbox{\hyperlink{structgpusat_1_1bag_type_ad7614a6047440b39627b93f0d9d10f28}{bags}} = 0
+\item 
+cl\+\_\+long \mbox{\hyperlink{structgpusat_1_1bag_type_a45e2893595bdc5f3f5ba02fe3602edd1}{correction}} = 0
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} $\ast$ $>$ \mbox{\hyperlink{structgpusat_1_1bag_type_aea8755e100c946abf0a54aa1df1f37a0}{edges}}
+\item 
+cl\+\_\+long \mbox{\hyperlink{structgpusat_1_1bag_type_aa2254cc6f28bce34476ca1aeaa9b8fa1}{exponent}} = 0
+\item 
+cl\+\_\+long \mbox{\hyperlink{structgpusat_1_1bag_type_a80da84fe62383989c1966895a9719cdc}{id}} = 0
+\item 
+cl\+\_\+long \mbox{\hyperlink{structgpusat_1_1bag_type_a4209fefe5bb0f9a742ec0e5b4b19d919}{max\+Size}} = 0
+\item 
+\mbox{\hyperlink{structgpusat_1_1tree_type}{tree\+Type}} $\ast$ \mbox{\hyperlink{structgpusat_1_1bag_type_a0e24ac4f19e4d96b5b5ae585b2256b5e}{solution}}
+\item 
+std\+::vector$<$ cl\+\_\+long $>$ \mbox{\hyperlink{structgpusat_1_1bag_type_a33b305d1b0b90e1a8e3e3a4d8e6d5db7}{variables}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+type for a bag in the tree decomposition 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structgpusat_1_1bag_type_ad7614a6047440b39627b93f0d9d10f28}\label{structgpusat_1_1bag_type_ad7614a6047440b39627b93f0d9d10f28}} 
+\index{gpusat::bagType@{gpusat::bagType}!bags@{bags}}
+\index{bags@{bags}!gpusat::bagType@{gpusat::bagType}}
+\doxysubsubsection{\texorpdfstring{bags}{bags}}
+{\footnotesize\ttfamily cl\+\_\+long gpusat\+::bag\+Type\+::bags = 0}
+
+
+
+Referenced by gpusat\+::printbag\+Type(), gpusat\+::\+Solver\+::solve\+Introduce\+Forget(), gpusat\+::\+Solver\+::solve\+Join(), and gpusat\+::\+Solver\+::solve\+Problem().
+
+\mbox{\Hypertarget{structgpusat_1_1bag_type_a45e2893595bdc5f3f5ba02fe3602edd1}\label{structgpusat_1_1bag_type_a45e2893595bdc5f3f5ba02fe3602edd1}} 
+\index{gpusat::bagType@{gpusat::bagType}!correction@{correction}}
+\index{correction@{correction}!gpusat::bagType@{gpusat::bagType}}
+\doxysubsubsection{\texorpdfstring{correction}{correction}}
+{\footnotesize\ttfamily cl\+\_\+long gpusat\+::bag\+Type\+::correction = 0}
+
+
+
+Referenced by gpusat\+::printbag\+Type(), gpusat\+::sol\+Json(), gpusat\+::solutiontable(), gpusat\+::\+Solver\+::solve\+Introduce\+Forget(), and gpusat\+::\+Solver\+::solve\+Join().
+
+\mbox{\Hypertarget{structgpusat_1_1bag_type_aea8755e100c946abf0a54aa1df1f37a0}\label{structgpusat_1_1bag_type_aea8755e100c946abf0a54aa1df1f37a0}} 
+\index{gpusat::bagType@{gpusat::bagType}!edges@{edges}}
+\index{edges@{edges}!gpusat::bagType@{gpusat::bagType}}
+\doxysubsubsection{\texorpdfstring{edges}{edges}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structgpusat_1_1bag_type}{bag\+Type}} $\ast$$>$ gpusat\+::bag\+Type\+::edges}
+
+
+
+Referenced by gpusat\+::\+Preprocessor\+::preprocess\+Decomp(), gpusat\+::printbag\+Type(), gpusat\+::\+Solver\+::solve\+Problem(), and gpusat\+::\+Visualization\+::visu\+Tree\+Dec().
+
+\mbox{\Hypertarget{structgpusat_1_1bag_type_aa2254cc6f28bce34476ca1aeaa9b8fa1}\label{structgpusat_1_1bag_type_aa2254cc6f28bce34476ca1aeaa9b8fa1}} 
+\index{gpusat::bagType@{gpusat::bagType}!exponent@{exponent}}
+\index{exponent@{exponent}!gpusat::bagType@{gpusat::bagType}}
+\doxysubsubsection{\texorpdfstring{exponent}{exponent}}
+{\footnotesize\ttfamily cl\+\_\+long gpusat\+::bag\+Type\+::exponent = 0}
+
+
+
+Referenced by gpusat\+::\+Solver\+::clean\+Tree(), gpusat\+::printbag\+Type(), gpusat\+::\+Solver\+::solve\+Introduce\+Forget(), and gpusat\+::\+Solver\+::solve\+Join().
+
+\mbox{\Hypertarget{structgpusat_1_1bag_type_a80da84fe62383989c1966895a9719cdc}\label{structgpusat_1_1bag_type_a80da84fe62383989c1966895a9719cdc}} 
+\index{gpusat::bagType@{gpusat::bagType}!id@{id}}
+\index{id@{id}!gpusat::bagType@{gpusat::bagType}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily cl\+\_\+long gpusat\+::bag\+Type\+::id = 0}
+
+
+
+Referenced by gpusat\+::comp\+Treed\+Type(), gpusat\+::printbag\+Type(), gpusat\+::\+Solver\+::solve\+Introduce\+Forget(), gpusat\+::\+Solver\+::solve\+Problem(), and gpusat\+::\+Visualization\+::visu\+Tree\+Dec().
+
+\mbox{\Hypertarget{structgpusat_1_1bag_type_a4209fefe5bb0f9a742ec0e5b4b19d919}\label{structgpusat_1_1bag_type_a4209fefe5bb0f9a742ec0e5b4b19d919}} 
+\index{gpusat::bagType@{gpusat::bagType}!maxSize@{maxSize}}
+\index{maxSize@{maxSize}!gpusat::bagType@{gpusat::bagType}}
+\doxysubsubsection{\texorpdfstring{maxSize}{maxSize}}
+{\footnotesize\ttfamily cl\+\_\+long gpusat\+::bag\+Type\+::max\+Size = 0}
+
+
+
+Referenced by gpusat\+::\+Solver\+::solve\+Introduce\+Forget(), gpusat\+::\+Solver\+::solve\+Join(), and gpusat\+::\+Solver\+::solve\+Problem().
+
+\mbox{\Hypertarget{structgpusat_1_1bag_type_a0e24ac4f19e4d96b5b5ae585b2256b5e}\label{structgpusat_1_1bag_type_a0e24ac4f19e4d96b5b5ae585b2256b5e}} 
+\index{gpusat::bagType@{gpusat::bagType}!solution@{solution}}
+\index{solution@{solution}!gpusat::bagType@{gpusat::bagType}}
+\doxysubsubsection{\texorpdfstring{solution}{solution}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structgpusat_1_1tree_type}{tree\+Type}}$\ast$ gpusat\+::bag\+Type\+::solution}
+
+
+
+Referenced by gpusat\+::sol\+Json(), gpusat\+::solutiontable(), gpusat\+::\+Solver\+::solve\+Introduce\+Forget(), gpusat\+::\+Solver\+::solve\+Join(), and gpusat\+::\+Solver\+::solve\+Problem().
+
+\mbox{\Hypertarget{structgpusat_1_1bag_type_a33b305d1b0b90e1a8e3e3a4d8e6d5db7}\label{structgpusat_1_1bag_type_a33b305d1b0b90e1a8e3e3a4d8e6d5db7}} 
+\index{gpusat::bagType@{gpusat::bagType}!variables@{variables}}
+\index{variables@{variables}!gpusat::bagType@{gpusat::bagType}}
+\doxysubsubsection{\texorpdfstring{variables}{variables}}
+{\footnotesize\ttfamily std\+::vector$<$cl\+\_\+long$>$ gpusat\+::bag\+Type\+::variables}
+
+
+
+Referenced by main(), gpusat\+::\+Preprocessor\+::preprocess\+Decomp(), gpusat\+::printbag\+Type(), gpusat\+::sol\+Json(), gpusat\+::solutiontable(), gpusat\+::\+Solver\+::solve\+Introduce\+Forget(), gpusat\+::\+Solver\+::solve\+Join(), and gpusat\+::\+Solver\+::solve\+Problem().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{types_8h}{types.\+h}}\end{DoxyCompactItemize}

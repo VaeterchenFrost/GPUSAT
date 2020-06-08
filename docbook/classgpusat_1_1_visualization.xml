@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classgpusat_1_1_visualization">
+<title>gpusat::Visualization Class Reference</title>
+<indexterm><primary>gpusat::Visualization</primary></indexterm>
+<para>
+<computeroutput>#include &lt;visualization.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classgpusat_1_1_visualization_1a6b548a71d2aaf1d49fa2caac8a7484a9">Visualization</link> (std::string filename)</para>
+</listitem>
+            <listitem><para>Json::Value <link linkend="_classgpusat_1_1_visualization_1af4588f3aa3763db2cab198b3e35f5540">getClausesJson</link> ()</para>
+</listitem>
+            <listitem><para>std::string <link linkend="_classgpusat_1_1_visualization_1a144d3c4292e447443c5829913de1f0e5">getFilename</link> ()</para>
+</listitem>
+            <listitem><para>Json::Value <link linkend="_classgpusat_1_1_visualization_1a775289fa51e1bacd9c7d5a7906159826">getTdTimeline</link> ()</para>
+</listitem>
+            <listitem><para>Json::Value <link linkend="_classgpusat_1_1_visualization_1a8c22927f54be8c6acc574b0f9f9f72d5">getTreeDecJson</link> ()</para>
+</listitem>
+            <listitem><para>Json::StreamWriterBuilder * <link linkend="_classgpusat_1_1_visualization_1af841b2d46c254ddd2c7dc9fe5c8814e6">getWriterBuilder</link> ()</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classgpusat_1_1_visualization_1a9c947b84d850f20947ee459854c31251">isEnabled</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classgpusat_1_1_visualization_1ab4e903d8555a40d44ef98c09a39d8941">tdTimelineAppend</link> (std::vector&lt; cl_long &gt; bag_ids)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classgpusat_1_1_visualization_1aee01b172cd6c03b26143b1ae82193b9b">tdTimelineAppend</link> (std::vector&lt; cl_long &gt; bag_ids, <link linkend="_structgpusat_1_1_table_lines">TableLines</link> tablelines, std::string const toplabel=&quot;&quot;, std::string const bottomlabel=&quot;&quot;, bool transpose=true)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classgpusat_1_1_visualization_1a52f199ac61c2f13e748aa312765528ea">testJson</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classgpusat_1_1_visualization_1af628a778e4606cbd0c15b20b6e558816">visuClauses</link> (<link linkend="_structgpusat_1_1satformula_type">satformulaType</link> *sat)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classgpusat_1_1_visualization_1ace2a5d3b44bed0ad4a40d827373a5339">visuTreeDec</link> (<link linkend="_structgpusat_1_1treedec_type">treedecType</link> *treeDec)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classgpusat_1_1_visualization_1a81123313bcffe5cd041d3d3897f7d5d1">writeJsonFile</link> (bool append=false)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classgpusat_1_1_visualization_1a2a9d9571adc1b706bcdc2f1de26d2345">writeJsonToStdout</link> (Json::StreamWriter::Factory const &amp;factory, Json::Value const &amp;value, Json::OStream *sout=&amp;std::cout)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classgpusat_1_1_visualization_1a67d917c287d6e6020ee8ca4f10a12221">writeJsonToStdout</link> (Json::Value const &amp;value, Json::OStream *sout=&amp;std::cout)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classgpusat_1_1_visualization_1a6b548a71d2aaf1d49fa2caac8a7484a9"/>    <section>
+    <title>Visualization()</title>
+<indexterm><primary>Visualization</primary><secondary>gpusat::Visualization</secondary></indexterm>
+<indexterm><primary>gpusat::Visualization</primary><secondary>Visualization</secondary></indexterm>
+<para><computeroutput>gpusat::Visualization::Visualization (std::string filename)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+References isEnabled().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_visualization_a6b548a71d2aaf1d49fa2caac8a7484a9_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classgpusat_1_1_visualization_1af4588f3aa3763db2cab198b3e35f5540"/>    <section>
+    <title>getClausesJson()</title>
+<indexterm><primary>getClausesJson</primary><secondary>gpusat::Visualization</secondary></indexterm>
+<indexterm><primary>gpusat::Visualization</primary><secondary>getClausesJson</secondary></indexterm>
+<para><computeroutput>Json::Value gpusat::Visualization::getClausesJson ( )<computeroutput>[inline]</computeroutput></computeroutput></para>    </section><anchor xml:id="_classgpusat_1_1_visualization_1a144d3c4292e447443c5829913de1f0e5"/>    <section>
+    <title>getFilename()</title>
+<indexterm><primary>getFilename</primary><secondary>gpusat::Visualization</secondary></indexterm>
+<indexterm><primary>gpusat::Visualization</primary><secondary>getFilename</secondary></indexterm>
+<para><computeroutput>std::string gpusat::Visualization::getFilename ( )<computeroutput>[inline]</computeroutput></computeroutput></para>    </section><anchor xml:id="_classgpusat_1_1_visualization_1a775289fa51e1bacd9c7d5a7906159826"/>    <section>
+    <title>getTdTimeline()</title>
+<indexterm><primary>getTdTimeline</primary><secondary>gpusat::Visualization</secondary></indexterm>
+<indexterm><primary>gpusat::Visualization</primary><secondary>getTdTimeline</secondary></indexterm>
+<para><computeroutput>Json::Value gpusat::Visualization::getTdTimeline ( )<computeroutput>[inline]</computeroutput></computeroutput></para>    </section><anchor xml:id="_classgpusat_1_1_visualization_1a8c22927f54be8c6acc574b0f9f9f72d5"/>    <section>
+    <title>getTreeDecJson()</title>
+<indexterm><primary>getTreeDecJson</primary><secondary>gpusat::Visualization</secondary></indexterm>
+<indexterm><primary>gpusat::Visualization</primary><secondary>getTreeDecJson</secondary></indexterm>
+<para><computeroutput>Json::Value gpusat::Visualization::getTreeDecJson ( )<computeroutput>[inline]</computeroutput></computeroutput></para>    </section><anchor xml:id="_classgpusat_1_1_visualization_1af841b2d46c254ddd2c7dc9fe5c8814e6"/>    <section>
+    <title>getWriterBuilder()</title>
+<indexterm><primary>getWriterBuilder</primary><secondary>gpusat::Visualization</secondary></indexterm>
+<indexterm><primary>gpusat::Visualization</primary><secondary>getWriterBuilder</secondary></indexterm>
+<para><computeroutput>Json::StreamWriterBuilder * gpusat::Visualization::getWriterBuilder ( )</computeroutput></para><para>
+Referenced by testJson().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_visualization_af841b2d46c254ddd2c7dc9fe5c8814e6_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_visualization_1a9c947b84d850f20947ee459854c31251"/>    <section>
+    <title>isEnabled()</title>
+<indexterm><primary>isEnabled</primary><secondary>gpusat::Visualization</secondary></indexterm>
+<indexterm><primary>gpusat::Visualization</primary><secondary>isEnabled</secondary></indexterm>
+<para><computeroutput>bool gpusat::Visualization::isEnabled ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Referenced by Visualization(), and writeJsonFile().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_visualization_a9c947b84d850f20947ee459854c31251_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_visualization_1ab4e903d8555a40d44ef98c09a39d8941"/>    <section>
+    <title>tdTimelineAppend()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>tdTimelineAppend</primary><secondary>gpusat::Visualization</secondary></indexterm>
+<indexterm><primary>gpusat::Visualization</primary><secondary>tdTimelineAppend</secondary></indexterm>
+<para><computeroutput>void gpusat::Visualization::tdTimelineAppend (std::vector&lt; cl_long &gt; bag_ids)</computeroutput></para>
+<para>Only append those bags as one array. Might even be only one bag. The behaviour with zero length is not implemented (yet). </para>
+<para>
+References LOGGER2.</para>
+    </section><anchor xml:id="_classgpusat_1_1_visualization_1aee01b172cd6c03b26143b1ae82193b9b"/>    <section>
+    <title>tdTimelineAppend()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>tdTimelineAppend</primary><secondary>gpusat::Visualization</secondary></indexterm>
+<indexterm><primary>gpusat::Visualization</primary><secondary>tdTimelineAppend</secondary></indexterm>
+<para><computeroutput>void gpusat::Visualization::tdTimelineAppend (std::vector&lt; cl_long &gt; bag_ids, <link linkend="_structgpusat_1_1_table_lines">TableLines</link> tablelines, std::string const toplabel = <computeroutput>&quot;&quot;</computeroutput>
+, std::string const bottomlabel = <computeroutput>&quot;&quot;</computeroutput>
+, bool transpose = <computeroutput>true</computeroutput>
+)</computeroutput></para>
+<para>bag_ids: asserts not empty 
+<literallayout>&#160;&#xa;</literallayout>
+<itemizedlist>
+<listitem>
+<para>if one: one (IF) solution found</para>
+</listitem><listitem>
+<para>more: join solution found tablelines: all lines for the table toplabel: string to label the whole solution bottomlabel: string to summarize the solution transpose: whether the tablelines are rowfirst (true) or not. </para>
+</listitem></itemizedlist>
+</para>
+<para>
+References gpusat::BagMatrix::columns(), gpusat::TableLines::headline, LOGGER2, gpusat::BagMatrix::rows(), gpusat::TableLines::solutions, and gpusat::TableLines::totalSol.</para>
+<para>
+Referenced by gpusat::Solver::solveProblem().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_visualization_aee01b172cd6c03b26143b1ae82193b9b_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_visualization_aee01b172cd6c03b26143b1ae82193b9b_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_visualization_1a52f199ac61c2f13e748aa312765528ea"/>    <section>
+    <title>testJson()</title>
+<indexterm><primary>testJson</primary><secondary>gpusat::Visualization</secondary></indexterm>
+<indexterm><primary>gpusat::Visualization</primary><secondary>testJson</secondary></indexterm>
+<para><computeroutput>void gpusat::Visualization::testJson ( )</computeroutput></para><para>
+References getWriterBuilder(), and writeJsonToStdout().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_visualization_a52f199ac61c2f13e748aa312765528ea_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_visualization_1af628a778e4606cbd0c15b20b6e558816"/>    <section>
+    <title>visuClauses()</title>
+<indexterm><primary>visuClauses</primary><secondary>gpusat::Visualization</secondary></indexterm>
+<indexterm><primary>gpusat::Visualization</primary><secondary>visuClauses</secondary></indexterm>
+<para><computeroutput>void gpusat::Visualization::visuClauses (<link linkend="_structgpusat_1_1satformula_type">satformulaType</link> * sat)</computeroutput></para>
+<para>Save the clauses into the Visualization::clausesJson. Form: List[Dict{INT: List[Int]}] Error if: sat formula is null or empty. </para>
+<para>
+References gpusat::satformulaType::clauses.</para>
+<para>
+Referenced by main().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_visualization_af628a778e4606cbd0c15b20b6e558816_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_visualization_1ace2a5d3b44bed0ad4a40d827373a5339"/>    <section>
+    <title>visuTreeDec()</title>
+<indexterm><primary>visuTreeDec</primary><secondary>gpusat::Visualization</secondary></indexterm>
+<indexterm><primary>gpusat::Visualization</primary><secondary>visuTreeDec</secondary></indexterm>
+<para><computeroutput>void gpusat::Visualization::visuTreeDec (<link linkend="_structgpusat_1_1treedec_type">treedecType</link> * treeDec)</computeroutput></para><para>
+References gpusat::treedecType::bags, gpusat::bagType::edges, gpusat::bagType::id, and gpusat::treedecType::numVars.</para>
+<para>
+Referenced by main().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_visualization_ace2a5d3b44bed0ad4a40d827373a5339_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_visualization_1a81123313bcffe5cd041d3d3897f7d5d1"/>    <section>
+    <title>writeJsonFile()</title>
+<indexterm><primary>writeJsonFile</primary><secondary>gpusat::Visualization</secondary></indexterm>
+<indexterm><primary>gpusat::Visualization</primary><secondary>writeJsonFile</secondary></indexterm>
+<para><computeroutput>void gpusat::Visualization::writeJsonFile (bool append = <computeroutput>false</computeroutput>
+)</computeroutput></para><para>
+References isEnabled(), LOGGER, and writeJsonToStdout().</para>
+<para>
+Referenced by main().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_visualization_a81123313bcffe5cd041d3d3897f7d5d1_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_visualization_a81123313bcffe5cd041d3d3897f7d5d1_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_visualization_1a2a9d9571adc1b706bcdc2f1de26d2345"/>    <section>
+    <title>writeJsonToStdout()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>writeJsonToStdout</primary><secondary>gpusat::Visualization</secondary></indexterm>
+<indexterm><primary>gpusat::Visualization</primary><secondary>writeJsonToStdout</secondary></indexterm>
+<para><computeroutput>void gpusat::Visualization::writeJsonToStdout (Json::StreamWriter::Factory const &amp; factory, Json::Value const &amp; value, Json::OStream * sout = <computeroutput>&amp;std::cout</computeroutput>
+)</computeroutput></para><para>
+Referenced by testJson(), writeJsonFile(), and writeJsonToStdout().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_visualization_a2a9d9571adc1b706bcdc2f1de26d2345_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_visualization_1a67d917c287d6e6020ee8ca4f10a12221"/>    <section>
+    <title>writeJsonToStdout()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>writeJsonToStdout</primary><secondary>gpusat::Visualization</secondary></indexterm>
+<indexterm><primary>gpusat::Visualization</primary><secondary>writeJsonToStdout</secondary></indexterm>
+<para><computeroutput>void gpusat::Visualization::writeJsonToStdout (Json::Value const &amp; value, Json::OStream * sout = <computeroutput>&amp;std::cout</computeroutput>
+)</computeroutput></para><para>
+References writeJsonToStdout().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_visualization_a67d917c287d6e6020ee8ca4f10a12221_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+include/<link linkend="_visualization_8h">visualization.h</link>src/<link linkend="_visualization_8cpp">visualization.cpp</link></section>
+</section>

@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classgpusat_1_1_bag_matrix">
+<title>gpusat::BagMatrix Class Reference</title>
+<indexterm><primary>gpusat::BagMatrix</primary></indexterm>
+<para>
+<computeroutput>#include &lt;visualization.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classgpusat_1_1_bag_matrix_1a3fb572769d5aaa784294588065aaa28f">BagMatrix</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classgpusat_1_1_bag_matrix_1a0cd1a0a593586eaba07ea6cd21026741">BagMatrix</link> (size_t <link linkend="_classgpusat_1_1_bag_matrix_1ae908b7136aee4cbca717608e45b79a87">rows</link>, size_t cols)</para>
+</listitem>
+            <listitem><para>size_t <link linkend="_classgpusat_1_1_bag_matrix_1ac3ca0894fea2e196b1f80da4906920c3">columns</link> ()</para>
+</listitem>
+            <listitem><para>cl_long &amp; <link linkend="_classgpusat_1_1_bag_matrix_1a5ef505265371eaed5f56d0f60eef026d">operator()</link> (size_t i, size_t j)</para>
+</listitem>
+            <listitem><para>cl_long <link linkend="_classgpusat_1_1_bag_matrix_1a066deb0aec2976c7f2851c197787e133">operator()</link> (size_t i, size_t j) const</para>
+</listitem>
+            <listitem><para>size_t <link linkend="_classgpusat_1_1_bag_matrix_1ae908b7136aee4cbca717608e45b79a87">rows</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Class for storing 2dim &apos;ulong&apos; values using vector and a 1dim memory layout. See <link xlink:href="https://stackoverflow.com/a/2076668">https://stackoverflow.com/a/2076668</link> Example usage:</para>
+
+<para><link linkend="_classgpusat_1_1_bag_matrix">BagMatrix</link> mygrid (5, 5); for (int r = 0; r &lt; mygrid.rows(); r++){ for (int c = 0; c &lt; mygrid.columns(); c++){ mygrid[r][c] = r * c; } } Print the array for (int r = 0; r &lt; mygrid.rows(); r++){ std::cout &lt;&lt; std::hex &lt;&lt; &amp;(mygrid[r][0]) &lt;&lt; std::dec; std::cout &lt;&lt; &quot;: &quot;; for (int c = 0; c &lt; mygrid.columns(); c++){ std::cout &lt;&lt; mygrid[r][c] &lt;&lt; &apos; &apos;; } std::cout &lt;&lt; std::endl; } </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classgpusat_1_1_bag_matrix_1a0cd1a0a593586eaba07ea6cd21026741"/>    <section>
+    <title>BagMatrix()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>BagMatrix</primary><secondary>gpusat::BagMatrix</secondary></indexterm>
+<indexterm><primary>gpusat::BagMatrix</primary><secondary>BagMatrix</secondary></indexterm>
+<para><computeroutput>gpusat::BagMatrix::BagMatrix (size_t rows, size_t cols)</computeroutput></para>    </section><anchor xml:id="_classgpusat_1_1_bag_matrix_1a3fb572769d5aaa784294588065aaa28f"/>    <section>
+    <title>BagMatrix()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>BagMatrix</primary><secondary>gpusat::BagMatrix</secondary></indexterm>
+<indexterm><primary>gpusat::BagMatrix</primary><secondary>BagMatrix</secondary></indexterm>
+<para><computeroutput>gpusat::BagMatrix::BagMatrix ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classgpusat_1_1_bag_matrix_1ac3ca0894fea2e196b1f80da4906920c3"/>    <section>
+    <title>columns()</title>
+<indexterm><primary>columns</primary><secondary>gpusat::BagMatrix</secondary></indexterm>
+<indexterm><primary>gpusat::BagMatrix</primary><secondary>columns</secondary></indexterm>
+<para><computeroutput>size_t gpusat::BagMatrix::columns ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Referenced by gpusat::solJson(), and gpusat::Visualization::tdTimelineAppend().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_bag_matrix_ac3ca0894fea2e196b1f80da4906920c3_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_bag_matrix_1a5ef505265371eaed5f56d0f60eef026d"/>    <section>
+    <title>operator()()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator()</primary><secondary>gpusat::BagMatrix</secondary></indexterm>
+<indexterm><primary>gpusat::BagMatrix</primary><secondary>operator()</secondary></indexterm>
+<para><computeroutput>cl_long &amp; gpusat::BagMatrix::operator() (size_t i, size_t j)</computeroutput></para>    </section><anchor xml:id="_classgpusat_1_1_bag_matrix_1a066deb0aec2976c7f2851c197787e133"/>    <section>
+    <title>operator()()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator()</primary><secondary>gpusat::BagMatrix</secondary></indexterm>
+<indexterm><primary>gpusat::BagMatrix</primary><secondary>operator()</secondary></indexterm>
+<para><computeroutput>cl_long gpusat::BagMatrix::operator() (size_t i, size_t j) const</computeroutput></para>    </section><anchor xml:id="_classgpusat_1_1_bag_matrix_1ae908b7136aee4cbca717608e45b79a87"/>    <section>
+    <title>rows()</title>
+<indexterm><primary>rows</primary><secondary>gpusat::BagMatrix</secondary></indexterm>
+<indexterm><primary>gpusat::BagMatrix</primary><secondary>rows</secondary></indexterm>
+<para><computeroutput>size_t gpusat::BagMatrix::rows ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Referenced by gpusat::Visualization::tdTimelineAppend().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_bag_matrix_ae908b7136aee4cbca717608e45b79a87_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+include/<link linkend="_visualization_8h">visualization.h</link>src/<link linkend="_visualization_8cpp">visualization.cpp</link></section>
+</section>

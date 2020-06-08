@@ -1,0 +1,12 @@
+digraph "gpusat::treedecType"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="gpusat::treedecType",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="type for saving a tree decomposition"];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" width\nnumb\nnumVars" ];
+  Node2 [label="cl_long",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" bags" ];
+  Node3 [label="vector\< gpusat::bagType \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

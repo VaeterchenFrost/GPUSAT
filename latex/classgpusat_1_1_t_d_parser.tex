@@ -1,0 +1,99 @@
+\hypertarget{classgpusat_1_1_t_d_parser}{}\doxysection{gpusat\+::T\+D\+Parser Class Reference}
+\label{classgpusat_1_1_t_d_parser}\index{gpusat::TDParser@{gpusat::TDParser}}
+
+
+{\ttfamily \#include $<$gpusatparser.\+h$>$}
+
+
+
+Collaboration diagram for gpusat\+::T\+D\+Parser\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classgpusat_1_1_t_d_parser__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgpusat_1_1_t_d_parser_a4d4127fe0b50cf07418ba280873c13ba}{T\+D\+Parser}} ()
+\item 
+\mbox{\hyperlink{structgpusat_1_1treedec_type}{treedec\+Type}} \mbox{\hyperlink{classgpusat_1_1_t_d_parser_af5ee31072b0c9f1ddfdd032e93a7d8d4}{parse\+Tree\+Decomp}} (std\+::string graph, \mbox{\hyperlink{structgpusat_1_1satformula_type}{satformula\+Type}} \&formula)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+cl\+\_\+double \mbox{\hyperlink{classgpusat_1_1_t_d_parser_a425ada4407877d5b968beb30312743ed}{default\+Weight}} = 1.\+0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classgpusat_1_1_t_d_parser_a4d4127fe0b50cf07418ba280873c13ba}\label{classgpusat_1_1_t_d_parser_a4d4127fe0b50cf07418ba280873c13ba}} 
+\index{gpusat::TDParser@{gpusat::TDParser}!TDParser@{TDParser}}
+\index{TDParser@{TDParser}!gpusat::TDParser@{gpusat::TDParser}}
+\doxysubsubsection{\texorpdfstring{TDParser()}{TDParser()}}
+{\footnotesize\ttfamily gpusat\+::\+T\+D\+Parser\+::\+T\+D\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classgpusat_1_1_t_d_parser_af5ee31072b0c9f1ddfdd032e93a7d8d4}\label{classgpusat_1_1_t_d_parser_af5ee31072b0c9f1ddfdd032e93a7d8d4}} 
+\index{gpusat::TDParser@{gpusat::TDParser}!parseTreeDecomp@{parseTreeDecomp}}
+\index{parseTreeDecomp@{parseTreeDecomp}!gpusat::TDParser@{gpusat::TDParser}}
+\doxysubsubsection{\texorpdfstring{parseTreeDecomp()}{parseTreeDecomp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structgpusat_1_1treedec_type}{treedec\+Type}} gpusat\+::\+T\+D\+Parser\+::parse\+Tree\+Decomp (\begin{DoxyParamCaption}\item[{std\+::string}]{graph,  }\item[{\mbox{\hyperlink{structgpusat_1_1satformula_type}{satformula\+Type}} \&}]{formula }\end{DoxyParamCaption})}
+
+generates a treedec from a given string
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & the string representation of the tree decomposition \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the tree decomposition 
+\end{DoxyReturn}
+
+
+References gpusat\+::treedec\+Type\+::bags, gpusat\+::comp\+Treed\+Type(), and gpusat\+::treedec\+Type\+::numb.
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgpusat_1_1_t_d_parser_af5ee31072b0c9f1ddfdd032e93a7d8d4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{classgpusat_1_1_t_d_parser_af5ee31072b0c9f1ddfdd032e93a7d8d4_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classgpusat_1_1_t_d_parser_a425ada4407877d5b968beb30312743ed}\label{classgpusat_1_1_t_d_parser_a425ada4407877d5b968beb30312743ed}} 
+\index{gpusat::TDParser@{gpusat::TDParser}!defaultWeight@{defaultWeight}}
+\index{defaultWeight@{defaultWeight}!gpusat::TDParser@{gpusat::TDParser}}
+\doxysubsubsection{\texorpdfstring{defaultWeight}{defaultWeight}}
+{\footnotesize\ttfamily cl\+\_\+double gpusat\+::\+T\+D\+Parser\+::default\+Weight = 1.\+0}
+
+
+
+Referenced by main().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{gpusatparser_8h}{gpusatparser.\+h}}\item 
+src/\mbox{\hyperlink{gpusatparser_8cpp}{gpusatparser.\+cpp}}\end{DoxyCompactItemize}

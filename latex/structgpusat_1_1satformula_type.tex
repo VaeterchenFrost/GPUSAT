@@ -1,0 +1,107 @@
+\hypertarget{structgpusat_1_1satformula_type}{}\doxysection{gpusat\+::satformula\+Type Struct Reference}
+\label{structgpusat_1_1satformula_type}\index{gpusat::satformulaType@{gpusat::satformulaType}}
+
+
+type for saving the sat formula  
+
+
+
+
+{\ttfamily \#include $<$types.\+h$>$}
+
+
+
+Collaboration diagram for gpusat\+::satformula\+Type\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structgpusat_1_1satformula_type__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ cl\+\_\+long $>$ $>$ \mbox{\hyperlink{structgpusat_1_1satformula_type_aee5fa477a9bfe8b901273ce8aab08494}{clauses}}
+\item 
+std\+::vector$<$ cl\+\_\+long $>$ \mbox{\hyperlink{structgpusat_1_1satformula_type_aa645e3a7596745fe08320d7bdbc7b3aa}{facts}}
+\item 
+cl\+\_\+long \mbox{\hyperlink{structgpusat_1_1satformula_type_a5244ffbca87927c67fdb8d960da4421b}{num\+Vars}} = 0
+\item 
+cl\+\_\+long \mbox{\hyperlink{structgpusat_1_1satformula_type_a0e11bd6e70dfbd455618dd1adb99b042}{num\+Weights}} = 0
+\item 
+bool \mbox{\hyperlink{structgpusat_1_1satformula_type_a37cfd86e7ea86aaae40f1aa04006276f}{unsat}} = false
+\item 
+cl\+\_\+double $\ast$ \mbox{\hyperlink{structgpusat_1_1satformula_type_a2c9685e2a25cd9d7eeeba34cdcd1371f}{variable\+Weights}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+type for saving the sat formula 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structgpusat_1_1satformula_type_aee5fa477a9bfe8b901273ce8aab08494}\label{structgpusat_1_1satformula_type_aee5fa477a9bfe8b901273ce8aab08494}} 
+\index{gpusat::satformulaType@{gpusat::satformulaType}!clauses@{clauses}}
+\index{clauses@{clauses}!gpusat::satformulaType@{gpusat::satformulaType}}
+\doxysubsubsection{\texorpdfstring{clauses}{clauses}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$cl\+\_\+long$>$ $>$ gpusat\+::satformula\+Type\+::clauses}
+
+
+
+Referenced by gpusat\+::\+Graphoutput\+::neo4j\+Sat(), gpusat\+::\+Preprocessor\+::preprocess\+Facts(), gpusat\+::\+Solver\+::solve\+Introduce\+Forget(), and gpusat\+::\+Visualization\+::visu\+Clauses().
+
+\mbox{\Hypertarget{structgpusat_1_1satformula_type_aa645e3a7596745fe08320d7bdbc7b3aa}\label{structgpusat_1_1satformula_type_aa645e3a7596745fe08320d7bdbc7b3aa}} 
+\index{gpusat::satformulaType@{gpusat::satformulaType}!facts@{facts}}
+\index{facts@{facts}!gpusat::satformulaType@{gpusat::satformulaType}}
+\doxysubsubsection{\texorpdfstring{facts}{facts}}
+{\footnotesize\ttfamily std\+::vector$<$cl\+\_\+long$>$ gpusat\+::satformula\+Type\+::facts}
+
+
+
+Referenced by gpusat\+::\+Graphoutput\+::neo4j\+Sat(), and gpusat\+::\+Preprocessor\+::preprocess\+Facts().
+
+\mbox{\Hypertarget{structgpusat_1_1satformula_type_a5244ffbca87927c67fdb8d960da4421b}\label{structgpusat_1_1satformula_type_a5244ffbca87927c67fdb8d960da4421b}} 
+\index{gpusat::satformulaType@{gpusat::satformulaType}!numVars@{numVars}}
+\index{numVars@{numVars}!gpusat::satformulaType@{gpusat::satformulaType}}
+\doxysubsubsection{\texorpdfstring{numVars}{numVars}}
+{\footnotesize\ttfamily cl\+\_\+long gpusat\+::satformula\+Type\+::num\+Vars = 0}
+
+
+
+Referenced by gpusat\+::\+Graphoutput\+::neo4j\+Sat(), gpusat\+::\+C\+N\+F\+Parser\+::parse\+Sat\+Formula(), and gpusat\+::\+Preprocessor\+::preprocess\+Facts().
+
+\mbox{\Hypertarget{structgpusat_1_1satformula_type_a0e11bd6e70dfbd455618dd1adb99b042}\label{structgpusat_1_1satformula_type_a0e11bd6e70dfbd455618dd1adb99b042}} 
+\index{gpusat::satformulaType@{gpusat::satformulaType}!numWeights@{numWeights}}
+\index{numWeights@{numWeights}!gpusat::satformulaType@{gpusat::satformulaType}}
+\doxysubsubsection{\texorpdfstring{numWeights}{numWeights}}
+{\footnotesize\ttfamily cl\+\_\+long gpusat\+::satformula\+Type\+::num\+Weights = 0}
+
+
+
+Referenced by gpusat\+::\+C\+N\+F\+Parser\+::parse\+Sat\+Formula(), gpusat\+::\+Preprocessor\+::preprocess\+Facts(), gpusat\+::\+Solver\+::solve\+Introduce\+Forget(), and gpusat\+::\+Solver\+::solve\+Join().
+
+\mbox{\Hypertarget{structgpusat_1_1satformula_type_a37cfd86e7ea86aaae40f1aa04006276f}\label{structgpusat_1_1satformula_type_a37cfd86e7ea86aaae40f1aa04006276f}} 
+\index{gpusat::satformulaType@{gpusat::satformulaType}!unsat@{unsat}}
+\index{unsat@{unsat}!gpusat::satformulaType@{gpusat::satformulaType}}
+\doxysubsubsection{\texorpdfstring{unsat}{unsat}}
+{\footnotesize\ttfamily bool gpusat\+::satformula\+Type\+::unsat = false}
+
+
+
+Referenced by main(), gpusat\+::\+Graphoutput\+::neo4j\+Sat(), and gpusat\+::\+Preprocessor\+::preprocess\+Facts().
+
+\mbox{\Hypertarget{structgpusat_1_1satformula_type_a2c9685e2a25cd9d7eeeba34cdcd1371f}\label{structgpusat_1_1satformula_type_a2c9685e2a25cd9d7eeeba34cdcd1371f}} 
+\index{gpusat::satformulaType@{gpusat::satformulaType}!variableWeights@{variableWeights}}
+\index{variableWeights@{variableWeights}!gpusat::satformulaType@{gpusat::satformulaType}}
+\doxysubsubsection{\texorpdfstring{variableWeights}{variableWeights}}
+{\footnotesize\ttfamily cl\+\_\+double$\ast$ gpusat\+::satformula\+Type\+::variable\+Weights = nullptr}
+
+
+
+Referenced by gpusat\+::\+C\+N\+F\+Parser\+::parse\+Sat\+Formula(), gpusat\+::\+Preprocessor\+::preprocess\+Facts(), gpusat\+::\+Solver\+::solve\+Introduce\+Forget(), and gpusat\+::\+Solver\+::solve\+Join().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{types_8h}{types.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classgpusat_1_1_preprocessor">
+<title>gpusat::Preprocessor Class Reference</title>
+<indexterm><primary>gpusat::Preprocessor</primary></indexterm>
+<para>
+<computeroutput>#include &lt;gpusatpreprocessor.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static void <link linkend="_classgpusat_1_1_preprocessor_1a3f7a765eda39dc7b5b41a24972b77354">preprocessDecomp</link> (<link linkend="_structgpusat_1_1bag_type">bagType</link> *decomp, cl_long combineWidth)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classgpusat_1_1_preprocessor_1a0eb30c75fad0b216ca501b86605c2c58">preprocessFacts</link> (<link linkend="_structgpusat_1_1treedec_type">treedecType</link> &amp;decomp, <link linkend="_structgpusat_1_1satformula_type">satformulaType</link> &amp;formula, cl_double &amp;defaultWeight)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classgpusat_1_1_preprocessor_1a3f7a765eda39dc7b5b41a24972b77354"/>    <section>
+    <title>preprocessDecomp()</title>
+<indexterm><primary>preprocessDecomp</primary><secondary>gpusat::Preprocessor</secondary></indexterm>
+<indexterm><primary>gpusat::Preprocessor</primary><secondary>preprocessDecomp</secondary></indexterm>
+<para><computeroutput>void gpusat::Preprocessor::preprocessDecomp (<link linkend="_structgpusat_1_1bag_type">bagType</link> * decomp, cl_long combineWidth)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>preprocess the tree decomposition</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>decomp</entry>
+                                <entry>
+<para>the tree decomposition </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>combineWidth</entry>
+                                <entry>
+<para>max width to combine bags </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+References gpusat::compTreedType(), gpusat::bagType::edges, and gpusat::bagType::variables.</para>
+<para>
+Referenced by main().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_preprocessor_a3f7a765eda39dc7b5b41a24972b77354_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_preprocessor_a3f7a765eda39dc7b5b41a24972b77354_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classgpusat_1_1_preprocessor_1a0eb30c75fad0b216ca501b86605c2c58"/>    <section>
+    <title>preprocessFacts()</title>
+<indexterm><primary>preprocessFacts</primary><secondary>gpusat::Preprocessor</secondary></indexterm>
+<indexterm><primary>gpusat::Preprocessor</primary><secondary>preprocessFacts</secondary></indexterm>
+<para><computeroutput>void gpusat::Preprocessor::preprocessFacts (<link linkend="_structgpusat_1_1treedec_type">treedecType</link> &amp; decomp, <link linkend="_structgpusat_1_1satformula_type">satformulaType</link> &amp; formula, cl_double &amp; defaultWeight)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>removes facts from the sat formula</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>decomp</entry>
+                                <entry>
+<para>the tree decomposition </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>formula</entry>
+                                <entry>
+<para>the sat formula </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>defaultWeight</entry>
+                                <entry>
+<para>for WMC the product of the weights of the removed literals </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+References gpusat::treedecType::bags, gpusat::satformulaType::clauses, gpusat::compVars(), gpusat::satformulaType::facts, gpusat::treedecType::numVars, gpusat::satformulaType::numVars, gpusat::satformulaType::numWeights, gpusat::satformulaType::unsat, and gpusat::satformulaType::variableWeights.</para>
+<para>
+Referenced by main().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_preprocessor_a0eb30c75fad0b216ca501b86605c2c58_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_preprocessor_a0eb30c75fad0b216ca501b86605c2c58_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+include/<link linkend="_gpusatpreprocessor_8h">gpusatpreprocessor.h</link>src/<link linkend="_gpusatpreprocessor_8cpp">gpusatpreprocessor.cpp</link></section>
+</section>

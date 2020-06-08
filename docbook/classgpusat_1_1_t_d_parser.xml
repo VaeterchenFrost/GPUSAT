@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classgpusat_1_1_t_d_parser">
+<title>gpusat::TDParser Class Reference</title>
+<indexterm><primary>gpusat::TDParser</primary></indexterm>
+<para>
+<computeroutput>#include &lt;gpusatparser.h&gt;</computeroutput>
+</para>
+Collaboration diagram for gpusat::TDParser:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_t_d_parser__coll__graph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classgpusat_1_1_t_d_parser_1a4d4127fe0b50cf07418ba280873c13ba">TDParser</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_structgpusat_1_1treedec_type">treedecType</link> <link linkend="_classgpusat_1_1_t_d_parser_1af5ee31072b0c9f1ddfdd032e93a7d8d4">parseTreeDecomp</link> (std::string graph, <link linkend="_structgpusat_1_1satformula_type">satformulaType</link> &amp;formula)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>cl_double <link linkend="_classgpusat_1_1_t_d_parser_1a425ada4407877d5b968beb30312743ed">defaultWeight</link> = 1.0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classgpusat_1_1_t_d_parser_1a4d4127fe0b50cf07418ba280873c13ba"/>    <section>
+    <title>TDParser()</title>
+<indexterm><primary>TDParser</primary><secondary>gpusat::TDParser</secondary></indexterm>
+<indexterm><primary>gpusat::TDParser</primary><secondary>TDParser</secondary></indexterm>
+<para><computeroutput>gpusat::TDParser::TDParser ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classgpusat_1_1_t_d_parser_1af5ee31072b0c9f1ddfdd032e93a7d8d4"/>    <section>
+    <title>parseTreeDecomp()</title>
+<indexterm><primary>parseTreeDecomp</primary><secondary>gpusat::TDParser</secondary></indexterm>
+<indexterm><primary>gpusat::TDParser</primary><secondary>parseTreeDecomp</secondary></indexterm>
+<para><computeroutput><link linkend="_structgpusat_1_1treedec_type">treedecType</link> gpusat::TDParser::parseTreeDecomp (std::string graph, <link linkend="_structgpusat_1_1satformula_type">satformulaType</link> &amp; formula)</computeroutput></para>
+<para>generates a treedec from a given string</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>graph</entry>
+                                <entry>
+<para>the string representation of the tree decomposition </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the tree decomposition </para>
+</formalpara>
+</para>
+<para>
+References gpusat::treedecType::bags, gpusat::compTreedType(), and gpusat::treedecType::numb.</para>
+<para>
+Referenced by main().</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_t_d_parser_af5ee31072b0c9f1ddfdd032e93a7d8d4_cgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_t_d_parser_af5ee31072b0c9f1ddfdd032e93a7d8d4_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classgpusat_1_1_t_d_parser_1a425ada4407877d5b968beb30312743ed"/>    <section>
+    <title>defaultWeight</title>
+<indexterm><primary>defaultWeight</primary><secondary>gpusat::TDParser</secondary></indexterm>
+<indexterm><primary>gpusat::TDParser</primary><secondary>defaultWeight</secondary></indexterm>
+<para><computeroutput>cl_double gpusat::TDParser::defaultWeight = 1.0</computeroutput></para><para>
+Referenced by main().</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+include/<link linkend="_gpusatparser_8h">gpusatparser.h</link>src/<link linkend="_gpusatparser_8cpp">gpusatparser.cpp</link></section>
+</section>

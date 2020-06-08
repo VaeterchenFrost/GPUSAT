@@ -1,0 +1,11 @@
+digraph "gpusat::Graphoutput::neo4jSat"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="gpusat::Graphoutput\l::neo4jSat",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Output Cypherquery to create the nodes from the SAT formula"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="gpusat::Graphoutput\l::isEnabled",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_graphoutput.html#a9337a44c758b7a403e4f7d854b8cd934",tooltip=" "];
+}

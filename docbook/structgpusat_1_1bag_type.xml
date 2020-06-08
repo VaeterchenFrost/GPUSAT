@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structgpusat_1_1bag_type">
+<title>gpusat::bagType Struct Reference</title>
+<indexterm><primary>gpusat::bagType</primary></indexterm>
+<para>
+
+<para>type for a bag in the tree decomposition </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;types.h&gt;</computeroutput>
+</para>
+Collaboration diagram for gpusat::bagType:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structgpusat_1_1bag_type__coll__graph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>cl_long <link linkend="_structgpusat_1_1bag_type_1ad7614a6047440b39627b93f0d9d10f28">bags</link> = 0</para>
+</listitem>
+            <listitem><para>cl_long <link linkend="_structgpusat_1_1bag_type_1a45e2893595bdc5f3f5ba02fe3602edd1">correction</link> = 0</para>
+</listitem>
+            <listitem><para>std::vector&lt; <link linkend="_structgpusat_1_1bag_type">bagType</link> * &gt; <link linkend="_structgpusat_1_1bag_type_1aea8755e100c946abf0a54aa1df1f37a0">edges</link></para>
+</listitem>
+            <listitem><para>cl_long <link linkend="_structgpusat_1_1bag_type_1aa2254cc6f28bce34476ca1aeaa9b8fa1">exponent</link> = 0</para>
+</listitem>
+            <listitem><para>cl_long <link linkend="_structgpusat_1_1bag_type_1a80da84fe62383989c1966895a9719cdc">id</link> = 0</para>
+</listitem>
+            <listitem><para>cl_long <link linkend="_structgpusat_1_1bag_type_1a4209fefe5bb0f9a742ec0e5b4b19d919">maxSize</link> = 0</para>
+</listitem>
+            <listitem><para><link linkend="_structgpusat_1_1tree_type">treeType</link> * <link linkend="_structgpusat_1_1bag_type_1a0e24ac4f19e4d96b5b5ae585b2256b5e">solution</link></para>
+</listitem>
+            <listitem><para>std::vector&lt; cl_long &gt; <link linkend="_structgpusat_1_1bag_type_1a33b305d1b0b90e1a8e3e3a4d8e6d5db7">variables</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>type for a bag in the tree decomposition </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structgpusat_1_1bag_type_1ad7614a6047440b39627b93f0d9d10f28"/>    <section>
+    <title>bags</title>
+<indexterm><primary>bags</primary><secondary>gpusat::bagType</secondary></indexterm>
+<indexterm><primary>gpusat::bagType</primary><secondary>bags</secondary></indexterm>
+<para><computeroutput>cl_long gpusat::bagType::bags = 0</computeroutput></para><para>
+Referenced by gpusat::printbagType(), gpusat::Solver::solveIntroduceForget(), gpusat::Solver::solveJoin(), and gpusat::Solver::solveProblem().</para>
+    </section><anchor xml:id="_structgpusat_1_1bag_type_1a45e2893595bdc5f3f5ba02fe3602edd1"/>    <section>
+    <title>correction</title>
+<indexterm><primary>correction</primary><secondary>gpusat::bagType</secondary></indexterm>
+<indexterm><primary>gpusat::bagType</primary><secondary>correction</secondary></indexterm>
+<para><computeroutput>cl_long gpusat::bagType::correction = 0</computeroutput></para><para>
+Referenced by gpusat::printbagType(), gpusat::solJson(), gpusat::solutiontable(), gpusat::Solver::solveIntroduceForget(), and gpusat::Solver::solveJoin().</para>
+    </section><anchor xml:id="_structgpusat_1_1bag_type_1aea8755e100c946abf0a54aa1df1f37a0"/>    <section>
+    <title>edges</title>
+<indexterm><primary>edges</primary><secondary>gpusat::bagType</secondary></indexterm>
+<indexterm><primary>gpusat::bagType</primary><secondary>edges</secondary></indexterm>
+<para><computeroutput>std::vector&lt;<link linkend="_structgpusat_1_1bag_type">bagType</link> *&gt; gpusat::bagType::edges</computeroutput></para><para>
+Referenced by gpusat::Preprocessor::preprocessDecomp(), gpusat::printbagType(), gpusat::Solver::solveProblem(), and gpusat::Visualization::visuTreeDec().</para>
+    </section><anchor xml:id="_structgpusat_1_1bag_type_1aa2254cc6f28bce34476ca1aeaa9b8fa1"/>    <section>
+    <title>exponent</title>
+<indexterm><primary>exponent</primary><secondary>gpusat::bagType</secondary></indexterm>
+<indexterm><primary>gpusat::bagType</primary><secondary>exponent</secondary></indexterm>
+<para><computeroutput>cl_long gpusat::bagType::exponent = 0</computeroutput></para><para>
+Referenced by gpusat::Solver::cleanTree(), gpusat::printbagType(), gpusat::Solver::solveIntroduceForget(), and gpusat::Solver::solveJoin().</para>
+    </section><anchor xml:id="_structgpusat_1_1bag_type_1a80da84fe62383989c1966895a9719cdc"/>    <section>
+    <title>id</title>
+<indexterm><primary>id</primary><secondary>gpusat::bagType</secondary></indexterm>
+<indexterm><primary>gpusat::bagType</primary><secondary>id</secondary></indexterm>
+<para><computeroutput>cl_long gpusat::bagType::id = 0</computeroutput></para><para>
+Referenced by gpusat::compTreedType(), gpusat::printbagType(), gpusat::Solver::solveIntroduceForget(), gpusat::Solver::solveProblem(), and gpusat::Visualization::visuTreeDec().</para>
+    </section><anchor xml:id="_structgpusat_1_1bag_type_1a4209fefe5bb0f9a742ec0e5b4b19d919"/>    <section>
+    <title>maxSize</title>
+<indexterm><primary>maxSize</primary><secondary>gpusat::bagType</secondary></indexterm>
+<indexterm><primary>gpusat::bagType</primary><secondary>maxSize</secondary></indexterm>
+<para><computeroutput>cl_long gpusat::bagType::maxSize = 0</computeroutput></para><para>
+Referenced by gpusat::Solver::solveIntroduceForget(), gpusat::Solver::solveJoin(), and gpusat::Solver::solveProblem().</para>
+    </section><anchor xml:id="_structgpusat_1_1bag_type_1a0e24ac4f19e4d96b5b5ae585b2256b5e"/>    <section>
+    <title>solution</title>
+<indexterm><primary>solution</primary><secondary>gpusat::bagType</secondary></indexterm>
+<indexterm><primary>gpusat::bagType</primary><secondary>solution</secondary></indexterm>
+<para><computeroutput><link linkend="_structgpusat_1_1tree_type">treeType</link>* gpusat::bagType::solution</computeroutput></para><para>
+Referenced by gpusat::solJson(), gpusat::solutiontable(), gpusat::Solver::solveIntroduceForget(), gpusat::Solver::solveJoin(), and gpusat::Solver::solveProblem().</para>
+    </section><anchor xml:id="_structgpusat_1_1bag_type_1a33b305d1b0b90e1a8e3e3a4d8e6d5db7"/>    <section>
+    <title>variables</title>
+<indexterm><primary>variables</primary><secondary>gpusat::bagType</secondary></indexterm>
+<indexterm><primary>gpusat::bagType</primary><secondary>variables</secondary></indexterm>
+<para><computeroutput>std::vector&lt;cl_long&gt; gpusat::bagType::variables</computeroutput></para><para>
+Referenced by main(), gpusat::Preprocessor::preprocessDecomp(), gpusat::printbagType(), gpusat::solJson(), gpusat::solutiontable(), gpusat::Solver::solveIntroduceForget(), gpusat::Solver::solveJoin(), and gpusat::Solver::solveProblem().</para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+include/<link linkend="_types_8h">types.h</link></section>
+</section>

@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structgpusat_1_1satformula_type">
+<title>gpusat::satformulaType Struct Reference</title>
+<indexterm><primary>gpusat::satformulaType</primary></indexterm>
+<para>
+
+<para>type for saving the sat formula </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;types.h&gt;</computeroutput>
+</para>
+Collaboration diagram for gpusat::satformulaType:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structgpusat_1_1satformula_type__coll__graph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::vector&lt; std::vector&lt; cl_long &gt; &gt; <link linkend="_structgpusat_1_1satformula_type_1aee5fa477a9bfe8b901273ce8aab08494">clauses</link></para>
+</listitem>
+            <listitem><para>std::vector&lt; cl_long &gt; <link linkend="_structgpusat_1_1satformula_type_1aa645e3a7596745fe08320d7bdbc7b3aa">facts</link></para>
+</listitem>
+            <listitem><para>cl_long <link linkend="_structgpusat_1_1satformula_type_1a5244ffbca87927c67fdb8d960da4421b">numVars</link> = 0</para>
+</listitem>
+            <listitem><para>cl_long <link linkend="_structgpusat_1_1satformula_type_1a0e11bd6e70dfbd455618dd1adb99b042">numWeights</link> = 0</para>
+</listitem>
+            <listitem><para>bool <link linkend="_structgpusat_1_1satformula_type_1a37cfd86e7ea86aaae40f1aa04006276f">unsat</link> = false</para>
+</listitem>
+            <listitem><para>cl_double * <link linkend="_structgpusat_1_1satformula_type_1a2c9685e2a25cd9d7eeeba34cdcd1371f">variableWeights</link> = nullptr</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>type for saving the sat formula </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structgpusat_1_1satformula_type_1aee5fa477a9bfe8b901273ce8aab08494"/>    <section>
+    <title>clauses</title>
+<indexterm><primary>clauses</primary><secondary>gpusat::satformulaType</secondary></indexterm>
+<indexterm><primary>gpusat::satformulaType</primary><secondary>clauses</secondary></indexterm>
+<para><computeroutput>std::vector&lt;std::vector&lt;cl_long&gt; &gt; gpusat::satformulaType::clauses</computeroutput></para><para>
+Referenced by gpusat::Graphoutput::neo4jSat(), gpusat::Preprocessor::preprocessFacts(), gpusat::Solver::solveIntroduceForget(), and gpusat::Visualization::visuClauses().</para>
+    </section><anchor xml:id="_structgpusat_1_1satformula_type_1aa645e3a7596745fe08320d7bdbc7b3aa"/>    <section>
+    <title>facts</title>
+<indexterm><primary>facts</primary><secondary>gpusat::satformulaType</secondary></indexterm>
+<indexterm><primary>gpusat::satformulaType</primary><secondary>facts</secondary></indexterm>
+<para><computeroutput>std::vector&lt;cl_long&gt; gpusat::satformulaType::facts</computeroutput></para><para>
+Referenced by gpusat::Graphoutput::neo4jSat(), and gpusat::Preprocessor::preprocessFacts().</para>
+    </section><anchor xml:id="_structgpusat_1_1satformula_type_1a5244ffbca87927c67fdb8d960da4421b"/>    <section>
+    <title>numVars</title>
+<indexterm><primary>numVars</primary><secondary>gpusat::satformulaType</secondary></indexterm>
+<indexterm><primary>gpusat::satformulaType</primary><secondary>numVars</secondary></indexterm>
+<para><computeroutput>cl_long gpusat::satformulaType::numVars = 0</computeroutput></para><para>
+Referenced by gpusat::Graphoutput::neo4jSat(), gpusat::CNFParser::parseSatFormula(), and gpusat::Preprocessor::preprocessFacts().</para>
+    </section><anchor xml:id="_structgpusat_1_1satformula_type_1a0e11bd6e70dfbd455618dd1adb99b042"/>    <section>
+    <title>numWeights</title>
+<indexterm><primary>numWeights</primary><secondary>gpusat::satformulaType</secondary></indexterm>
+<indexterm><primary>gpusat::satformulaType</primary><secondary>numWeights</secondary></indexterm>
+<para><computeroutput>cl_long gpusat::satformulaType::numWeights = 0</computeroutput></para><para>
+Referenced by gpusat::CNFParser::parseSatFormula(), gpusat::Preprocessor::preprocessFacts(), gpusat::Solver::solveIntroduceForget(), and gpusat::Solver::solveJoin().</para>
+    </section><anchor xml:id="_structgpusat_1_1satformula_type_1a37cfd86e7ea86aaae40f1aa04006276f"/>    <section>
+    <title>unsat</title>
+<indexterm><primary>unsat</primary><secondary>gpusat::satformulaType</secondary></indexterm>
+<indexterm><primary>gpusat::satformulaType</primary><secondary>unsat</secondary></indexterm>
+<para><computeroutput>bool gpusat::satformulaType::unsat = false</computeroutput></para><para>
+Referenced by main(), gpusat::Graphoutput::neo4jSat(), and gpusat::Preprocessor::preprocessFacts().</para>
+    </section><anchor xml:id="_structgpusat_1_1satformula_type_1a2c9685e2a25cd9d7eeeba34cdcd1371f"/>    <section>
+    <title>variableWeights</title>
+<indexterm><primary>variableWeights</primary><secondary>gpusat::satformulaType</secondary></indexterm>
+<indexterm><primary>gpusat::satformulaType</primary><secondary>variableWeights</secondary></indexterm>
+<para><computeroutput>cl_double* gpusat::satformulaType::variableWeights = nullptr</computeroutput></para><para>
+Referenced by gpusat::CNFParser::parseSatFormula(), gpusat::Preprocessor::preprocessFacts(), gpusat::Solver::solveIntroduceForget(), and gpusat::Solver::solveJoin().</para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+include/<link linkend="_types_8h">types.h</link></section>
+</section>

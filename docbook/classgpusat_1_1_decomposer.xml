@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classgpusat_1_1_decomposer">
+<title>gpusat::Decomposer Class Reference</title>
+<indexterm><primary>gpusat::Decomposer</primary></indexterm>
+<para>
+<computeroutput>#include &lt;decomposer.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static std::string <link linkend="_classgpusat_1_1_decomposer_1a5e0c5e1696b2088b8ad66261022abcea">computeDecomposition</link> (std::string formula, htd::ITreeDecompositionFitnessFunction *fitness, size_t n)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classgpusat_1_1_decomposer_1a5e0c5e1696b2088b8ad66261022abcea"/>    <section>
+    <title>computeDecomposition()</title>
+<indexterm><primary>computeDecomposition</primary><secondary>gpusat::Decomposer</secondary></indexterm>
+<indexterm><primary>gpusat::Decomposer</primary><secondary>computeDecomposition</secondary></indexterm>
+<para><computeroutput>std::string gpusat::Decomposer::computeDecomposition (std::string formula, htd::ITreeDecompositionFitnessFunction * fitness, size_t n)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>computes the decomposition of the primal graph of the given formula</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>formula</entry>
+                                <entry>
+<para>the formula in cnf format </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>fitness</entry>
+                                <entry>
+<para>the fitness function </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>number of iterations for the fitness function </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the decomposition in td format </para>
+</formalpara>
+</para>
+<para>
+Referenced by main().</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classgpusat_1_1_decomposer_a5e0c5e1696b2088b8ad66261022abcea_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+include/<link linkend="_decomposer_8h">decomposer.h</link>src/<link linkend="_decomposer_8cpp">decomposer.cpp</link></section>
+</section>
