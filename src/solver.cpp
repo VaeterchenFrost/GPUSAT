@@ -114,8 +114,9 @@ void Solver::solveProblem(treedecType &decomp, satformulaType &formula, bagType 
                             std::cout << "Solved JOIN-IF on node " << node.id << "\n";
                             printbagType(&node, std::cout);
                         }
-
-                        graphoutput->nodeBag(node.id, solutiontable(node, solutionType));
+                        if (graphoutput->isEnabled()) {
+                            graphoutput->nodeBag(node.id, solutiontable(node, solutionType));
+                        }
                     } else {
                         solveJoin(tmp, edge1, edge2, formula, nodeType::JOIN);
                         visualization->tdTimelineAppend(std::vector<cl_long>({edge1.id, edge2.id}),
@@ -125,16 +126,15 @@ void Solver::solveProblem(treedecType &decomp, satformulaType &formula, bagType 
                             std::cout << "Solved JOIN-0 on node " << tmp.id << "\n";
                             printbagType(&tmp, std::cout);
                         }
-
-                        graphoutput->nodeBag(tmp.id, solutiontable(tmp, solutionType));
-
+                        if (graphoutput->isEnabled()) {
+                            graphoutput->nodeBag(tmp.id, solutiontable(tmp, solutionType));
+                        }
                         edge1 = tmp;
                     }
                 }
             }
         }
     }
-
     if (graphoutput->isEnabled() && node.id == 0)
         graphoutput->graphEdgeSet(&decomp);
 }
