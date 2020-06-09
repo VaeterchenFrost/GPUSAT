@@ -60,7 +60,8 @@
 			"streambuf": "cpp",
 			"cfenv": "cpp",
 			"cinttypes": "cpp",
-			"typeinfo": "cpp"
+			"typeinfo": "cpp",
+			"random": "cpp"
 		},
 		"C_Cpp.default.cppStandard": "c++20",
 		"editor.defaultFormatter": "ms-vscode.cpptools",
