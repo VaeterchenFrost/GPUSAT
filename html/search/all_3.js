@@ -9,10 +9,9 @@ var searchData=
   ['comptreedtype_16',['compTreedType',['../namespacegpusat.html#a25859e1a162fb1712110b033239a3e06',1,'gpusat']]],
   ['computedecomposition_17',['computeDecomposition',['../classgpusat_1_1_decomposer.html#a5e0c5e1696b2088b8ad66261022abcea',1,'gpusat::Decomposer']]],
   ['compvars_18',['compVars',['../namespacegpusat.html#a1f445c345dcaf73f1835ce81473ef646',1,'gpusat']]],
-  ['connectbag_19',['connectbag',['../classgpusat_1_1_graphoutput.html#aac7f79d571ad2b8e2a146c4512b6d2f1',1,'gpusat::Graphoutput']]],
-  ['context_20',['context',['../classgpusat_1_1_solver.html#aefd785c01f25da5496e97aba18052062',1,'gpusat::Solver']]],
-  ['correction_21',['correction',['../structgpusat_1_1bag_type.html#a45e2893595bdc5f3f5ba02fe3602edd1',1,'gpusat::bagType']]],
-  ['cutsetwidthfitnessfunction_22',['CutSetWidthFitnessFunction',['../classgpusat_1_1_cut_set_width_fitness_function.html',1,'gpusat::CutSetWidthFitnessFunction'],['../classgpusat_1_1_cut_set_width_fitness_function.html#aca921ea8015a85e1cc3daa5c85a7478b',1,'gpusat::CutSetWidthFitnessFunction::CutSetWidthFitnessFunction()']]],
-  ['cutsetwidthfitnessfunction_2ecpp_23',['CutSetWidthFitnessFunction.cpp',['../_cut_set_width_fitness_function_8cpp.html',1,'']]],
-  ['cutsetwidthfitnessfunction_2eh_24',['CutSetWidthFitnessFunction.h',['../_cut_set_width_fitness_function_8h.html',1,'']]]
+  ['context_19',['context',['../classgpusat_1_1_solver.html#aefd785c01f25da5496e97aba18052062',1,'gpusat::Solver']]],
+  ['correction_20',['correction',['../structgpusat_1_1bag_type.html#a45e2893595bdc5f3f5ba02fe3602edd1',1,'gpusat::bagType']]],
+  ['cutsetwidthfitnessfunction_21',['CutSetWidthFitnessFunction',['../classgpusat_1_1_cut_set_width_fitness_function.html',1,'gpusat::CutSetWidthFitnessFunction'],['../classgpusat_1_1_cut_set_width_fitness_function.html#aca921ea8015a85e1cc3daa5c85a7478b',1,'gpusat::CutSetWidthFitnessFunction::CutSetWidthFitnessFunction()']]],
+  ['cutsetwidthfitnessfunction_2ecpp_22',['CutSetWidthFitnessFunction.cpp',['../_cut_set_width_fitness_function_8cpp.html',1,'']]],
+  ['cutsetwidthfitnessfunction_2eh_23',['CutSetWidthFitnessFunction.h',['../_cut_set_width_fitness_function_8h.html',1,'']]]
 ];

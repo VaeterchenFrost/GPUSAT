@@ -1,4 +1,4 @@
 <map id="gpusat::Graphoutput::nodeBag" name="gpusat::Graphoutput::nodeBag">
-<area shape="rect" id="node1" title="Create one node with the corresponding solution in a connected extra bag." alt="" coords="5,5,145,47"/>
+<area shape="rect" id="node1" title="Creates one node with the corresponding solution in a connected extra bag." alt="" coords="5,5,145,47"/>
 <area shape="rect" id="node2" href="$classgpusat_1_1_graphoutput.html#a9337a44c758b7a403e4f7d854b8cd934" title=" " alt="" coords="193,5,333,47"/>
 </map>

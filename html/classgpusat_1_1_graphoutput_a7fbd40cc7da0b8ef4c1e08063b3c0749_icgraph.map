@@ -1,4 +1,4 @@
 <map id="gpusat::Graphoutput::nodeBag" name="gpusat::Graphoutput::nodeBag">
-<area shape="rect" id="node1" title="Create one node with the corresponding solution in a connected extra bag." alt="" coords="243,5,383,47"/>
+<area shape="rect" id="node1" title="Creates one node with the corresponding solution in a connected extra bag." alt="" coords="243,5,383,47"/>
 <area shape="rect" id="node2" href="$classgpusat_1_1_solver.html#ae0fed660431502c4ff23b011de6207ca" title="Solves the sat formula with a given decomposition." alt="" coords="5,13,195,39"/>
 </map>

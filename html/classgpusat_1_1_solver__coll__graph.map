@@ -1,13 +1,12 @@
 <map id="gpusat::Solver" name="gpusat::Solver">
-<area shape="rect" id="node1" title=" " alt="" coords="552,261,656,288"/>
-<area shape="rect" id="node2" title=" " alt="" coords="277,11,357,37"/>
-<area shape="rect" id="node3" href="$classgpusat_1_1_graphoutput.html" title=" " alt="" coords="247,61,387,88"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,9,113,36"/>
-<area shape="rect" id="node5" title=" " alt="" coords="32,113,87,140"/>
-<area shape="rect" id="node6" title=" " alt="" coords="285,184,348,211"/>
-<area shape="rect" id="node7" title=" " alt="" coords="275,235,359,261"/>
-<area shape="rect" id="node8" title=" " alt="" coords="267,285,367,312"/>
-<area shape="rect" id="node9" title=" " alt="" coords="293,336,340,363"/>
-<area shape="rect" id="node10" title=" " alt="" coords="251,387,383,413"/>
-<area shape="rect" id="node11" href="$classgpusat_1_1_visualization.html" title=" " alt="" coords="245,437,388,464"/>
+<area shape="rect" id="node1" title=" " alt="" coords="568,261,672,288"/>
+<area shape="rect" id="node2" title=" " alt="" coords="293,11,373,37"/>
+<area shape="rect" id="node3" href="$classgpusat_1_1_graphoutput.html" title=" " alt="" coords="263,61,403,88"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,61,152,88"/>
+<area shape="rect" id="node5" title=" " alt="" coords="301,184,364,211"/>
+<area shape="rect" id="node6" title=" " alt="" coords="291,235,375,261"/>
+<area shape="rect" id="node7" title=" " alt="" coords="283,285,383,312"/>
+<area shape="rect" id="node8" title=" " alt="" coords="309,336,356,363"/>
+<area shape="rect" id="node9" title=" " alt="" coords="267,387,399,413"/>
+<area shape="rect" id="node10" href="$classgpusat_1_1_visualization.html" title=" " alt="" coords="261,437,404,464"/>
 </map>

@@ -20,7 +20,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="$classgpusat_1_1_graphoutput.html#a6a8698facb754dbd450edb04bba74b1c" xlink:title="Addes the edges from the tree&#45;decomposition into the graph.">
+<g id="a_node2"><a xlink:href="$classgpusat_1_1_graphoutput.html#a6a8698facb754dbd450edb04bba74b1c" xlink:title="Adds the edges from the tree&#45;decomposition into the graph.">
 <polygon fill="white" stroke="black" points="178,-333.5 178,-363.5 283,-363.5 283,-333.5 178,-333.5"/>
 <text text-anchor="start" x="186" y="-351.5" font-family="Helvetica,sans-Serif" font-size="10.00">gpusat::Graphoutput</text>
 <text text-anchor="middle" x="230.5" y="-340.5" font-family="Helvetica,sans-Serif" font-size="10.00">::graphEdgeSet</text>
@@ -47,7 +47,7 @@
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="$classgpusat_1_1_graphoutput.html#a75b647b135cd9dbdc2eaed399eaf0ba3" xlink:title=" ">
+<g id="a_node4"><a xlink:href="$classgpusat_1_1_graphoutput.html#a75b647b135cd9dbdc2eaed399eaf0ba3" xlink:title="If enabled: Add the closing bracket(s) to the output.">
 <polygon fill="white" stroke="black" points="178,-147.5 178,-177.5 283,-177.5 283,-147.5 178,-147.5"/>
 <text text-anchor="start" x="186" y="-165.5" font-family="Helvetica,sans-Serif" font-size="10.00">gpusat::Graphoutput</text>
 <text text-anchor="middle" x="230.5" y="-154.5" font-family="Helvetica,sans-Serif" font-size="10.00">::graphEnd</text>
@@ -61,7 +61,7 @@
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="$classgpusat_1_1_graphoutput.html#a2cd530c2bd234cd6fca065b8d504fc36" xlink:title=" ">
+<g id="a_node6"><a xlink:href="$classgpusat_1_1_graphoutput.html#a2cd530c2bd234cd6fca065b8d504fc36" xlink:title="If enabled: Create new content with the start of a dot&#45;graph and .">
 <polygon fill="white" stroke="black" points="178,-98.5 178,-128.5 283,-128.5 283,-98.5 178,-98.5"/>
 <text text-anchor="start" x="186" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">gpusat::Graphoutput</text>
 <text text-anchor="middle" x="230.5" y="-105.5" font-family="Helvetica,sans-Serif" font-size="10.00">::graphStart</text>
@@ -75,7 +75,7 @@
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="$classgpusat_1_1_graphoutput.html#aed89def93056ef06a7c0969bfa2fcf1b" xlink:title="Output Cypherquery to create the nodes from the SAT formula">
+<g id="a_node7"><a xlink:href="$classgpusat_1_1_graphoutput.html#aed89def93056ef06a7c0969bfa2fcf1b" xlink:title="Output Cypher query to create the nodes from the SAT formula">
 <polygon fill="white" stroke="black" points="178,-49.5 178,-79.5 283,-79.5 283,-49.5 178,-49.5"/>
 <text text-anchor="start" x="186" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">gpusat::Graphoutput</text>
 <text text-anchor="middle" x="230.5" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">::neo4jSat</text>
@@ -89,7 +89,7 @@
 </g>
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
-<g id="a_node8"><a xlink:href="$classgpusat_1_1_graphoutput.html#ae371f11ef89ad4507bc5f656fe932da7" xlink:title=" ">
+<g id="a_node8"><a xlink:href="$classgpusat_1_1_graphoutput.html#ae371f11ef89ad4507bc5f656fe932da7" xlink:title="Output Cypher query to create the tree decomposition.">
 <polygon fill="white" stroke="black" points="178,-0.5 178,-30.5 283,-30.5 283,-0.5 178,-0.5"/>
 <text text-anchor="start" x="186" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">gpusat::Graphoutput</text>
 <text text-anchor="middle" x="230.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">::neo4jTD</text>
@@ -103,7 +103,7 @@
 </g>
 <!-- Node9 -->
 <g id="node9" class="node"><title>Node9</title>
-<g id="a_node9"><a xlink:href="$classgpusat_1_1_graphoutput.html#a7fbd40cc7da0b8ef4c1e08063b3c0749" xlink:title="Create one node with the corresponding solution in a connected extra bag.">
+<g id="a_node9"><a xlink:href="$classgpusat_1_1_graphoutput.html#a7fbd40cc7da0b8ef4c1e08063b3c0749" xlink:title="Creates one node with the corresponding solution in a connected extra bag.">
 <polygon fill="white" stroke="black" points="178,-245.5 178,-275.5 283,-275.5 283,-245.5 178,-245.5"/>
 <text text-anchor="start" x="186" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">gpusat::Graphoutput</text>
 <text text-anchor="middle" x="230.5" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00">::nodeBag</text>

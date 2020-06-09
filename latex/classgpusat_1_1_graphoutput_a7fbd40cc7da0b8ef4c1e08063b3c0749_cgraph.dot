@@ -5,7 +5,7 @@ digraph "gpusat::Graphoutput::nodeBag"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node1 [label="gpusat::Graphoutput\l::nodeBag",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Create one node with the corresponding solution in a connected extra bag."];
+  Node1 [label="gpusat::Graphoutput\l::nodeBag",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Creates one node with the corresponding solution in a connected extra bag."];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
   Node2 [label="gpusat::Graphoutput\l::isEnabled",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgpusat_1_1_graphoutput.html#a9337a44c758b7a403e4f7d854b8cd934",tooltip=" "];
 }

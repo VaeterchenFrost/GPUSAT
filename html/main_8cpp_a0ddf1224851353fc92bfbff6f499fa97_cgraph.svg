@@ -131,7 +131,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
-<g id="a_node8"><a xlink:href="classgpusat_1_1_graphoutput.html#a75b647b135cd9dbdc2eaed399eaf0ba3" target="_top" xlink:title=" ">
+<g id="a_node8"><a xlink:href="classgpusat_1_1_graphoutput.html#a75b647b135cd9dbdc2eaed399eaf0ba3" target="_top" xlink:title="If enabled: Add the closing bracket(s) to the output.">
 <polygon fill="white" stroke="black" points="92,-553.5 92,-583.5 197,-583.5 197,-553.5 92,-553.5"/>
 <text text-anchor="start" x="100" y="-571.5" font-family="Helvetica,sans-Serif" font-size="10.00">gpusat::Graphoutput</text>
 <text text-anchor="middle" x="144.5" y="-560.5" font-family="Helvetica,sans-Serif" font-size="10.00">::graphEnd</text>
@@ -145,7 +145,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node10 -->
 <g id="node10" class="node"><title>Node10</title>
-<g id="a_node10"><a xlink:href="classgpusat_1_1_graphoutput.html#a2cd530c2bd234cd6fca065b8d504fc36" target="_top" xlink:title=" ">
+<g id="a_node10"><a xlink:href="classgpusat_1_1_graphoutput.html#a2cd530c2bd234cd6fca065b8d504fc36" target="_top" xlink:title="If enabled: Create new content with the start of a dot&#45;graph and .">
 <polygon fill="white" stroke="black" points="92,-504.5 92,-534.5 197,-534.5 197,-504.5 92,-504.5"/>
 <text text-anchor="start" x="100" y="-522.5" font-family="Helvetica,sans-Serif" font-size="10.00">gpusat::Graphoutput</text>
 <text text-anchor="middle" x="144.5" y="-511.5" font-family="Helvetica,sans-Serif" font-size="10.00">::graphStart</text>
@@ -159,7 +159,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node11 -->
 <g id="node11" class="node"><title>Node11</title>
-<g id="a_node11"><a xlink:href="classgpusat_1_1_graphoutput.html#aed89def93056ef06a7c0969bfa2fcf1b" target="_top" xlink:title="Output Cypherquery to create the nodes from the SAT formula">
+<g id="a_node11"><a xlink:href="classgpusat_1_1_graphoutput.html#aed89def93056ef06a7c0969bfa2fcf1b" target="_top" xlink:title="Output Cypher query to create the nodes from the SAT formula">
 <polygon fill="white" stroke="black" points="92,-455.5 92,-485.5 197,-485.5 197,-455.5 92,-455.5"/>
 <text text-anchor="start" x="100" y="-473.5" font-family="Helvetica,sans-Serif" font-size="10.00">gpusat::Graphoutput</text>
 <text text-anchor="middle" x="144.5" y="-462.5" font-family="Helvetica,sans-Serif" font-size="10.00">::neo4jSat</text>
@@ -173,7 +173,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node12 -->
 <g id="node12" class="node"><title>Node12</title>
-<g id="a_node12"><a xlink:href="classgpusat_1_1_graphoutput.html#ae371f11ef89ad4507bc5f656fe932da7" target="_top" xlink:title=" ">
+<g id="a_node12"><a xlink:href="classgpusat_1_1_graphoutput.html#ae371f11ef89ad4507bc5f656fe932da7" target="_top" xlink:title="Output Cypher query to create the tree decomposition.">
 <polygon fill="white" stroke="black" points="92,-406.5 92,-436.5 197,-436.5 197,-406.5 92,-406.5"/>
 <text text-anchor="start" x="100" y="-424.5" font-family="Helvetica,sans-Serif" font-size="10.00">gpusat::Graphoutput</text>
 <text text-anchor="middle" x="144.5" y="-413.5" font-family="Helvetica,sans-Serif" font-size="10.00">::neo4jTD</text>

@@ -1,8 +1,8 @@
 <map id="gpusat::Solver::solveProblem" name="gpusat::Solver::solveProblem">
 <area shape="rect" id="node1" title="Solves the sat formula with a given decomposition." alt="" coords="5,282,195,309"/>
-<area shape="rect" id="node2" href="$classgpusat_1_1_graphoutput.html#a6a8698facb754dbd450edb04bba74b1c" title="Addes the edges from the tree&#45;decomposition into the graph." alt="" coords="270,136,410,177"/>
+<area shape="rect" id="node2" href="$classgpusat_1_1_graphoutput.html#a6a8698facb754dbd450edb04bba74b1c" title="Adds the edges from the tree&#45;decomposition into the graph." alt="" coords="270,136,410,177"/>
 <area shape="rect" id="node3" href="$classgpusat_1_1_graphoutput.html#a9337a44c758b7a403e4f7d854b8cd934" title=" " alt="" coords="509,104,649,145"/>
-<area shape="rect" id="node4" href="$classgpusat_1_1_graphoutput.html#a7fbd40cc7da0b8ef4c1e08063b3c0749" title="Create one node with the corresponding solution in a connected extra bag." alt="" coords="270,5,410,47"/>
+<area shape="rect" id="node4" href="$classgpusat_1_1_graphoutput.html#a7fbd40cc7da0b8ef4c1e08063b3c0749" title="Creates one node with the corresponding solution in a connected extra bag." alt="" coords="270,5,410,47"/>
 <area shape="rect" id="node5" href="$classgpusat_1_1_graphoutput.html#abfe6c27af045e2dcff833c53069ccbfc" title="Creates a node with the solution that joins two bags. Two edges are added to connect the solution." alt="" coords="270,71,410,112"/>
 <area shape="rect" id="node6" href="$namespacegpusat.html#aa117816b931264c9a291041b047d0c56" title="print information for a bag in the tree decomposition" alt="" coords="507,253,650,279"/>
 <area shape="rect" id="node7" href="$namespacegpusat.html#ae780028fdecbf7e4891b55159b33f3c1" title=" " alt="" coords="283,471,397,498"/>

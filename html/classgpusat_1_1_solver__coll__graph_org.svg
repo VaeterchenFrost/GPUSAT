@@ -33,7 +33,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="$classgpusat_1_1_graphoutput.html" xlink:title=" ">
+<g id="a_node3"><a xlink:href="classgpusat_1_1_graphoutput.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="193,-282.5 193,-301.5 298,-301.5 298,-282.5 193,-282.5"/>
 <text text-anchor="middle" x="245.5" y="-289.5" font-family="Helvetica,sans-Serif" font-size="10.00">gpusat::Graphoutput</text>
 </a>
@@ -138,7 +138,7 @@
 </g>
 <!-- Node10 -->
 <g id="node10" class="node"><title>Node10</title>
-<g id="a_node10"><a xlink:href="$classgpusat_1_1_visualization.html" xlink:title=" ">
+<g id="a_node10"><a xlink:href="classgpusat_1_1_visualization.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="192,-0.5 192,-19.5 299,-19.5 299,-0.5 192,-0.5"/>
 <text text-anchor="middle" x="245.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">gpusat::Visualization</text>
 </a>
