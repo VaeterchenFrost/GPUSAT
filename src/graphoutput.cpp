@@ -22,7 +22,7 @@ namespace gpusat
                      << std::to_string(source) << "\n"
                      << "target " 
                      << std::to_string(target) << "\n"
-                     << "]\n");
+                     << "]\n";
     }
 
     /// <summary>
@@ -71,7 +71,7 @@ namespace gpusat
                      << "\"\n"
                      << "anchor \"e\"\n"
                      << "]\n"
-                     << "]\n");
+                     << "]\n";
     }
 
     /// <summary>
@@ -99,7 +99,7 @@ namespace gpusat
                      << "LabelGraphics\n[ text \"" 
                      << solution 
                      << "\"\nmodel \"sandwich\"\nanchor \"s\"\n]\n"
-                     << "]\n");
+                     << "]\n";
     }
 
     /// <summary>
@@ -317,7 +317,7 @@ namespace gpusat
 
         if (stream.is_open())
         {
-            stream << graphContent;
+            stream << graphContent.str();
             stream.close();
         }
         else
