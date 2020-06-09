@@ -16,8 +16,8 @@ class Graphoutput {
     static const std::string Graphoutput::CONTAINS = "CONTAINS";
     static const std::string Graphoutput::USES_BAG = "USES_BAG";
 
-    static const unsigned int baseIdSol = 10'000'000;
-    static const unsigned int baseIdJoin = 2'000'000'000; // avoid factor 2 that would collide with adding two ids.
+    static const unsigned baseIdSol = 10'000'000;
+    static const unsigned baseIdJoin = 2'000'000'000; // avoid baseIdSol*2 that would collide with adding two ids.
 
     Graphoutput(std::string filename) {
         setFile(filename);
@@ -31,7 +31,7 @@ class Graphoutput {
     void graphEnd();
 
     std::string getFilename() {
-        return graphfile;
+        return graphFile;
     }
 
     bool isEnabled() {
@@ -43,12 +43,13 @@ class Graphoutput {
 
   private:
     bool outputEnabled = false;
-    std::map<int, int> joinmap;
-    std::map<int, std::vector<cl_long>> variablesmap;
+    std::map<int, int> joinMap;
+    std::map<int, std::vector<cl_long>> variablesMap;
+    std::stringstream graphContent;
 
     unsigned int countJoin = baseIdJoin;
     unsigned int countSol = baseIdSol;
-    std::string graphfile;
+    std::string graphFile;
     std::string satFile = "cypherSatFormula.txt";
     std::string tdFile = "cypherTreedec.txt";
 
@@ -56,7 +57,7 @@ class Graphoutput {
     void graphNode(unsigned int id, std::string label);
     void graphSolutionNode(unsigned int id, std::string label, std::string solution);
 
-    void graphout(std::string string, bool append = true);
+    void graphout(bool append = false);
     void setFile(std::string filename);
 };
 } // namespace gpusat
