@@ -16,8 +16,8 @@ class Graphoutput {
     static const std::string Graphoutput::CONTAINS = "CONTAINS";
     static const std::string Graphoutput::USES_BAG = "USES_BAG";
 
-    static const unsigned int baseIdSol = 1'000'000;
-    static const unsigned int baseIdJoin = 10'000'000; // avoid factor 2 that would collide with adding two ids.
+    static const unsigned int baseIdSol = 10'000'000;
+    static const unsigned int baseIdJoin = 2'000'000'000; // avoid factor 2 that would collide with adding two ids.
 
     Graphoutput(std::string filename) {
         setFile(filename);
