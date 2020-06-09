@@ -7,14 +7,8 @@
 
 namespace gpusat {
 
-const std::string Graphoutput::dualedge = "SHARE_VAR";
-const std::string Graphoutput::incidenceedge = "VAR_IN_CLAUSE";
-const std::string Graphoutput::primaledge = "SHARE_CLAUSE";
-const std::string Graphoutput::inbag = "CONTAINS";
-const std::string Graphoutput::connectbag = "USES_BAG";
-
 /// <summary>
-/// Write out one edge between two nodes.
+/// Writes one edge between two nodes.
 /// </summary>
 /// <param name="source">The source id.</param>
 /// <param name="target">The target id.</param>
@@ -31,7 +25,7 @@ void Graphoutput::graphEdge(unsigned int source, unsigned int target) {
 }
 
 /// <summary>
-/// Writes out a node with one label.
+/// Writes a node with one label.
 /// </summary>
 /// <param name="id">The identifier.</param>
 /// <param name="label">The label.</param>
@@ -77,7 +71,7 @@ void Graphoutput::graphNode(unsigned int id, std::string label) {
 }
 
 /// <summary>
-/// Writes out a node with one label and a solution label.
+/// Writes a node with one label and a solution label.
 /// </summary>
 /// <param name="id">The identifier.</param>
 /// <param name="label">The corresponding label.</param>
@@ -105,7 +99,7 @@ void Graphoutput::graphSolutionNode(unsigned int id, std::string label, std::str
 }
 
 /// <summary>
-/// Create one node with the corresponding solution in a connected extra bag.
+/// Creates one node with the corresponding solution in a connected extra bag.
 /// </summary>
 /// <param name="id">The identifier of the bag.</param>
 /// <param name="solution">The solution in string form.</param>
@@ -125,7 +119,6 @@ void Graphoutput::nodeBag(unsigned int id, std::string solution) {
 /// <param name="id1">The id1.</param>
 /// <param name="id2">The id2.</param>
 /// <param name="solution">The solution.</param>
-/// TODO Edit XML Comment Template for nodeJoin
 void Graphoutput::nodeJoin(unsigned int id1, unsigned int id2, std::string solution) {
     if (!isEnabled())
         return;
@@ -137,7 +130,7 @@ void Graphoutput::nodeJoin(unsigned int id1, unsigned int id2, std::string solut
 }
 
 /// <summary>
-/// Addes the edges from the tree-decomposition into the graph.
+/// Adds the edges from the tree-decomposition into the graph.
 /// </summary>
 /// <remarks>Any outgoing edges from id '0' are not added.</remarks>
 /// <param name="dec">Pointer to the tree-decomposition containing used edges.</param>
@@ -160,6 +153,10 @@ void Graphoutput::graphEdgeSet(treedecType *dec) {
     }
 }
 
+/// <summary>
+/// If enabled: OVERWRITE existing content with the start of a dot-graph.
+/// </summary>
+/// <param name="dec">To collect variables for each bag for later use.</param>
 void Graphoutput::graphStart(treedecType *dec) {
     if (!isEnabled())
         return;
@@ -167,14 +164,17 @@ void Graphoutput::graphStart(treedecType *dec) {
     for (auto b : dec->bags) {
         variablesmap.emplace(b.id, b.variables);
     }
-    // overwrite existing content with the opening line
-    Graphoutput::graphout("graph\n[\n", false);
+    // overwrite existing content with the start of the graph
+    graphout("graph\n[\n", false);
 }
 
+/// <summary>
+/// If enabled: Add the closing bracket(s) to the output.
+/// </summary>
 void Graphoutput::graphEnd() {
     if (!isEnabled())
         return;
-    Graphoutput::graphout("\n]\n");
+    graphout("\n]\n");
 }
 
 /// <summary>
@@ -196,7 +196,7 @@ void Graphoutput::neo4jSat(satformulaType *satFormula) {
                << ",unsat:" << satFormula->unsat
                << ",facts:\"" << satFormula->facts << "\"})";
 
-        // stream << "\n// ========== INCIDENCE GRAPH ===========\n";
+        stream << "\n// ========== INCIDENCE GRAPH ===========\n\n";
 
         // Variables
         for (int i = satFormula->numVars; i > 0; i--) {
@@ -210,18 +210,17 @@ void Graphoutput::neo4jSat(satformulaType *satFormula) {
             // Edges
             for (auto var : clause) {
                 stream << ",("
-                       << "c" << clauseid << ")-[:" + incidenceedge + "]->(v" << std::abs(var) << ")";
+                       << "c" << clauseid << ")-[:" + INCIDENCEEDGE + "]->(v" << std::abs(var) << ")";
             }
         }
 
         stream << ";"
-                  "\n\n// ====== DUAL GRAPH QUERY ==========="
+                  "\n\n// ========== DUAL GRAPH QUERY ==========="
                   "\nMATCH (cl1:Clause)-[]-(:Variable)-[]-(cl2:Clause)  WHERE cl1.id<>cl2.id MERGE (cl1)-[:" +
-                      dualedge + "]-(cl2);"
-                                 "\n\n// ====== PRIMAL GRAPH QUERY ========="
+                      DUALEDGE + "]-(cl2);"
+                                 "\n\n// ========== PRIMAL GRAPH QUERY ========="
                                  "\nMATCH (va1:Variable)<-[]-(:Clause)-[]->(va2:Variable) WHERE va1.id<>va2.id MERGE (va1)-[:" +
-                      primaledge + "]-(va2);";
-
+                      PRIMALEDGE + "]-(va2);";
         stream << "\n";
         file << stream.str();
         file.close();
@@ -230,6 +229,10 @@ void Graphoutput::neo4jSat(satformulaType *satFormula) {
     }
 }
 
+/// <summary>
+/// Output Cypher query to create the tree decomposition.
+/// </summary>
+/// <param name="treeDec">The tree decomposition.</param>
 void Graphoutput::neo4jTD(treedecType *treeDec) {
     if (!isEnabled())
         return;
@@ -252,16 +255,15 @@ void Graphoutput::neo4jTD(treedecType *treeDec) {
             stream << "\nCREATE (b" << bag.id << ":Bag{id:" << bag.id << "})";
             // Edges to variables
             for (auto var_id : bag.variables) {
-                stream << "\nMERGE (b" << bag.id << ")-[:" + inbag + "]->(v" << var_id << ")";
+                stream << "\nMERGE (b" << bag.id << ")-[:" + CONTAINS + "]->(v" << var_id << ")";
             }
         }
         // Edges to bags
         for (auto bag : treeDec->bags) {
             for (auto e : bag.edges) {
-                stream << "\nMERGE (b" << bag.id << ")-[:" + connectbag + "]->(b" << e << ")";
+                stream << "\nMERGE (b" << bag.id << ")-[:" + USES_BAG + "]->(b" << e << ")";
             }
         }
-
         stream << "\n";
         file << stream.str();
         file.close();
@@ -273,7 +275,6 @@ void Graphoutput::neo4jTD(treedecType *treeDec) {
 void Graphoutput::graphout(std::string string, bool append) {
     if (!isEnabled())
         return;
-
     std::ofstream stream(graphfile, append ? std::ios_base::app : std::ios_base::out);
 
     if (stream.is_open()) {
@@ -292,27 +293,5 @@ void Graphoutput::setFile(std::string filename) {
     graphfile = filename;
 }
 
-// currently deprecated
-/*void decompGraph(std::string filename, treedecType& decomp) {
-		std::ofstream stream(filename);
-		if (stream.is_open()) {
-			stream << "graph\n[\n";
-			/// nodes
-			for (bagType b : decomp.bags) {
-				stream << "node\n[\n" << " id " << b.id << "\n";
-				stream << " label \"bag " << b.id << " var: " << b.variables << "\"\n]\n";
-			}
-			/// edges
-			for (auto b : decomp.bags) {
-				for (auto e : b.edges) {
-					stream << "edge\n[\n source " << b.id << "\n"
-						<< " target " << e->id << "\n]\n";
-				}
-			}
-			stream << "]";
-			stream.close();
-		}
-		else { std::cerr << "Failed to open file : " << filename << " with " << errno << std::endl; }
-	}*/
 
 } // namespace gpusat

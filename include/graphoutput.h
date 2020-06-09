@@ -10,14 +10,14 @@ namespace gpusat {
 class Graphoutput {
 
   public:
-    static const std::string connectbag;
-    static const std::string dualedge;
-    static const std::string inbag;
-    static const std::string incidenceedge;
-    static const std::string primaledge;
+    static const std::string Graphoutput::DUALEDGE = "SHARE_VAR";
+    static const std::string Graphoutput::INCIDENCEEDGE = "VAR_IN_CLAUSE";
+    static const std::string Graphoutput::PRIMALEDGE = "SHARE_CLAUSE";
+    static const std::string Graphoutput::CONTAINS = "CONTAINS";
+    static const std::string Graphoutput::USES_BAG = "USES_BAG";
 
-    static const int baseIdSol = 1'000'000;
-    static const int baseIdJoin = 4 * baseIdSol; // avoid factor 2 that would collide with adding two ids.
+    static const unsigned int baseIdSol = 1'000'000;
+    static const unsigned int baseIdJoin = 10'000'000; // avoid factor 2 that would collide with adding two ids.
 
     Graphoutput(std::string filename) {
         setFile(filename);
