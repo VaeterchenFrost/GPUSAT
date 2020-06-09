@@ -1,0 +1,513 @@
+\begin{theindex}
+
+  \item {\_\_CL\_ENABLE\_EXCEPTIONS}
+    \subitem {main.cpp}, \hyperpage{91}
+  \item {$\sim$CutSetWidthFitnessFunction}
+    \subitem {gpusat::CutSetWidthFitnessFunction}, \hyperpage{24}
+  \item {$\sim$JoinSizeFitnessFunction}
+    \subitem {gpusat::JoinSizeFitnessFunction}, \hyperpage{37}
+  \item {$\sim$NumJoinFitnessFunction}
+    \subitem {gpusat::NumJoinFitnessFunction}, \hyperpage{40}
+  \item {$\sim$WidthCutSetFitnessFunction}
+    \subitem {gpusat::WidthCutSetFitnessFunction}, \hyperpage{71}
+
+  \indexspace
+
+  \item {ARRAY}
+    \subitem {gpusat}, \hyperpage{8}
+  \item {attributeNames}
+    \subitem {main.cpp}, \hyperpage{95}
+  \item {attributeTypes}
+    \subitem {main.cpp}, \hyperpage{95}
+
+  \indexspace
+
+  \item {BagMatrix}
+    \subitem {gpusat::BagMatrix}, \hyperpage{17}
+  \item {bags}
+    \subitem {gpusat::bagType}, \hyperpage{20}
+    \subitem {gpusat::treedecType}, \hyperpage{60}
+  \item {baseIdJoin}
+    \subitem {gpusat::Graphoutput}, \hyperpage{35}
+  \item {baseIdSol}
+    \subitem {gpusat::Graphoutput}, \hyperpage{35}
+  \item {buildKernel}
+    \subitem {main.cpp}, \hyperpage{91}
+
+  \indexspace
+
+  \item {clauses}
+    \subitem {gpusat::satformulaType}, \hyperpage{44}
+  \item {cleanTree}
+    \subitem {gpusat::Solver}, \hyperpage{47}
+  \item {clone}
+    \subitem {gpusat::CutSetWidthFitnessFunction}, \hyperpage{25}
+    \subitem {gpusat::JoinSizeFitnessFunction}, \hyperpage{38}
+    \subitem {gpusat::NumJoinFitnessFunction}, \hyperpage{40}
+    \subitem {gpusat::WidthCutSetFitnessFunction}, \hyperpage{71}
+  \item {CNFParser}
+    \subitem {gpusat::CNFParser}, \hyperpage{22}
+  \item {columns}
+    \subitem {gpusat::BagMatrix}, \hyperpage{18}
+  \item {combineTree}
+    \subitem {gpusat::Solver}, \hyperpage{48}
+  \item {compTreedType}
+    \subitem {gpusat}, \hyperpage{8}
+  \item {computeDecomposition}
+    \subitem {gpusat::Decomposer}, \hyperpage{26}
+  \item {compVars}
+    \subitem {gpusat}, \hyperpage{9}
+  \item {connectbag}
+    \subitem {gpusat::Graphoutput}, \hyperpage{35}
+  \item {context}
+    \subitem {gpusat::Solver}, \hyperpage{53}
+  \item {correction}
+    \subitem {gpusat::bagType}, \hyperpage{20}
+  \item {CutSetWidthFitnessFunction}
+    \subitem {gpusat::CutSetWidthFitnessFunction}, \hyperpage{24}
+
+  \indexspace
+
+  \item {dataStructure}
+    \subitem {gpusat}, \hyperpage{8}
+  \item {defaultWeight}
+    \subitem {gpusat::TDParser}, \hyperpage{59}
+  \item {device\_query}
+    \subitem {main.cpp}, \hyperpage{92}
+  \item {dualedge}
+    \subitem {gpusat::Graphoutput}, \hyperpage{35}
+
+  \indexspace
+
+  \item {edges}
+    \subitem {gpusat::bagType}, \hyperpage{20}
+  \item {elements}
+    \subitem {gpusat::treeType}, \hyperpage{62}
+  \item {exponent}
+    \subitem {gpusat::bagType}, \hyperpage{20}
+
+  \indexspace
+
+  \item {facts}
+    \subitem {gpusat::satformulaType}, \hyperpage{44}
+  \item {fitness}
+    \subitem {gpusat::CutSetWidthFitnessFunction}, \hyperpage{25}
+    \subitem {gpusat::JoinSizeFitnessFunction}, \hyperpage{38}
+    \subitem {gpusat::NumJoinFitnessFunction}, \hyperpage{40}
+    \subitem {gpusat::WidthCutSetFitnessFunction}, \hyperpage{71}
+
+  \indexspace
+
+  \item {getClausesJson}
+    \subitem {gpusat::Visualization}, \hyperpage{64}
+  \item {getCount}
+    \subitem {gpusat}, \hyperpage{10}
+  \item {getFilename}
+    \subitem {gpusat::Graphoutput}, \hyperpage{28}
+    \subitem {gpusat::Visualization}, \hyperpage{64}
+  \item {getMaxCutSetSize}
+    \subitem {gpusat::CutSetWidthFitnessFunction}, \hyperpage{25}
+    \subitem {gpusat::WidthCutSetFitnessFunction}, \hyperpage{72}
+  \item {getTdTimeline}
+    \subitem {gpusat::Visualization}, \hyperpage{64}
+  \item {getTime}
+    \subitem {gpusat}, \hyperpage{11}
+  \item {getTreeDecJson}
+    \subitem {gpusat::Visualization}, \hyperpage{64}
+  \item {getWriterBuilder}
+    \subitem {gpusat::Visualization}, \hyperpage{64}
+  \item {gpusat}, \hyperpage{7}
+    \subitem {ARRAY}, \hyperpage{8}
+    \subitem {compTreedType}, \hyperpage{8}
+    \subitem {compVars}, \hyperpage{9}
+    \subitem {dataStructure}, \hyperpage{8}
+    \subitem {getCount}, \hyperpage{10}
+    \subitem {getTime}, \hyperpage{11}
+    \subitem {INTRODUCEFORGET}, \hyperpage{8}
+    \subitem {JOIN}, \hyperpage{8}
+    \subitem {nodeType}, \hyperpage{8}
+    \subitem {operator$<$$<$}, \hyperpage{11, 12}
+    \subitem {printbagType}, \hyperpage{12}
+    \subitem {printtreedecType}, \hyperpage{12}
+    \subitem {printtreeType}, \hyperpage{13}
+    \subitem {solJson}, \hyperpage{13}
+    \subitem {solutiontable}, \hyperpage{14}
+    \subitem {TREE}, \hyperpage{8}
+  \item {gpusat::BagMatrix}, \hyperpage{17}
+    \subitem {BagMatrix}, \hyperpage{17}
+    \subitem {columns}, \hyperpage{18}
+    \subitem {operator()}, \hyperpage{18}
+    \subitem {rows}, \hyperpage{18}
+  \item {gpusat::bagType}, \hyperpage{19}
+    \subitem {bags}, \hyperpage{20}
+    \subitem {correction}, \hyperpage{20}
+    \subitem {edges}, \hyperpage{20}
+    \subitem {exponent}, \hyperpage{20}
+    \subitem {id}, \hyperpage{21}
+    \subitem {maxSize}, \hyperpage{21}
+    \subitem {solution}, \hyperpage{21}
+    \subitem {variables}, \hyperpage{21}
+  \item {gpusat::CNFParser}, \hyperpage{22}
+    \subitem {CNFParser}, \hyperpage{22}
+    \subitem {parseSatFormula}, \hyperpage{22}
+  \item {gpusat::CutSetWidthFitnessFunction}, \hyperpage{23}
+    \subitem {$\sim$CutSetWidthFitnessFunction}, \hyperpage{24}
+    \subitem {clone}, \hyperpage{25}
+    \subitem {CutSetWidthFitnessFunction}, \hyperpage{24}
+    \subitem {fitness}, \hyperpage{25}
+    \subitem {getMaxCutSetSize}, \hyperpage{25}
+  \item {gpusat::Decomposer}, \hyperpage{26}
+    \subitem {computeDecomposition}, \hyperpage{26}
+  \item {gpusat::Graphoutput}, \hyperpage{27}
+    \subitem {baseIdJoin}, \hyperpage{35}
+    \subitem {baseIdSol}, \hyperpage{35}
+    \subitem {connectbag}, \hyperpage{35}
+    \subitem {dualedge}, \hyperpage{35}
+    \subitem {getFilename}, \hyperpage{28}
+    \subitem {graphEdgeSet}, \hyperpage{28}
+    \subitem {graphEnd}, \hyperpage{29}
+    \subitem {Graphoutput}, \hyperpage{28}
+    \subitem {graphStart}, \hyperpage{30}
+    \subitem {inbag}, \hyperpage{35}
+    \subitem {incidenceedge}, \hyperpage{36}
+    \subitem {isEnabled}, \hyperpage{30}
+    \subitem {neo4jSat}, \hyperpage{31}
+    \subitem {neo4jTD}, \hyperpage{32}
+    \subitem {nodeBag}, \hyperpage{33}
+    \subitem {nodeJoin}, \hyperpage{34}
+    \subitem {primaledge}, \hyperpage{36}
+  \item {gpusat::JoinSizeFitnessFunction}, \hyperpage{36}
+    \subitem {$\sim$JoinSizeFitnessFunction}, \hyperpage{37}
+    \subitem {clone}, \hyperpage{38}
+    \subitem {fitness}, \hyperpage{38}
+    \subitem {JoinSizeFitnessFunction}, \hyperpage{37}
+  \item {gpusat::NumJoinFitnessFunction}, \hyperpage{39}
+    \subitem {$\sim$NumJoinFitnessFunction}, \hyperpage{40}
+    \subitem {clone}, \hyperpage{40}
+    \subitem {fitness}, \hyperpage{40}
+    \subitem {NumJoinFitnessFunction}, \hyperpage{40}
+  \item {gpusat::Preprocessor}, \hyperpage{41}
+    \subitem {preprocessDecomp}, \hyperpage{41}
+    \subitem {preprocessFacts}, \hyperpage{42}
+  \item {gpusat::satformulaType}, \hyperpage{43}
+    \subitem {clauses}, \hyperpage{44}
+    \subitem {facts}, \hyperpage{44}
+    \subitem {numVars}, \hyperpage{44}
+    \subitem {numWeights}, \hyperpage{44}
+    \subitem {unsat}, \hyperpage{45}
+    \subitem {variableWeights}, \hyperpage{45}
+  \item {gpusat::Solver}, \hyperpage{45}
+    \subitem {cleanTree}, \hyperpage{47}
+    \subitem {combineTree}, \hyperpage{48}
+    \subitem {context}, \hyperpage{53}
+    \subitem {graphoutput}, \hyperpage{54}
+    \subitem {isSat}, \hyperpage{54}
+    \subitem {maxBag}, \hyperpage{54}
+    \subitem {maxMemoryBuffer}, \hyperpage{54}
+    \subitem {maxTableSize}, \hyperpage{54}
+    \subitem {memorySize}, \hyperpage{54}
+    \subitem {numIntroduceForget}, \hyperpage{55}
+    \subitem {numJoin}, \hyperpage{55}
+    \subitem {program}, \hyperpage{55}
+    \subitem {queue}, \hyperpage{55}
+    \subitem {solutionType}, \hyperpage{55}
+    \subitem {solveIntroduceForget}, \hyperpage{48}
+    \subitem {solveJoin}, \hyperpage{50}
+    \subitem {solveProblem}, \hyperpage{52}
+    \subitem {Solver}, \hyperpage{46}
+    \subitem {verbose}, \hyperpage{55}
+    \subitem {visualization}, \hyperpage{56}
+  \item {gpusat::TableLines}, \hyperpage{56}
+    \subitem {headline}, \hyperpage{57}
+    \subitem {solutions}, \hyperpage{57}
+    \subitem {totalSol}, \hyperpage{57}
+  \item {gpusat::TDParser}, \hyperpage{57}
+    \subitem {defaultWeight}, \hyperpage{59}
+    \subitem {parseTreeDecomp}, \hyperpage{58}
+    \subitem {TDParser}, \hyperpage{58}
+  \item {gpusat::treedecType}, \hyperpage{59}
+    \subitem {bags}, \hyperpage{60}
+    \subitem {numb}, \hyperpage{60}
+    \subitem {numVars}, \hyperpage{60}
+    \subitem {width}, \hyperpage{61}
+  \item {gpusat::treeType}, \hyperpage{61}
+    \subitem {elements}, \hyperpage{62}
+    \subitem {maxId}, \hyperpage{62}
+    \subitem {minId}, \hyperpage{62}
+    \subitem {numSolutions}, \hyperpage{62}
+    \subitem {size}, \hyperpage{62}
+  \item {gpusat::Visualization}, \hyperpage{63}
+    \subitem {getClausesJson}, \hyperpage{64}
+    \subitem {getFilename}, \hyperpage{64}
+    \subitem {getTdTimeline}, \hyperpage{64}
+    \subitem {getTreeDecJson}, \hyperpage{64}
+    \subitem {getWriterBuilder}, \hyperpage{64}
+    \subitem {isEnabled}, \hyperpage{64}
+    \subitem {tdTimelineAppend}, \hyperpage{65}
+    \subitem {testJson}, \hyperpage{66}
+    \subitem {Visualization}, \hyperpage{63}
+    \subitem {visuClauses}, \hyperpage{67}
+    \subitem {visuTreeDec}, \hyperpage{67}
+    \subitem {writeJsonFile}, \hyperpage{67}
+    \subitem {writeJsonToStdout}, \hyperpage{68, 69}
+  \item {gpusat::WidthCutSetFitnessFunction}, \hyperpage{70}
+    \subitem {$\sim$WidthCutSetFitnessFunction}, \hyperpage{71}
+    \subitem {clone}, \hyperpage{71}
+    \subitem {fitness}, \hyperpage{71}
+    \subitem {getMaxCutSetSize}, \hyperpage{72}
+    \subitem {WidthCutSetFitnessFunction}, \hyperpage{71}
+  \item {graphEdgeSet}
+    \subitem {gpusat::Graphoutput}, \hyperpage{28}
+  \item {graphEnd}
+    \subitem {gpusat::Graphoutput}, \hyperpage{29}
+  \item {Graphoutput}
+    \subitem {gpusat::Graphoutput}, \hyperpage{28}
+  \item {graphoutput}
+    \subitem {gpusat::Solver}, \hyperpage{54}
+  \item {graphStart}
+    \subitem {gpusat::Graphoutput}, \hyperpage{30}
+
+  \indexspace
+
+  \item {headline}
+    \subitem {gpusat::TableLines}, \hyperpage{57}
+
+  \indexspace
+
+  \item {id}
+    \subitem {gpusat::bagType}, \hyperpage{21}
+  \item {inbag}
+    \subitem {gpusat::Graphoutput}, \hyperpage{35}
+  \item {incidenceedge}
+    \subitem {gpusat::Graphoutput}, \hyperpage{36}
+  \item {include/decomposer.h}, \hyperpage{73}
+  \item {include/FitnessFunctions/CutSetWidthFitnessFunction.h}, 
+		\hyperpage{74}
+  \item {include/FitnessFunctions/JoinSizeFitnessFunction.h}, 
+		\hyperpage{75}
+  \item {include/FitnessFunctions/NumJoinFitnessFunction.h}, 
+		\hyperpage{76}
+  \item {include/FitnessFunctions/WidthCutSetFitnessFunction.h}, 
+		\hyperpage{77}
+  \item {include/gpusatparser.h}, \hyperpage{78}
+  \item {include/gpusatpreprocessor.h}, \hyperpage{79}
+  \item {include/gpusatutils.h}, \hyperpage{80}
+  \item {include/graphoutput.h}, \hyperpage{81}
+  \item {include/kernel.h}, \hyperpage{82}
+  \item {include/solver.h}, \hyperpage{82}
+  \item {include/types.h}, \hyperpage{83}
+  \item {include/visualization.h}, \hyperpage{84}
+  \item {INTRODUCEFORGET}
+    \subitem {gpusat}, \hyperpage{8}
+  \item {isEnabled}
+    \subitem {gpusat::Graphoutput}, \hyperpage{30}
+    \subitem {gpusat::Visualization}, \hyperpage{64}
+  \item {isSat}
+    \subitem {gpusat::Solver}, \hyperpage{54}
+
+  \indexspace
+
+  \item {JOIN}
+    \subitem {gpusat}, \hyperpage{8}
+  \item {JoinSizeFitnessFunction}
+    \subitem {gpusat::JoinSizeFitnessFunction}, \hyperpage{37}
+
+  \indexspace
+
+  \item {kernelStr}
+    \subitem {main.cpp}, \hyperpage{95}
+
+  \indexspace
+
+  \item {LOGGER}
+    \subitem {visualization.cpp}, \hyperpage{97}
+  \item {LOGGER2}
+    \subitem {visualization.cpp}, \hyperpage{97}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.cpp}, \hyperpage{93}
+  \item {main.cpp}
+    \subitem {\_\_CL\_ENABLE\_EXCEPTIONS}, \hyperpage{91}
+    \subitem {attributeNames}, \hyperpage{95}
+    \subitem {attributeTypes}, \hyperpage{95}
+    \subitem {buildKernel}, \hyperpage{91}
+    \subitem {device\_query}, \hyperpage{92}
+    \subitem {kernelStr}, \hyperpage{95}
+    \subitem {main}, \hyperpage{93}
+    \subitem {NELEMS}, \hyperpage{91}
+    \subitem {PrintDeviceInfo}, \hyperpage{94}
+  \item {maxBag}
+    \subitem {gpusat::Solver}, \hyperpage{54}
+  \item {maxId}
+    \subitem {gpusat::treeType}, \hyperpage{62}
+  \item {maxMemoryBuffer}
+    \subitem {gpusat::Solver}, \hyperpage{54}
+  \item {maxSize}
+    \subitem {gpusat::bagType}, \hyperpage{21}
+  \item {maxTableSize}
+    \subitem {gpusat::Solver}, \hyperpage{54}
+  \item {memorySize}
+    \subitem {gpusat::Solver}, \hyperpage{54}
+  \item {minId}
+    \subitem {gpusat::treeType}, \hyperpage{62}
+
+  \indexspace
+
+  \item {NELEMS}
+    \subitem {main.cpp}, \hyperpage{91}
+  \item {neo4jSat}
+    \subitem {gpusat::Graphoutput}, \hyperpage{31}
+  \item {neo4jTD}
+    \subitem {gpusat::Graphoutput}, \hyperpage{32}
+  \item {nodeBag}
+    \subitem {gpusat::Graphoutput}, \hyperpage{33}
+  \item {nodeJoin}
+    \subitem {gpusat::Graphoutput}, \hyperpage{34}
+  \item {nodeType}
+    \subitem {gpusat}, \hyperpage{8}
+  \item {numb}
+    \subitem {gpusat::treedecType}, \hyperpage{60}
+  \item {numIntroduceForget}
+    \subitem {gpusat::Solver}, \hyperpage{55}
+  \item {numJoin}
+    \subitem {gpusat::Solver}, \hyperpage{55}
+  \item {NumJoinFitnessFunction}
+    \subitem {gpusat::NumJoinFitnessFunction}, \hyperpage{40}
+  \item {numSolutions}
+    \subitem {gpusat::treeType}, \hyperpage{62}
+  \item {numVars}
+    \subitem {gpusat::satformulaType}, \hyperpage{44}
+    \subitem {gpusat::treedecType}, \hyperpage{60}
+  \item {numWeights}
+    \subitem {gpusat::satformulaType}, \hyperpage{44}
+
+  \indexspace
+
+  \item {operator$<$$<$}
+    \subitem {gpusat}, \hyperpage{11, 12}
+  \item {operator()}
+    \subitem {gpusat::BagMatrix}, \hyperpage{18}
+
+  \indexspace
+
+  \item {parseSatFormula}
+    \subitem {gpusat::CNFParser}, \hyperpage{22}
+  \item {parseTreeDecomp}
+    \subitem {gpusat::TDParser}, \hyperpage{58}
+  \item {preprocessDecomp}
+    \subitem {gpusat::Preprocessor}, \hyperpage{41}
+  \item {preprocessFacts}
+    \subitem {gpusat::Preprocessor}, \hyperpage{42}
+  \item {primaledge}
+    \subitem {gpusat::Graphoutput}, \hyperpage{36}
+  \item {printbagType}
+    \subitem {gpusat}, \hyperpage{12}
+  \item {PrintDeviceInfo}
+    \subitem {main.cpp}, \hyperpage{94}
+  \item {printtreedecType}
+    \subitem {gpusat}, \hyperpage{12}
+  \item {printtreeType}
+    \subitem {gpusat}, \hyperpage{13}
+  \item {program}
+    \subitem {gpusat::Solver}, \hyperpage{55}
+
+  \indexspace
+
+  \item {queue}
+    \subitem {gpusat::Solver}, \hyperpage{55}
+
+  \indexspace
+
+  \item {rows}
+    \subitem {gpusat::BagMatrix}, \hyperpage{18}
+
+  \indexspace
+
+  \item {size}
+    \subitem {gpusat::treeType}, \hyperpage{62}
+  \item {solJson}
+    \subitem {gpusat}, \hyperpage{13}
+  \item {solution}
+    \subitem {gpusat::bagType}, \hyperpage{21}
+  \item {solutions}
+    \subitem {gpusat::TableLines}, \hyperpage{57}
+  \item {solutiontable}
+    \subitem {gpusat}, \hyperpage{14}
+  \item {solutionType}
+    \subitem {gpusat::Solver}, \hyperpage{55}
+  \item {solveIntroduceForget}
+    \subitem {gpusat::Solver}, \hyperpage{48}
+  \item {solveJoin}
+    \subitem {gpusat::Solver}, \hyperpage{50}
+  \item {solveProblem}
+    \subitem {gpusat::Solver}, \hyperpage{52}
+  \item {Solver}
+    \subitem {gpusat::Solver}, \hyperpage{46}
+  \item {src/decomposer.cpp}, \hyperpage{86}
+  \item {src/FitnessFunctions/CutSetWidthFitnessFunction.cpp}, 
+		\hyperpage{86}
+  \item {src/FitnessFunctions/JoinSizeFitnessFunction.cpp}, 
+		\hyperpage{87}
+  \item {src/FitnessFunctions/NumJoinFitnessFunction.cpp}, 
+		\hyperpage{87}
+  \item {src/FitnessFunctions/WidthCutSetFitnessFunction.cpp}, 
+		\hyperpage{88}
+  \item {src/gpusatparser.cpp}, \hyperpage{88}
+  \item {src/gpusatpreprocessor.cpp}, \hyperpage{89}
+  \item {src/graphoutput.cpp}, \hyperpage{89}
+  \item {src/main.cpp}, \hyperpage{90}
+  \item {src/solver.cpp}, \hyperpage{96}
+  \item {src/visualization.cpp}, \hyperpage{96}
+
+  \indexspace
+
+  \item {TDParser}
+    \subitem {gpusat::TDParser}, \hyperpage{58}
+  \item {tdTimelineAppend}
+    \subitem {gpusat::Visualization}, \hyperpage{65}
+  \item {testJson}
+    \subitem {gpusat::Visualization}, \hyperpage{66}
+  \item {totalSol}
+    \subitem {gpusat::TableLines}, \hyperpage{57}
+  \item {TREE}
+    \subitem {gpusat}, \hyperpage{8}
+
+  \indexspace
+
+  \item {unsat}
+    \subitem {gpusat::satformulaType}, \hyperpage{45}
+
+  \indexspace
+
+  \item {variables}
+    \subitem {gpusat::bagType}, \hyperpage{21}
+  \item {variableWeights}
+    \subitem {gpusat::satformulaType}, \hyperpage{45}
+  \item {verbose}
+    \subitem {gpusat::Solver}, \hyperpage{55}
+  \item {Visualization}
+    \subitem {gpusat::Visualization}, \hyperpage{63}
+  \item {visualization}
+    \subitem {gpusat::Solver}, \hyperpage{56}
+  \item {visualization.cpp}
+    \subitem {LOGGER}, \hyperpage{97}
+    \subitem {LOGGER2}, \hyperpage{97}
+  \item {visuClauses}
+    \subitem {gpusat::Visualization}, \hyperpage{67}
+  \item {visuTreeDec}
+    \subitem {gpusat::Visualization}, \hyperpage{67}
+
+  \indexspace
+
+  \item {width}
+    \subitem {gpusat::treedecType}, \hyperpage{61}
+  \item {WidthCutSetFitnessFunction}
+    \subitem {gpusat::WidthCutSetFitnessFunction}, \hyperpage{71}
+  \item {writeJsonFile}
+    \subitem {gpusat::Visualization}, \hyperpage{67}
+  \item {writeJsonToStdout}
+    \subitem {gpusat::Visualization}, \hyperpage{68, 69}
+
+\end{theindex}

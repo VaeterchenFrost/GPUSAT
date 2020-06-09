@@ -1,0 +1,235 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Hierarchical Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Class Hierarchy}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Class Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Namespace Documentation}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}gpusat Namespace Reference}{7}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Enumeration Type Documentation}{8}{subsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1.1}dataStructure}{8}{subsubsection.4.1.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1.2}nodeType}{8}{subsubsection.4.1.1.2}%
+\contentsline {subsection}{\numberline {4.1.2}Function Documentation}{8}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}compTreedType()}{9}{subsubsection.4.1.2.1}%
+\contentsline {subsubsection}{\numberline {4.1.2.2}compVars()}{9}{subsubsection.4.1.2.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.3}getCount()}{10}{subsubsection.4.1.2.3}%
+\contentsline {subsubsection}{\numberline {4.1.2.4}getTime()}{11}{subsubsection.4.1.2.4}%
+\contentsline {subsubsection}{\numberline {4.1.2.5}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{11}{subsubsection.4.1.2.5}%
+\contentsline {subsubsection}{\numberline {4.1.2.6}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{12}{subsubsection.4.1.2.6}%
+\contentsline {subsubsection}{\numberline {4.1.2.7}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{12}{subsubsection.4.1.2.7}%
+\contentsline {subsubsection}{\numberline {4.1.2.8}printbagType()}{12}{subsubsection.4.1.2.8}%
+\contentsline {subsubsection}{\numberline {4.1.2.9}printtreedecType()}{13}{subsubsection.4.1.2.9}%
+\contentsline {subsubsection}{\numberline {4.1.2.10}printtreeType()}{13}{subsubsection.4.1.2.10}%
+\contentsline {subsubsection}{\numberline {4.1.2.11}solJson()}{14}{subsubsection.4.1.2.11}%
+\contentsline {subsubsection}{\numberline {4.1.2.12}solutiontable()}{14}{subsubsection.4.1.2.12}%
+\contentsline {chapter}{\numberline {5}Class Documentation}{17}{chapter.5}%
+\contentsline {section}{\numberline {5.1}gpusat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Bag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Matrix Class Reference}{17}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{17}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Constructor \& Destructor Documentation}{17}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.1}BagMatrix()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{17}{subsubsection.5.1.2.1}%
+\contentsline {subsubsection}{\numberline {5.1.2.2}BagMatrix()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{18}{subsubsection.5.1.2.2}%
+\contentsline {subsection}{\numberline {5.1.3}Member Function Documentation}{18}{subsection.5.1.3}%
+\contentsline {subsubsection}{\numberline {5.1.3.1}columns()}{18}{subsubsection.5.1.3.1}%
+\contentsline {subsubsection}{\numberline {5.1.3.2}operator()()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{18}{subsubsection.5.1.3.2}%
+\contentsline {subsubsection}{\numberline {5.1.3.3}operator()()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{18}{subsubsection.5.1.3.3}%
+\contentsline {subsubsection}{\numberline {5.1.3.4}rows()}{19}{subsubsection.5.1.3.4}%
+\contentsline {section}{\numberline {5.2}gpusat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::bag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Type Struct Reference}{19}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{20}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Member Data Documentation}{20}{subsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.1}bags}{20}{subsubsection.5.2.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2.2}correction}{20}{subsubsection.5.2.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.3}edges}{20}{subsubsection.5.2.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.2.4}exponent}{21}{subsubsection.5.2.2.4}%
+\contentsline {subsubsection}{\numberline {5.2.2.5}id}{21}{subsubsection.5.2.2.5}%
+\contentsline {subsubsection}{\numberline {5.2.2.6}maxSize}{21}{subsubsection.5.2.2.6}%
+\contentsline {subsubsection}{\numberline {5.2.2.7}solution}{21}{subsubsection.5.2.2.7}%
+\contentsline {subsubsection}{\numberline {5.2.2.8}variables}{21}{subsubsection.5.2.2.8}%
+\contentsline {section}{\numberline {5.3}gpusat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}N\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Parser Class Reference}{22}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Constructor \& Destructor Documentation}{22}{subsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.1}CNFParser()}{22}{subsubsection.5.3.1.1}%
+\contentsline {subsection}{\numberline {5.3.2}Member Function Documentation}{22}{subsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}parseSatFormula()}{22}{subsubsection.5.3.2.1}%
+\contentsline {section}{\numberline {5.4}gpusat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Cut\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Width\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fitness\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Function Class Reference}{23}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{24}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Constructor \& Destructor Documentation}{24}{subsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.2.1}CutSetWidthFitnessFunction()}{24}{subsubsection.5.4.2.1}%
+\contentsline {subsubsection}{\numberline {5.4.2.2}$\sim $CutSetWidthFitnessFunction()}{25}{subsubsection.5.4.2.2}%
+\contentsline {subsection}{\numberline {5.4.3}Member Function Documentation}{25}{subsection.5.4.3}%
+\contentsline {subsubsection}{\numberline {5.4.3.1}clone()}{25}{subsubsection.5.4.3.1}%
+\contentsline {subsubsection}{\numberline {5.4.3.2}fitness()}{25}{subsubsection.5.4.3.2}%
+\contentsline {subsubsection}{\numberline {5.4.3.3}getMaxCutSetSize()}{26}{subsubsection.5.4.3.3}%
+\contentsline {section}{\numberline {5.5}gpusat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Decomposer Class Reference}{26}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Member Function Documentation}{26}{subsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.1.1}computeDecomposition()}{26}{subsubsection.5.5.1.1}%
+\contentsline {section}{\numberline {5.6}gpusat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Graphoutput Class Reference}{27}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Constructor \& Destructor Documentation}{28}{subsection.5.6.1}%
+\contentsline {subsubsection}{\numberline {5.6.1.1}Graphoutput()}{28}{subsubsection.5.6.1.1}%
+\contentsline {subsection}{\numberline {5.6.2}Member Function Documentation}{28}{subsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.6.2.1}getFilename()}{28}{subsubsection.5.6.2.1}%
+\contentsline {subsubsection}{\numberline {5.6.2.2}graphEdgeSet()}{28}{subsubsection.5.6.2.2}%
+\contentsline {subsubsection}{\numberline {5.6.2.3}graphEnd()}{29}{subsubsection.5.6.2.3}%
+\contentsline {subsubsection}{\numberline {5.6.2.4}graphStart()}{30}{subsubsection.5.6.2.4}%
+\contentsline {subsubsection}{\numberline {5.6.2.5}isEnabled()}{31}{subsubsection.5.6.2.5}%
+\contentsline {subsubsection}{\numberline {5.6.2.6}neo4jSat()}{31}{subsubsection.5.6.2.6}%
+\contentsline {subsubsection}{\numberline {5.6.2.7}neo4jTD()}{32}{subsubsection.5.6.2.7}%
+\contentsline {subsubsection}{\numberline {5.6.2.8}nodeBag()}{33}{subsubsection.5.6.2.8}%
+\contentsline {subsubsection}{\numberline {5.6.2.9}nodeJoin()}{34}{subsubsection.5.6.2.9}%
+\contentsline {subsection}{\numberline {5.6.3}Member Data Documentation}{35}{subsection.5.6.3}%
+\contentsline {subsubsection}{\numberline {5.6.3.1}baseIdJoin}{35}{subsubsection.5.6.3.1}%
+\contentsline {subsubsection}{\numberline {5.6.3.2}baseIdSol}{35}{subsubsection.5.6.3.2}%
+\contentsline {subsubsection}{\numberline {5.6.3.3}connectbag}{35}{subsubsection.5.6.3.3}%
+\contentsline {subsubsection}{\numberline {5.6.3.4}dualedge}{35}{subsubsection.5.6.3.4}%
+\contentsline {subsubsection}{\numberline {5.6.3.5}inbag}{36}{subsubsection.5.6.3.5}%
+\contentsline {subsubsection}{\numberline {5.6.3.6}incidenceedge}{36}{subsubsection.5.6.3.6}%
+\contentsline {subsubsection}{\numberline {5.6.3.7}primaledge}{36}{subsubsection.5.6.3.7}%
+\contentsline {section}{\numberline {5.7}gpusat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Join\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Size\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fitness\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Function Class Reference}{36}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{37}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.7.2}Constructor \& Destructor Documentation}{37}{subsection.5.7.2}%
+\contentsline {subsubsection}{\numberline {5.7.2.1}JoinSizeFitnessFunction()}{37}{subsubsection.5.7.2.1}%
+\contentsline {subsubsection}{\numberline {5.7.2.2}$\sim $JoinSizeFitnessFunction()}{38}{subsubsection.5.7.2.2}%
+\contentsline {subsection}{\numberline {5.7.3}Member Function Documentation}{38}{subsection.5.7.3}%
+\contentsline {subsubsection}{\numberline {5.7.3.1}clone()}{38}{subsubsection.5.7.3.1}%
+\contentsline {subsubsection}{\numberline {5.7.3.2}fitness()}{38}{subsubsection.5.7.3.2}%
+\contentsline {section}{\numberline {5.8}gpusat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Num\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Join\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fitness\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Function Class Reference}{39}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Detailed Description}{39}{subsection.5.8.1}%
+\contentsline {subsection}{\numberline {5.8.2}Constructor \& Destructor Documentation}{40}{subsection.5.8.2}%
+\contentsline {subsubsection}{\numberline {5.8.2.1}NumJoinFitnessFunction()}{40}{subsubsection.5.8.2.1}%
+\contentsline {subsubsection}{\numberline {5.8.2.2}$\sim $NumJoinFitnessFunction()}{40}{subsubsection.5.8.2.2}%
+\contentsline {subsection}{\numberline {5.8.3}Member Function Documentation}{40}{subsection.5.8.3}%
+\contentsline {subsubsection}{\numberline {5.8.3.1}clone()}{40}{subsubsection.5.8.3.1}%
+\contentsline {subsubsection}{\numberline {5.8.3.2}fitness()}{41}{subsubsection.5.8.3.2}%
+\contentsline {section}{\numberline {5.9}gpusat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Preprocessor Class Reference}{41}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Member Function Documentation}{41}{subsection.5.9.1}%
+\contentsline {subsubsection}{\numberline {5.9.1.1}preprocessDecomp()}{41}{subsubsection.5.9.1.1}%
+\contentsline {subsubsection}{\numberline {5.9.1.2}preprocessFacts()}{42}{subsubsection.5.9.1.2}%
+\contentsline {section}{\numberline {5.10}gpusat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::satformula\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Type Struct Reference}{43}{section.5.10}%
+\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{44}{subsection.5.10.1}%
+\contentsline {subsection}{\numberline {5.10.2}Member Data Documentation}{44}{subsection.5.10.2}%
+\contentsline {subsubsection}{\numberline {5.10.2.1}clauses}{44}{subsubsection.5.10.2.1}%
+\contentsline {subsubsection}{\numberline {5.10.2.2}facts}{44}{subsubsection.5.10.2.2}%
+\contentsline {subsubsection}{\numberline {5.10.2.3}numVars}{44}{subsubsection.5.10.2.3}%
+\contentsline {subsubsection}{\numberline {5.10.2.4}numWeights}{45}{subsubsection.5.10.2.4}%
+\contentsline {subsubsection}{\numberline {5.10.2.5}unsat}{45}{subsubsection.5.10.2.5}%
+\contentsline {subsubsection}{\numberline {5.10.2.6}variableWeights}{45}{subsubsection.5.10.2.6}%
+\contentsline {section}{\numberline {5.11}gpusat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Solver Class Reference}{45}{section.5.11}%
+\contentsline {subsection}{\numberline {5.11.1}Detailed Description}{46}{subsection.5.11.1}%
+\contentsline {subsection}{\numberline {5.11.2}Constructor \& Destructor Documentation}{46}{subsection.5.11.2}%
+\contentsline {subsubsection}{\numberline {5.11.2.1}Solver()}{47}{subsubsection.5.11.2.1}%
+\contentsline {subsection}{\numberline {5.11.3}Member Function Documentation}{47}{subsection.5.11.3}%
+\contentsline {subsubsection}{\numberline {5.11.3.1}cleanTree()}{47}{subsubsection.5.11.3.1}%
+\contentsline {subsubsection}{\numberline {5.11.3.2}combineTree()}{48}{subsubsection.5.11.3.2}%
+\contentsline {subsubsection}{\numberline {5.11.3.3}solveIntroduceForget()}{48}{subsubsection.5.11.3.3}%
+\contentsline {subsubsection}{\numberline {5.11.3.4}solveJoin()}{51}{subsubsection.5.11.3.4}%
+\contentsline {subsubsection}{\numberline {5.11.3.5}solveProblem()}{52}{subsubsection.5.11.3.5}%
+\contentsline {subsection}{\numberline {5.11.4}Member Data Documentation}{53}{subsection.5.11.4}%
+\contentsline {subsubsection}{\numberline {5.11.4.1}context}{54}{subsubsection.5.11.4.1}%
+\contentsline {subsubsection}{\numberline {5.11.4.2}graphoutput}{54}{subsubsection.5.11.4.2}%
+\contentsline {subsubsection}{\numberline {5.11.4.3}isSat}{54}{subsubsection.5.11.4.3}%
+\contentsline {subsubsection}{\numberline {5.11.4.4}maxBag}{54}{subsubsection.5.11.4.4}%
+\contentsline {subsubsection}{\numberline {5.11.4.5}maxMemoryBuffer}{54}{subsubsection.5.11.4.5}%
+\contentsline {subsubsection}{\numberline {5.11.4.6}maxTableSize}{54}{subsubsection.5.11.4.6}%
+\contentsline {subsubsection}{\numberline {5.11.4.7}memorySize}{55}{subsubsection.5.11.4.7}%
+\contentsline {subsubsection}{\numberline {5.11.4.8}numIntroduceForget}{55}{subsubsection.5.11.4.8}%
+\contentsline {subsubsection}{\numberline {5.11.4.9}numJoin}{55}{subsubsection.5.11.4.9}%
+\contentsline {subsubsection}{\numberline {5.11.4.10}program}{55}{subsubsection.5.11.4.10}%
+\contentsline {subsubsection}{\numberline {5.11.4.11}queue}{55}{subsubsection.5.11.4.11}%
+\contentsline {subsubsection}{\numberline {5.11.4.12}solutionType}{55}{subsubsection.5.11.4.12}%
+\contentsline {subsubsection}{\numberline {5.11.4.13}verbose}{56}{subsubsection.5.11.4.13}%
+\contentsline {subsubsection}{\numberline {5.11.4.14}visualization}{56}{subsubsection.5.11.4.14}%
+\contentsline {section}{\numberline {5.12}gpusat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Table\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lines Struct Reference}{56}{section.5.12}%
+\contentsline {subsection}{\numberline {5.12.1}Detailed Description}{56}{subsection.5.12.1}%
+\contentsline {subsection}{\numberline {5.12.2}Member Data Documentation}{57}{subsection.5.12.2}%
+\contentsline {subsubsection}{\numberline {5.12.2.1}headline}{57}{subsubsection.5.12.2.1}%
+\contentsline {subsubsection}{\numberline {5.12.2.2}solutions}{57}{subsubsection.5.12.2.2}%
+\contentsline {subsubsection}{\numberline {5.12.2.3}totalSol}{57}{subsubsection.5.12.2.3}%
+\contentsline {section}{\numberline {5.13}gpusat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::T\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Parser Class Reference}{57}{section.5.13}%
+\contentsline {subsection}{\numberline {5.13.1}Constructor \& Destructor Documentation}{58}{subsection.5.13.1}%
+\contentsline {subsubsection}{\numberline {5.13.1.1}TDParser()}{58}{subsubsection.5.13.1.1}%
+\contentsline {subsection}{\numberline {5.13.2}Member Function Documentation}{58}{subsection.5.13.2}%
+\contentsline {subsubsection}{\numberline {5.13.2.1}parseTreeDecomp()}{58}{subsubsection.5.13.2.1}%
+\contentsline {subsection}{\numberline {5.13.3}Member Data Documentation}{59}{subsection.5.13.3}%
+\contentsline {subsubsection}{\numberline {5.13.3.1}defaultWeight}{59}{subsubsection.5.13.3.1}%
+\contentsline {section}{\numberline {5.14}gpusat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::treedec\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Type Struct Reference}{59}{section.5.14}%
+\contentsline {subsection}{\numberline {5.14.1}Detailed Description}{60}{subsection.5.14.1}%
+\contentsline {subsection}{\numberline {5.14.2}Member Data Documentation}{60}{subsection.5.14.2}%
+\contentsline {subsubsection}{\numberline {5.14.2.1}bags}{60}{subsubsection.5.14.2.1}%
+\contentsline {subsubsection}{\numberline {5.14.2.2}numb}{60}{subsubsection.5.14.2.2}%
+\contentsline {subsubsection}{\numberline {5.14.2.3}numVars}{61}{subsubsection.5.14.2.3}%
+\contentsline {subsubsection}{\numberline {5.14.2.4}width}{61}{subsubsection.5.14.2.4}%
+\contentsline {section}{\numberline {5.15}gpusat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::tree\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Type Struct Reference}{61}{section.5.15}%
+\contentsline {subsection}{\numberline {5.15.1}Detailed Description}{62}{subsection.5.15.1}%
+\contentsline {subsection}{\numberline {5.15.2}Member Data Documentation}{62}{subsection.5.15.2}%
+\contentsline {subsubsection}{\numberline {5.15.2.1}elements}{62}{subsubsection.5.15.2.1}%
+\contentsline {subsubsection}{\numberline {5.15.2.2}maxId}{62}{subsubsection.5.15.2.2}%
+\contentsline {subsubsection}{\numberline {5.15.2.3}minId}{62}{subsubsection.5.15.2.3}%
+\contentsline {subsubsection}{\numberline {5.15.2.4}numSolutions}{62}{subsubsection.5.15.2.4}%
+\contentsline {subsubsection}{\numberline {5.15.2.5}size}{63}{subsubsection.5.15.2.5}%
+\contentsline {section}{\numberline {5.16}gpusat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Visualization Class Reference}{63}{section.5.16}%
+\contentsline {subsection}{\numberline {5.16.1}Constructor \& Destructor Documentation}{63}{subsection.5.16.1}%
+\contentsline {subsubsection}{\numberline {5.16.1.1}Visualization()}{63}{subsubsection.5.16.1.1}%
+\contentsline {subsection}{\numberline {5.16.2}Member Function Documentation}{64}{subsection.5.16.2}%
+\contentsline {subsubsection}{\numberline {5.16.2.1}getClausesJson()}{64}{subsubsection.5.16.2.1}%
+\contentsline {subsubsection}{\numberline {5.16.2.2}getFilename()}{64}{subsubsection.5.16.2.2}%
+\contentsline {subsubsection}{\numberline {5.16.2.3}getTdTimeline()}{64}{subsubsection.5.16.2.3}%
+\contentsline {subsubsection}{\numberline {5.16.2.4}getTreeDecJson()}{64}{subsubsection.5.16.2.4}%
+\contentsline {subsubsection}{\numberline {5.16.2.5}getWriterBuilder()}{64}{subsubsection.5.16.2.5}%
+\contentsline {subsubsection}{\numberline {5.16.2.6}isEnabled()}{65}{subsubsection.5.16.2.6}%
+\contentsline {subsubsection}{\numberline {5.16.2.7}tdTimelineAppend()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{65}{subsubsection.5.16.2.7}%
+\contentsline {subsubsection}{\numberline {5.16.2.8}tdTimelineAppend()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{65}{subsubsection.5.16.2.8}%
+\contentsline {subsubsection}{\numberline {5.16.2.9}testJson()}{66}{subsubsection.5.16.2.9}%
+\contentsline {subsubsection}{\numberline {5.16.2.10}visuClauses()}{67}{subsubsection.5.16.2.10}%
+\contentsline {subsubsection}{\numberline {5.16.2.11}visuTreeDec()}{67}{subsubsection.5.16.2.11}%
+\contentsline {subsubsection}{\numberline {5.16.2.12}writeJsonFile()}{68}{subsubsection.5.16.2.12}%
+\contentsline {subsubsection}{\numberline {5.16.2.13}writeJsonToStdout()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{68}{subsubsection.5.16.2.13}%
+\contentsline {subsubsection}{\numberline {5.16.2.14}writeJsonToStdout()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{69}{subsubsection.5.16.2.14}%
+\contentsline {section}{\numberline {5.17}gpusat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Width\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cut\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fitness\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Function Class Reference}{70}{section.5.17}%
+\contentsline {subsection}{\numberline {5.17.1}Detailed Description}{70}{subsection.5.17.1}%
+\contentsline {subsection}{\numberline {5.17.2}Constructor \& Destructor Documentation}{71}{subsection.5.17.2}%
+\contentsline {subsubsection}{\numberline {5.17.2.1}WidthCutSetFitnessFunction()}{71}{subsubsection.5.17.2.1}%
+\contentsline {subsubsection}{\numberline {5.17.2.2}$\sim $WidthCutSetFitnessFunction()}{71}{subsubsection.5.17.2.2}%
+\contentsline {subsection}{\numberline {5.17.3}Member Function Documentation}{71}{subsection.5.17.3}%
+\contentsline {subsubsection}{\numberline {5.17.3.1}clone()}{71}{subsubsection.5.17.3.1}%
+\contentsline {subsubsection}{\numberline {5.17.3.2}fitness()}{72}{subsubsection.5.17.3.2}%
+\contentsline {subsubsection}{\numberline {5.17.3.3}getMaxCutSetSize()}{72}{subsubsection.5.17.3.3}%
+\contentsline {chapter}{\numberline {6}File Documentation}{73}{chapter.6}%
+\contentsline {section}{\numberline {6.1}include/decomposer.h File Reference}{73}{section.6.1}%
+\contentsline {section}{\numberline {6.2}include/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fitness\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Functions/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cut\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Width\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fitness\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Function.h File Reference}{74}{section.6.2}%
+\contentsline {section}{\numberline {6.3}include/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fitness\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Functions/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Join\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Size\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fitness\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Function.h File Reference}{75}{section.6.3}%
+\contentsline {section}{\numberline {6.4}include/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fitness\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Functions/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Num\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Join\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fitness\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Function.h File Reference}{76}{section.6.4}%
+\contentsline {section}{\numberline {6.5}include/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fitness\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Functions/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Width\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cut\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fitness\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Function.h File Reference}{77}{section.6.5}%
+\contentsline {section}{\numberline {6.6}include/gpusatparser.h File Reference}{78}{section.6.6}%
+\contentsline {section}{\numberline {6.7}include/gpusatpreprocessor.h File Reference}{79}{section.6.7}%
+\contentsline {section}{\numberline {6.8}include/gpusatutils.h File Reference}{80}{section.6.8}%
+\contentsline {section}{\numberline {6.9}include/graphoutput.h File Reference}{81}{section.6.9}%
+\contentsline {section}{\numberline {6.10}include/kernel.h File Reference}{82}{section.6.10}%
+\contentsline {section}{\numberline {6.11}include/solver.h File Reference}{82}{section.6.11}%
+\contentsline {section}{\numberline {6.12}include/types.h File Reference}{83}{section.6.12}%
+\contentsline {section}{\numberline {6.13}include/visualization.h File Reference}{84}{section.6.13}%
+\contentsline {section}{\numberline {6.14}src/decomposer.cpp File Reference}{86}{section.6.14}%
+\contentsline {section}{\numberline {6.15}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fitness\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Functions/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cut\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Width\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fitness\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Function.cpp File Reference}{86}{section.6.15}%
+\contentsline {section}{\numberline {6.16}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fitness\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Functions/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Join\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Size\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fitness\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Function.cpp File Reference}{87}{section.6.16}%
+\contentsline {section}{\numberline {6.17}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fitness\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Functions/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Num\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Join\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fitness\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Function.cpp File Reference}{87}{section.6.17}%
+\contentsline {section}{\numberline {6.18}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fitness\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Functions/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Width\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cut\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fitness\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Function.cpp File Reference}{88}{section.6.18}%
+\contentsline {section}{\numberline {6.19}src/gpusatparser.cpp File Reference}{88}{section.6.19}%
+\contentsline {section}{\numberline {6.20}src/gpusatpreprocessor.cpp File Reference}{89}{section.6.20}%
+\contentsline {section}{\numberline {6.21}src/graphoutput.cpp File Reference}{89}{section.6.21}%
+\contentsline {section}{\numberline {6.22}src/main.cpp File Reference}{90}{section.6.22}%
+\contentsline {subsection}{\numberline {6.22.1}Macro Definition Documentation}{91}{subsection.6.22.1}%
+\contentsline {subsubsection}{\numberline {6.22.1.1}\_\_CL\_ENABLE\_EXCEPTIONS}{91}{subsubsection.6.22.1.1}%
+\contentsline {subsubsection}{\numberline {6.22.1.2}NELEMS}{91}{subsubsection.6.22.1.2}%
+\contentsline {subsection}{\numberline {6.22.2}Function Documentation}{91}{subsection.6.22.2}%
+\contentsline {subsubsection}{\numberline {6.22.2.1}buildKernel()}{92}{subsubsection.6.22.2.1}%
+\contentsline {subsubsection}{\numberline {6.22.2.2}device\_query()}{92}{subsubsection.6.22.2.2}%
+\contentsline {subsubsection}{\numberline {6.22.2.3}main()}{93}{subsubsection.6.22.2.3}%
+\contentsline {subsubsection}{\numberline {6.22.2.4}PrintDeviceInfo()}{94}{subsubsection.6.22.2.4}%
+\contentsline {subsection}{\numberline {6.22.3}Variable Documentation}{95}{subsection.6.22.3}%
+\contentsline {subsubsection}{\numberline {6.22.3.1}attributeNames}{95}{subsubsection.6.22.3.1}%
+\contentsline {subsubsection}{\numberline {6.22.3.2}attributeTypes}{95}{subsubsection.6.22.3.2}%
+\contentsline {subsubsection}{\numberline {6.22.3.3}kernelStr}{95}{subsubsection.6.22.3.3}%
+\contentsline {section}{\numberline {6.23}src/solver.cpp File Reference}{96}{section.6.23}%
+\contentsline {section}{\numberline {6.24}src/visualization.cpp File Reference}{96}{section.6.24}%
+\contentsline {subsection}{\numberline {6.24.1}Macro Definition Documentation}{97}{subsection.6.24.1}%
+\contentsline {subsubsection}{\numberline {6.24.1.1}LOGGER}{97}{subsubsection.6.24.1.1}%
+\contentsline {subsubsection}{\numberline {6.24.1.2}LOGGER2}{97}{subsubsection.6.24.1.2}%
+\contentsline {chapter}{Index}{99}{section*.192}%
