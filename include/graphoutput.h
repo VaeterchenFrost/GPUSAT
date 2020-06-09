@@ -10,11 +10,11 @@ namespace gpusat {
 class Graphoutput {
 
   public:
-    static const std::string Graphoutput::DUALEDGE = "SHARE_VAR";
-    static const std::string Graphoutput::INCIDENCEEDGE = "VAR_IN_CLAUSE";
-    static const std::string Graphoutput::PRIMALEDGE = "SHARE_CLAUSE";
-    static const std::string Graphoutput::CONTAINS = "CONTAINS";
-    static const std::string Graphoutput::USES_BAG = "USES_BAG";
+    inline static const std::string DUALEDGE = "SHARE_VAR";
+    inline static const std::string INCIDENCEEDGE = "VAR_IN_CLAUSE";
+    inline static const std::string PRIMALEDGE = "SHARE_CLAUSE";
+    inline static const std::string CONTAINS = "CONTAINS";
+    inline static const std::string USES_BAG = "USES_BAG";
 
     static const unsigned baseIdSol = 10'000'000;
     static const unsigned baseIdJoin = 2'000'000'000; // avoid baseIdSol*2 that would collide with adding two ids.
