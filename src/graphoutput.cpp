@@ -8,6 +8,12 @@
 namespace gpusat
 {
 
+    const std::string Graphoutput::DUALEDGE = "SHARE_VAR";
+    const std::string Graphoutput::INCIDENCEEDGE = "VAR_IN_CLAUSE";
+    const std::string Graphoutput::PRIMALEDGE = "SHARE_CLAUSE";
+    const std::string Graphoutput::CONTAINS = "CONTAINS";
+    const std::string Graphoutput::USES_BAG = "USES_BAG";
+    
     /// <summary>
     /// Writes one edge between two nodes.
     /// </summary>
