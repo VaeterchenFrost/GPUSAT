@@ -176,7 +176,8 @@ Json::StreamWriterBuilder *Visualization::getWriterBuilder() {
 }
 
 void Visualization::writeJsonFile(bool append) {
-    std::cout << "Entering writeJsonFile, enabled " << isEnabled();
+    if (verbose) 
+        std::cout << "Entering writeJsonFile, enabled " << isEnabled();
     if (!isEnabled())
         return;
 
@@ -194,19 +195,19 @@ void Visualization::writeJsonFile(bool append) {
 
             visu_json[TAG_INCID] = incidenceGraph;
         } else {
-            LOGGER("clausesJson not array-type");
+            if (verbose) LOGGER("clausesJson not array-type");
         }
         visu_json[TAG_GENERAL] = false;
 
         if (treeDecJson.type() == Json::ValueType::objectValue) {
             visu_json[TAG_TDJ] = treeDecJson;
         } else {
-            LOGGER("treeDecJson not object-type");
+            if (verbose) LOGGER("treeDecJson not object-type");
         }
         if (tdTimeline.type() == Json::ValueType::arrayValue) {
             visu_json[TAG_TDTIMELINE] = tdTimeline;
         } else {
-            LOGGER("tdTimeline not array-type");
+            if (verbose) LOGGER("tdTimeline not array-type");
         }
         writeJsonToStdout(visu_json, &stream);
         stream.close();

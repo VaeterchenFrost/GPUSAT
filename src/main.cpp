@@ -346,7 +346,7 @@ int main(int argc, char *argv[]) {
         std::cout.flush();
 
         Solver *sol;
-        Visualization *myVisu = new Visualization(visufile);
+        Visualization *myVisu = new Visualization(visufile, verbose);
         // myVisu.testJson();
         Graphoutput *graphout = new Graphoutput(graphfile);
         graphout->neo4jSat(&satFormula);

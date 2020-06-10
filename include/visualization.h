@@ -68,9 +68,12 @@ TableLines solJson(bagType node, dataStructure solutionType);
 class Visualization {
 
   public:
-    Visualization(std::string filename) {
+    Visualization(std::string filename, bool _verbose) {
         setFile(filename);
-        std::cout << "Opened visualization with file " << visufile << " " << (isEnabled() ? "true" : "false") << "\n----------" << std::endl;
+        if (_verbose){
+            verbose = true; 
+            std::cout << "Opened visualization with file " << visufile << " " << (isEnabled() ? "true" : "false") << "\n----------" << std::endl;
+        }
         writerBuilder = new Json::StreamWriterBuilder();
         (*writerBuilder)["commentStyle"] = "None";
         (*writerBuilder)["indentation"] = "    ";
@@ -83,7 +86,7 @@ class Visualization {
     bool isEnabled() {
         return outputEnabled;
     }
-
+    bool verbose=false;
     void testJson();
     void visuTreeDec(treedecType *treeDec);
     void visuClauses(satformulaType *sat); // consuming std::vector<std::vector<cl_long>> clauses;
