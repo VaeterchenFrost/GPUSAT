@@ -1,8 +1,9 @@
- cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.2)
 project(gpusat)
 
-include_directories(/home/roemar/Ba/htd/include)
+include_directories(~/Ba/htd/include)
 include_directories(~/Ba/jsoncpp/jsoncpp/include)
+include_directories(${CMAKE_SOURCE_DIR}/include)
 
 if (DEFINED ENV{AMDAPPSDKROOT})
     # add amd opencl libraries if AMDAPPSDKROOT environment variable is set
@@ -13,8 +14,6 @@ elseif (DEFINED ENV{CUDA_PATH})
     include_directories("$ENV{CUDA_PATH}/include")
     link_directories("$ENV{CUDA_PATH}/lib/x64")
 endif ()
-
-include_directories(${CMAKE_SOURCE_DIR}/include)
 
 if (DEBUG)
     # compiler flags
@@ -29,15 +28,15 @@ elseif (UNIX)
     SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS}")
 endif ()
 
-find_library(HTD_LIB htd /home/roemar/Ba/htd/lib)
+find_library(HTD_LIB htd ~/Ba/htd/lib)
 add_library(htd SHARED IMPORTED)
 set_target_properties(htd PROPERTIES IMPORTED_LOCATION ${HTD_LIB})
 
-find_library(HTD_IO_LIB htd_io /home/roemar/Ba/htd/lib)
+find_library(HTD_IO_LIB htd_io ~/Ba/htd/lib)
 add_library(htd_io SHARED IMPORTED)
 set_target_properties(htd_io PROPERTIES IMPORTED_LOCATION ${HTD_IO_LIB})
 
-find_library(JSONCPP_LIB jsoncpp /home/roemar/Ba/jsoncpp/jsoncpp/build/debug/src/lib_json)
+find_library(JSONCPP_LIB jsoncpp ~/Ba/jsoncpp/jsoncpp/build/debug/src/lib_json)
 add_library(jsoncpp STATIC IMPORTED)
 set_target_properties(jsoncpp PROPERTIES IMPORTED_LOCATION ${JSONCPP_LIB})
 
