@@ -197,7 +197,6 @@ void Visualization::writeJsonFile(bool append) {
         } else {
             if (verbose) LOGGER("clausesJson not array-type");
         }
-        visu_json[TAG_GENERAL] = false;
 
         if (treeDecJson.type() == Json::ValueType::objectValue) {
             visu_json[TAG_TDJ] = treeDecJson;
